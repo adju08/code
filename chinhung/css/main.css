@@ -34,45 +34,112 @@ a {
     width: 1260px;
     margin: 0 auto;
 }
-.Global {
-    margin: 120px 0 97px 0;
+header {
+    height: 100px;
+    /* header는 대부분 디자인한 높이를 잡아주고 코딩함
+    header에는 존재하는 것이 많아서 .. */
 }
-.Global h1,
-.lsc h1{
-    font-size: 40px;
+header .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+header .logo {
+    margin: 33px 0 0 0;
+}
+header .logo a img {
+    width: 122px;
+}
+header .gnb ul {
+    display: flex;
+    gap: 26px;
+}
+header .gnb ul li a {
+    display: block;
+    font-size: 25px;
     font-weight: 700;
     color: #1d1d1d;
-    margin: 0 0 17px 0;
+    letter-spacing: -0.2px;
+    padding: 31px 18px 31px 18px;
 }
-.Global .sub_tit {
-    color: #00b900;
-    margin: 0 0 8px 0;
-}
-.Global .more a {
-    border: 1px solid #00b900;
-    display: inline-block;
-    color: #00b900;
-    padding: 5px 28px;
-    margin: 30px 0 43px 0;
-}
-.lsc {
-    height: 641px;
+
+.visual {
+    background: url(../images/sin-bg.png) no-repeat center center / cover;
+    /* background 한번에 정의                반복     좌우   위아래    크기 */
+    height: 1000px;
     color: #fff;
+}
+.visual h2 {
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.02em; /* 포토샵값 -20 */
+    padding: 322px 0 29px 0;
+}
+
+.biz {
+    margin: 153px 0 0 0;
     text-align: center;
-    background-image: url(../images/lsc-bg.png);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
-.lsc h1 {
-    line-height: 1.4;
-    color: #fff;
-    padding: 118px 0 0 0;
+.biz .tit h2 {
+    color: #21439c;
 }
-.lsc .more a {
-    border: 1px solid #fff;
-    display: inline-block;
+.biz .tit p,
+.brand .sub_tit{
+    font-size: 45px;
+    color: #1d1d1d;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    line-height: 1.3;
+}
+.biz .list {
+    margin: 50px 0 0 0;
+}
+.biz .list ul{
+    display: flex;
+    justify-content: space-between;
+}
+.biz .list ul li{
+    width: 297px;
+}
+.biz .list ul li a {
+    display: block; /*  a의 필수값 */
+}
+.biz .list ul li a h3 {
+    font-size: 25px;
+    font-weight: 700;
+    color: #21439c;
+    margin: 22px 0 8px 0;
+}
+.biz .list ul li a p,
+.biz .list ul li a .more {
+    color: #1d1d1d;
+}
+.biz .list ul li a .more {
+    border: 1px solid #ccc;
+    padding: 14px 0;
+    margin: 25px 0 0 0;
+    display: block;
+}
+
+.brand {
+    background: url(../images/hrt-bg.png) no-repeat center center / cover;
+    height: 853px;
+    margin: 115px 0 0 0;
     color: #fff;
-    padding: 6px 25px;
-    margin: 32px 0 42px 0;
+}
+.brand h2 {
+    padding: 278px 0 2px 0;
+}
+.brand .sub_tit {
+    margin: 0 0 56px 0;
+    color: #fff;
+}
+.brand .cnt {
+    border-top: 1px solid rgba(255,255,255,0.2) ;
+    color: rgba(255,255,255,0.8); /* 흰색(#fff) RGB값 255 - opactiy 80% */
+    padding: 10px 0 0 0;
+}
+
+footer {
+    margin: 400px 0 0 0;
 }
