@@ -5,7 +5,7 @@ body {
     font-family: 'Pretendard', sans-serif;
     font-size: 17px;
     font-weight: 400;
-    color: #3d3d3d;
+    color: #555;
     line-height: 1.5;
     word-break: keep-all;
 }
@@ -34,21 +34,45 @@ a {
     width: 1260px;
     margin: 0 auto;
 }
-header .wrapper {
-    display: flex;
-    /* 로고랑 gnb를 좌우로 들어가게 할거라 flex 적용 */
-    justify-content: space-between
+.Global {
+    margin: 120px 0 97px 0;
 }
-header .logo,.gnb {
-    margin: 32px 0 0 0;
+.Global h1,
+.lsc h1{
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 0 0 17px 0;
 }
-header .logo a img {
-    width: 122px;
-    /* 이미지는 넓이나 높이 둘중에 하나만 주면 나머지는 비율에 맞게 조절 됨
-    오히려 넓이, 높이 둘 다 주면 찌그러짐 */
+.Global .sub_tit {
+    color: #00b900;
+    margin: 0 0 8px 0;
 }
-header .gnb ul {
-    display: flex;
-    gap: 64px;
-    margin: 0 25px 0 0;
+.Global .more a {
+    border: 1px solid #00b900;
+    display: inline-block;
+    color: #00b900;
+    padding: 5px 28px;
+    margin: 30px 0 43px 0;
+}
+.lsc {
+    height: 641px;
+    color: #fff;
+    text-align: center;
+    background-image: url(../images/lsc-bg.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.lsc h1 {
+    line-height: 1.4;
+    color: #fff;
+    padding: 118px 0 0 0;
+}
+.lsc .more a {
+    border: 1px solid #fff;
+    display: inline-block;
+    color: #fff;
+    padding: 6px 25px;
+    margin: 32px 0 42px 0;
 }
