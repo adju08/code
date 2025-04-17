@@ -12,9 +12,6 @@ header {
 header .logo {
     margin: 24px 0 0 0;
 }
-header .logo a img {
-    width: 167.85px;
-} 
 header .inner {
     display: flex; /* gnb와 shop을 좌우로 배치 */
     align-items: center; /* 위아래 가운데(flex) */
