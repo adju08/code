@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 30 30">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_83" data-name="사각형 83" width="30" height="30" transform="translate(601 -189)" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="마스크_그룹_18" data-name="마스크 그룹 18" transform="translate(-601 189)" clip-path="url(#clip-path)">
+    <text id="SY" transform="translate(605 -166)" fill="#788ad3" font-size="20" font-family="HancomMalangMalang-Bold, Hancom MalangMalang" font-weight="700"><tspan x="0" y="0">SY</tspan></text>
+  </g>
+</svg>
