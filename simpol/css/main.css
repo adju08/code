@@ -26,9 +26,9 @@ header .inner .gnb ul li a {
     font-weight: 800;
     color: #1d1d1d;
     line-height: 100px;
-    /* header의 높이랑 1차 메뉴의 a의 높이는 같아야함... a에 행간을 헤더의 높이값으로 줌,
+    /* header의 높이랑 1차 메뉴의 a의 높이는 같아야함... a에 행간을 header의 높이값으로 줌,
     a에 높이가 생기고 글자는 위아래 가운데 정렬,
-    패딩에 여백을 주는 게 XX */
+    padding으로 높이 여백을 주는 게 XX */
     padding: 0 40px;
 }
 header .inner .shop {
