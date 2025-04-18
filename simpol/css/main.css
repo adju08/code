@@ -53,7 +53,8 @@ header .inner .shop {
     letter-spacing: -0.03em; /* -30 */
     padding: 293px 0 3px 0;
 }
-.product {
+.product,
+.community {
     margin: 177px 0 0 0;
 }
 .product .tit h2,
@@ -127,10 +128,110 @@ header .inner .shop {
     border: 1px solid #fff;
     border-radius: 16px
 }
-.community {
-    padding: 182px 0 0 0;
+.community .list {
+    margin: 52px 0 0 0;
+    display: flex; /* group을 좌우로배치 */
+    justify-content: space-between; /* 양쪽 끝에 배치 */
 }
-
+.community .list .group {
+    width: calc(50% - 6px); /* 높이는 X, 넓이만 주기 */
+    /* 반응형 코딩을 할 때 중요한 코드
+       1. 몇개로 분할 : 2개 =ex 100/2 = 50%
+       2. 사이 여백의 총합 / 분할하는 갯수로 나눔(n빵) =ex 12 / 2 = 6px
+    */
+}
+.community .list .group ul {
+    display: flex; /* li를 좌우에 배치 */
+    flex-wrap: wrap; /* li가 2줄로 나타나는 걸 허락(박스 2줄 만들기 허용) */
+    gap: 12px;
+}
+/* 1. li의 사이즈와 a의 사이즈가 동일해야 할 때
+   2. height를 꼭 줘야 하는 디자인일때 (위에 product는 높이가 필요없는 디자인)
+   -- 두 조건이 충족되면 li에는 넓이를 주고 a에는 높이를 줌 */
+.community .list .group ul li.color,
+.community .list .group ul li.gray {
+    width: calc(50% - 6px);  /* li뒤에 띄어쓰기 X, li를 부르는 게 아닌 li의 누구를 부를 때는 li.누구 <-이렇게 부름 */
+}
+.community .list .group ul li.color a,
+.community .list .group ul li.gray a {
+    height: 232px; /* li가 아닌 a에 높이를 줌,
+    넓이는 li에 줘야함(a에 줘버리면 기준값이 달라져서 쪼그라듬)*/
+}
+.community .list .group ul li.color.bg1 a {
+    color: #fff;
+    background-color: #066749;
+}
+.community .list .group ul li.color.bg2 a {
+    color: #fff;
+    background-color: #1E3487;
+}
+.community .list .group ul li.gray a {
+    background-color: #EDEDED;
+    color: #1d1d1d;
+}
+.community .list .group ul li.review {
+    width: 100%;
+    /* 나를 감싸는 요소 ul의 넓이의 100%가 들어감 */
+}
+.community .list .group ul li.review a {
+    height: 383px;
+    color: #fff;
+}
+.community .list .group ul li.review.bg1 a {
+    background: url(../images/community_bg1.jpg) no-repeat center center / cover;
+}
+.community .list .group ul li.review.bg2 a {
+    background: url(../images/community_bg2.jpg) no-repeat center center / cover;
+}
+.community .list .group ul li a {
+    display: block;
+    padding: 0 30px 30px 30px; /* 높이가 설정되어 있을 땐 패딩으로 높이는 주지 않는 것 추천 */
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+.community .list .group ul li a h3 {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 1px 0 22px 0;
+}
+.community .list .group ul li a .date {
+    display: flex;
+    gap: 43px;
+}
+.community .list .group ul li.color a .date,
+.community .list .group ul li.review a .date {
+    color: rgba(255,255,255,0.8);
+}
+.community .list .group ul li.gray a .date {
+    color: #666;
+}
 footer {
-    margin: 400px 0;
+    background-color: #1D1D1D;
+    padding: 68px 0 109px 0;
+    margin: 125px 0 0 0;
+    color: rgba(255,255,255,0.8);
+}
+footer .f_nav {
+    padding: 0 0 26px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+footer .f_nav ul {
+    display: flex;
+    gap: 42px;
+}
+footer .f_info {
+    margin: 26px 0 24px 0;
+}
+footer .f_info .group {
+    display: flex;
+    gap: 42px;
+    line-height: 1.8;
+}
+footer .copyright {
+    color: rgba(255,255,255,0.6);
 }
