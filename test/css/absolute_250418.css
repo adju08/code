@@ -1,0 +1,97 @@
+@import url(common.css);
+@import url(default.css);
+@import url(font.css);
+
+header {/* absolute를 주는 경우 반드시 좌우의 위치,위아래 위치 정렬값을 줘야 함
+    (안그러면 body기준으로 들어감)
+    그래서 common.css #wrap의 position: relative;를 줌*/
+    position: absolute; /* wrap를 기준으로 정렬 */
+    top: 0;
+    left: 0;
+    color: #fff;
+    width: 100%; /* wrap의 넓이 100% */
+    height: 100px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+header .gnb ul {
+    display: flex;
+    justify-content: center;
+}
+header .gnb ul a {
+    display: block;
+    line-height: 100px;
+    font-size: 20px;
+    font-weight: 800;
+    padding: 0 23px;
+}
+.visual {
+    background: url(../images/viz_bg.jpg) no-repeat center center / cover;
+    height: 700px;
+    color: #fff;
+    text-align: center;
+}
+.visual h2 {
+    font-size: 60px;
+    font-weight: 800;
+    line-height: 150%;
+    letter-spacing: -0.03em;
+    padding: 275px 0 0 0;
+}
+.product {
+    margin: 151px 0 0 0;
+}
+.product .wrapper {
+    position: relative; /* more 정렬의 기준점 */
+}
+.product h2 {
+    font-size: 45px;
+    font-weight: 800;
+    color: #1d1d1d;
+    line-height: 150%;
+}
+.product .list {
+    margin: 25px 0 0 0;
+}
+.product .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.product .list ul li {
+    width: calc(33.33% - 16px);
+        /* 
+            한줄에 한번에 나오는 갯수 : 3 = 100/3 = 33.33%
+            여백의 총합 24 + 24 = 48/3 = 16 */
+}
+.product .list ul li a {
+    display: block;
+    position: relative; /* h3 정렬의 기준점 */
+}
+.product .list ul li a .photo {
+    line-height: 0;
+    font-size: 0;
+}
+.product .list ul li a h3 {
+    position: absolute; /* a를 기준으로 정렬 */
+    bottom: 30px;
+    left: 30px;
+    color: #fff;
+    font-weight: 800;
+    width: calc(100% - 60px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.product .more {
+    position: absolute; /* wrapper를 기준으로 정렬 */
+    right: 0;
+    top: 38px;
+    border: 1px solid #1d1d1d;
+    border-radius: 25px;
+    color: #1d1d1d;
+    padding: 1px 24px;
+}
+
+
+body {
+    margin: 0 0 400px 0;
+}
