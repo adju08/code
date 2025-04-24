@@ -1,0 +1,18 @@
+@font-face {
+	font-family: "NanumSquareNeo";
+	font-weight: 400;
+	font-display: swap;
+	src: url(../font/NanumSquareNeoTTF-bRg.woff2) format("woff2"),
+         url(../font/NanumSquareNeoTTF-bRg.woff) format("woff"),
+         url(../font/NanumSquareNeoTTF-bRg.eot?#iefix) format("embedded-opentype");
+         /* eot파일의 호출 방식(안넣어도 됨, 혹시 몰라서 줬을 때 넣어주긴함) */
+}
+@font-face {
+	font-family: "NanumSquareNeo";
+	font-weight: 800;
+	font-display: swap;
+	src: url(../font/NanumSquareNeoTTF-dEb.woff2) format("woff2"),
+         url(../font/NanumSquareNeoTTF-dEb.woff) format("woff"),
+         url(../font/NanumSquareNeoTTF-dEb.eot?#iefix) format("embedded-opentype");
+    /* local 지워도 되고 안지워도 되고 근데 지워줄거임 */
+}
