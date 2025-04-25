@@ -132,6 +132,322 @@ border-bottom-right-radius: 190px; /* 라운드가 한쪽만 들어가게 함 */
     }
 }
 
+
+
+
+
+.culture {
+    margin: 231px 0 0 0;
+}
+.culture .wrapper {
+    position: relative; /* more 정렬의 기준 */
+}
+.culture .tit h2 {
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #1d1d1d;
+    margin: 0 0 18px 0;
+}
+.culture .list {
+    margin: 80px 0 0 0;
+}
+.culture .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.culture .list ul li{
+    width: calc(33.33% - 16px);
+    /* 100 / li의 갯수 = 100/3 = 33.33%
+        li 사이 여백의 총합 = 24+24 = 48 / li의 갯수 = 48/3 = 16px  */
+}
+.culture .list ul li a{
+    display: block;
+    line-height: 100%;
+}
+.culture .list ul li a .photo {
+    /* block요소라서 넓이가 이미 100% 들어가 있음 -> 그래서 넓이는 안줌 */
+    height: 263px;
+    overflow: hidden; /* 지정영역보다 넘치는 부분들(이미지) 숨김
+                        (아무곳에나 주면 안되고 영역이 정해져 있는 곳에 줘야함) */
+    
+}
+.culture .list ul li a .photo img {
+    width: 100%; /* object-fit: cover;를 줄 때 width, height가 반드시 100%여야함 */
+    height: 100%;
+    object-fit: cover; /* 사이즈가 제각각인 이미지를 영역에 맞게 나타나게 함 */
+    transition: 0.5s; /* 오버효과를 주기 전에 동일한 선택자에게 줌
+                        transition을 주면 변화되는 값이 부드럽게 변화 */
+}
+.culture .list ul li a:hover .photo img {
+    /* a에 마우스를 올렸을 때 이미지 변화 */
+    transform: scale3d(1.2, 1.2, 1); /* 마지막이 1로 끝나야 가운데 정렬 */
+}
+.culture .list ul li a h3 {
+    font-weight: 800;
+    line-height: 1.2;
+    color: #1d1d1d;
+    font-size: 20px;
+    margin: 25px 0 12px 0;
+}
+.culture .list ul li a span {
+    font-size: 15px;
+    color: #258289;
+    display: inline-block; /* 인라인 태그라 margin이 안들어가서 줌 */
+    margin: 11px 0 0 0;
+    padding: 0 22px 0 0; /* 아이콘이 들어갈 자리 확보 */
+    position: relative; /* after 정렬의 기준 */
+}
+.culture .list ul li a span::after {
+    content: ""; /* 필수값 */
+    position: absolute; /* span을 기준으로 정렬 */
+    right: 0;
+    top: 0.5px;
+    width: 16px;
+    height: 16px;
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_59_1560' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='16' height='16'%3E%3Crect width='16' height='16' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_59_1560)'%3E%3Cpath d='M7.33319 8.66634H3.33319V7.33301H7.33319V3.33301H8.66652V7.33301H12.6665V8.66634H8.66652V12.6663H7.33319V8.66634Z' fill='%23258289'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.culture .more {
+    /* position: absolute;가 쏀 놈이라 인라인, 블럭 요소 신경 안쓰고 싹 다 인라인블럭 상태로 만듦
+        (그래서 a인데도 display: block을 안줘도 상관없음) */
+    position: absolute; /* wrapper를 기준으로 정렬(tit, list는 형제라서 불가능) */
+    top: 78px;
+    right: 0;
+    padding: 0 15px 0 0; /* 아이콘이 들어올 자리 확보 */
+    color: #258289;
+}
+.culture .more::after {
+    content: ""; /* 필수값 */
+    position: absolute; /* more를 기준으로 정렬 */
+    top: 9px;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_59_1542' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='10' height='10'%3E%3Crect width='10' height='10' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_59_1542)'%3E%3Cpath d='M3.34347 9.16732L2.60388 8.42773L6.03097 5.00065L2.60388 1.57357L3.34347 0.833984L7.51013 5.00065L3.34347 9.16732Z' fill='%23258289'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.culture .more:hover::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 1px; /* 작대기 위로 올리기 */
+    width: calc(100% - 2px); /* 작대기 길이 조절(딱 맞게 할거면 100%) */
+    height: 1px;
+    background-color: #258289;
+}
+
+
+
+
+.tour {
+    margin: 288px 0 0 0;
+}
+.tour .wrapper {
+    position: relative; /* more 정렬의 기준 */
+}
+.tour .tit h2 {
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #1d1d1d;
+    margin: 0 0 18px 0;
+}
+.tour .list {
+    margin: 80px 0 0 0;
+}
+.tour .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.tour .list ul li {
+    width: 190px;
+}
+.tour .list ul li a {
+    display: flex;
+    flex-direction: column; /* 2줄로 만들어 */
+    justify-content: flex-end; /* 아래로 정렬 */
+    height: 359px; /* 디자인한 높이 */
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    padding: 0 0 37px 0;
+}
+.tour .list ul li.list01 a {
+    background-image: url(../images/tour_bg1.jpg);
+}
+.tour .list ul li.list02 a {
+    background-image: url(../images/tour_bg2.jpg);
+}
+.tour .list ul li.list03 a {
+    background-image: url(../images/tour_bg3.jpg);
+}
+.tour .list ul li.list04 a {
+    background-image: url(../images/tour_bg4.jpg);
+}
+.tour .list ul li a h3 {
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.2;
+    text-align: center;
+}
+.tour .list ul li a p {
+    display: none; /* 숨김 */
+}
+
+/**********************  ON이 들어갔을 때(열렸을 때) STEART *********************/
+.tour .list ul li.on {
+    width: 654px;
+}
+.tour .list ul li.on a {
+    padding: 0 34px 30px 34px;
+    align-items: flex-start; /* flex 땜에 p태그에 맞춰 늘어난 h3의 길이를 줄임
+                                (p만큼 늘어난 걸 취소 후 글자 바로 옆에 아이콘을 넣기 위해) */
+}
+.tour .list ul li.on a h3 {
+    text-align: left;
+    padding: 0 32px 0 0;
+    position: relative; /* after 정렬의 기준 */
+}
+.tour .list ul li.on a h3::after {
+    content: "";
+    position: absolute; /* h3를 기준으로 정렬 */
+    top: 1px;
+    right: 0;
+    width: 21px;
+    height: 21px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_123_21' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='14' height='14'%3E%3Crect width='14' height='14' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_123_21)'%3E%3Cpath d='M4.68092 12.8327L3.64551 11.7973L8.44343 6.99935L3.64551 2.20143L4.68092 1.16602L10.5143 6.99935L4.68092 12.8327Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    /* 사이즈 XXX(contain을 주면 동그라미에 맞춰 꽉 차게 나옴) */
+}
+.tour .list ul li.on a p {
+    display: block; /* 나타남(위에 none으로 숨긴 p태그 보이게 설정) */
+    margin: 10px 0 0 0;
+}
+/************************  ON이 들어갔을 때(열렸을 때) END *********************/
+
+.tour .more {
+    /* position: absolute;가 쏀 놈이라 인라인, 블럭 요소 신경 안쓰고 싹 다 인라인블럭 상태로 만듦
+        (그래서 a인데도 display: block을 안줘도 상관없음) */
+    position: absolute; /* wrapper를 기준으로 정렬(tit, list는 형제라서 불가능) */
+    top: 78px;
+    right: 0;
+    padding: 0 15px 0 0; /* 아이콘이 들어올 자리 확보 */
+    color: #258289;
+}
+.tour .more::after {
+    content: ""; /* 필수값 */
+    position: absolute; /* more를 기준으로 정렬 */
+    top: 9px;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_59_1542' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='10' height='10'%3E%3Crect width='10' height='10' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_59_1542)'%3E%3Cpath d='M3.34347 9.16732L2.60388 8.42773L6.03097 5.00065L2.60388 1.57357L3.34347 0.833984L7.51013 5.00065L3.34347 9.16732Z' fill='%23258289'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.tour .more:hover::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 1px; /* 작대기 위로 올리기 */
+    width: calc(100% - 2px); /* 작대기 길이 조절(딱 맞게 할거면 100%) */
+    height: 1px;
+    background-color: #258289;
+}
+
+
+
+
+
+.community {
+    margin: 161px 0 0 0;
+    padding: 232px 0 0 0;
+    background: url(../images/community_bg.jpg) no-repeat center center / cover;
+    height: 900px;
+    color: #fff;
+}
+.community .wrapper {
+    display: flex; /* tit/inner를 좌우로 배치 */
+    justify-content: space-between; /* 양쪽 끝으로 배치 */
+}
+.community .tit h2 {
+    font-size: 55px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 3px 0 26px 0;
+}
+.community .inner {
+    display: flex; /* notice/link를 좌우로 배치 */
+    align-items: flex-end; /* link 아래로 정렬 */
+    gap: 15px;
+}
+.community .inner .notice {
+    width: 591px;
+    height: 393px;
+    border-radius: 10px;
+    background-color: rgba(10, 32, 92, 0.7);
+    backdrop-filter: blur(6px); /* 흐림효과(글래스 모피즘) */
+}
+.community .inner .link {
+    width: 275px; /* 넓이 제안을 줘서 flex 여러 줄 허용으로 해서 두개두개씩 떨어지게 해줌 */
+}
+.community .inner .link ul {
+    display: flex;
+    flex-wrap: wrap; /* 여러 줄 허용 */
+    gap: 15px;
+}
+.community .inner .link ul li {
+    width: calc(50% - 7.5px);
+    /*
+        100/한줄에 들어가는 li갯수 = 100/2 = 50%
+        한줄에 들어가는 여백의 총합/한줄에 들어가는 li갯수 = 15/2=7.5px*/
+}
+.community .inner .link ul li a {
+    display: block;
+    height: 130px;
+    border-radius: 10px;
+    background-color: rgba(10, 32, 92, 0.7);
+    backdrop-filter: blur(6px); /* 흐림효과(글래스 모피즘) */
+    padding: 25px 0 0 25px;
+    font-weight: 800;
+    line-height: 1.2;
+    position: relative; /* after 정렬의 기준 */
+}
+.community .inner .link ul li a::after {
+    content: "";
+    position: absolute; /* a를 기준으로 정렬 */
+    bottom: 20px;
+    right: 18px;
+    width: 45px;
+    height: 45px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.community .inner .link ul li.link01 a::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='45' height='45' viewBox='0 0 45 45' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_59_1601' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='45' height='45'%3E%3Crect width='44.6349' height='44.6349' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_59_1601)'%3E%3Cpath d='M9.29887 39.0557V33.3833C8.74094 32.7634 8.29149 32.0737 7.95053 31.3143C7.60957 30.5549 7.43909 29.7258 7.43909 28.8269V11.1589C7.43909 8.58617 8.63245 6.70314 11.0192 5.50977C13.4059 4.31641 17.172 3.71973 22.3174 3.71973C27.6488 3.71973 31.4613 4.29316 33.7551 5.44003C36.0488 6.5869 37.1957 8.49318 37.1957 11.1589V28.8269C37.1957 29.7258 37.0252 30.5549 36.6843 31.3143C36.3433 32.0737 35.8938 32.7634 35.3359 33.3833V39.0557H29.7565V35.3361H14.8782V39.0557H9.29887ZM11.1587 18.598H33.4761V13.0187H11.1587V18.598ZM15.8081 29.7568C16.583 29.7568 17.2417 29.4855 17.7842 28.9431C18.3266 28.4007 18.5978 27.742 18.5978 26.9671C18.5978 26.1922 18.3266 25.5335 17.7842 24.991C17.2417 24.4486 16.583 24.1774 15.8081 24.1774C15.0332 24.1774 14.3745 24.4486 13.8321 24.991C13.2897 25.5335 13.0185 26.1922 13.0185 26.9671C13.0185 27.742 13.2897 28.4007 13.8321 28.9431C14.3745 29.4855 15.0332 29.7568 15.8081 29.7568ZM28.8266 29.7568C29.6016 29.7568 30.2602 29.4855 30.8027 28.9431C31.3451 28.4007 31.6163 27.742 31.6163 26.9671C31.6163 26.1922 31.3451 25.5335 30.8027 24.991C30.2602 24.4486 29.6016 24.1774 28.8266 24.1774C28.0517 24.1774 27.3931 24.4486 26.8506 24.991C26.3082 25.5335 26.037 26.1922 26.037 26.9671C26.037 27.742 26.3082 28.4007 26.8506 28.9431C27.3931 29.4855 28.0517 29.7568 28.8266 29.7568ZM11.9956 9.29909H32.8252C32.3602 8.77215 31.3606 8.33045 29.8263 7.97399C28.292 7.61753 25.82 7.4393 22.4104 7.4393C19.0938 7.4393 16.6683 7.63303 15.134 8.02049C13.5996 8.40794 12.5535 8.83414 11.9956 9.29909ZM14.8782 31.6165H29.7565C30.7794 31.6165 31.6551 31.2523 32.3835 30.5239C33.1119 29.7955 33.4761 28.9198 33.4761 27.897V22.3176H11.1587V27.897C11.1587 28.9198 11.5229 29.7955 12.2513 30.5239C12.9797 31.2523 13.8554 31.6165 14.8782 31.6165Z' fill='white' fill-opacity='0.6'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+.community .inner .link ul li.link02 a::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='45' height='45' viewBox='0 0 45 45' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_59_1604' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='45' height='45'%3E%3Crect width='44.6349' height='44.6349' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_59_1604)'%3E%3Cpath d='M11.1585 40.9155V23.8984C9.48466 23.4645 8.13631 22.5811 7.11343 21.2482C6.09054 19.9154 5.5791 18.4121 5.5791 16.7382V3.71973H9.29868V14.8785H11.1585V3.71973H14.878V14.8785H16.7378V3.71973H20.4574V16.7382C20.4574 18.4121 19.946 19.9154 18.9231 21.2482C17.9002 22.5811 16.5519 23.4645 14.878 23.8984V40.9155H11.1585ZM29.7563 40.9155V23.201C28.0825 22.6431 26.7342 21.473 25.7113 19.6907C24.6884 17.9084 24.177 15.8858 24.177 13.6231C24.177 10.8644 24.9054 8.52418 26.3622 6.6024C27.8191 4.68062 29.5704 3.71973 31.6161 3.71973C33.6619 3.71973 35.4132 4.68837 36.87 6.62565C38.3269 8.56292 39.0553 10.9109 39.0553 13.6696C39.0553 15.9323 38.5438 17.9471 37.521 19.7139C36.4981 21.4807 35.1497 22.6431 33.4759 23.201V40.9155H29.7563Z' fill='white' fill-opacity='0.6'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+.community .inner .link ul li.link03 a::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='45' height='45' viewBox='0 0 45 45' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_59_1610' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='45' height='45'%3E%3Crect width='44.6349' height='44.6349' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_59_1610)'%3E%3Cpath d='M3.7196 35.3359V18.5978H5.57939V9.29883H39.0556V18.5978H40.9154V35.3359H37.1958V31.6163H7.43918V35.3359H3.7196ZM24.1773 18.5978H35.336V13.0184H24.1773V18.5978ZM9.29897 18.5978H20.4577V13.0184H9.29897V18.5978ZM7.43918 27.8967H37.1958V22.3173H7.43918V27.8967Z' fill='white' fill-opacity='0.6'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+.community .inner .link ul li.link04 a::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='45' height='45' viewBox='0 0 45 45' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_59_1607' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='45' height='45'%3E%3Crect width='44.6349' height='44.6349' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_59_1607)'%3E%3Cpath d='M10.8332 40.9155L13.3439 35.2431C12.9099 34.9022 12.4915 34.569 12.0885 34.2435C11.6856 33.918 11.2981 33.5693 10.9262 33.1974C10.6782 33.2904 10.438 33.3601 10.2055 33.4066C9.97302 33.4531 9.71729 33.4763 9.43833 33.4763C8.41544 33.4763 7.53979 33.1121 6.81138 32.3837C6.08296 31.6553 5.71875 30.7796 5.71875 29.7568C5.71875 29.1368 5.85048 28.5711 6.11395 28.0597C6.37742 27.5483 6.74163 27.1221 7.20658 26.7811C6.95861 26.0682 6.78813 25.3475 6.69514 24.6191C6.60215 23.8907 6.55565 23.1235 6.55565 22.3176C6.55565 21.5117 6.60215 20.7445 6.69514 20.0161C6.78813 19.2877 6.95861 18.567 7.20658 17.8541C6.74163 17.5132 6.37742 17.087 6.11395 16.5755C5.85048 16.0641 5.71875 15.4984 5.71875 14.8785C5.71875 13.8556 6.08296 12.9799 6.81138 12.2515C7.53979 11.5231 8.41544 11.1589 9.43833 11.1589C9.71729 11.1589 9.97302 11.1821 10.2055 11.2286C10.438 11.2751 10.6782 11.3449 10.9262 11.4378C11.949 10.322 13.1192 9.39208 14.4365 8.64816C15.7539 7.90425 17.1564 7.34631 18.6443 6.97436C18.7993 6.04446 19.2255 5.26955 19.9229 4.64962C20.6203 4.02969 21.434 3.71973 22.3639 3.71973C23.2937 3.71973 24.1074 4.03744 24.8048 4.67287C25.5022 5.3083 25.9284 6.07546 26.0834 6.97436C27.5713 7.34631 28.9739 7.8965 30.2912 8.62492C31.6085 9.35333 32.7787 10.26 33.8015 11.3449C34.0495 11.2519 34.282 11.1821 34.499 11.1356C34.7159 11.0891 34.9484 11.0659 35.1964 11.0659C36.2193 11.0659 37.0949 11.4301 37.8233 12.1585C38.5518 12.8869 38.916 13.7626 38.916 14.7855C38.916 15.4054 38.792 15.9556 38.544 16.436C38.296 16.9165 37.9551 17.3272 37.5211 17.6681C37.7691 18.4121 37.9396 19.1715 38.0326 19.9464C38.1256 20.7213 38.1721 21.5117 38.1721 22.3176C38.1721 23.1235 38.1256 23.9062 38.0326 24.6656C37.9396 25.425 37.7691 26.1612 37.5211 26.8741C37.9551 27.215 38.296 27.6258 38.544 28.1062C38.792 28.5866 38.916 29.1368 38.916 29.7568C38.916 30.7796 38.5518 31.6553 37.8233 32.3837C37.0949 33.1121 36.2193 33.4763 35.1964 33.4763C34.9484 33.4763 34.7159 33.4531 34.499 33.4066C34.282 33.3601 34.0495 33.2904 33.8015 33.1974C33.4296 33.5693 33.0499 33.9335 32.6624 34.29C32.275 34.6465 31.8488 34.9952 31.3838 35.3361L33.8015 40.9155H30.3609L28.5941 36.824C28.1602 37.0099 27.7417 37.1727 27.3388 37.3121C26.9358 37.4516 26.5174 37.5679 26.0834 37.6609C25.9284 38.5598 25.5022 39.3269 24.8048 39.9623C24.1074 40.5978 23.2937 40.9155 22.3639 40.9155C21.434 40.9155 20.6203 40.6055 19.9229 39.9856C19.2255 39.3657 18.7993 38.5908 18.6443 37.6609C18.1793 37.5679 17.7376 37.4516 17.3192 37.3121C16.9007 37.1727 16.4745 37.0099 16.0406 36.824L14.2738 40.9155H10.8332ZM14.3668 32.8254L17.2494 26.3162C16.8155 25.7582 16.4745 25.1383 16.2266 24.4564C15.9786 23.7744 15.8546 23.0615 15.8546 22.3176C15.8546 20.5508 16.4978 19.0242 17.7841 17.7379C19.0705 16.4515 20.5971 15.8083 22.3639 15.8083C24.1306 15.8083 25.6572 16.4515 26.9436 17.7379C28.2299 19.0242 28.8731 20.5508 28.8731 22.3176C28.8731 23.0615 28.7414 23.7899 28.4779 24.5029C28.2144 25.2158 27.8502 25.8512 27.3853 26.4091L30.268 32.8254C30.5469 32.5774 30.8181 32.3527 31.0816 32.1512C31.3451 31.9498 31.6008 31.7095 31.8488 31.4306C31.6938 31.1826 31.5931 30.9114 31.5466 30.6169C31.5001 30.3224 31.4768 30.0357 31.4768 29.7568C31.4768 28.7649 31.8178 27.9125 32.4997 27.1995C33.1816 26.4866 34.0185 26.0992 35.0104 26.0372C35.1964 25.4173 35.3359 24.8051 35.4289 24.2006C35.5219 23.5962 35.5683 22.9685 35.5683 22.3176C35.5683 21.6667 35.5219 21.0235 35.4289 20.3881C35.3359 19.7526 35.1964 19.125 35.0104 18.505C34.0185 18.443 33.1816 18.0556 32.4997 17.3427C31.8178 16.6298 31.4768 15.7774 31.4768 14.7855C31.4768 14.5065 31.5156 14.2353 31.5931 13.9718C31.6705 13.7083 31.7558 13.4526 31.8488 13.2046C30.9499 12.3057 29.958 11.5463 28.8731 10.9264C27.7882 10.3065 26.6414 9.82603 25.4325 9.48507C25.0915 10.012 24.6576 10.4227 24.1307 10.7172C23.6037 11.0116 23.0148 11.1589 22.3639 11.1589C21.7129 11.1589 21.124 11.0116 20.5971 10.7172C20.0701 10.4227 19.6362 10.012 19.2952 9.48507C18.0243 9.82603 16.8465 10.3142 15.7616 10.9497C14.6767 11.5851 13.6848 12.3677 12.7859 13.2976C12.8789 13.5456 12.9642 13.8013 13.0417 14.0648C13.1192 14.3283 13.1579 14.5995 13.1579 14.8785C13.1579 15.8703 12.8324 16.715 12.1815 17.4124C11.5306 18.1098 10.7092 18.505 9.71729 18.598C9.53132 19.218 9.39183 19.8301 9.29884 20.4346C9.20585 21.039 9.15936 21.6667 9.15936 22.3176C9.15936 22.9685 9.20585 23.5962 9.29884 24.2006C9.39183 24.8051 9.53132 25.4173 9.71729 26.0372C10.7092 26.0992 11.5306 26.4866 12.1815 27.1995C12.8324 27.9125 13.1579 28.7649 13.1579 29.7568C13.1579 30.0357 13.1347 30.3069 13.0882 30.5704C13.0417 30.8339 12.9409 31.0896 12.7859 31.3376C13.0339 31.6165 13.2896 31.8723 13.5531 32.1047C13.8166 32.3372 14.0878 32.5774 14.3668 32.8254ZM17.1564 34.4062C17.4974 34.5612 17.8461 34.7007 18.2026 34.8247C18.559 34.9487 18.9232 35.0572 19.2952 35.1501C19.6362 34.6232 20.0701 34.2125 20.5971 33.918C21.124 33.6236 21.7129 33.4763 22.3639 33.4763C23.0148 33.4763 23.6037 33.6236 24.1307 33.918C24.6576 34.2125 25.0915 34.6232 25.4325 35.1501C25.8045 35.0572 26.1532 34.9487 26.4786 34.8247C26.8041 34.7007 27.1373 34.5612 27.4783 34.4062L24.7816 28.3619C24.4096 28.5169 24.0222 28.6331 23.6192 28.7106C23.2163 28.7881 22.7978 28.8269 22.3639 28.8269C21.8989 28.8269 21.4572 28.7804 21.0388 28.6874C20.6203 28.5944 20.2251 28.4549 19.8531 28.2689L17.1564 34.4062ZM22.3639 25.1073C23.1078 25.1073 23.7587 24.8438 24.3166 24.3169C24.8746 23.7899 25.1535 23.1235 25.1535 22.3176C25.1535 21.5737 24.8746 20.9228 24.3166 20.3648C23.7587 19.8069 23.1078 19.5279 22.3639 19.5279C21.5579 19.5279 20.8915 19.8069 20.3646 20.3648C19.8376 20.9228 19.5742 21.5737 19.5742 22.3176C19.5742 23.1235 19.8376 23.7899 20.3646 24.3169C20.8915 24.8438 21.5579 25.1073 22.3639 25.1073Z' fill='white' fill-opacity='0.6'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+
+
+
 footer {
     margin: 400px 0 0 0;
 }
