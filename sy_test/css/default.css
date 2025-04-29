@@ -1,0 +1,32 @@
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+strong {
+    font-weight: inherit;
+}
+address, em {
+    font-style: normal;
+}
+li {
+    list-style: none;
+}
+button {
+    cursor: pointer; /* 마우스 오버시 손바닥 모양 */
+    border: none;
+    background: none;
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

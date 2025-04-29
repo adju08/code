@@ -1,0 +1,62 @@
+@import url(common.css);
+@import url(default.css);
+@import url(font.css);
+.culture {
+    margin: 231px 0 0 0;
+}
+.culture .tit h2 {
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #1d1d1d;
+    margin: 0 0 18px 0;
+}
+.culture .list {
+    margin: 80px 0 0 0;
+}
+.culture .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.culture .list ul li {
+    width: calc(33.33% - 16px);
+}
+.culture .list ul li a {
+    display: block;
+    line-height: 100%;
+}
+.culture .list ul li a .photo {
+    height: 263px;
+    overflow: hidden;
+}
+.culture .list ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.culture .list ul li a h3 {
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #1d1d1d;
+    margin: 25px 0 12px 0;
+}
+.culture .list ul li a span {
+    display: inline-block;
+    margin: 11px 0 0 0;
+    padding: 0 19px 0 0;
+    color: #258289;
+    font-size: 15px;
+}
+
+
+
+
+
+
+
+
+
+body {
+    margin: 0 0 400px 0;
+}
