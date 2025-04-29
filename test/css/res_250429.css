@@ -239,6 +239,150 @@
 
 
 
+.esg {
+    margin: 211px 0 0 0;
+}
+.esg .tit h2 {
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1.3;
+    color: #1d1d1d;
+    margin: 0 0 4px 0;
+}
+.esg .list {
+    margin: 36px 0 0 0;
+}
+.esg .list ul {
+    display: flex; /* li들을 좌우로 배치 */
+    justify-content: space-between;
+}
+.esg .list ul li {
+    width: calc(25% - 18px);
+    /* 
+        100% / 1줄에 나오는 갯수 4개 = 25%
+        1줄 여백의 총합 / 1줄에 나오는 갯수 = 24+24+24+=72 / 4 = 18px
+    */
+}
+.esg .list ul li a {
+    display: flex;
+    align-items: flex-end; /* 아래 정렬 */
+    justify-content: center; /* 좌우 가운데 정렬 */
+    height: 423px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+    color: #fff;
+    font-weight: 800;
+    line-height: 1.3;
+    font-size: 27px;
+    padding: 0 0 52px 0; /* 글자와 하단 여백 */
+}
+.esg .list ul li.list01 a {
+    background-image: url(../images/esg_bg01.jpg);
+}
+.esg .list ul li.list02 a {
+    background-image: url(../images/esg_bg02.jpg);
+}
+.esg .list ul li.list03 a {
+    background-image: url(../images/esg_bg03.jpg);
+}
+.esg .list ul li.list04 a {
+    background-image: url(../images/esg_bg04.jpg);
+}
+
+
+
+
+
+/**********************  모바일 시작 **********************/
+@media screen and (max-width:640px) { /* 브라우저 사이즈가 640px 이하일때만 적용되는 스타일 */
+            .esg {
+                margin: 93px 0 0 0;
+            }
+            .esg .tit h2 {
+                font-size: 23px;
+                margin: 0 0 3px 0;
+            }
+            .esg .list {
+                margin: 18px 0 0 0;
+            }
+            .esg .list ul {
+                justify-content: space-between; /* ????? */
+                flex-wrap: wrap; /* 2줄 허용 */
+                gap: 10px;
+            }
+            .esg .list ul li {
+                width: calc(50% - 5px);
+                /* 
+                    100% / 1줄에 나오는 갯수 2개 = 50%
+                    1줄 여백의 총합 / 1줄에 나오는 갯수 = 10 / 2 = 5px
+                */
+            }
+            .esg .list ul li a {
+                align-items: center; /* 가운데 정렬 */
+                height: 155px;
+                border-radius: 10px;
+                font-size: 17px;
+                padding: 0; /* 여백 삭제 0 처리 */
+            }
+}
+
+
+
+
+
+.esg_fix {
+    margin: 272px 0 0 0;
+}
+.esg_fix .wrapper {
+    display: flex; /* tit list 좌우배치 */
+    justify-content: space-between;
+    align-items: flex-start; /* tit 높이가 길어서 sticky가 적용이 안됨,
+                                그래서 높이를 변경해야 하는 경우 또는 정렬이 필요할 경우 사용함 */
+}
+.esg_fix .tit {
+    width: 23.57%;
+    /*
+        297px / 1260 * 100 = 23.57
+    */
+    position: sticky; /* 고정 -> 스크롤 내리면 이미지만 내려가고 tit 글자는 고정 */
+    top: 20px; /* 고정 됐을 때 tit 위의 여백 */
+}
+.esg_fix .tit h2 {
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1.3;
+    color: #1d1d1d;
+    margin: 0 0 4px 0;
+}
+.esg_fix .list {
+    width: 57.53%;
+    /*
+        725px / 1260 * 100 = 57.53
+    */
+}
+.esg_fix .list ul li a {
+    display: block;
+    height: 453px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.esg_fix .list ul li.list01 a {
+    background-image: url(../images/esg_bg01.jpg);
+}
+.esg_fix .list ul li.list02 a {
+    background-image: url(../images/esg_bg02.jpg);
+}
+.esg_fix .list ul li.list03 a {
+    background-image: url(../images/esg_bg03.jpg);
+}
+.esg_fix .list ul li.list04 a {
+    background-image: url(../images/esg_bg04.jpg);
+}
+
+
 
 body {
     margin: 0 0 400px 0;
