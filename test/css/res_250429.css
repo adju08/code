@@ -1,0 +1,166 @@
+@import url(default.css);
+@import url(font.css);
+@import url(res_common.css);
+.news {
+    margin: 151px 0 0 0;
+}
+.news .wrapper {
+    display: flex; /* h2 list를 좌우로 배치 - more는 absolute라 계산 X */
+    justify-content: space-between;
+    position: relative; /* more 정렬의 기준 */
+}
+.news h2 {
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1.3;
+    color: #1d1d1d;
+}
+.news .list {
+    width: 66.03%;
+    /*
+        넓이는 %로 계산 - 콘텐츠 넓이에서 몇%로 계산
+        832 / 1260 * 100 = 66.03
+    */
+}
+.news .list ul li {
+    border-bottom: 1px solid #ccc;
+
+}
+.news .list ul li a {
+    display: flex; /* txt photo 좌우로 배치 */
+    justify-content: space-between; /* 양끝 배치 */
+    align-items: center; /* 위아래 가운데 */
+    padding: 22px 0;
+}
+.news .list ul li a .txt {
+    width: calc(100% - 297px);
+    /* 사진의 넓이는 고정,
+       제목이 들어갈 수 있는 넓이는 브라우저 넓이에 따라 바뀜
+       글자와 사진 전체의 넓이 100% - 사진의 넓이와 여백값 297px */
+}
+.news .list ul li a .txt strong {
+    font-size: 21px;
+    font-weight: 800;
+    line-height: 1.3;
+    color: #1d1d1d;
+    display: block;
+    margin: 0 0 8px 0;
+
+    /* 1줄 제한 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.news .list ul li a .txt span {
+    color: #555;
+}
+.news .list ul li a .photo {
+    width: 190px;
+    height: 127px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.news .list ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+.news .list ul li a:hover .photo img {
+    transform: scale3d(1.2, 1.2, 1);
+}
+.news .more {
+    position: absolute; /*  wrapper를 기준으로 정렬,
+                            after 정렬의 기준
+                            flex에서 벗어나려 줌 */
+    top: 84px;
+    left: 0;
+    border: 1px solid #555;
+    border-radius: 15px;
+    padding: 0px 38px 0 20px;
+    text-align: center;
+    font-size: 15px;
+}
+.news .more::after {
+    content: "";
+    top: 1px;
+    right: 8px;
+    width: 19px;
+    height: 19px;
+    position: absolute; /* more를 기준으로 정렬 */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_1007_21' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='19' height='19'%3E%3Crect width='19' height='19' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_1007_21)'%3E%3Cpath d='M8.90624 10.0938H4.35416V8.90626H8.90624V4.35417H10.0937V8.90626H14.6458V10.0938H10.0937V14.6458H8.90624V10.0938Z' fill='%23555555'/%3E%3C/g%3E%3C/svg%3E%0A");
+    /* 복사해서 가져올 때 반응형 생각해서 넓이 높이 삭제하고 가져옴 */
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain; /* 영역에 맞게 아이콘 안짤리게 꽉채우기 / 반응형에서 크기가 줄을 때 필요함 */
+    transition: 1s; /* 오버 후 속성이 변경되면 1초 동안 천천히 실행 */
+}
+.news .more:hover::after {
+    transform: rotate(360deg); /* 회전 */
+}
+
+
+
+
+/**********************  모바일 시작 **********************/
+@media screen and (max-width:640px) { /* 브라우저 사이즈가 640px 이하일때만 적용되는 스타일 */
+            .news {
+                margin: 97px 0 0 0;
+            }
+            .news .wrapper {
+                display: block; /* flex 안함 */
+            }
+            .news h2 {
+                font-size: 33px;
+            }
+            .news .list {
+                width: auto; /* 원래 속성대로 주기 - div 블럭요소라서 100% 들어감 */
+                margin: 17px 0 0 0;
+            }
+            .news .list ul li a {
+                align-items: flex-start; /* 윗쪽 정렬 */
+                padding: 16px 0;
+            }
+            .news .list ul li a .txt {
+                width: calc(100% - 112px);
+                /* 사진의 넓이는 고정,
+                제목이 들어갈 수 있는 넓이는 브라우저 넓이에 따라 바뀜
+                글자와 사진 전체의 넓이 100% - 사진의 넓이와 여백값 112px */
+            }
+            .news .list ul li a .txt strong {
+                font-size: 16px;
+                margin: 0 0 3px 0;
+            
+                /* 1줄 제한 -> 무제한 */
+                white-space: normal; /* nowrap 해제 */
+                overflow: visible; /* hidden 해제 */
+            }
+            .news .list ul li a .photo {
+                width: 96px;
+                height: 72px;
+                border-radius: 10px;
+            }
+            .news .more {
+                top: 15px;
+                left: auto; /* 0로 취소XXX 오히려 늘어남(=넓이 100%라는 뜻) 해제하려면 auto로 해제 */
+                right: 0; /* left 정렬에서 right 정렬로 변경하려면
+                             left: auto;로 해제하고 right를 줘야함 */
+                padding: 0px 23px 0 14px;
+                font-size: 12px;
+            }
+            .news .more::after {
+                top: 3px;
+                right: 8px;
+                width: 12px;
+                height: 12px;
+            }
+}/* @media */
+
+
+
+
+
+body {
+    margin: 0 0 400px 0;
+}
