@@ -160,6 +160,85 @@
 
 
 
+.global {
+    margin: 211px 0 0 0;
+}
+.global .wrapper {
+    display: flex; /* txt photo 좌우 배치 */
+    justify-content: space-between; /* 양끝 배치 */
+}
+.global .txt {
+    width: calc(50% - 12px);
+    /* 2개니까 50%에 둘 사이 여백의 절반(나누는 애들의 총여백 / 나누는 애들 수 = 24/2 = 12px) */
+    padding: 13px 0;
+    /* 왼쪽 글자의 높이에서 padding 만큼 오른쪽 이미지가 늘어남 */
+}
+.global .txt h2 {
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1.3;
+    color: #1d1d1d;
+    position: relative; /* after 정렬의 기준 */
+    margin: 0 0 37px 0;
+}
+.global .txt h2::after {
+    content: "";
+    position: absolute; /* h2를 기준으로 정렬 */
+    bottom: -16px;
+    left: 0;
+    background-color: #ccc;
+    height: 1px;
+    width: 121px; /* 선은 브라우저 크기가 바뀐다고 같이 바뀌게 하지는 않음 -> % XX,
+                     선은 가만히 있기 때문에 px로 줌 */
+}
+.global .photo {
+    width: calc(50% - 12px);
+    overflow: hidden;
+    border-radius: 20px;
+}
+.global .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+
+/**********************  모바일 시작 **********************/
+@media screen and (max-width:640px) { /* 브라우저 사이즈가 640px 이하일때만 적용되는 스타일 */
+            .global {
+                margin: 93px 0 0 0;
+            }
+            .global .txt {
+                width: calc(50% - 8px);
+                /* 2개니까 50%에 둘 사이 여백의 절반(나누는 애들의 총여백 / 나누는 애들 수 = 16/2 = 8px) */
+                padding: 9px 0;
+                /* 왼쪽 글자의 높이에서 padding 만큼 오른쪽 이미지가 늘어남 */
+            }
+            .global .txt h2 {
+                font-size: 23px;
+                margin: 0 0 26px 0;
+            }
+            .global .txt h2::after {
+                bottom: -13px;
+                width: 49px;
+            }
+            .global .txt h2 br {
+                display: none; /* pc형에서 준 줄바꿈을 모바일에서 삭제, br태그를 숨김처리 */
+            }
+            .global .txt p br {
+                display: none;
+            }
+            .global .photo {
+                width: calc(50% - 8px);
+                border-radius: 10px;
+            }
+}/* @media */
+
+
+
+
 
 body {
     margin: 0 0 400px 0;
