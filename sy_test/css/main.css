@@ -4,6 +4,9 @@
 .culture {
     margin: 231px 0 0 0;
 }
+.culture .wrapper {
+    position: relative; /* more 정렬의 기준 */
+}
 .culture .tit h2 {
     font-size: 50px;
     font-weight: 800;
@@ -33,6 +36,10 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: 0.5s;
+}
+.culture .list ul li a:hover .photo img {
+    transform: scale3d(1.2, 1.2, 1);
 }
 .culture .list ul li a h3 {
     font-size: 20px;
@@ -47,8 +54,45 @@
     padding: 0 19px 0 0;
     color: #258289;
     font-size: 15px;
+    position: relative;
 }
-
+.culture .list ul li a span::after {
+    content: "";
+    position: absolute;
+    top: 1px;
+    right: 0;
+    width: 16px;
+    height: 16px;
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_59_1557' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='16' height='16'%3E%3Crect width='16' height='16' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_59_1557)'%3E%3Cpath d='M7.33319 8.66634H3.33319V7.33301H7.33319V3.33301H8.66652V7.33301H12.6665V8.66634H8.66652V12.6663H7.33319V8.66634Z' fill='%23258289'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: 1s;
+}
+.culture .list ul li a span:hover::after {
+    transform: rotate(360deg);
+}
+.culture .more {
+    color: #258289;
+    padding: 0 13px 0 0;
+    position: absolute; /* wrapper를 기준으로 정렬 */
+    top: 77px;
+    right: 0;
+}
+.culture .more::after {
+    content: "";
+    position: absolute; /* more를 기준으로 정렬 */
+    top: 9px;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_59_1542' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='10' height='10'%3E%3Crect width='10' height='10' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_59_1542)'%3E%3Cpath d='M3.34347 9.16732L2.60388 8.42773L6.03097 5.00065L2.60388 1.57357L3.34347 0.833984L7.51013 5.00065L3.34347 9.16732Z' fill='%23258289'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: 1s;
+}
+.culture .more:hover::after {
+    transform: rotate(360deg);
+}
 
 
 
