@@ -181,7 +181,7 @@ header .gnb ul li a:hover { /* a에게 마우스를 올렸을때 */
     padding: 20px 0 50px 20px;
 }
 
-.news .inner .group .list ul li a span {
+.news .inner .group .list ul li a strong {
     font-size: 23px;
     font-weight: 800;
     line-height: 1.2;
@@ -300,7 +300,7 @@ header .gnb ul li a:hover { /* a에게 마우스를 올렸을때 */
     color: #fff;
     padding: 0 0 30px 30px;
 }
-.pr .list ul li a h3 {
+.pr .list ul li a strong {
     font-weight: 800;
     line-height: 1.2;
     font-size: 20px;
