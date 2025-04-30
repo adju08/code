@@ -130,6 +130,7 @@ header .gnb ul li a:hover { /* a에게 마우스를 올렸을때 */
     line-height: 1.2;
     color: #1d1d1d;
     width: 24.52%;
+    margin: 0 0 12px 0;
 }
 .news .inner {
     background-color: #ededed;
