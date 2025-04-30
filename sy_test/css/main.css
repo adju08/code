@@ -98,6 +98,56 @@
 
 
 
+.esg {
+    margin: 231px 0 0 0;
+}
+.esg .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; 
+}
+.esg .tit {
+    width: 23.57%;
+    top: 20px;
+    position: sticky;
+}
+.esg .tit h2 {
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #1d1d1d;
+    margin: 0 0 18px 0;
+}
+.esg .list {
+    width: 57.53%;
+}
+.esg .list ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 27px;
+    font-weight: 800;
+    height: 453px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}  
+.esg .list ul li.list01 a {
+    background-image: url(../images/esg_bg01.jpg);
+}
+.esg .list ul li.list02 a {
+    background-image: url(../images/esg_bg02.jpg);
+}
+.esg .list ul li.list03 a {
+    background-image: url(../images/esg_bg03.jpg);
+}
+.esg .list ul li.list04 a {
+    background-image: url(../images/esg_bg04.jpg);
+}
+
+
+
 
 
 
