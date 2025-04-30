@@ -235,6 +235,14 @@ header .gnb ul li a:hover { /* a에게 마우스를 올렸을때 */
     color: #fff;
 }
 
+/******* 시간초과 후 추가작업 start ******/
+.news .inner .group .list ul li a:hover strong {
+    color: #fff;
+}
+.news .inner .group .list ul li a:hover h3 {
+    color: #fff;
+}
+/************  시간초과 후 추가작업 End **********/
 
 .pr {
     margin: 210px 0 0 0;
