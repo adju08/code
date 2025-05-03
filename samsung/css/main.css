@@ -305,3 +305,7 @@ background-color: #F2F2F8;
 .news .more:hover::before {
     background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_90_178' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='10' height='10'%3E%3Crect x='0.5' y='0.5' width='9' height='9' fill='%23D9D9D9' stroke='white'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_90_178)'%3E%3Cpath d='M7.3457 4.99902L3.34082 9.00293L2.76758 8.42969L6.19824 4.99902L6.18945 4.99023L2.76758 1.56738L3.34082 0.994141L7.3457 4.99902Z' fill='%23ffffff' stroke='%23243279' stroke-width='0.025'/%3E%3C/g%3E%3C/svg%3E%0A");
 }
+
+
+
+
