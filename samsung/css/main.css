@@ -542,6 +542,18 @@ footer .f_nav ul li::before {
 footer .f_nav ul li:first-child:before {
     display: none;
 }
+footer .f_nav ul li a {
+    position: relative;
+}
+footer .f_nav ul li a:hover:before {
+    position: absolute;
+    content: "";
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+}
 footer .f_nav ul li .privacy {
     font-weight: 800;
 }
