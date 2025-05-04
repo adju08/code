@@ -216,7 +216,7 @@ background-color: #F2F2F8;
     color: #243279;
     margin: 0 0 3px 0;
 }
-.news p {
+.news .tit p {
     font-family: "GmarketSans";
     font-size: 48px;
     font-weight: 800;
@@ -309,3 +309,225 @@ background-color: #F2F2F8;
 
 
 
+.webzine {
+padding: 195px 0 108px 0;
+background-color: #243379;
+}
+.webzine .wrapper {
+    position: relative;
+}
+.webzine .tit {
+    margin: 0 0 53px 0;
+}
+.webzine h2 {
+    color: #A1B1FF;
+    margin: 0 0 3px 0;
+}
+.webzine .tit p {
+    font-family: "GmarketSans";
+    font-size: 48px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.3;
+}
+.webzine .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.webzine .list ul li {
+    width: calc(25% - 18px);
+}
+.webzine .list ul li a {
+    display: block;
+    line-height: 100%;
+    background-color: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+.webzine .list ul li a:hover {
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.7);
+    transform: translate(-5px, -5px);/*위,왼쪽으로 이동*/
+}
+.webzine .list ul li a .photo {
+    width: 100%;
+    height: 212px;
+    overflow: hidden;
+}
+.webzine .list ul li a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+.webzine .list ul li a:hover img {
+    transform: scale3d(1.2, 1.2, 1);
+}
+.webzine .list ul li a .txt {
+    padding: 31px 20px 39px 20px;
+}
+.webzine .list ul li a .txt .category {
+    color: #243379;
+    padding: 0 0 11px 0;
+}
+.webzine .list ul li a .txt h3 {
+    font-family: "GmarketSans";
+    font-size: 20px;
+    font-weight: 800;
+    color: #1d1d1d;
+    line-height: 1.3;
+    margin: 0 0 8px 0;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.3;
+    height: calc(1.3em * 2);
+}
+.webzine .list ul li a .txt p {
+    display: -webkit-box;/*필수값*/
+    -webkit-box-orient: vertical;/*필수값*/
+    -webkit-line-clamp: 2;/*줄 수 제한*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: normal;
+}
+.webzine .list ul li a .txt .date {
+    padding: 32px 0 0 0;
+    display: inline-block;
+}
+.webzine .more {
+    position: absolute;/*wrapper를 기준으로 정렬*/
+    top: 72px;
+    right: 0;
+    font-size: 14px;
+    color: #A1B1FF;
+    border: 1px solid #A1B1FF;
+    border-radius: 15px;
+    padding: 0 25px 1px 18px;
+}
+.webzine .more:hover {
+    color: #243379;
+    background-color: #fff;
+    border-color: #fff;
+}
+.webzine .more::before {
+    content: "";
+    position: absolute;/*more를 기준으로 정렬*/
+    top: 6px;
+    right: 12px;
+    width: 10px;
+    height: 10px;
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_90_140' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='10' height='10'%3E%3Crect width='10' height='10' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_90_140)'%3E%3Cpath d='M3.34135 9.02135L2.75 8.43L6.18104 4.99896L2.75 1.56792L3.34135 0.976562L7.36375 4.99896L3.34135 9.02135Z' fill='%23A1B1FF'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.webzine .more:hover::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_90_178' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='10' height='10'%3E%3Crect x='0.5' y='0.5' width='9' height='9' fill='%23D9D9D9' stroke='white'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_90_178)'%3E%3Cpath d='M7.3457 4.99902L3.34082 9.00293L2.76758 8.42969L6.19824 4.99902L6.18945 4.99023L2.76758 1.56738L3.34082 0.994141L7.3457 4.99902Z' fill='%23243379' stroke='%23243279' stroke-width='0.025'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+
+
+
+
+
+.service {
+    margin: 195px 0 127px 0;
+}
+.service .tit {
+    margin: 0 0 58px 0;
+}
+.service .tit h2 {
+    color: #243279;
+    margin: 0 0 3px 0;
+}
+.service .tit p {
+    font-family: "GmarketSans";
+    font-size: 48px;
+    font-weight: 800;
+    color: #1d1d1d;
+    line-height: 1.3;
+}
+.service .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.service .list ul li {
+    width: calc(33.33% - 16px);
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.25);
+    transition: 0.5s;
+}
+.service .list ul li:hover {
+    transform: translate(-10px, -10px);/*위,왼쪽으로 이동*/
+    box-shadow: 5px 3px 10px rgba(0, 0, 0, 0.5);
+}
+.service .list ul li a {
+    line-height: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 35px;
+    position: relative;/*icon 정렬의 기준*/
+}
+.service .list ul li a:hover {
+    background-color: #243379;
+}
+.service .list ul li a .txt strong {
+    color: #243379;
+    font-size: 15px;
+    line-height: normal;
+}
+.service .list ul li a:hover .txt strong {
+    color: #A1B1FF;
+}
+.service .list ul li a .txt h3 {
+    font-family: "GmarketSans";
+    font-size: 20px;
+    font-weight: 800;
+    color: #1d1d1d;
+    line-height: 1.3;
+    margin: 3px 0 0 0;
+}
+.service .list ul li a:hover .txt h3 {
+    color: #fff;
+}
+.service .list ul li a .icon {
+    position: absolute;/*a를 기준으로 정렬*/
+    bottom: 25px;
+    right: 35px;
+    padding: 13px 13px;
+    border: 1px solid #243379;
+    border-radius: 50%;
+    background-color: #243379;
+    width: 17px;
+    height: 17px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_90_195' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='17' height='17'%3E%3Crect width='17' height='17' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_90_195)'%3E%3Cpath d='M11.4579 9.20817H3.54232C3.34162 9.20817 3.17339 9.14029 3.03763 9.00452C2.90187 8.86876 2.83398 8.70053 2.83398 8.49983C2.83398 8.29914 2.90187 8.13091 3.03763 7.99515C3.17339 7.85938 3.34162 7.7915 3.54232 7.7915H11.4579L7.98711 4.32067C7.84544 4.179 7.77756 4.01372 7.78346 3.82483C7.78937 3.63594 7.86315 3.47067 8.00482 3.329C8.14648 3.19914 8.31176 3.13126 8.50065 3.12535C8.68954 3.11945 8.85482 3.18733 8.99648 3.329L13.6715 8.004C13.7423 8.07483 13.7925 8.15157 13.822 8.23421C13.8515 8.31685 13.8663 8.40539 13.8663 8.49983C13.8663 8.59428 13.8515 8.68282 13.822 8.76546C13.7925 8.8481 13.7423 8.92483 13.6715 8.99567L8.99648 13.6707C8.86662 13.8005 8.7043 13.8655 8.5095 13.8655C8.31471 13.8655 8.14648 13.8005 8.00482 13.6707C7.86315 13.529 7.79232 13.3608 7.79232 13.166C7.79232 12.9712 7.86315 12.803 8.00482 12.6613L11.4579 9.20817Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+.service .list ul li a:hover .icon {
+    border-color: #fff;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_90_195' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='17' height='17'%3E%3Crect width='17' height='17' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_90_195)'%3E%3Cpath d='M11.4579 9.20817H3.54232C3.34162 9.20817 3.17339 9.14029 3.03763 9.00452C2.90187 8.86876 2.83398 8.70053 2.83398 8.49983C2.83398 8.29914 2.90187 8.13091 3.03763 7.99515C3.17339 7.85938 3.34162 7.7915 3.54232 7.7915H11.4579L7.98711 4.32067C7.84544 4.179 7.77756 4.01372 7.78346 3.82483C7.78937 3.63594 7.86315 3.47067 8.00482 3.329C8.14648 3.19914 8.31176 3.13126 8.50065 3.12535C8.68954 3.11945 8.85482 3.18733 8.99648 3.329L13.6715 8.004C13.7423 8.07483 13.7925 8.15157 13.822 8.23421C13.8515 8.31685 13.8663 8.40539 13.8663 8.49983C13.8663 8.59428 13.8515 8.68282 13.822 8.76546C13.7925 8.8481 13.7423 8.92483 13.6715 8.99567L8.99648 13.6707C8.86662 13.8005 8.7043 13.8655 8.5095 13.8655C8.31471 13.8655 8.14648 13.8005 8.00482 13.6707C7.86315 13.529 7.79232 13.3608 7.79232 13.166C7.79232 12.9712 7.86315 12.803 8.00482 12.6613L11.4579 9.20817Z' fill='%23243379'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+
+
+
+
+
+footer {
+    background-color: #333A46;
+    padding: 83px 0 110px 0;
+    color: #fff;
+}
+footer .f_nav {
+    margin: 0 0 30px 0;
+}
+footer .f_nav ul {
+    display: flex;
+}
+footer .f_nav ul li a {
+    border-left: 1px solid rgba(255,255,255,0.2);
+    padding: 0 23px;
+}
