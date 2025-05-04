@@ -519,15 +519,43 @@ background-color: #243379;
 footer {
     background-color: #333A46;
     padding: 83px 0 110px 0;
-    color: #fff;
+    color: rgba(255,255,255,0.8);
 }
 footer .f_nav {
     margin: 0 0 30px 0;
 }
 footer .f_nav ul {
     display: flex;
+    gap: 46px;
 }
-footer .f_nav ul li a {
-    border-left: 1px solid rgba(255,255,255,0.2);
-    padding: 0 23px;
+footer .f_nav ul li {
+    position: relative;
+}
+footer .f_nav ul li::before {
+    position: absolute;
+    content: "";
+    top: 7px;
+    left: -23px;
+    width: 1px;
+    height: 13px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+footer .f_nav ul li:first-child:before {
+    display: none;
+}
+footer .f_nav ul li .privacy {
+    font-weight: 800;
+}
+footer .f_info {
+    margin: 0 0 30px 0;
+}
+footer .f_info {
+    display: flex;
+    gap: 28px;
+}
+footer .f_info strong {
+    font-weight: 800;
+}
+footer .copyright {
+    color: rgba(255,255,255,0.6);
 }
