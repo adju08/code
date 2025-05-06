@@ -1,0 +1,43 @@
+body {
+    font-family: "GmarketSans", sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    color: #555;
+    line-height: 1.5;
+    word-break: keep-all; /* 글자 단어별로 떨어지게 함 */
+}
+#wrap {
+    min-width: 1320px;
+    /* 1260 + 30 + 30 =1320 */
+    position: relative; /* header 정렬의 기준 */
+}
+.wrapper {
+    width: 1260px;
+    margin: 0 auto; /* 가운데 정렬 */
+}
+@media screen and (max-width:640px) {
+    /* 브라우저 넓이가 640px 이하에서만 적용되는 스타일 */
+    body {
+        font-size: 16px;
+    }
+    #wrap {
+        min-width: 0;
+    }
+    .wrapper {
+        width: auto; /* 100% 절대 안됨 / 너 들어가고싶은대로 들어가 */
+        margin: 0 20px; /* 좌우여백 20px / padding 안됨-> 내가 준 여백이랑 중첩되서 들어감 */
+    }
+}
+
+
+/* 글자를 숨겨야하는 경우 blind 클래스를 적용
+    skip, blind 이렇게 두 이름으로 많이 부름 */
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    color: transparent; /* 글자가 투명 */
+}
