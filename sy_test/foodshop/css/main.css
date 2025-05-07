@@ -211,18 +211,13 @@ header .tnb .icon02 {
     gap: 24px;
 }
 .category .list ul li a {
-    position: relative;
     display: flex;
     align-items: center;
-    padding: 0 0 0 80px;
     height: 397px;
     border-radius: 30px;
 }
 .category .list ul li a:hover::before {
-    position: absolute;
     content: "";
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(255,237,171,0.9);
@@ -243,17 +238,11 @@ header .tnb .icon02 {
 .category .list ul li .list05 {
     background: url(../images/category05.jpg) no-repeat center center / cover;
 }
-.category .list ul li a .txt {
-    position: relative;
-    display: flex;
-}
 
 /*************** 글자를 .txt로 감싸고 absolute로 아래로 내려서
 정렬 시키는 방법도 괜찮은지? **************/
 .category .list ul li a:hover .txt {
     position: absolute;
-    top: 180px;
-    left: 80px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -263,6 +252,7 @@ header .tnb .icon02 {
     font-weight: 800;
     line-height: 1.2;
     color: #fff;
+    padding: 0 0 0 80px;
 }
 .category .list ul li a:hover strong {
     color: #1d1d1d;
