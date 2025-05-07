@@ -64,7 +64,7 @@ header .tnb .icon02 {
 .visual .wrapper {
     position: relative;
 }
-.visual strong {
+.visual h2 {
     font-size: 80px;
     font-weight: 800;
     color: #fff;
