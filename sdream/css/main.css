@@ -85,7 +85,7 @@ header .tnb .lang {
                 /* 오른쪽 여백만 삭제 - 메뉴열기 버튼이 오른쪽 끝까지 배치되게 하려고 */
             }
             header .logo a img {
-                width: 94px;
+                width: 103px;
             }
             header .gnb .gnb_open {
                 display: block; /* none으로 숨김요소를 다른속성만 주면 나타남 */
