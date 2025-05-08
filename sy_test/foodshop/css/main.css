@@ -203,7 +203,7 @@ header .tnb .icon02 {
     margin: 0 0 7px 0;
 }
 .category .list {
-    width: calc(50% - 12px);
+    width: 49.04%;
 }
 .category .list ul {
     display: flex;
@@ -211,72 +211,72 @@ header .tnb .icon02 {
     gap: 24px;
 }
 .category .list ul li a {
-    display: flex;
-    align-items: center;
+    display: block;
+    position: relative; /* txt */
+}
+.category .list ul li a .photo {
+    overflow: hidden;
     height: 397px;
     border-radius: 30px;
+    position: relative; /* before */
 }
-.category .list ul li a:hover::before {
+.category .list ul li a .photo::before {
+    position: absolute; /* photo */
     content: "";
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255,237,171,0.9);
-    border-radius: 30px;
+    background-color: #FFEDAB;
+    opacity: 0;
+    transition: 0.3s;
 }
-.category .list ul li .list01 {
-    background: url(../images/category01.jpg) no-repeat center center / cover;
+.category .list ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
-.category .list ul li .list02 {
-    background: url(../images/category02.jpg) no-repeat center center / cover;
+.category .list ul li a .txt {
+    position: absolute; /* a */
+    bottom: 128px;
+    left: 80px;
 }
-.category .list ul li .list03 {
-    background: url(../images/category03.jpg) no-repeat center center / cover;
-}
-.category .list ul li .list04 {
-    background: url(../images/category04.jpg) no-repeat center center / cover;
-}
-.category .list ul li .list05 {
-    background: url(../images/category05.jpg) no-repeat center center / cover;
-}
-
-/*************** 글자를 .txt로 감싸고 absolute로 아래로 내려서
-정렬 시키는 방법도 괜찮은지? **************/
-.category .list ul li a:hover .txt {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-.category .list ul li a strong {
-    font-size: 27px;
+.category .list ul li a .txt h3 {
+    font-size: 30px;
     font-weight: 800;
     line-height: 1.2;
     color: #fff;
-    padding: 0 0 0 80px;
 }
-.category .list ul li a:hover strong {
-    color: #1d1d1d;
-    padding: 0 0 30px 0;
-}
-.category .list ul li a span {
-    display: none;
-    position: relative;
+.category .list ul li a .txt span {
+    position: relative; /* after */
     padding: 0 18px 0 0;
+    margin: 27px 0 0 0;
+    display: none;
 }
-.category .list ul li a span::after {
-    position: absolute;
+.category .list ul li a .txt span::after {
+    position: absolute; /* span */
     content: "";
-    top: 7px;
+    top: 4px;
     right: 0;
-    height: 10px;
     width: 10px;
+    height: 10px;
     background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_51_116' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='10' height='10'%3E%3Crect width='10' height='10' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_51_116)'%3E%3Cpath d='M3.34359 9.16696L2.604 8.42738L6.03109 5.0003L2.604 1.57321L3.34359 0.83363L7.51025 5.0003L3.34359 9.16696Z' fill='%23555555'/%3E%3C/g%3E%3C/svg%3E%0A");
     background-position: center center;
     background-repeat: no-repeat;
 }
-.category .list ul li a:hover span {
+
+/*********************** 오버 했을 때 ***********************/
+.category .list ul li a:hover .photo::before {
+    opacity: 0.9;
+}
+.category .list ul li a:hover .txt h3 {
+    color: #1d1d1d;
+}
+.category .list ul li a:hover .txt span {
     display: inline-block;
 }
+
+
 
 
 
