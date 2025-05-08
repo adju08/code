@@ -321,9 +321,6 @@ header .tnb .lang {
             .project .list ul li a .txt h3 {
                 font-size: 16px;
                 font-weight: 400;
-                white-space: break-spaces;
-                overflow: hidden;
-                text-overflow: ellipsis;
             }
             .project .list ul li a .txt h3 br {
                 display: none; /* 줄바꿈 삭제 */
