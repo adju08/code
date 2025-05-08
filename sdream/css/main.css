@@ -524,9 +524,10 @@ header .tnb .lang {
     color: #fff;
 }
 .webzine .list {
-    width: calc(50% + 630px); /* list 넓이 설정 */
+    width: calc(50% + 630px); /* list 넓이 설정 -> (브라우저 넓이의 반 50% + wrapper 사이즈의 절반 630px) */
     position: relative;
-    left: calc(50% - 630px); /* list 왼쪽 정렬 방법 */
+    left: calc(50% - 630px); /* list 오른쪽 이동 방법 -> right는 안먹는데 left는 먹음
+                                콘텐츠 영역의 절반 50% - wrapper 사이즈의 절반 630px */
     margin: 53px 0 0 0;
 }
 .webzine .list ul {
