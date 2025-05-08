@@ -524,9 +524,9 @@ header .tnb .lang {
     color: #fff;
 }
 .webzine .list {
-    width: calc(50% + 630px);
+    width: calc(50% + 630px); /* list 넓이 설정 */
     position: relative;
-    left: calc(50% - 630px);
+    left: calc(50% - 630px); /* list 왼쪽 정렬 방법 */
     margin: 53px 0 0 0;
 }
 .webzine .list ul {
