@@ -846,7 +846,7 @@ header .tnb .lang {
             }
             .service .list ul li a {
                 display: block;
-                padding: 18px 45px 17px 15px;
+                padding: 18px 45px 17px 18px;
             }
             .service .list ul li a::after {
                 top: 50%;
