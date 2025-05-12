@@ -556,7 +556,7 @@ header .tnb .lang {
     background-color: #fff;
     border-radius: 20px;
     color: #555;
-    overflow: hidden; /* 빠져나간 이미지 자름 */
+    overflow: hidden; /* border-radius 밖으로 빠져나간 이미지 자름 */
     box-shadow: 5px 5px 10px 0 rgba(0,0,0,0.25);
     transition: 0.5s;
 }

@@ -96,16 +96,31 @@ header .tnb .icon02 {
     color: #BF0200;
     margin: 0 0 7px 0;
 }
+
+/****************** 옆스크롤 생기게 넓이 주기 START *****************/
+.product .list {
+    width: calc(50% + 630px );
+    position: relative;
+    left: calc(50% - 630px);
+    overflow: hidden; /* 가로스크롤바 삭제 */
+}
 .product .list ul {
     display: flex;
-    justify-content: space-between;
+    gap: 24px;
+    width: 2140px;
+    /* 
+        li의 넓이 * li의 갯수 + li의 여백 * li의 갯수 = 2140px
+        404 * 5 + 24 * 5 = 2020 + 120 = 2140
+    */
 }
 .product .list ul li {
-    width: calc(33.33% - 16px);
+    width: 404px;
+    
 }
+/****************** 옆스크롤 생기게 넓이 주기 END *****************/
+
 .product .list ul li a {
     display: block;
-    line-height: 100%;
 }
 .product .list ul li a .photo {
     height: 263px;
