@@ -170,7 +170,7 @@ header .gnb .gnb_wrap ul li a {
 .paint .paint_wrap .more {
     position: absolute; /* paint_wrap */
     top: 40px;
-    right: 0;
+    right: calc(50% - 630px); /********* 시간초과 후 작업 ***********/
     border: 1px solid #1D1D1D;
     border-radius: 20px;
     color: #1D1D1D;
