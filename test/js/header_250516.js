@@ -22,7 +22,7 @@ $(document).ready(function(){
 
     function scroll_chk(){
         //함수 선언(scroll_chk라는 이름의 함수가 있어요!!)
-        scrolling = $(window).scrollTop() /* lte=출생신고/ 단 한번만 해주면 됨 
+        scrolling = $(window).scrollTop() /* let=출생신고/ 단 한번만 해주면 됨 
                                             -> 출생신고를 제외하고는 새로 부를때마다 선언해줘야함 */
         console.log(scrolling)
 
