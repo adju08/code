@@ -171,3 +171,122 @@
                 display: none;
             }
 }
+
+
+
+
+.interview {
+    background-color: #EDE6E3;
+    padding: 155px 0 127px 0;
+    margin: 155px 0 0 0;
+}
+.interview .tit {
+    text-align: center;
+}
+.interview .tit h2 {
+    font-size: 40px;
+    color: #422E23;
+    margin: 10px 0 12px 0;
+}
+.interview .list {
+    margin: 28px 0 0 0;
+}
+.interview .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.interview .list ul li {
+    width: calc(33.33% - 36px);
+}
+.interview .list ul li:nth-child(2) {
+    margin: 42px 0 0 0;
+}
+.interview .list ul li a {
+    display: block;
+    position: relative; /* txt, txt_over */
+}
+.interview .list ul li a .photo {
+    position: relative; /* before */
+    overflow: hidden;
+    height: 449px;
+    border-radius: 60px 0 60px 0;
+}
+.interview .list ul li:nth-child(2) a .photo {
+    border-radius: 0 60px 0 60px;
+}
+.interview .list ul li a .photo::before {
+    position: absolute;
+    z-index: 10;
+    content: "";
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.8));
+}
+.interview .list ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(1);
+}
+.interview .list ul li a .txt {
+    position: absolute; /* a */
+    z-index: 11;
+    bottom: 30px;
+    left: 30px;
+    width: calc(100% - 60px);
+}
+.interview .list ul li a .txt::after {
+    content: "";
+    position: absolute; /* txt */
+    top: 18px;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.0175 16.9825H0V15.0175H15.0175V0H16.9825V15.0175H32V16.9825H16.9825V32H15.0175V16.9825Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.interview .list ul li a .txt strong {
+    font-size: 25px;
+    color: #fff;
+}
+.interview .list ul li a .txt_over {
+    position: absolute; /* a */
+    z-index: 12;
+    bottom: 0;
+    left: 0;
+    background-color: #412D22;
+    padding: 30px 40px;
+    border-radius: 60px 0 60px 0;
+}
+.interview .list ul li a .txt_over h3 {
+    font-size: 25px;
+    color: #fff;
+}
+.interview .list ul li a .txt_over p {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 11px 0 17px 0;
+    line-height: 1.5;
+    height: 3em;
+    overflow: hidden;
+    
+    /* 2줄 점점점(...) */
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* 내 줄수 */
+    -webkit-box-orient: vertical;
+}
+.interview .list ul li a .txt_over span {
+    display: inline-block;
+    position: relative; /* after */
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 0 16px 0 0;
+}
+.interview .list ul li:nth-child(2) a .txt_over {
+    border-radius: 0 60px 0 60px;
+}
+
+@media screen and (min-width:641px){ /******* pc형 오버효과 ******/
+}
