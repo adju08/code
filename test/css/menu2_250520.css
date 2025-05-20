@@ -1,0 +1,175 @@
+@import url(default.css);
+@import url(common_full.css);
+@import url(font.css);
+
+
+header {
+    position: fixed; /* body을 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100px;
+    color: #fff;
+}
+header .wrapper {
+    display: flex; /* logo,gnb,util 좌우로 배치 */
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo a {
+    display: block;
+    width: 218px;
+    height: 35px;
+    background: url(../images/logo_w.svg) no-repeat center center / contain;
+}
+header .util .search .search_open {
+    display: block;
+    width: 60px;
+    height: 60px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M27.6667 30L17.1667 19.5C16.3333 20.1667 15.375 20.6944 14.2917 21.0833C13.2083 21.4722 12.0556 21.6667 10.8333 21.6667C7.80555 21.6667 5.24306 20.6181 3.14583 18.5208C1.04861 16.4236 0 13.8611 0 10.8333C0 7.80555 1.04861 5.24306 3.14583 3.14583C5.24306 1.04861 7.80555 0 10.8333 0C13.8611 0 16.4236 1.04861 18.5208 3.14583C20.6181 5.24306 21.6667 7.80555 21.6667 10.8333C21.6667 12.0556 21.4722 13.2083 21.0833 14.2917C20.6944 15.375 20.1667 16.3333 19.5 17.1667L30 27.6667L27.6667 30ZM10.8333 18.3333C12.9167 18.3333 14.6875 17.6042 16.1458 16.1458C17.6042 14.6875 18.3333 12.9167 18.3333 10.8333C18.3333 8.75 17.6042 6.97917 16.1458 5.52083C14.6875 4.0625 12.9167 3.33333 10.8333 3.33333C8.75 3.33333 6.97917 4.0625 5.52083 5.52083C4.0625 6.97917 3.33333 8.75 3.33333 10.8333C3.33333 12.9167 4.0625 14.6875 5.52083 16.1458C6.97917 17.6042 8.75 18.3333 10.8333 18.3333Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+/************** header에 fixed 클래스 추가 시 *************/
+header.fixed {
+    background-color: #fff;
+    color: #1d1d1d;
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,0.05);
+}
+header.fixed .logo a {
+    background-image: url(../images/logo_c.svg);
+}
+header.fixed .util .search .search_open {
+    background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M27.6667 30L17.1667 19.5C16.3333 20.1667 15.375 20.6944 14.2917 21.0833C13.2083 21.4722 12.0556 21.6667 10.8333 21.6667C7.80555 21.6667 5.24306 20.6181 3.14583 18.5208C1.04861 16.4236 0 13.8611 0 10.8333C0 7.80555 1.04861 5.24306 3.14583 3.14583C5.24306 1.04861 7.80555 0 10.8333 0C13.8611 0 16.4236 1.04861 18.5208 3.14583C20.6181 5.24306 21.6667 7.80555 21.6667 10.8333C21.6667 12.0556 21.4722 13.2083 21.0833 14.2917C20.6944 15.375 20.1667 16.3333 19.5 17.1667L30 27.6667L27.6667 30ZM10.8333 18.3333C12.9167 18.3333 14.6875 17.6042 16.1458 16.1458C17.6042 14.6875 18.3333 12.9167 18.3333 10.8333C18.3333 8.75 17.6042 6.97917 16.1458 5.52083C14.6875 4.0625 12.9167 3.33333 10.8333 3.33333C8.75 3.33333 6.97917 4.0625 5.52083 5.52083C4.0625 6.97917 3.33333 8.75 3.33333 10.8333C3.33333 12.9167 4.0625 14.6875 5.52083 16.1458C6.97917 17.6042 8.75 18.3333 10.8333 18.3333Z' fill='%231d1d1d'/%3E%3C/svg%3E%0A");
+}
+
+@media screen and (min-width:1025px) { /************* pc버전 오버 효과 *************/
+            header .gnb .gnb_open,
+            header .gnb .gnb_close {
+                display: none; /* 모바일에서만 보임 */
+            }
+            header .gnb .gnb_wrap ul.depth1 {
+                display: flex; /* 1차 메뉴 li를 좌우로 배치 */
+            }
+            header .gnb .gnb_wrap ul.depth1 > li {
+                width: 138px;
+                text-align: center;
+                position: relative; /* ul.depth2 정렬의 기준 */
+            }
+            header .gnb .gnb_wrap ul.depth1 > li > a {
+                display: block;
+                font-size: 20px;
+                font-weight: 800;
+                line-height: 100px;
+            }
+            header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
+                /* !!!!!!!!!반드시 absolute!!!!!!! */
+                position: absolute; /* li를 기준으로 정렬 */
+                left: 0;
+                top: 100px; /* !!!!!!!!!!!! 1차메뉴 a의 높이만큼 만 들어가야함 /반드시 같은 값이어야함 !!!!!!!!!!! */
+                width: 100%; /* absolute 때문에 넓이가 줄어서 li의 넓이와 같게 ... */
+                display: none; /* 메뉴에 오버하면 보임 */
+                padding: 20px 0 0 0; /* a와 2차 메뉴 사이의 여백 / margin 절대 안됨 */
+            }
+            header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a {
+                display: block;
+                padding: 6px 0;
+            }
+
+            /****************** 메뉴에 마우스를 오버했을 때 ****************/
+            header.menu_over {
+                color: #1d1d1d;
+            }
+            header.menu_over::before {
+                position: absolute; /* header를 기준으로 정렬 */
+                content: "";
+                left: 0;
+                top: 0;
+                z-index: -1;
+                /* 
+                    position 들어간 요소와 안들어간 요소가 겹치면 position 속성이 있는 요소가 위
+                    position 속성이 있는 요소끼리 순서를 정할때는 z-index가 높은 요소가 위
+                    위로 배치되어야 할 요소한테 모두 position, z-index를 주기 어려울 경우
+                    >>  z-index:-1 을 주면 position이 없는 요소보다도 아래 배치됨 ... 
+                        내 정렬의 기준 안에서 맨 아래임(여기서는 header) ...
+                    >>  header에 border를 줬음. header::before한테 z-index를 주고 배경색을 줌
+                        header에 준 border보다 befoer가 위에 있음 border가 안보임    
+                */
+                width: 100%;
+                height: 252px;
+                background-color: #fff;
+                box-shadow: 0 3px 5px 0 rgba(0,0,0,0.05);
+            }
+            header.menu_over::after {
+                content: "";
+                position: absolute; /* header */
+                left: 0;
+                top: 100px;
+                width: 100%;
+                height: 1px;
+                background-color: #ededed;
+            }
+            header.menu_over .logo a {
+                background-image: url(../images/logo_c.svg);
+            }
+            header.menu_over .gnb .gnb_wrap ul.depth1 > li.over > a {
+                color: #745947;
+            }
+            header.menu_over .gnb .gnb_wrap ul.depth1 > li.over > a span {
+                position: relative; /* after */
+            }
+            header.menu_over .gnb .gnb_wrap ul.depth1 > li.over > a span::after {
+                position: absolute; /* span */
+                content: "";
+                left: 0;
+                bottom: -39px;
+                z-index: 1;
+                width: 100%;
+                height: 4px;
+                background-color: #745947;
+            }
+            header.menu_over .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
+                display: block;
+                color: #555;
+            }
+            header.menu_over .util .search .search_open {
+                background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M27.6667 30L17.1667 19.5C16.3333 20.1667 15.375 20.6944 14.2917 21.0833C13.2083 21.4722 12.0556 21.6667 10.8333 21.6667C7.80555 21.6667 5.24306 20.6181 3.14583 18.5208C1.04861 16.4236 0 13.8611 0 10.8333C0 7.80555 1.04861 5.24306 3.14583 3.14583C5.24306 1.04861 7.80555 0 10.8333 0C13.8611 0 16.4236 1.04861 18.5208 3.14583C20.6181 5.24306 21.6667 7.80555 21.6667 10.8333C21.6667 12.0556 21.4722 13.2083 21.0833 14.2917C20.6944 15.375 20.1667 16.3333 19.5 17.1667L30 27.6667L27.6667 30ZM10.8333 18.3333C12.9167 18.3333 14.6875 17.6042 16.1458 16.1458C17.6042 14.6875 18.3333 12.9167 18.3333 10.8333C18.3333 8.75 17.6042 6.97917 16.1458 5.52083C14.6875 4.0625 12.9167 3.33333 10.8333 3.33333C8.75 3.33333 6.97917 4.0625 5.52083 5.52083C4.0625 6.97917 3.33333 8.75 3.33333 10.8333C3.33333 12.9167 4.0625 14.6875 5.52083 16.1458C6.97917 17.6042 8.75 18.3333 10.8333 18.3333Z' fill='%231d1d1d'/%3E%3C/svg%3E%0A");
+            }
+}/* @media */
+
+@media screen and (max-width:1024px) { /************* 모바일 버전 *************/
+
+}/* @media */
+
+
+
+
+.visual {
+    height: 100vh;
+    background: url(../images/vg_bg.jpg) no-repeat center center / cover;
+    color: #fff;
+}
+.visual p {
+    font-size: 60px;
+    font-weight: 800;
+    line-height: 1.2;
+    padding: 50vh 0 0 0;
+}
+
+@media screen and (max-width:768px) {
+    .visual p {
+        font-size: 30px;
+    }
+}/* @media */
+
+
+
+
+
+
+
+
+footer {
+    margin: 2000px 0 0 0;
+}
