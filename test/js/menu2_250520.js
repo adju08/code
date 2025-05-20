@@ -112,8 +112,8 @@ $(document).ready(function(){
                 //console.log('메뉴가 닫혀있네?')
                 $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('open')
                 $(this).parents('li').addClass('open')
-            }
-        }
+            }//if
+        }//if
     })
 
 

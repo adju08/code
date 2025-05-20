@@ -274,6 +274,7 @@ header.fixed .util .search .search_open {
 
 
 .visual {
+    position: relative;
     height: 100vh;
     background: url(../images/vg_bg.jpg) no-repeat center center / cover;
     color: #fff;
@@ -283,6 +284,13 @@ header.fixed .util .search .search_open {
     font-weight: 800;
     line-height: 1.2;
     padding: 50vh 0 0 0;
+}
+.visual span {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 }
 
 @media screen and (max-width:768px) {
