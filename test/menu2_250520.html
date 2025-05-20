@@ -9,6 +9,10 @@
     <title>메뉴 마우스 오버시 2차 메뉴 전체 나옴</title>
 </head>
 <body>
+    <div class="skip_nav">
+        <a href="#skip_content">본문 바로가기</a>
+        <!-- a를 클릭하면 id="skip_content" 인 요소로 이동(스크롤된다) -->
+    </div>
     <div id="wrap">
         <!-- ##############
             1. 브라우저가 스크롤이 되면 haeder에 fixed 클래스 추가
@@ -79,7 +83,11 @@
                 </div>
             </section>
         </main>
-        <footer></footer>
+        <footer>
+            <div class="wrapper">
+                <p id="skip_content">여기가 본문이야</p>
+            </div>
+        </footer>
     </div>
 </body>
 </html>

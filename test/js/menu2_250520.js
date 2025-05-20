@@ -17,7 +17,7 @@ $(document).ready(function(){
 
     function scroll_chk(){
         scrolling = $(window).scrollTop()
-        console.log(scrolling)
+        //console.log(scrolling)
         if(scrolling > 0){
             $('header').addClass('fixed')
         }else{
@@ -33,8 +33,92 @@ $(document).ready(function(){
         }else{
             device_status = 'mobile'
         }
-        console.log(device_status)
+        //console.log(device_status)
     }
+
+    /* 
+        pc버전에서만
+        메뉴에 마우스를 오버하면
+          >> header .gnb .gnb_wrap ul.depth1 > li
+        1. header에 menu_over 클래스 추가
+        2. 오버한 1차 메뉴 li에 over 클래스 추가
+           header .gnb .gnb_wrap ul.depth1 > li
+
+        언제 메뉴의 오버상태를 해제할거냐 ...
+        header 밖에 나가면 메뉴 사라지게 ...
+    */
+    $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter focusin', function(){
+        //마우스를 오버했을 때만 실행(pc일때만 실행)
+        if(device_status == 'pc'){
+            $('header').addClass('menu_over')
+            $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
+            $(this).addClass('over')
+        }//if
+    })//mouseenter
+    $('header').on('mouseleave', function(){
+        if(device_status == 'pc'){
+            $('header').removeClass('menu_over')
+            $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
+        }//if
+    })//mouseleave
+
+    $('header .gnb .gnb_wrap ul.depth1 > li:last-child > ul.depth2 > li:last-child > a').on('focusout', function(){
+        if(device_status == 'pc'){
+            $('header').removeClass('menu_over')
+            $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
+        }//if
+    })//mouseleave
+
+
+
+    /* 
+        모바일에서만
+        메뉴 열기 버튼을 클릭하면 header에 menu_open 클래스 추가
+            >> header .gnb .gnb_open
+        메뉴 닫기 버튼을 클릭하면 header에 menu_open 클래스 삭제
+            >> header .gnb .gnb_close
+    */
+    $('header .gnb .gnb_open').on('click', function(){
+        $('header').addClass('menu_open')
+    })
+    $('header .gnb .gnb_close').on('click', function(){
+        $('header').removeClass('menu_open')
+    })
+
+
+    /* 
+        모바일에서만
+        1차 메뉴를 클릭하면
+        1. 링크(href)로 이동하는 걸 막아야함
+             >> 반드시 href가 있는 a를 클릭한 것으로 해야함
+        2. 1차메뉴 li에 open 클래스 추가 
+            ---> 이미 열려있는 메뉴를 클릭하면
+                (open클래스가 있으면 열린거..)
+                 클릭한 메뉴를 닫고 끝남
+            ---> 열려있지 않은 메뉴를 클릭하면
+                 이전에 열려있던 메뉴를 닫고
+                 지금 클릭한 메뉴가 열림
+     */
+    $('header .gnb .gnb_wrap ul.depth1 > li > a').on('click', function(e){ //e는 매개 변수
+        if(device_status == 'mobile'){
+            e.preventDefault()
+            //console.log('눌렸니? 나오니?')
+            let depth1_open = $(this).parents('li').hasClass('open')
+            //console.log(depth1_open)
+            if(depth1_open == true){ //메뉴가 열렸을 때
+                //console.log('메뉴가 열려있네?')
+                $(this).parents('li').removeClass('open')
+            }else{
+                //console.log('메뉴가 닫혀있네?')
+                $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('open')
+                $(this).parents('li').addClass('open')
+            }
+        }
+    })
+
+
+    
+
 
 })//$(document).ready
 
