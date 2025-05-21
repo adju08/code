@@ -16,7 +16,7 @@ $(document).ready(function(){
     })//$(window).resize
 
     function scroll_chk(){
-        scrolling = $(window).scrollTop()
+        scrolling = $(window).scrollTop() //홈페이지 스크롤 된 값 알기
         //console.log(scrolling)
         if(scrolling > 0){
             $('header').addClass('fixed')
