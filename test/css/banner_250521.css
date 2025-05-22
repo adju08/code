@@ -1,0 +1,115 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common_full.css);
+
+.tour {
+    margin: 150px 0;
+}
+.tour h2 {
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #1d1d1d;
+    margin: 0 0 18px 0;
+}
+.tour .list {
+    margin: 35px 0 0 0;
+}
+.tour .list ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+.tour.acc01 .list ul li {
+    /* width: 25%; */
+    flex: 1 1 0%; /* 삼성물산 참고값 */
+    /*flex: 1; /* 이렇게 해도 위와 같게 나옴 */
+
+    /* 
+        --> 너비로 주는 것보다 flex로 값을 주는 게 늘렸다 줄였다 할 때 갈라지는 현상이 안생김
+     */
+    transition: 0.5s;
+}
+.tour.acc01 .list ul li.on {
+    /* width: 70%; */
+    flex: 3 1 0%;
+    /*flex: 3; /* 이렇게 해도 위와 같게 나옴 */
+}
+.tour.acc02 .list ul li {
+    /*width: calc(25% - 9px);*/
+    flex: 1 1 0%;
+    transition: 0.5s;
+}
+.tour.acc02 .list ul li.on {
+    flex: 3 1 0%;
+}
+.tour .list ul li a {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 359px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    color: #fff;
+    padding: 0 34px 30px 34px;
+}
+.tour .list ul li.list01 a {
+    background-image: url(../images/tour01.jpg);
+}
+.tour .list ul li.list02 a {
+    background-image: url(../images/tour02.jpg);
+}
+.tour .list ul li.list03 a {
+    background-image: url(../images/tour03.jpg);
+}
+.tour .list ul li.list04 a {
+    background-image: url(../images/tour04.jpg);
+}
+.tour .list ul li a h3 {
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+.tour .list ul li a p {
+    margin: 10px 0 0 0;
+    display: none; /* 오버시 나타남 */
+}
+
+
+@media screen and (max-width:1024px) {
+            .tour {
+                margin: 75px 0;
+            }
+            .tour h2 {
+                font-size: 28px;
+                margin: 0 0 9px 0;
+            }
+            .tour .list {
+                margin: 18px 0 0 0;
+            }
+            .tour .list ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .tour.acc01 .list ul li {
+                width: 100%;
+            }
+            .tour.acc01 .list ul li.on {
+                width: 100%;
+            }
+            .tour.acc02 .list ul li {
+                width: 100%;
+            }
+            .tour .list ul li a {
+                height: 200px;
+                padding: 0 17px 20px 17px;
+            }
+            .tour .list ul li a h3 {
+                font-size: 19px;
+            }
+            .tour .list ul li a p {
+                margin: 5px 0 0 0;
+                display: block;
+            }
+}/* @media */

@@ -8,6 +8,7 @@ body {
 }
 #wrap {
     position: relative; /* header 정렬의 기준 */
+    overflow: hidden; /* 집 나가는 애들 땜에 생기는 가로스크롤바 삭제 */
 }
 .wrapper {
     width: 1260px;
