@@ -263,10 +263,19 @@ border-bottom-right-radius: 190px; /* 라운드가 한쪽만 들어가게 함 */
 .tour .list ul {
     display: flex;
     justify-content: space-between;
+    gap: 12px;
 }
 .tour .list ul li {
-    width: 190px;
+    /*width: 190px;*/
+    flex: 1 1 0%;
+    transition: 0.5s;
 }
+.tour .list ul li.on {
+    /*width: 190px;*/
+    flex: 3 1 0%;
+}
+
+
 .tour .list ul li a {
     display: flex;
     flex-direction: column; /* 2줄로 만들어 */
