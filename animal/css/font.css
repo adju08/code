@@ -1,0 +1,14 @@
+
+
+@font-face {
+	font-family: "ElectricalSafety";
+	font-weight: 400;
+	font-display: normal;
+	src: url(../font/ElectricalSafetyRegularTTF.woff2) format("woff2");
+}
+@font-face {
+	font-family: "ElectricalSafety";
+	font-weight: 700;
+	font-display: normal;
+	src: url(../font/ElectricalSafetyBoldTTF.woff2) format("woff2");
+}

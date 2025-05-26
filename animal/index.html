@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- jqyery 라이브러리 -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+
+    <!-- swiper 라이브러리 -->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <script src="js/swiper-bundle.min.js"></script>
+
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js"></script>
+    <title>동물보호센터</title>
+</head>
+<body>
+        <header>
+            <h1 class="logo"><a href="index.html"><span class="blind">동물보호센터</span></a></h1>
+            <nav class="gnb">
+                <button class="gnb_open"><span class="blind">메뉴열기</span></button>
+                <div class="gnb_wrap">
+                    <ul class="depth1">
+                        <li>
+                            <a href="https://www.naver.com/"><span>찾습니다</span></a>
+                            <ul class="depth2">
+                                <li><a href="#"><span>실종신고</span></a></li>
+                                <li><a href="#"><span>구조정보/목격담</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="https://www.naver.com/"><span>구조분양</span></a>
+                        </li>
+                        <li>
+                            <a href="https://www.naver.com/"><span>네트워크</span></a>
+                            <ul class="depth2">
+                                <li><a href="#"><span>동물찾기 네트워크</span></a></li>
+                                <li><a href="https://www.animal.go.kr" target="_blank" title="새창열림"><span>국가동물보호정보시스템</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="https://www.naver.com/"><span>재회성공담</span></a>
+                        </li>
+                        <li>
+                            <a href="https://www.naver.com/"><span>대처방법</span></a>
+                            <ul class="depth2">
+                                <li><a href="#"><span>실종시 대처방법</span></a></li>
+                                <li><a href="#"><span>구조시 대처방법</span></a></li>
+                                <li><a href="#"><span>고양이에 대해</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <button class="gnb_close"><span class="blind">메뉴닫기</span></button>
+            </nav>
+            <div class="util">
+                <div class="search">
+                    <button class="search_open"><span class="blind">검색열기</span></button>
+                </div>
+            </div>
+        </header>
+        <main class="container">
+            <section class="visual">
+                <h2 class="blind">팝업</h2>
+                <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                    <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                        <li class="swiper-slide bg1">
+                            <div class="wrapper">
+                                <p>집이 필요한 게 아니라<br>집으로 돌아가는 길을 잃었습니다.</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide bg2">
+                            <div class="wrapper">
+                            <p>길 위 아이는 누군가의 전부,<br>함께 찾아야 할 가족</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide bg3">
+                            <div class="wrapper">
+                            <p>작은 몸 하나로<br>온 세상을 기다려온 아이가 있어요</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide bg4">
+                            <div class="wrapper">
+                            <p>물건이 아닌 생명,<br> 입양으로 그 가치를 지켜주세요</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="btn_wrap">
+                        <button class="btn_prev"><span class="blind">이전팝업보기</span></button>
+                        <button class="btn_next"><span class="blind">다음팝업보기</span></button>
+                        <button class="btn_stop"><span class="blind">일시정지</span></button>
+                        <button class="btn_play"><span class="blind">다시시작</span></button>
+                    </div><!--//btn_wrap-->
+                </div><!--//swiper-->
+            </section><!--//visual-->
+            <section class="find"></section><!--//find-->
+            <section class="slogan"></section><!--//slogan-->
+            <section class="adopt"></section><!--//adopt-->
+            <section class="review"></section><!--//review-->
+        </main>
+        <footer></footer>
+</body>
+</html>
