@@ -15,13 +15,25 @@
     <title>동물보호센터</title>
 </head>
 <body>
-        <header class="menu_over">
+    <div class="skip_nav">
+        <a href="#skip_content">본문바로가기</a>
+        <!-- id="skip_content" 인 요소로 바로가기 (내부링크) -->
+    </div>
+    <div id="wrap">
+        <!--
+            header에 마우스를 오버하거나 .. 스크롤을 내리면 - fixed클래스 추가
+            메뉴에 마우스를 오버하면 오버한 li에만 over클래스 추가
+
+            모바일에서 메뉴 열기 버튼을 클릭하면 header에 menu_open 클래스 추가
+            모바일에서 1차 메뉴를 클릭하면 클릭한 li에 open 클래스 추가
+        -->
+        <header class="">
             <h1 class="logo"><a href="index.html"><span class="blind">동물보호센터</span></a></h1>
             <nav class="gnb">
                 <button class="gnb_open"><span class="blind">메뉴열기</span></button>
                 <div class="gnb_wrap">
                     <ul class="depth1">
-                        <li class="over">
+                        <li class="">
                             <a href="https://www.naver.com/"><span>찾습니다</span></a>
                             <ul class="depth2">
                                 <li><a href="#"><span>실종신고</span></a></li>
@@ -31,7 +43,7 @@
                         <li>
                             <a href="https://www.naver.com/"><span>구조분양</span></a>
                         </li>
-                        <li>
+                        <li class="">
                             <a href="https://www.naver.com/"><span>네트워크</span></a>
                             <ul class="depth2">
                                 <li><a href="#"><span>동물찾기 네트워크</span></a></li>
@@ -41,7 +53,7 @@
                         <li>
                             <a href="https://www.naver.com/"><span>재회성공담</span></a>
                         </li>
-                        <li>
+                        <li class="">
                             <a href="https://www.naver.com/"><span>대처방법</span></a>
                             <ul class="depth2">
                                 <li><a href="#"><span>실종시 대처방법</span></a></li>
@@ -93,11 +105,233 @@
                     </div><!--//btn_wrap-->
                 </div><!--//swiper-->
             </section><!--//visual-->
-            <section class="find"></section><!--//find-->
+
+            <section class="find" id="skip_content">
+                <div class="wrapper">
+                    <div class="tit">
+                        <h2>찾습니다</h2>
+                    </div>
+                    <div class="list">
+                        <div class="tab_list">
+                            <ul role="tablist">
+                                <!--선택된 li에는 activ클래스 추가, button에 선택됨이라고 써움
+                                    aria-selected="true"가 선택된 것 false 선택이 안된 것
+                                    data-content li를 눌렀을 때 나타날 탭 콘텐츠 id값
+                                    li를 클릭했을 때 data-content값을 호출해서 id가 같은 요소만 보이게함
+                                    data-content는 내 마음대로 속성을 추가한 것 .... (값을 저장할 공간이 필요해서 - 표준위배임)
+                                data-link라던가 ... data-value 이렇게 data가 들어간 속성은 퍼블이 만든 속성-->
+                                <li role="tab" aria-selected="true" class="item1 active" data-content="tab_item1"><button>가족을<span class="">선택됨</span></button></li>
+                                <li role="tab" aria-selected="false"  class="item2 " data-content="tab_item2"><button>주인을<span class=""></span></button></li>
+                            </ul>
+                        </div><!--//tab_list-->
+                        <div class="tab_content">
+                            <!--가족을, 주인을 탭 콘텐츠를 구분 item1/2로 클래스명을 구분
+                            현재 선택된 탭 콘텐츠는 active클래스 추가-->
+                            <div class="tab_item item1 active" id="tab_item1">
+                                <h3 class="blind">가족을 찾습니다</h3>
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find01.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_lost">실종</strong>
+                                                <h4>웰시코기</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>경기도 파주시 금파 빗물 펌프 경기도 파주시 금파 빗물 펌프</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-05-23</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>실리콘 연한색 목줄을 착용 중</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find02.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_end">종료</strong>
+                                                <h4>랙돌</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>경상북도 경주시 외동읍 죽동앞 럭키 아파트 화단</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-05-20</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>파란눈 중성화 완료, 애교냥이</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find03.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_lost">실종</strong>
+                                                <h4>시베리안 허스키</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>경기도 수원시 권선구 스타벅스 부근</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-05-15</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>미용한지 얼마 안지나 몸털이 정돈되어 있음.</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find04.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_lost">실종</strong>
+                                                <h4>치즈 코리안 숏헤어 귀여운 고양이</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>광주광역시 동구 지산동 법원근처 공원</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-05-07</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>치즈 냥이이고 얼굴에 점이 있습니다.</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="tab_item item2" id="tab_item2">
+                                <h3 class="blind">주인을 찾습니다</h3>
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find05.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_see">목격</strong>
+                                                <h4>진돗개</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>서울특별시 마포구 경의선숲길 근처</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-05-22</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>흰색털 사람을 좋아함</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find06.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_end">종료</strong>
+                                                <h4>보더콜리</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>청주시 흥덕구 강서초등학교 운동장</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-05-17</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>흰색 검은색 섞인 털색에 1m가 넘는 길이</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find07.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_care">구조</strong>
+                                                <h4>러시안 블루</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>서울특별시 관악구 낙성대역 1번 출구 앞</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-05-11</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>전체적인 미용상태가 깨끗합니다.</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find08.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_see">목격</strong>
+                                                <h4>말티푸</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>강원도 춘천시 춘천 타프로스터</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-05-06</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>옷 착용</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div><!--//tab_content-->
+                    </div><!--//list-->
+                </div>
+            </section><!--//find-->
+
             <section class="slogan"></section><!--//slogan-->
             <section class="adopt"></section><!--//adopt-->
             <section class="review"></section><!--//review-->
         </main>
         <footer></footer>
+    </div>
 </body>
 </html>
