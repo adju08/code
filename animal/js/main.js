@@ -48,17 +48,13 @@ $(document).ready(function(){
             $('header').addClass('fixed')
         }
     })
-    $('header').on('mouseleave', function(){
+    $('header').on('mouseleave focusout', function(){
         /* 브라우저가 스크롤된 상태에서는 header에 fixed 클래스를 삭제하면 XX
             맨 위에 있을 때만 삭제해야함 */
         if(scrollig <= 0){
             //console.log('아웃')
             $('header').removeClass('fixed')
         } //if종료
-    })
-
-    $('header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li:last-child').on('focusout', function(){
-        $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
     })
 
     /********* 메뉴에 마우스를 오버했을 때 ********/
@@ -70,6 +66,9 @@ $(document).ready(function(){
     $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseleave', function(){
         //console.log('아웃!!')
         $(this).removeClass('over')
+    })
+    $('header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li:last-child').on('focusout', function(){
+        $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
     })
     /********* 모바일 ********/
     $('header .gnb .gnb_open').on('click', function(){
@@ -86,9 +85,17 @@ $(document).ready(function(){
     */
     $('header .gnb .gnb_wrap ul.depth1 > li:has(ul.depth2) > a').on('click', function(e){
         if(device_status == 'mobile'){
-            e.preventDefault() //a href로 페이지이동을 막는 명령
-            console.log('클릭했다')
-            $(this).parents('li').toggleClass('open')
+            e.preventDefault() //a href로 페이지 이동을 막는 명령
+            console.log('클릭했다!!!!!!!!!!!')
+
+            /* 선택한 메뉴 외 다른 메뉴 닫힘 설정 + 토글(with GPT) :  시작 */
+            let $clickedMenu = $(this).parents('li'); // 먼저 클릭한 메뉴에서 open 클래스 토글
+            $clickedMenu.toggleClass('open');
+
+            $('header .gnb .gnb_wrap ul.depth1 > li:has(ul.depth2)').not($clickedMenu).removeClass('open'); // 다른 메뉴들에서 open 클래스 제거
+            /* 선택한 메뉴 외 다른 메뉴 닫힘 설정 + 토글(with GPT) :  종료 */
+
+            //$(this).parents('li').toggleClass('open') -> 토글만 설정(다른메뉴 클릭시 내가 선택한 메뉴 외에 다른 창도 자동으로 닫기지 XX / 선생님이랑 같이 한 것)
         }
     })
     /******************************* header 와 메뉴 : 종료 ******************************/

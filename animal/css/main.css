@@ -70,7 +70,7 @@ header.fixed .logo a {
                 padding: 0 26px;
             }
             header .gnb .gnb_wrap ul.depth1 > li:has(ul.depth2) > a > span {
-                /* li하위에 depth2가 있는 a만 */
+                /* :has(ul.depth2) -> li하위에 depth2가 있는 a만 */
                 position: relative; /* after 정렬의 기준 */
                 display: block;
                 padding-right: 20px; /* 아이콘이 들어갈 만큼 */
