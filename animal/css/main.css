@@ -15,10 +15,13 @@
     text-align: center;
     color: #fff;
     padding: 10px 0;
-    transform: translateX(-120%);
+    position: absolute;
+    left: 0;
+    top: -1000px;
+    width: 100%;
 }
 .skip_nav a:focus {
-    transform: translateX(0);
+    top: 0;
 }
 
 header {
@@ -480,6 +483,11 @@ header.fixed .logo a {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: 0.5s;
+}
+/* 마우스 오버 효과 */
+.find .list .tab_content .tab_item > ul > li a:hover .photo img {
+    transform: scale3d(1.2,1.2,1);
 }
 .find .list .tab_content .tab_item > ul > li a .subject {
     display: flex;
@@ -533,6 +541,428 @@ header.fixed .logo a {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+@media screen and (max-width:1024px){
+            .find {
+                padding: 120px 0 100px 0;
+            }
+            .find .tit h2 {
+                font-size: 35px;
+            }
+            .find .list {
+                margin: 11px 0 0 0;
+            }
+            .find .list .tab_list ul {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+            }
+            .find .list .tab_list ul li button {
+                font-size: 21px;
+                padding: 0 19px;
+            }
+            .find .list .tab_content .tab_item > ul {
+                gap: 20px 16px;
+                flex-wrap: wrap; /* 줄바꿈 허용 */
+            }
+            .find .list .tab_content .tab_item > ul > li {
+                width: calc(50% - 8px);
+            }
+            .find .list .tab_content .tab_item > ul > li a .photo {
+                height: 290px;
+                border-radius: 24px;
+            }
+}/* @media */
+
+@media screen and (max-width:768px){
+            .find {
+                padding: 84px 0 74px 0;
+            }
+            .find .tit h2 {
+                font-size: 28px;
+            }
+            .find .list {
+                margin: 7px 0 0 0;
+            }
+            .find .list .tab_list ul {
+                gap: 5px;
+            }
+            .find .list .tab_list ul li button {
+                font-size: 16px;
+                padding: 0 15px;
+                border-radius: 26px;
+            }
+            .find .list .tab_list ul li.item1 button {
+                border: 2px solid #FF794C;
+            }
+            .find .list .tab_list ul li.item2 button {
+                border: 2px solid #BBBE33;
+            }
+            .find .list .tab_list ul li.item2.active button {
+                border: 2px solid #BBBE33;
+            }
+            .find .list .tab_content {
+                margin: 30px 0 0 0;
+            }
+            .find .list .tab_content .tab_item > ul > li a .photo {
+                height: 186px;
+                border-radius: 30px;
+            }
+            .find .list .tab_content .tab_item > ul > li a .subject {
+                display: block;
+                margin: 13px 0 0 0;
+                position: relative;/* strong 정렬의 기준 */
+            }
+            .find .list .tab_content .tab_item > ul > li a .subject strong {
+                padding: 0 13px;
+                line-height: 25px;
+                font-size: 16px;
+                position: absolute; /* subject를 기준으로 정렬 */
+                top: -48px;
+                left: 10px;
+            }
+            .find .list .tab_content .tab_item > ul > li a .subject h4 {
+                font-size: 19px;
+            }
+            .find .list .tab_content .tab_item > ul > li a ul.detail {
+                margin: 6px 0 0 0;
+            }
+            .find .list .tab_content .tab_item > ul > li a ul.detail li {
+                display: block;
+                line-height: 1.5;
+            }
+            .find .list .tab_content .tab_item > ul > li a ul.detail li:last-child {
+                display: none;
+            }
+            .find .list .tab_content .tab_item > ul > li a ul.detail li strong {
+                display: none;
+            }
+            .find .list .tab_content .tab_item > ul > li a ul.detail li span {
+                display: block;
+            }
+}/*@media*/
+
+
+
+
+
+.slogan {
+    background-color: #F6F3EE;
+    padding: 214px 0 188px 0;
+}
+.slogan .sub_tit {
+    font-size: 65px;
+    font-weight: 700;
+    line-height: 1.6;
+    color: #412D22;
+    text-align: center;
+}
+.slogan .sub_tit strong {
+    display: inline-block;
+    /***** 글자를 태그로 감싸고 inline-block을 주면
+        줄바꿈이 될 때 inline-block으로 묶인 글자는 단락으로 줄바꿈이 됨 *****/
+}
+.slogan .sub_tit span {
+    display: inline-block;
+    color: transparent; /* 높이가 안잡혀서 글자를 준 후 투명처리 */
+    position: relative; /* before 정렬의 기준 */
+}
+.slogan .sub_tit span::before {
+    position: absolute; /* span을 기준으로 정렬 */
+    content: "";
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* span의 영역에 위아래 가운데 좌우에 가운데 */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+.slogan .sub_tit span.item1::before {
+    width: 1.69em; /* 110 / 65 = 1.69 */
+    height: 1.23em; /* 80 / 65 = 1.23 */
+    background-image: url(../images/slogan01.png);
+}
+.slogan .sub_tit span.item2::before {
+    width: 1.52em;
+    height: 1.12em;
+    background-image: url(../images/slogan02.png);
+}
+.slogan .sub_tit span.item3::before {
+    width: 2.32em;
+    height: 1.2em;
+    background-image: url(../images/slogan03.png);
+}
+.slogan .sub_tit span.item4::before {
+    width: 1.27em;
+    height: 1.2em;
+    background-image: url(../images/slogan04.png);
+}
+.slogan .sub_tit span.item1 {
+    width: 2.24em; /* 브라우저 넓이가 변할 때 같이 변하게 하려고 em 단위로 줌 */
+    /* 넓이가 146px - 글자크기 65px
+        146 / 65 = 2.24 em
+        1em은 현재 해당 요소에 상속되 ㄴ글자크기를 1로봄 -> 상대크기
+    */
+}
+.slogan .sub_tit span.item2 {
+    width: 2.01em;
+}
+.slogan .sub_tit span.item3 {
+    width: 2.93em;
+}
+.slogan .sub_tit span.item4 {
+    width: 1.78em;
+}
+.slogan .ex {
+    margin: 32px 0 0 0;
+    text-align: center;
+}
+
+@media screen and (max-width:1300px){
+    .slogan .sub_tit {
+        font-size: 55px;
+    }
+}
+
+@media screen and (max-width:1024px){
+    .slogan .sub_tit {
+        font-size: 50px;
+    }
+    .slogan .ex br {
+        display: none;
+    }
+}/* @media */
+
+@media screen and (max-width:768px){
+            .slogan {
+                padding: 120px 0;
+            }
+            .slogan .sub_tit {
+                font-size: 32px;
+                line-height: 1.5;
+            }
+            .slogan .sub_tit br {
+                display: none;
+            }
+            .slogan .sub_tit span.item1 {
+                width: 2.24em; /* 브라우저 넓이가 변할 때 같이 변하게 하려고 em 단위로 줌 */
+                /* 넓이가 146px - 글자크기 65px
+                    146 / 65 = 2.24 em
+                    1em은 현재 해당 요소에 상속되 ㄴ글자크기를 1로봄 -> 상대크기
+                */
+            }
+            .slogan .sub_tit span.item2 {
+                width: 2.01em;
+            }
+            .slogan .sub_tit span.item3 {
+                width: 2.93em;
+            }
+            .slogan .sub_tit span.item4 {
+                width: 1.78em;
+            }
+            .slogan .ex {
+                margin: 26px 0 0 0;
+                text-align: center;
+            }
+}/* @media */
+
+
+
+
+
+.adopt {
+    background-color: #362E2C;
+    padding: 157px 0 277px 0;
+    color: #fff;
+    text-align: center;
+    position: relative; /* rolling 정렬의 기준 */
+}
+.adopt .tit h2 {
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.adopt .list {
+    margin: 37px 0 0 0;
+}
+.adopt .list .swiper-slide {
+    width: 300px;
+}
+.adopt .list .swiper-slide a {
+    display: block;
+}
+.adopt .list .swiper-slide a .photo {
+    overflow: hidden;
+    height: 300px;
+    border-radius: 50%; /* 동그라미 */
+}
+.adopt .list .swiper-slide a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+.adopt .list .swiper-slide a:hover .photo img {
+    transform: scale3d(1.2,1.2,1);
+}
+
+.adopt .list .swiper-slide a strong {
+    font-size: 20px;
+    font-weight: 700;
+    padding: 1px 24px;
+    background-color: #FF794C;
+    border-radius: 25px;
+    display: inline-block;
+    position: relative;
+    top: -16px;
+    /*  margin-top: -16px;
+        transform: translateY(-16px);
+        -> 으로도 조절 가능함
+    */
+}
+.adopt .list .swiper-slide a strong.cate_care {
+    background-color: #BBBE33;
+}
+.adopt .list .swiper-slide a h3 {
+    margin: 0 0 6px 0;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 1.2;
+}
+.adopt .list .swiper-slide a p {
+    color: rgba(255,255,255,0.8);
+    /* 1줄 제한 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.adopt .list_ctrl {
+    margin: 58px 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.adopt .list_ctrl button {
+    width: 27px;
+    height: 27px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    background-image: url("data:image/svg+xml,%3Csvg width='9' height='15' viewBox='0 0 9 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.84244 7.74312L8.1781 13.0788C8.35959 13.2603 8.4473 13.472 8.44126 13.714C8.43521 13.956 8.34144 14.1677 8.15995 14.3492C7.97847 14.5307 7.76674 14.6214 7.52476 14.6214C7.28278 14.6214 7.07104 14.5307 6.88956 14.3492L1.29982 8.77758C1.15463 8.63239 1.04574 8.46906 0.973149 8.28757C0.900555 8.10609 0.864258 7.9246 0.864258 7.74312C0.864258 7.56163 0.900555 7.38015 0.973149 7.19866C1.04574 7.01718 1.15463 6.85384 1.29982 6.70865L6.88956 1.11891C7.07104 0.93743 7.2858 0.849712 7.53383 0.855761C7.78186 0.861811 7.99662 0.955578 8.1781 1.13706C8.35959 1.31855 8.45033 1.53028 8.45033 1.77226C8.45033 2.01424 8.35959 2.22597 8.1781 2.40746L2.84244 7.74312Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.adopt .list_ctrl button.btn_next {
+    transform: rotate(180deg);
+}
+.adopt .list_ctrl .more {
+    line-height: 27px;
+    height: 27px;
+    padding: 0 18px;
+    border: 1px solid #fff;
+    border-radius: 15px;
+}
+
+.adopt .rolling {
+    position: absolute; /* adopt를 기준으로 정렬 */
+    bottom: -13px;
+    left: 0;
+    width: 100%;
+}
+.adopt .rolling p {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-family: "establish";
+    font-size: 120px;
+    color: rgba(255,255,255,0.05);
+    white-space: nowrap;
+
+    animation-name: rolling;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; /* 가속도 삭제 */
+}
+@keyframes rolling {
+    0% {left: 0;}
+    100% {left: -26.85em;}
+}
+
+@media screen and (max-width:1024px){
+    .adopt .tit h2 {
+        font-size: 35px;
+    }
+    .adopt .list {
+        margin: 31px 0 0 0;
+    }
+    .adopt .list .swiper-slide {
+        width: 250px;
+    }
+    .adopt .list .swiper-slide a .photo {
+        height: 250px;
+    }
+    .adopt .rolling p {
+        font-size: 90px;
+    }
+}/* @media */
+
+@media screen and (max-width:768px){
+            .adopt {
+                padding: 85px 0 160px 0;
+            }
+            .adopt .tit h2 {
+                font-size: 28px;
+            }
+            .adopt .list {
+                margin: 26px 0 0 0;
+            }
+            .adopt .list .swiper {
+                padding-left: 16px;
+                /* 사진 슬라이드 전 사진이 옆에 딱 붙어 있어서 여백을 주려할 때
+                   패딩으로 줄거면 js에 있는 spaceBetween 값만큼 줘야함 */
+            }
+            .adopt .list .swiper-slide {
+                width: 208px;
+            }
+            .adopt .list .swiper-slide a .photo {
+                height: 208px;
+            }
+            .adopt .list .swiper-slide a strong {
+                font-size: 16px;
+                padding: 2px 19px 0 19px;
+                top: -14px;
+                /*  margin-top: -16px;
+                    transform: translateY(-16px);
+                    -> 으로도 조절 가능함
+                */
+            }
+            .adopt .list .swiper-slide a h3 {
+                margin: 0 0 2px 0;
+                font-size: 19px;
+            }
+            .adopt .list_ctrl {
+                margin: 40px 0 0 0;
+            }
+            .adopt .list_ctrl button {
+                display: none;
+            }
+            .adopt .list_ctrl .more {
+                display: inline-block;
+                font-size: 15px;
+                line-height: 22px;
+                height: 22px;
+                padding: 0 18px;
+            }
+            
+            .adopt .rolling {
+                bottom: -5px;
+            }
+            .adopt .rolling p {
+                font-size: 60px;
+            }
+}/* @media */
+
+
 
 
 

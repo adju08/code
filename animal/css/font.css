@@ -12,3 +12,10 @@
 	font-display: normal;
 	src: url(../font/ElectricalSafetyBoldTTF.woff2) format("woff2");
 }
+@font-face {
+    font-family: "establish";
+	font-weight: 700;
+	font-display: normal;
+    src: url(../font/establishRetrosansOTF.woff) format("woff");
+    font-style: normal;
+}
