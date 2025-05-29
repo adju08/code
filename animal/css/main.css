@@ -897,7 +897,7 @@ header.fixed .logo a {
         font-size: 35px;
     }
     .adopt .list {
-        margin: 31px 0 0 0;
+        margin: 25px 0 0 0;
     }
     .adopt .list .swiper-slide {
         width: 250px;
@@ -912,13 +912,13 @@ header.fixed .logo a {
 
 @media screen and (max-width:768px){
             .adopt {
-                padding: 85px 0 160px 0;
+                padding: 100px 0 160px 0;
             }
             .adopt .tit h2 {
                 font-size: 28px;
             }
             .adopt .list {
-                margin: 26px 0 0 0;
+                margin: 12px 0 0 0;
             }
             .adopt .list .swiper {
                 padding-left: 16px;
