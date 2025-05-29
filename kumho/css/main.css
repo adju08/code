@@ -1,0 +1,10 @@
+@import url(font.css);
+@import url(default.css);
+@import url(common.css);
+
+strong {
+    font-weight: 700;
+}
+p {
+    font-weight: 400;
+}
