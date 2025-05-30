@@ -3,8 +3,11 @@
 @import url(common.css);
 
 strong {
-    font-weight: 700;
+    font-family: "DM Serif Display";
+    font-size: 65px;
+    line-height: 1.2;
+    color: #1d1d1d;
 }
-p {
-    font-weight: 400;
+p span {
+    font-family: "DM Serif Display";
 }
