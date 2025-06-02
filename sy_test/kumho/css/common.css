@@ -1,0 +1,95 @@
+/* 모든 페이지에 공통으로 들어가는 기본 스타일 */
+html, body {
+    font-family: "DM Serif Display", "Pretendard", serif;
+    /* 앞에 쓴 서체를 적용하고 지원이 안되면 두번째 서체를 적용 */
+    font-size: 17px;
+    font-weight: 400;
+    color: #555;
+    line-height: 1.5;
+    word-break: keep-all; /* 스페이스기준 단어별로 떨어지게 함 */
+    word-wrap: break-word; /* 단어가 너무 긴 경우 강제로 줄바꿈을 주는 방법 */
+}
+.wrapper {
+    width: 1260px;
+    margin: 0 auto; /* 가운데 정렬 */
+}
+#wrap {
+    position: relative; /* header 정렬의 기준 */
+    overflow-x: hidden; /* 가로스크롤 삭제 */
+    width: 100%;
+}
+
+
+
+@media screen and (max-width:1300px){ /* 1260 * 0.05 = 63 + 63 = 126 + 1260 = 1386 (%로 했을 때)*/
+                                      /* 20 + 20 = 40 + 1260 = 1300 (px로 했을 때)*/
+    .wrapper {
+        width: auto;
+        /*margin: 0 5%; /* 좌우여백 %로 주는 걸 옛날에 많이함 -> 요즘 다시 하는 중(뮤자인-하이붓다) */
+        margin: 0 20px;
+    }
+}
+@media screen and (max-width:768px){
+            /* 브라우저 넓이가 768px 이하에서만 작동 */
+            body {
+                font-size: 16px;
+            }
+}/*media 꽁다리*/
+
+
+
+/* 글자를 숨겨야하는 경우 blind 클래스를 적용
+    skip, blind 이렇게 두 이름으로 많이 부름 */
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    color: transparent; /* 글자가 투명 */
+}
+
+
+.skip_nav {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1000; /* 맨위 */
+    width: 100%;
+}
+.skip_nav a {
+    background-color: mediumslateblue;
+    display: block;
+    text-align: center;
+    color: #fff;
+    padding: 10px 0;
+    position: absolute;
+    left: 0;
+    top: -1000px;
+    width: 100%;
+}
+.skip_nav a:focus {
+    top: 0;
+}
+
+/* 변수 */
+:root {
+    --header-h: 100px; /* header 높이 */
+    --tit-color: #272120;
+    --point-color: #C11221;
+    --bold-weight: 800;
+    --tit-font-size: 2.65rem; /* 45px / 17 = 2.65 */
+    --tit-line-height: 1.2;
+    --tit-ico: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 3.97336C0 4.11159 0.0201075 4.25484 0.0754117 4.39055C0.319253 4.99372 0.940168 5.36567 1.72951 5.05152C1.91805 4.97612 7.13927 2.87258 7.13927 2.87258C7.13927 2.87258 5.08295 8.08494 5.00503 8.27846C4.70588 9.02488 5.06536 9.70093 5.67622 9.92712C5.81196 9.97738 5.95274 10 6.091 10C6.59125 9.99749 7.03117 9.70344 7.24736 9.11536C7.28004 9.02739 9.85168 1.96783 9.90699 1.79945C9.93967 1.69892 10 1.46268 10 1.29932C10 0.949987 9.8718 0.620759 9.62293 0.371953C9.37909 0.12566 9.05229 0 8.70789 0C8.53947 0 8.40372 0.0301583 8.19759 0.0955014C8.07441 0.135712 1.44545 2.60116 0.879839 2.81226C0.314228 3.02337 -1.38094e-06 3.47575 0.00251245 3.97336' fill='%23ED1C24'/%3E%3C/svg%3E%0A");
+}
+@media screen and (max-width:1024px){
+    :root {
+        --header-h: 56px; /* header 높이 */
+    }
+}
+@media screen and (max-width:768px){
+    :root {
+        --tit-font-size: 1.88rem; /* 30px / 16 = 1.88 */
+    }
+}
