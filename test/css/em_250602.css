@@ -1,0 +1,120 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common_full.css);
+
+
+html, body {
+    font-family: "Pretendard", sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    color: #555;
+    line-height: 1.5;
+    word-break: keep-all; /* 글자 단어별로 떨어지게 함 */
+}
+/*html {
+    font-size: 17px;
+}
+body {
+    font-size: 1rem;
+}
+@media screen and (max-width:1024px){
+    html {
+        font-size: 14px;
+    }
+    body {
+        font-size: 1.21rem;
+    }
+}*/
+@media screen and (max-width:768px){
+    /*html {
+        font-size: 10px;
+    }
+    body {
+        font-size: 1.6rem;
+    }*/
+    html, body {
+        font-size: 16px;
+    }
+}
+
+.biz, .new, .banner {
+    margin: 50px 0;
+}
+
+.biz .tit h2 {
+    font-size: var(--tit-font-size);
+    font-weight: var(--tit-font-weight);
+    color: var(--tit-color);
+}
+.biz strong {
+    font-size: 2em;
+}
+.biz em {
+    font-size: 2rem;
+}
+.biz .btn_wrap {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7em;
+}
+.biz .btn_wrap .view {
+    /* 글자크기가 25px, 여백 30px 30px, 라운드 22px */
+    font-size: 1.47rem; /* 25 / 17 */
+    border: 1px solid #555;
+    border-radius: 1.29rem; /* 22 / 17 */
+    padding:  1.76rem; /* 2 / 17, 30 / 17 */
+}
+.biz .btn_wrap .more {
+    font-size: 1.47rem; /* 25 */
+    border: 1px solid #555;
+    border-radius: 0.88em; /* 22/25 = 0.88 */
+    padding:  1.2em; /* 2/25 = 0.08, 30/25 = 1.2 */
+    /* em -> 브라우저 글자(html에 선언된 글자크기) 사이즈의 변화에 맞춰 같이 줄어듬 */
+}
+@media screen and (max-width:1024px){
+    .biz .btn_wrap .view {
+        font-size: 1.2rem;
+    }
+    .biz .btn_wrap .more {
+        font-size: 1.2rem;
+    }
+}
+@media screen and (max-width:768px){
+    .biz .btn_wrap .view {
+        font-size: 0.8rem;
+    }
+    .biz .btn_wrap .more {
+        font-size: 0.8rem;
+    }
+}
+
+.new .tit h2 {
+    font-size: var(--tit-font-size);
+    font-weight: var(--tit-font-weight);
+    color: var(--tit-color);
+}
+.banner .tit h2 {
+    font-size: var(--tit-font-size);
+    font-weight: var(--tit-font-weight);
+    color: var(--tit-color);
+}
+
+
+
+
+
+:root { /* 변수 */
+    --tit-font-size: 2.35rem; /* 17px */
+    --tit-font-weight: 800;
+    --tit-color: #1d1d1d;
+}
+/*@media screen and (max-width:1024px){
+    :root {
+        --tit-font-size: 30px;
+    }
+}/* @media */
+/*@media screen and (max-width:768px){
+    :root {
+        --tit-font-size: 20px;
+    }
+}/* @media */
