@@ -16,24 +16,30 @@ $(document).ready(function(){
 
         loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
 
-        pagination: {  /* 몇개의 팝업이 있는지 보여주는 동그라미 */
-            el: '.swiper-pagination', /* 해당 요소의 class명 */
-            clickable: true,  /* 클릭하면 해당 팝업으로 이동할 것인지 값 */
-            type: 'fraction',  /* type fraction을 주면 paging이 숫자로 표시됨 */
-            renderBullet: function (index, className) {   /* paging에 특정 코드 넣기 */
-                return '<span class="' + className + '">' + (index + 1) + "</span>";
-            },
-        },
-        
-
-        //navigation: {  /* 이전, 다음 버튼 */
-            //nextEl: '.swiper-button-next',  /* 다음 버튼의 클래스명 */
-            //prevEl: '.swiper-button-prev',  
-        //},
-
+        // pagination: {  /* 몇개의 팝업이 있는지 보여주는 동그라미 */
+        //     el: '.swiper-pagination', /* 해당 요소의 class명 */
+        //     clickable: true,  /* 클릭하면 해당 팝업으로 이동할 것인지 값 */
+        //     type: 'fraction',  /* type fraction을 주면 paging이 숫자로 표시됨 */
+        //     renderBullet: function (index, className) {   /* paging에 특정 코드 넣기 */
+        //         return '<span class="' + className + '">' + (index + 1) + "</span>";
+        //     },
+        // },
     });
-    visual_swiper.autoplay.stop();  /* 일시정지 기능 */
-    visual_swiper.autoplay.start();  /* 재생 기능 */
+    // visual_swiper.autoplay.stop();  /* 일시정지 기능 */
+    // visual_swiper.autoplay.start();  /* 재생 기능 */
+
+    $('.visual .ctrl_wrap button.btn_stop').on('click', function(){
+        //console.log('정지버튼 클릭')
+        visual_swiper.autoplay.stop();
+        $(this).hide() //나를 숨김
+        $('.visual .ctrl_wrap button.btn_play').show() //play 버튼 나타남
+    })
+    $('.visual .ctrl_wrap button.btn_play').on('click', function(){
+        //console.log('재생버튼 클릭')
+        visual_swiper.autoplay.start()
+        $(this).hide() //나를 숨김
+        $('.visual .ctrl_wrap button.btn_stop').show() //stop 버튼 나타남
+    })
 
 /*************************** visual swiper 연결 : 종료 ***************************/
 
