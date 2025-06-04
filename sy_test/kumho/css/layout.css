@@ -1,5 +1,127 @@
 /* header와 footer 같이 모든 페이지 공통사항 저장 */
 
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: var(--header-h);
+    z-index: 100;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+header .logo a {
+    display: block;
+    width: 7.29em; /* 124 / 17 */
+    height: 2.43em; /* 41.33 / 17 */
+    background: url(../images/common/logo_w.svg) no-repeat center center / contain;
+}
+header .util {
+    display: flex;
+    align-items: center;
+    gap: 1.41em;
+}
+header .util .lang .lang_open {
+    padding-right: 0.88em;
+    position: relative; /* after */
+}
+header .util .lang .lang_open::after {
+    position: absolute;
+    content: "";
+    top: 0.59em;
+    right: 0;
+    width: 0.59em;
+    height: 0.29em;
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='5' viewBox='0 0 10 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 5L0 0H10L5 5Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+header .util .search .search_open {
+    width: 1.53em;
+    height: 1.53em;
+    background-image: url("data:image/svg+xml,%3Csvg width='19' height='19' viewBox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.5222 19L10.8722 12.35C10.3444 12.7722 9.7375 13.1065 9.05139 13.3528C8.36528 13.5991 7.63518 13.7222 6.86111 13.7222C4.94352 13.7222 3.3206 13.0581 1.99236 11.7299C0.66412 10.4016 0 8.7787 0 6.86111C0 4.94352 0.66412 3.3206 1.99236 1.99236C3.3206 0.66412 4.94352 0 6.86111 0C8.7787 0 10.4016 0.66412 11.7299 1.99236C13.0581 3.3206 13.7222 4.94352 13.7222 6.86111C13.7222 7.63518 13.5991 8.36528 13.3528 9.05139C13.1065 9.7375 12.7722 10.3444 12.35 10.8722L19 17.5222L17.5222 19ZM6.86111 11.6111C8.18056 11.6111 9.30208 11.1493 10.2257 10.2257C11.1493 9.30208 11.6111 8.18056 11.6111 6.86111C11.6111 5.54167 11.1493 4.42014 10.2257 3.49653C9.30208 2.57292 8.18056 2.11111 6.86111 2.11111C5.54167 2.11111 4.42014 2.57292 3.49653 3.49653C2.57292 4.42014 2.11111 5.54167 2.11111 6.86111C2.11111 8.18056 2.57292 9.30208 3.49653 10.2257C4.42014 11.1493 5.54167 11.6111 6.86111 11.6111Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 0.24em;
+    transform: translateY(0.15em);
+}
+
+/****************************** header에 fixed 클래스 추가 : 시작 ******************************/
+header.fixed,
+header.menu_over {
+    background-color: #fff;
+    color: var(--tit-color);
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.05);
+}
+header.fixed .logo a,
+header.menu_over .logo a {
+    background-image: url(../images/common/logo_c.svg);
+}
+header.fixed .util .lang .lang_open::after,
+header.menu_over .util .lang .lang_open::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='5' viewBox='0 0 10 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 5L0 0H10L5 5Z' fill='%23272120'/%3E%3C/svg%3E%0A");
+}
+header.fixed .util .search .search_open,
+header.menu_over .util .search .search_open {
+    background-image: url("data:image/svg+xml,%3Csvg width='19' height='19' viewBox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.5222 19L10.8722 12.35C10.3444 12.7722 9.7375 13.1065 9.05139 13.3528C8.36528 13.5991 7.63518 13.7222 6.86111 13.7222C4.94352 13.7222 3.3206 13.0581 1.99236 11.7299C0.66412 10.4016 0 8.7787 0 6.86111C0 4.94352 0.66412 3.3206 1.99236 1.99236C3.3206 0.66412 4.94352 0 6.86111 0C8.7787 0 10.4016 0.66412 11.7299 1.99236C13.0581 3.3206 13.7222 4.94352 13.7222 6.86111C13.7222 7.63518 13.5991 8.36528 13.3528 9.05139C13.1065 9.7375 12.7722 10.3444 12.35 10.8722L19 17.5222L17.5222 19ZM6.86111 11.6111C8.18056 11.6111 9.30208 11.1493 10.2257 10.2257C11.1493 9.30208 11.6111 8.18056 11.6111 6.86111C11.6111 5.54167 11.1493 4.42014 10.2257 3.49653C9.30208 2.57292 8.18056 2.11111 6.86111 2.11111C5.54167 2.11111 4.42014 2.57292 3.49653 3.49653C2.57292 4.42014 2.11111 5.54167 2.11111 6.86111C2.11111 8.18056 2.57292 9.30208 3.49653 10.2257C4.42014 11.1493 5.54167 11.6111 6.86111 11.6111Z' fill='%23272120'/%3E%3C/svg%3E%0A");
+}
+/****************************** header에 fixed 클래스 추가 : 끝 ******************************/
+
+
+@media screen and (min-width:1025px){
+    header .gnb .gnb_bg,
+    header .gnb .gnb_util,
+    header .gnb .gnb_open,
+    header .gnb .gnb_close {
+        display: none; /* 숨김 / 모바일에서 나타남 */
+    }
+    header .gnb .gnb_wrap ul.depth1 {
+        display: flex;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li {
+        width: 8.06em;
+        text-align: center;
+        position: relative; /* depth2 */
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > a {
+        display: block;
+        line-height: var(--header-h);
+        font-size: 1.35rem;
+        font-weight: var(--bold-weight);
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
+        position: absolute; /* li */
+        left: 0;
+        top: var(--header-h);
+        width: 100%;
+        padding: 1.18em 0 0 0;
+    }
+
+    /****************************** menu_over 추가 : 시작 ******************************/
+    header.menu_over::before {
+        content: "";
+        position: absolute; /* header */
+        left: 0;
+        top: 0;
+        z-index: -1;
+        width: 100%;
+        height: 22.11em;
+        background-color: #fff;
+        box-shadow: 0 4px 10px 0 rgba(0,0,0,0.05);
+    }
+}
+
+
+
+
+
+
+
+
 footer {
-    margin: 500px 0 0 0;
+    margin: 1000px 0 0 0;
 }
