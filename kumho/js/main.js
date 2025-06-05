@@ -92,9 +92,8 @@ const news_swiper = new Swiper('.news .swiper', { /* 팝업을 감싼는 요소�
 });
 
 
-$('.news .ctrl_wrap .swiper-scrollbar').on('click', function(){
-    $(this).addClass('draging')
-})
+
+
 /*************************** news swiper 연결 : 종료 ***************************/
 
 

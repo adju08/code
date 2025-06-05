@@ -508,7 +508,7 @@ section .tit h2 {
     background: #999;
 }
 .news .ctrl_wrap .swiper-scrollbar .swiper-scrollbar-drag:hover,
-.news .ctrl_wrap .swiper-scrollbar.draging .swiper-scrollbar-drag {
+.news .ctrl_wrap .swiper-scrollbar.active .swiper-scrollbar-drag {
     background: var(--point-color);
 }
 .news .ctrl_wrap .group2 {
