@@ -12,6 +12,7 @@ header {
     justify-content: space-between;
     align-items: center;
     color: #fff;
+    transition: top 0.5s;
 }
 header .logo a {
     display: block;
@@ -51,7 +52,12 @@ header .util .search .search_open {
 }
 
 /****************************** 아래로 스크롤 내릴 때 header가 사라짐 ******************************/
-
+header.fixed.gnb_up {
+    top: var(--header-h-m);
+}
+header.fixed.gnb_up.menu_over {
+    top: 0;
+}
 
 /****************************** header에 fixed 클래스 추가 : 시작 ******************************/
 header.fixed,
@@ -156,6 +162,156 @@ header.menu_over .util .search .search_open {
     }
     /****************************** menu_over 추가 : 끝 ******************************/
 }
+
+@media screen and (max-width:1024px){
+            header {
+                padding-right: 0;
+            }
+            header .logo a {
+                width: 5.31em;
+                height: 1.75em;
+            }
+            header .util {
+                display: none;
+            }
+            header .gnb .gnb_util {
+                display: none;
+                position: absolute;
+                top: 0.94em;
+                left: 20px;
+                gap: 1.25em;
+            }
+            header .gnb .gnb_util .lang .lang_open {
+                padding-right: 0.94em;
+                position: relative;
+            }
+            header .gnb .gnb_util .lang .lang_open::after {
+                content: "";
+                position: absolute;
+                top: 0.62em;
+                right: 0;
+                width: 0.63em;
+                height: 0.31em;
+                background-image: url("data:image/svg+xml,%3Csvg width='10' height='5' viewBox='0 0 10 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 5L0 0H10L5 5Z' fill='%23272120'/%3E%3C/svg%3E%0A");
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+            header .gnb .gnb_util .search .search_open {
+                width: 1.19em;
+                height: 1.19em;
+                background-image: url("data:image/svg+xml,%3Csvg width='19' height='19' viewBox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.5222 19L10.8722 12.35C10.3444 12.7722 9.7375 13.1065 9.05139 13.3528C8.36528 13.5991 7.63518 13.7222 6.86111 13.7222C4.94352 13.7222 3.3206 13.0581 1.99236 11.7299C0.66412 10.4016 0 8.7787 0 6.86111C0 4.94352 0.66412 3.3206 1.99236 1.99236C3.3206 0.66412 4.94352 0 6.86111 0C8.7787 0 10.4016 0.66412 11.7299 1.99236C13.0581 3.3206 13.7222 4.94352 13.7222 6.86111C13.7222 7.63518 13.5991 8.36528 13.3528 9.05139C13.1065 9.7375 12.7722 10.3444 12.35 10.8722L19 17.5222L17.5222 19ZM6.86111 11.6111C8.18056 11.6111 9.30208 11.1493 10.2257 10.2257C11.1493 9.30208 11.6111 8.18056 11.6111 6.86111C11.6111 5.54167 11.1493 4.42014 10.2257 3.49653C9.30208 2.57292 8.18056 2.11111 6.86111 2.11111C5.54167 2.11111 4.42014 2.57292 3.49653 3.49653C2.57292 4.42014 2.11111 5.54167 2.11111 6.86111C2.11111 8.18056 2.57292 9.30208 3.49653 10.2257C4.42014 11.1493 5.54167 11.6111 6.86111 11.6111Z' fill='%23272120'/%3E%3C/svg%3E%0A");
+                background-position: center center;
+                background-repeat: no-repeat;
+                transform: translateY(0.1em);
+            }
+            header .gnb .gnb_open {
+                display: block;
+                width: var(--header-h);
+                height: var(--header-h);
+                background-image: url("data:image/svg+xml,%3Csvg width='31' height='31' viewBox='0 0 31 31' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_91_2394' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='31' height='31'%3E%3Crect width='31' height='31' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_91_2394)'%3E%3Cpath d='M5.16667 9.04134C4.80069 9.04134 4.49392 8.91756 4.24635 8.66999C3.99878 8.42242 3.875 8.11565 3.875 7.74967C3.875 7.3837 3.99878 7.07693 4.24635 6.82936C4.49392 6.58179 4.80069 6.45801 5.16667 6.45801H25.8333C26.1993 6.45801 26.5061 6.58179 26.7536 6.82936C27.0012 7.07693 27.125 7.3837 27.125 7.74967C27.125 8.11565 27.0012 8.42242 26.7536 8.66999C26.5061 8.91756 26.1993 9.04134 25.8333 9.04134H5.16667ZM5.16667 24.5413C4.80069 24.5413 4.49392 24.4176 4.24635 24.17C3.99878 23.9224 3.875 23.6156 3.875 23.2497C3.875 22.8837 3.99878 22.5769 4.24635 22.3294C4.49392 22.0818 4.80069 21.958 5.16667 21.958H25.8333C26.1993 21.958 26.5061 22.0818 26.7536 22.3294C27.0012 22.5769 27.125 22.8837 27.125 23.2497C27.125 23.6156 27.0012 23.9224 26.7536 24.17C26.5061 24.4176 26.1993 24.5413 25.8333 24.5413H5.16667ZM5.16667 16.7913C4.80069 16.7913 4.49392 16.6676 4.24635 16.42C3.99878 16.1724 3.875 15.8656 3.875 15.4997C3.875 15.1337 3.99878 14.8269 4.24635 14.5794C4.49392 14.3318 4.80069 14.208 5.16667 14.208H25.8333C26.1993 14.208 26.5061 14.3318 26.7536 14.5794C27.0012 14.8269 27.125 15.1337 27.125 15.4997C27.125 15.8656 27.0012 16.1724 26.7536 16.42C26.5061 16.6676 26.1993 16.7913 25.8333 16.7913H5.16667Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+            header.fixed .gnb .gnb_open {
+                background-image: url("data:image/svg+xml,%3Csvg width='31' height='31' viewBox='0 0 31 31' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_91_2394' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='31' height='31'%3E%3Crect width='31' height='31' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_91_2394)'%3E%3Cpath d='M5.16667 9.04134C4.80069 9.04134 4.49392 8.91756 4.24635 8.66999C3.99878 8.42242 3.875 8.11565 3.875 7.74967C3.875 7.3837 3.99878 7.07693 4.24635 6.82936C4.49392 6.58179 4.80069 6.45801 5.16667 6.45801H25.8333C26.1993 6.45801 26.5061 6.58179 26.7536 6.82936C27.0012 7.07693 27.125 7.3837 27.125 7.74967C27.125 8.11565 27.0012 8.42242 26.7536 8.66999C26.5061 8.91756 26.1993 9.04134 25.8333 9.04134H5.16667ZM5.16667 24.5413C4.80069 24.5413 4.49392 24.4176 4.24635 24.17C3.99878 23.9224 3.875 23.6156 3.875 23.2497C3.875 22.8837 3.99878 22.5769 4.24635 22.3294C4.49392 22.0818 4.80069 21.958 5.16667 21.958H25.8333C26.1993 21.958 26.5061 22.0818 26.7536 22.3294C27.0012 22.5769 27.125 22.8837 27.125 23.2497C27.125 23.6156 27.0012 23.9224 26.7536 24.17C26.5061 24.4176 26.1993 24.5413 25.8333 24.5413H5.16667ZM5.16667 16.7913C4.80069 16.7913 4.49392 16.6676 4.24635 16.42C3.99878 16.1724 3.875 15.8656 3.875 15.4997C3.875 15.1337 3.99878 14.8269 4.24635 14.5794C4.49392 14.3318 4.80069 14.208 5.16667 14.208H25.8333C26.1993 14.208 26.5061 14.3318 26.7536 14.5794C27.0012 14.8269 27.125 15.1337 27.125 15.4997C27.125 15.8656 27.0012 16.1724 26.7536 16.42C26.5061 16.6676 26.1993 16.7913 25.8333 16.7913H5.16667Z' fill='%23272120'/%3E%3C/g%3E%3C/svg%3E%0A");
+            }
+            header .gnb .gnb_wrap {
+                position: fixed;
+                right: -100%;
+                top: 0;
+                z-index: 10;/* gnb_bg 때문에 깔리는 걸 위로 올려줌 */
+                width: calc(100% - 2.5em);
+                max-width: 28.13em;
+                height: 100%;
+                background-color: #fff;
+                color: var(--tit-color);
+                transition: 0.5s;
+            }
+            header .gnb .gnb_wrap ul.depth1 {
+                margin-top: var(--header-h);
+                padding: 0 20px;
+                height: calc(100% - var(--header-h));
+                overflow-x: hidden;
+                overflow-y: auto;
+                border-top: 1px solid #ccc;
+            }
+            header .gnb .gnb_wrap ul.depth1 > li {
+                border-bottom: 1px solid #ededed;
+            }
+            header .gnb .gnb_wrap ul.depth1 > li > a {
+                position: relative;
+                display: block;
+                font-weight: var(--bold-weight);
+                font-size: 1.16rem;
+                line-height: var(--tit-line-height);
+                padding: 1em 0;
+            }
+            header .gnb .gnb_wrap ul.depth1 > li > a::after {
+                content: "";
+                position: absolute;
+                top: 1.11em;
+                right: 0;
+                width: 1.11em;
+                height: 1.11em;
+                background-image: url("data:image/svg+xml,%3Csvg width='16' height='10' viewBox='0 0 16 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.99989 7.34602L14.2772 1.06872C14.4427 0.903168 14.6377 0.822474 14.862 0.82664C15.0864 0.830946 15.2814 0.915877 15.447 1.08143C15.6125 1.24713 15.6953 1.44213 15.6953 1.66643C15.6953 1.89074 15.6125 2.08574 15.447 2.25143L9.06718 8.64393C8.91649 8.79463 8.74767 8.90629 8.56072 8.97893C8.37378 9.05157 8.18683 9.08789 7.99989 9.08789C7.81295 9.08789 7.626 9.05157 7.43906 8.97893C7.25211 8.90629 7.08329 8.79463 6.9326 8.64393L0.53989 2.25143C0.374334 2.08574 0.29371 1.88858 0.298015 1.65997C0.302321 1.43136 0.387251 1.23428 0.552807 1.06872C0.718362 0.903168 0.913363 0.820391 1.13781 0.820391C1.36211 0.820391 1.55704 0.903168 1.7226 1.06872L7.99989 7.34602Z' fill='%23272120'/%3E%3C/svg%3E%0A");
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+            header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
+                display: none;
+                background-color: #f7f7f7;
+                padding: 20px 0 20px 20px;
+                color: var(--base-color);
+            }
+            header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a {
+                display: block;
+                line-height: 1.8;
+            }
+            header .gnb .gnb_close {
+                display: none;
+                position: absolute; /* gnb_wrap */
+                top: 0;
+                right: 0;
+                width: var(--header-h);
+                height: var(--header-h);
+                background-image: url("data:image/svg+xml,%3Csvg width='31' height='31' viewBox='0 0 31 31' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_91_2534' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='31' height='31'%3E%3Crect width='31' height='31' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_91_2534)'%3E%3Cpath d='M8.26637 24.0941L6.90527 22.733L14.1386 15.4997L6.90527 8.26637L8.26637 6.90527L15.4997 14.1386L22.733 6.90527L24.0941 8.26637L16.8608 15.4997L24.0941 22.733L22.733 24.0941L15.4997 16.8608L8.26637 24.0941Z' fill='%23272120'/%3E%3C/g%3E%3C/svg%3E%0A");
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+            header .gnb .gnb_bg {
+                display: none;
+                position: fixed;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.6);
+            }
+           
+            /********** 2차 메뉴 열렸을 때 *********/
+            header .gnb .gnb_wrap ul.depth1 > li.open > a {
+                color: var(--point-color);
+            }
+            header .gnb .gnb_wrap ul.depth1 > li.open > a::after {
+                background-image: url("data:image/svg+xml,%3Csvg width='16' height='10' viewBox='0 0 16 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.99989 7.34602L14.2772 1.06872C14.4427 0.903168 14.6377 0.822474 14.862 0.82664C15.0864 0.830946 15.2814 0.915877 15.447 1.08143C15.6125 1.24713 15.6953 1.44213 15.6953 1.66643C15.6953 1.89074 15.6125 2.08574 15.447 2.25143L9.06718 8.64393C8.91649 8.79463 8.74767 8.90629 8.56072 8.97893C8.37378 9.05157 8.18683 9.08789 7.99989 9.08789C7.81295 9.08789 7.626 9.05157 7.43906 8.97893C7.25211 8.90629 7.08329 8.79463 6.9326 8.64393L0.53989 2.25143C0.374334 2.08574 0.29371 1.88858 0.298015 1.65997C0.302321 1.43136 0.387251 1.23428 0.552807 1.06872C0.718362 0.903168 0.913363 0.820391 1.13781 0.820391C1.36211 0.820391 1.55704 0.903168 1.7226 1.06872L7.99989 7.34602Z' fill='%23C11221'/%3E%3C/svg%3E%0A");
+                transform: rotate(180deg);
+            }
+            
+            /**********메뉴가 열렸을 때*********/
+            header.menu_open .gnb .gnb_util {
+                display: flex;
+            }
+            header.menu_open .gnb .gnb_wrap {
+                right: 0;
+            }
+            header.menu_open .gnb .gnb_close {
+                display: block;
+            }
+            header.menu_open .gnb .gnb_bg {
+                display: block;
+            }
+
+}/* @media */
 
 
 
