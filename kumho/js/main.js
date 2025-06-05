@@ -94,6 +94,17 @@ const news_swiper = new Swiper('.news .swiper', { /* 팝업을 감싼는 요소�
 
 
 
+
+// 마우스를 누르면 active 추가
+$('.news .ctrl_wrap .swiper-scrollbar .swiper-scrollbar-drag').on('pointerdown', function(){
+    $(this).addClass('active')
+});
+
+$('.news .ctrl_wrap .swiper-scrollbar .swiper-scrollbar-drag').on('pointerup', function () {
+    $(this).removeClass('active');
+});
+
+
 /*************************** news swiper 연결 : 종료 ***************************/
 
 

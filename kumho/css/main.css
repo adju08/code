@@ -507,8 +507,7 @@ section .tit h2 {
 .news .ctrl_wrap .swiper-scrollbar .swiper-scrollbar-drag {
     background: #999;
 }
-.news .ctrl_wrap .swiper-scrollbar .swiper-scrollbar-drag:hover,
-.news .ctrl_wrap .swiper-scrollbar.active .swiper-scrollbar-drag {
+.news .ctrl_wrap .swiper-scrollbar .swiper-scrollbar-drag.active {
     background: var(--point-color);
 }
 .news .ctrl_wrap .group2 {
@@ -618,6 +617,7 @@ section .tit h2 {
     height: 20.47em;
     display: flex; /* ul을 list의 높이에 위아래 가운데 정렬 */
     align-items: center;
+    transition: 0.5s;
 }
 .service .list[data-bg="bg1"] {
     background-image: url(../images/main/service02.jpg);

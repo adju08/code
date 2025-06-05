@@ -113,3 +113,12 @@ function scroll_chk(){
         $('header').removeClass('fixed')
     }
 }
+
+$('footer .top').on('click', function(){
+    //console.log('클릭했다')
+    //$(window).scrollTop(0)
+
+    $('html, body').animate({
+        scrollTop: 0
+    }, 500)
+})
