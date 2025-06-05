@@ -50,6 +50,9 @@ header .util .search .search_open {
     transform: translateY(0.15em);
 }
 
+/****************************** 아래로 스크롤 내릴 때 header가 사라짐 ******************************/
+
+
 /****************************** header에 fixed 클래스 추가 : 시작 ******************************/
 header.fixed,
 header.menu_over {
@@ -93,13 +96,39 @@ header.menu_over .util .search .search_open {
         font-size: 1.35rem;
         font-weight: var(--bold-weight);
     }
+    header .gnb .gnb_wrap ul.depth1 > li.over > a {
+        color: var(--point-color);
+    }
+    header .gnb .gnb_wrap ul.depth1 > li.over > a > span {
+        position: relative; /* before */
+    }
+    header .gnb .gnb_wrap ul.depth1 > li.over > a > span::before {
+        content: "";
+        position: absolute; /* span */
+        bottom: -1.5em;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: var(--point-color);
+    }
     header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
+        display: none;
         position: absolute; /* li */
         left: 0;
         top: var(--header-h);
         width: 100%;
         padding: 1.18em 0 0 0;
     }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a {
+        display: block;
+        line-height: 2;
+        color: var(--base-color);
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a:hover {
+        font-weight: var(--bold-weight);
+        color: var(--point-color);
+    }
+
 
     /****************************** menu_over 추가 : 시작 ******************************/
     header.menu_over::before {
@@ -113,6 +142,19 @@ header.menu_over .util .search .search_open {
         background-color: #fff;
         box-shadow: 0 4px 10px 0 rgba(0,0,0,0.05);
     }
+    header.menu_over::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: var(--header-h);
+        width: 100%;
+        height: 1px;
+        background-color: #ededed;
+    }
+    header.menu_over .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
+        display: block;
+    }
+    /****************************** menu_over 추가 : 끝 ******************************/
 }
 
 
