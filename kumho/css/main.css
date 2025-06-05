@@ -674,3 +674,42 @@ section .tit h2 {
 .service .list ul li a:hover .more {
     display: inline-block;
 }
+@media screen and (min-width:1025px) and (max-width:1630px) {
+    .service .list ul li a {
+        margin: 0 8%;
+        padding: 1.8em 0;
+    }
+    .service .list ul li a h3 {
+        font-size: 1.70rem;
+    }
+}
+@media screen and (max-width:1024px){
+            .service .list {
+                height: auto;
+                display: block;
+            }
+            .service .list ul {
+                display: block;
+                width: auto;
+                padding: 8px 0;
+            }
+            .service .list ul li {
+                width: auto;
+            }
+            .service .list ul li + li::before {
+                display: none;
+            }
+            .service .list ul li a {
+                display: inline-block;
+                margin: 8px 0;
+                padding: 2em 0;
+                width: 50%;
+                min-width: 300px;
+            }
+            .service .list ul li a h3 {
+                font-size: 1.44rem;
+            }
+            .service .list ul li a .more {
+                display: none;
+            }
+}/*@media*/
