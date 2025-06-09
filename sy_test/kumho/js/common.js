@@ -78,7 +78,7 @@ $(document).ready(function(){
     })
 
 
-})
+})//$(document).ready
 
 
 function resize_chk(){

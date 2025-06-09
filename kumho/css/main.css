@@ -332,6 +332,9 @@ section .tit h2 {
     .biz .list ul li:hover .txt a {
         opacity: 1;
     }
+
+
+    /*오버하지 않은 li들에 들어가는 효과*/
     .biz .list ul:hover li:not(:hover) .photo::before {
         opacity: 0;
     }

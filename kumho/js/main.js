@@ -60,7 +60,7 @@ $(document).ready(function(){
 
 
 /*************************** news swiper 연결 : 시작 ***************************/
-const news_swiper = new Swiper('.news .swiper', { /* 팝업을 감싼는 요소의 class명 */
+const news_swiper = new Swiper('.news .swiper', { /* 팝업을 감싸는 요소의 class명 */
 	slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
 	spaceBetween: 20, /* 팝업과 팝업 사이 여백 */
 	breakpoints: {
