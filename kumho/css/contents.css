@@ -147,6 +147,7 @@
 }
 .ctn_map .call .list ul li {
     display: flex;
+    gap: 4.47em;
     margin-bottom: 1.71em;
 }
 .ctn_map .call .list ul li strong {
@@ -155,7 +156,6 @@
     font-weight: var(--bold-weight);
     color: var(--tit-color);
     line-height: var(--tit-line-height);
-    width: 7.18em;
 }
 .ctn_map .call .ex p {
     color: #767676;
@@ -197,6 +197,7 @@
 }
 .ctn_map .Public .list ul li {
     display: flex;
+    gap: 4.47em;
     margin-bottom: 1.71em;
 }
 .ctn_map .Public .list ul li strong {
@@ -205,7 +206,6 @@
     font-weight: var(--bold-weight);
     color: var(--tit-color);
     line-height: var(--tit-line-height);
-    width: 7.18em;
 }
 @media screen and (max-width:1024px){
     .ctn_map .map {
@@ -264,7 +264,6 @@
             }
             .ctn_map .call .list ul li strong {
                 font-size: 1.13rem;
-                width: 6.22em;
             }
             .ctn_map .call .ex a {
                 font-size: 0.81rem;
@@ -295,6 +294,5 @@
             }
             .ctn_map .Public .list ul li strong {
                 font-size: 1.13rem;
-                width: 6.22em;
             }
 }/* @media */
