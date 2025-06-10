@@ -149,10 +149,13 @@
 .ctn_map .call .list ul li {
     display: flex;
 <<<<<<< HEAD
+<<<<<<< HEAD
     gap: 4.47em;
 =======
     justify-content: space-between;
 >>>>>>> 3e0fb98496bb7419bd3c95c7b95acdb78d7f595e
+=======
+>>>>>>> parent of a1a2ebc (.)
     margin-bottom: 1.71em;
     width: 76.11%;
 }
@@ -163,11 +166,15 @@
     color: var(--tit-color);
     line-height: var(--tit-line-height);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 }
 .ctn_map .call .list ul li p {
     width: calc(100% - 9.29em);
 >>>>>>> 3e0fb98496bb7419bd3c95c7b95acdb78d7f595e
+=======
+    width: 7.18em;
+>>>>>>> parent of a1a2ebc (.)
 }
 .ctn_map .call .ex p {
     color: #767676;
@@ -210,10 +217,13 @@
 .ctn_map .Public .list ul li {
     display: flex;
 <<<<<<< HEAD
+<<<<<<< HEAD
     gap: 4.47em;
 =======
     justify-content: space-between;
 >>>>>>> 3e0fb98496bb7419bd3c95c7b95acdb78d7f595e
+=======
+>>>>>>> parent of a1a2ebc (.)
     margin-bottom: 1.71em;
     width: 76.11%;
 }
@@ -224,11 +234,15 @@
     color: var(--tit-color);
     line-height: var(--tit-line-height);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 }
 .ctn_map .Public .list ul li p {
     width: calc(100% - 9.29em);
 >>>>>>> 3e0fb98496bb7419bd3c95c7b95acdb78d7f595e
+=======
+    width: 7.18em;
+>>>>>>> parent of a1a2ebc (.)
 }
 @media screen and (max-width:1024px){
     .ctn_map .map {
@@ -288,11 +302,15 @@
             .ctn_map .call .list ul li strong {
                 font-size: 1.13rem;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             }
             .ctn_map .call .list ul li p {
                 width: calc(100% - 7em);
 >>>>>>> 3e0fb98496bb7419bd3c95c7b95acdb78d7f595e
+=======
+                width: 6.22em;
+>>>>>>> parent of a1a2ebc (.)
             }
             .ctn_map .call .ex a {
                 font-size: 0.81rem;
@@ -324,10 +342,14 @@
             .ctn_map .Public .list ul li strong {
                 font-size: 1.13rem;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             }
             .ctn_map .Public .list ul li p {
                 width: calc(100% - 7em);
 >>>>>>> 3e0fb98496bb7419bd3c95c7b95acdb78d7f595e
+=======
+                width: 6.22em;
+>>>>>>> parent of a1a2ebc (.)
             }
 }/* @media */
