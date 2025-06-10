@@ -89,7 +89,6 @@
 }/*@media*/
 
 /************************** 평가 시작 ***********************/
-/* --> 시간초과작업 - list의 li와 p 너비 설정 */
 .ctn_map .add {
     margin: 2.76em 0 5.47em 0;
     display: flex;
@@ -149,7 +148,6 @@
 .ctn_map .call .list ul li {
     display: flex;
     margin-bottom: 1.71em;
-    width: 76.11%;
 }
 .ctn_map .call .list ul li strong {
     display: block;
@@ -200,7 +198,6 @@
 .ctn_map .Public .list ul li {
     display: flex;
     margin-bottom: 1.71em;
-    width: 76.11%;
 }
 .ctn_map .Public .list ul li strong {
     display: block;
@@ -262,8 +259,8 @@
                 padding-left: 0;
             }
             .ctn_map .call .list ul li {
+                gap: 2.81em;
                 margin-bottom: 1.19em;
-                width: auto;
             }
             .ctn_map .call .list ul li strong {
                 font-size: 1.13rem;
@@ -293,8 +290,8 @@
                 padding-left: 0;
             }
             .ctn_map .Public .list ul li {
+                gap: 2.81em;
                 margin-bottom: 1.19em;
-                width: auto;
             }
             .ctn_map .Public .list ul li strong {
                 font-size: 1.13rem;
