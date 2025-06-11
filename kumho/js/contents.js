@@ -10,6 +10,7 @@ $(document).ready(function(){
     let obj_nav_area = $('.ctn_history')
     let obj_nav_start //보이기 시작하는 스크롤값
     let obj_nav_end //보이는 마지막 스크롤값
+    let nav_m = $('.sub_visual .breadcrumb ol')
     /*
     eq -> 몇번째
     offset -> 위치를 시작점으로 하는 위치값
@@ -22,8 +23,10 @@ $(document).ready(function(){
 
     function nav_show(){
         obj_nav_start = obj_nav_area.offset().top
-        obj_nav_end = obj_nav_start + obj_nav_area.height() - window_h
-        // console.log('스크롤', scrolling, '종료', obj_nav_end)
+        // obj_nav_end = obj_nav_start + obj_nav_area.height() - window_h //선생님이랑
+        obj_nav_end = obj_nav_area.height() + nav_m.offset().top
+        console.log('스크롤', scrolling, '종료', obj_nav_end)
+
         if((scrolling > obj_nav_start) && (scrolling < obj_nav_end)){ /* && = and */
             obj_nav.addClass('active')
         }else{
