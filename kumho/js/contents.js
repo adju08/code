@@ -24,7 +24,13 @@ $(document).ready(function(){
     function nav_show(){
         obj_nav_start = obj_nav_area.offset().top
         // obj_nav_end = obj_nav_start + obj_nav_area.height() - window_h //선생님이랑
+
         obj_nav_end = obj_nav_area.height() + nav_m.offset().top
+        /******************************
+            obj_nav_area 값에다 .sub_visual .breadcrumb ol 더 한 값에서 사라지는 게
+            맘에 들어서let nav_m을 선언했는데 이렇게 하면 너무 지저분해지는지 여쭤보기
+        ******************************/
+
         console.log('스크롤', scrolling, '종료', obj_nav_end)
 
         if((scrolling > obj_nav_start) && (scrolling < obj_nav_end)){ /* && = and */
