@@ -82,6 +82,15 @@ $(document).ready(function(){ //문서가 로딩되고 단 1번 실행
     })
 
 
+    /* top 버튼을 클릭하면 상단으로 스크롤 */
+    $('footer .top').on('click', function(){
+        // console.log('클릭했다')
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500)
+    })
+
+
 
 })//$(document).ready
 
@@ -114,11 +123,3 @@ function scroll_chk(){
     }
 }
 
-$('footer .top').on('click', function(){
-    //console.log('클릭했다')
-    //$(window).scrollTop(0)
-
-    $('html, body').animate({
-        scrollTop: 0
-    }, 500)
-})
