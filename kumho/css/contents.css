@@ -686,3 +686,182 @@
                 padding: 0.44em 1.9em;
             }
 }/* @media */
+
+
+
+
+/* 홍보센터 - 금호뉴스 - 상담신청 */
+.ctn_notice {
+    margin: 3.06em 0 9.41em 0;
+}
+.ctn_notice h2 {
+    font-size: 1.76rem;
+    font-weight: var(--bold-weight);
+    color: var(--tit-color);
+    line-height: var(--tit-line-height);
+    margin-bottom: 23px;
+}
+.ctn_notice .agree_box {
+    border: 1px solid #ccc;
+    border-radius: 0.59em;
+    padding: 1.76em;
+    height: 16.29em;
+    overflow-x: hidden;
+    overflow-y: auto;
+    word-break: normal;
+    /* p에 있는 단어 중 긴 단어가 있어서 브라우저가 줄어들다가 안줄어듬
+    -> 그래서 줄바꿈하라고 word-break를 풀어줌 */
+}
+.ctn_notice .agree_chk {
+    margin: 1.53em 0 6.24em 0;
+    display: flex;
+    justify-content: center;
+    gap: 2.4em;
+}
+.ctn_notice .agree_chk .item input[type="radio"] {
+    display: none;
+}
+.ctn_notice .agree_chk .item label {
+    position: relative; /* before 정렬의 기준 */
+    color: var(--tit-color);
+    font-size: 1.12rem;
+    padding-left: 1.47em;
+    cursor: pointer; /* 마우스 포인터 손바닥 */
+}
+.ctn_notice .agree_chk .item label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 1px;
+    width: 1.16em;
+    height: 1.16em;
+    border: 1px solid var(--tit-color);
+    border-radius: 50%;
+}
+
+/* 라디오가 체크 되었을 때 label 디자인  */
+.ctn_notice .agree_chk .item input[type="radio"]:checked + label::before {
+    border-color: var(--point-color);
+    background-color: var(--point-color);
+    background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_353_265' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='18' height='18'%3E%3Crect x='0.200195' y='0.199219' width='17.6' height='17.6' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_353_265)'%3E%3Cpath d='M7.20403 13.7302L2.69238 9.21853L4.07948 7.83161L7.20403 10.9562L13.9219 4.23828L15.309 5.6252L7.20403 13.7302Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.ctn_notice .regist {
+    border-top: 3px solid var(--tit-color);
+}
+.ctn_notice .regist .item {
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    gap: 1.94em;
+}
+.ctn_notice .regist .item label {
+    max-width: 11.76em;
+    width: 20%;
+    /* 브라우저가 줄어들었을 때는 퍼센트로 너비가 들어감 */
+
+    font-size: 1.06rem;
+    font-weight: var(--bold-weight);
+    color: var(--tit-color);
+    text-align: center;
+    background-color: #f7f7f7;
+    padding-top: 1.44em;
+}
+.ctn_notice .regist .item select,
+.ctn_notice .regist .item input,
+.ctn_notice .regist .item textarea {
+    margin: 0.88em 0;
+    border: 1px solid var(--tit-color);
+    border-radius: 0.29em;
+    min-height: 2.94em;
+    background-color: #f7f7f7;
+    padding: 0.5em 1em;
+}
+.ctn_notice .regist .item .w100 {
+    min-width: calc(100% - 15.65em);
+    width: calc(80% - 3.88em);
+}
+.ctn_notice .regist .item .w70 {
+    max-width: 37.24em;
+    width: calc(80% - 3.88em);
+}
+.ctn_notice .regist .item textarea {
+    resize: none;
+}
+.ctn_notice .regist .item input::placeholder {
+    color: #767676;
+}
+.ctn_notice .btn_wrap {
+    margin: 2.59em 0 0 0;
+    display: flex;
+    justify-content: space-between;
+}
+.ctn_notice .btn_wrap .cancel,
+.ctn_notice .btn_wrap .ok {
+    width: 9.22em;
+    height: 2.5em;
+    text-align: center;
+    line-height: 2.5em;
+    border-radius: 7px;
+    font-size: 1.06em;
+    color: #fff;
+    font-weight: var(--bold-weight);
+
+    /* padding: 0.4em 0 0 0;
+    line-height: calc(2.5em - 0.4em);
+    -> 글자 가운데 정렬이 안맞으면(서체 자동 행간 때문에) 이렇게 정렬함 */
+}
+.ctn_notice .btn_wrap .cancel {
+    background-color: #919191;
+}
+.ctn_notice .btn_wrap .ok {
+    background-color: var(--point-color);
+}
+@media screen and (max-width:768px){
+    .ctn_notice {
+        margin: 3.68em 0 7.76em 0;
+    }
+    .ctn_notice h2 {
+        font-size: 1.44rem;
+        margin-bottom: 0.7em;
+    }
+    .ctn_notice .agree_box {
+        padding: 1.25em;
+        height: 16em;
+    }
+    .ctn_notice .agree_chk {
+        margin: 0.94em 0 3.11em 0;
+    }
+    .ctn_notice .regist .item {
+        border-bottom: 0;
+        display: block;
+    }
+    .ctn_notice .regist .item label {
+        max-width: none;
+        width: auto;
+        display: block;
+        font-size: 1.06rem;
+        text-align: left;
+        background-color: transparent;
+        padding: 1.12em 0 0.35em 0;
+    }
+    .ctn_notice .regist .item select,
+    .ctn_notice .regist .item input,
+    .ctn_notice .regist .item textarea {
+        margin: 0;
+    }
+    .ctn_notice .regist .item .w100 {
+        min-width: 100%;
+        width: 100%;
+    }
+    .ctn_notice .regist .item .w70 {
+        max-width: 100%;
+        width: 100%;
+    }
+    .ctn_notice .btn_wrap .cancel,
+    .ctn_notice .btn_wrap .ok {
+        width: 7.41em;
+        height: 2.41em;
+        line-height: 2.41em;
+    }
+}/*@media*/
