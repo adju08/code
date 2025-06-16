@@ -1,0 +1,13 @@
+
+@font-face {
+	font-family: 'ONE-Mobile-Title';
+	font-weight: 800;
+	font-display: swap;
+	src: url(../font/ONE-Mobile-Title.woff) format('woff');
+}
+@font-face {
+	font-family: 'ONE-Mobile-Regular';
+	font-weight: 400;
+	font-display: swap;
+	src: url(../font/ONE-Mobile-Regular.woff) format('woff');
+}
