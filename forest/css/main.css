@@ -3,26 +3,350 @@
 @import url(common.css);
 @import url(layout.css);
 
-.visual {
-    background-color: blueviolet;
+.visual .swiper {
+    height: 100%;
+    width: 100%; /* fullpage로 인해 커진 너비 조절 */
+}
+.visual .swiper .swiper-slide .photo {
+    overflow: hidden;
+    height: 100%; /* 100dvh도 가능 */
+}
+.visual .swiper .swiper-slide .photo img,
+.visual .swiper .swiper-slide .photo video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.visual .swiper .swiper-slide .visual_txt {
+    position: absolute; /* swiper-slide 기준으로 정렬 */
+    left: 0;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
     color: #fff;
-}
-.tree {
-    background-color: orange;
-}
-.work {
-    background-color: green;
-    color: #fff;
-}
-.story {
-    background-color: blue;
-    color: #fff;
-}
-footer {
-    background-color: #3d3d3d;
-    color: #fff;
-}
-.section {
     text-align: center;
-    font-size: 50px;
+}
+.visual .swiper .swiper-slide .visual_txt h3 {
+    font-size: var(--display-size);
+    font-family: var(--tit-font-family);
+    line-height: var(--tit-line-height);
+    margin: 9px 0 20px 0;
+}
+.visual .swiper .swiper-slide .visual_txt a {
+    display: inline-block;
+    border: 1px solid #fff;
+    border-radius: 30px;
+    padding: 11px 38px;
+}
+.visual .paging {
+    position: absolute; /* swiper를 기준으로 정렬 */
+    left: 50%;
+    bottom: 50px;
+    z-index: 10;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    max-width: 1260px;
+    color: #fff;
+    display: flex;
+}
+.visual .paging .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+.visual .paging .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0;
+}
+.visual .paging .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: transparent;
+    /* 선택된 팝업 변경 스타일 */
+}
+.visual .paging .swiper-pagination-bullet {
+    width: 25%;
+    height: auto;
+    display: block;
+    border-radius: 0;
+    background: transparent;
+    opacity: 1;
+    margin: 0;
+    text-align: center;
+    border-bottom: 7px solid rgba(255,255,255,0.2);
+    padding: 0 0 5px 0;
+    position: relative; /* before 정렬의 기준 */
+}
+.visual .paging .swiper-pagination-bullet::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 0;
+    height: 7px;
+    background-color: #fff;
+    /* transition: 5s; -> transition으로 하면 선택 전 바가 거꾸로 가서 안됨 */
+}
+.visual .paging .swiper-pagination-bullet.swiper-pagination-bullet-active::before {
+    animation-name: visual_paging;
+    animation-duration: 5s; /* jquery의 autoplay 시간과 맞추기 */
+    animation-iteration-count: 1; /* 반복 횟수*/
+    animation-fill-mode: forwards; /* 마지막 100% 유지 */
+    /* animation-timing-function: linear; 가속도 삭제 */
+}
+
+@keyframes visual_paging {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+
+
+
+
+
+
+
+
+
+
+/***************** 왼쪽 메뉴 스타일 수정 방법 1번(페이지에서 수정사항 복붙 한 것) *****************/
+#fp-nav.fp-left {
+    left: 20px; /* 왼쪽에서 떨어진 거리 */
+}
+#fp-nav {
+    top: 50%; /*??????*/
+}
+#fp-nav ul li {
+    width: auto;
+    height: auto;
+    margin: 8px 0;
+    padding: 0 0 0 13px;
+}
+#fp-nav ul li:last-child {
+    display: none;
+}
+#fp-nav ul li a {
+    /* li대로 덮어서 넓이가 꽉 차게 하려고 */
+    position: absolute; /* li를 기준으로 정렬 */
+    left: 0;
+    top: 0;
+}
+#fp-nav ul li a::before {
+    content: "";
+    position: absolute;
+    top: 9px;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    border: 1px solid rgba(255,255,255,0.8);
+    border-radius: 50%;
+}
+
+/* 마우스를 오버하거나 현재 선택된 메뉴 */
+#fp-nav ul li a.active::before,
+#fp-nav ul li:hover a::before {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+#fp-nav ul li a.active::after,
+#fp-nav ul li:hover a::after {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: -30px;
+    width: 35px;
+    height: 1px;
+    background-color: var(--main-color);
+}
+
+
+#fp-nav ul li a span {
+    display: none; /* 숨김 */
+}
+#fp-nav ul li:hover .fp-tooltip, #fp-nav.fp-show-active a.active + .fp-tooltip {
+    /* 마우스를 오버하거나 현재 선택된 메뉴 */
+    background-color: var(--main-color);
+    color: #fff;
+    font-weight: var(--bold-weight);
+}
+#fp-nav ul li .fp-tooltip.fp-left {
+    left: auto;
+}
+#fp-nav ul li .fp-tooltip { /* absolute XXXXX */
+    position: relative;
+    top: auto;
+    color: rgba(255,255,255,0.8);
+    font-size: 17px;
+    font-family: inherit; /* 기본 스타일 상속 */
+    max-width: 100%; /* 해제 */
+    overflow: visible; /* hidden 해제 */
+    display: inline-block; /* 글자 넓이 만큼 스타일 들어감 */
+    opacity: 1;
+    width: auto;
+    padding: 1px 5px 0 5px;
+    border-radius: 5px;
+}
+/******** 배경이 흰색일 때 ********/
+body.bg_w #fp-nav ul li .fp-tooltip {
+    color: var(--base-color);
+}
+body.bg_w #fp-nav ul li:hover .fp-tooltip,
+body.bg_w #fp-nav.fp-show-active a.active + .fp-tooltip {
+    color: #fff;
+}
+body.bg_w #fp-nav ul li a::before {
+    border-color: var(--base-color);
+}
+body.bg_w #fp-nav ul li a.active::before,
+body.bg_w #fp-nav ul li:hover a::before {
+    border-color: var(--main-color);
+}
+
+/***************** 왼쪽 메뉴 스타일 수정 방법 2번(처음한 것) *****************/
+/* #fp-nav.fp-left {
+    left: 30px;
+}
+#fp-nav ul li {
+    width: auto;
+    height: auto;
+    margin: 8px 0;
+}
+#fp-nav ul li a {
+    position: absolute; /* li대로 덮어서 넓이가 꽉 차게 하려고 *
+}
+#fp-nav ul li a::before {
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+#fp-nav ul li a span {
+    display: none; /* 숨김 *
+}
+#fp-nav ul li .fp-tooltip {
+    position: relative;
+    top: auto;
+    font-size: 17px;
+    font-family: inherit;
+    max-width: 100%;
+    overflow: visible;
+    opacity: 1;
+    width: auto;
+    margin: 0 0 0 15px;
+    display: inline-block;
+    padding: 0 5px;
+}
+
+/* 현재 선택된 메뉴 *
+#fp-nav ul li a.active::before {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+#fp-nav ul li a.active::after {
+    content: "";
+    position: absolute;
+    left: -30px;
+    top: 11px;
+    width: 30px;
+    height: 1px;
+    background-color: var(--main-color);
+}
+#fp-nav ul li a.active + .fp-tooltip {
+    /* #fp-nav ul li .fp-tooltip에 주면 현재 어떤게 선택되었는지 모르니 전체가 다 들어감
+       -> 그래서 a에 activ 클래스가 들어간 애(현재 선택된)가 스타일을 가짐 *
+    background-color: var(--main-color);
+    border-radius: 5px;
+}
+
+#fp-nav ul li .fp-tooltip.fp-left {
+    left: auto;
+} */
+
+
+
+
+
+
+.quick {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    z-index: 99;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column-reverse;
+    width: 78px;
+}
+.quick .btn {
+    width: 100%;
+    height: 78px;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.quick .btn.open {
+    background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_88_369' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='32' height='32'%3E%3Crect width='32' height='32' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_88_369)'%3E%3Cpath d='M4 9.33366V6.66699H28V9.33366H4ZM4 25.3337V22.667H28V25.3337H4ZM4 17.3337V14.667H28V17.3337H4Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+.quick .btn.close {
+    background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_59_2166' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='32' height='32'%3E%3Crect width='32' height='32' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_59_2166)'%3E%3Cpath d='M8.53317 25.3337L6.6665 23.467L14.1332 16.0003L6.6665 8.53366L8.53317 6.66699L15.9998 14.1337L23.4665 6.66699L25.3332 8.53366L17.8665 16.0003L25.3332 23.467L23.4665 25.3337L15.9998 17.867L8.53317 25.3337Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+.quick .detail {
+    margin: 0 0 10px 0;
+    border: 3px solid var(--main-color);
+    border-radius: 40px;
+    background-color: #FDFBF6;
+    padding: 17px 0;
+    display: none;
+}
+.quick .detail ul li + li {
+    position: relative;
+}
+.quick .detail ul li + li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 9px;
+    width: 53px;
+    height: 1px;
+    background-color: var(--main-color);
+}
+.quick .detail ul li a,
+.quick .detail ul li button {
+    display: block;
+    width: 100%; /* button땜에 줌 */
+    color: var(--main-color);
+    font-size: 15px;
+    text-align: center;
+    padding: 33px 0 11px 0;
+    position: relative; /* before 정렬의 기준 */
+}
+.quick .detail ul li a::before,
+.quick .detail ul li button::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 20px; /* 제일 높은 아이콘 기준() */
+    top: 9px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.quick .detail ul li.top button::before {
+    top: 4px;
+}
+.quick .detail ul li.kakao a::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='21' height='21' viewBox='0 0 21 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_59_2177' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='21' height='21'%3E%3Crect width='21' height='21' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_59_2177)'%3E%3Cpath d='M10.5 18.3751L9.23125 17.2376C7.75833 15.9105 6.54063 14.7657 5.57812 13.8032C4.61562 12.8407 3.85 11.9767 3.28125 11.211C2.7125 10.4454 2.3151 9.74176 2.08906 9.1001C1.86302 8.45843 1.75 7.80218 1.75 7.13135C1.75 5.76051 2.20937 4.61572 3.12813 3.69697C4.04688 2.77822 5.19167 2.31885 6.5625 2.31885C7.32083 2.31885 8.04271 2.47926 8.72813 2.8001C9.41354 3.12093 10.0042 3.57301 10.5 4.15635C10.9958 3.57301 11.5865 3.12093 12.2719 2.8001C12.9573 2.47926 13.6792 2.31885 14.4375 2.31885C15.8083 2.31885 16.9531 2.77822 17.8719 3.69697C18.7906 4.61572 19.25 5.76051 19.25 7.13135C19.25 7.80218 19.137 8.45843 18.9109 9.1001C18.6849 9.74176 18.2875 10.4454 17.7188 11.211C17.15 11.9767 16.3844 12.8407 15.4219 13.8032C14.4594 14.7657 13.2417 15.9105 11.7688 17.2376L10.5 18.3751ZM10.5 16.0126C11.9 14.7584 13.0521 13.6829 13.9563 12.786C14.8604 11.8892 15.575 11.109 16.1 10.4454C16.625 9.78187 16.9896 9.19124 17.1937 8.67353C17.3979 8.15583 17.5 7.64176 17.5 7.13135C17.5 6.25635 17.2083 5.52718 16.625 4.94385C16.0417 4.36051 15.3125 4.06885 14.4375 4.06885C13.7521 4.06885 13.1177 4.26208 12.5344 4.64854C11.951 5.03499 11.55 5.52718 11.3313 6.1251H9.66875C9.45 5.52718 9.04896 5.03499 8.46563 4.64854C7.88229 4.26208 7.24792 4.06885 6.5625 4.06885C5.6875 4.06885 4.95833 4.36051 4.375 4.94385C3.79167 5.52718 3.5 6.25635 3.5 7.13135C3.5 7.64176 3.60208 8.15583 3.80625 8.67353C4.01042 9.19124 4.375 9.78187 4.9 10.4454C5.425 11.109 6.13958 11.8892 7.04375 12.786C7.94792 13.6829 9.1 14.7584 10.5 16.0126Z' fill='%23236130'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+.quick .detail ul li.naver a::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_39_734' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_39_734)'%3E%3Cpath d='M12 20C11.0667 20 10.1875 19.8542 9.3625 19.5625C8.5375 19.2708 7.78333 18.8583 7.1 18.325L5.7 19.7C5.51667 19.8833 5.28333 19.975 5 19.975C4.71667 19.975 4.48333 19.8833 4.3 19.7C4.11667 19.5167 4.025 19.2833 4.025 19C4.025 18.7167 4.11667 18.4833 4.3 18.3L5.675 16.925C5.14167 16.2417 4.72917 15.4833 4.4375 14.65C4.14583 13.8167 4 12.9333 4 12C4 9.76667 4.775 7.875 6.325 6.325C7.875 4.775 9.76667 4 12 4H20V12C20 14.2333 19.225 16.125 17.675 17.675C16.125 19.225 14.2333 20 12 20ZM12 18C13.6667 18 15.0833 17.4167 16.25 16.25C17.4167 15.0833 18 13.6667 18 12V6H12C10.3333 6 8.91667 6.58333 7.75 7.75C6.58333 8.91667 6 10.3333 6 12C6 12.65 6.1 13.2708 6.3 13.8625C6.5 14.4542 6.775 14.9917 7.125 15.475L12.3 10.3C12.4833 10.1167 12.7167 10.025 13 10.025C13.2833 10.025 13.5167 10.1167 13.7 10.3C13.9 10.5 14 10.7375 14 11.0125C14 11.2875 13.9 11.525 13.7 11.725L8.525 16.9C9.00833 17.25 9.54583 17.5208 10.1375 17.7125C10.7292 17.9042 11.35 18 12 18Z' fill='%23236130'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+.quick .detail ul li.green a::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_39_737' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_39_737)'%3E%3Cpath d='M5 22V20H11V16H9C7.61667 16 6.4375 15.5125 5.4625 14.5375C4.4875 13.5625 4 12.3833 4 11C4 10 4.275 9.07917 4.825 8.2375C5.375 7.39583 6.11667 6.78333 7.05 6.4C7.2 5.15 7.74583 4.10417 8.6875 3.2625C9.62917 2.42083 10.7333 2 12 2C13.2667 2 14.3708 2.42083 15.3125 3.2625C16.2542 4.10417 16.8 5.15 16.95 6.4C17.8833 6.78333 18.625 7.39583 19.175 8.2375C19.725 9.07917 20 10 20 11C20 12.3833 19.5125 13.5625 18.5375 14.5375C17.5625 15.5125 16.3833 16 15 16H13V20H19V22H5ZM9 14H15C15.8333 14 16.5417 13.7083 17.125 13.125C17.7083 12.5417 18 11.8333 18 11C18 10.4 17.8292 9.85 17.4875 9.35C17.1458 8.85 16.7 8.48333 16.15 8.25L15.1 7.8L14.95 6.65C14.85 5.9 14.5208 5.27083 13.9625 4.7625C13.4042 4.25417 12.75 4 12 4C11.25 4 10.5958 4.25417 10.0375 4.7625C9.47917 5.27083 9.15 5.9 9.05 6.65L8.9 7.8L7.85 8.25C7.3 8.48333 6.85417 8.85 6.5125 9.35C6.17083 9.85 6 10.4 6 11C6 11.8333 6.29167 12.5417 6.875 13.125C7.45833 13.7083 8.16667 14 9 14Z' fill='%23236130'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+.quick .detail ul li.top button::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='17' height='10' viewBox='0 0 17 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.649845 8.17508L8.82492 -3.57344e-07L17 8.17508L15.5489 9.62615L8.82492 2.90215L2.10092 9.62615L0.649845 8.17508Z' fill='%23236130'/%3E%3C/svg%3E%0A");
+}
+
+
+.quick .detail ul li.top button {
+    padding-top: 22px;
 }

@@ -81,11 +81,13 @@ html, body {
     --base-color: #3d3d3d;
     --main-color: #236130;
     --sub-color: #4B9C5B;
-    --bold-weight: 800;
+    --bold-weight: 700;
     --base-weight: 400;
+    --tit-font-family: 'ONE-Mobile-Title';
     --tit-line-height: 1.2;
     --tit-size: 2.65rem; /* 45px / 17 = 2.65 */
     --sub-tit-size: 1.35rem; /* 23px / 17 */
+    --display-size: 60px;
 }
 @media screen and (max-width:1024px){
     :root {
@@ -93,11 +95,13 @@ html, body {
         --header-h-m: -56px;
         --tit-size: 2.06rem; /* 35/17 */
         --sub-tit-size: 1.24rem; /* 21/17 */
+        --display-size: 45px;
     }
 }
 @media screen and (max-width:768px){
     :root {
         --tit-size: 1.56rem; /* 25px / 16 = 1.56 */
         --sub-tit-size: 1.19rem; /* 19/16 */
+        --display-size: 30px;
     }
 }
