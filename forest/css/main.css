@@ -3,9 +3,14 @@
 @import url(common.css);
 @import url(layout.css);
 
+
 .visual .swiper {
     height: 100%;
     width: 100%; /* fullpage로 인해 커진 너비 조절 */
+    height: 100dvh; /* 화면의 높이에 꽉 맞게 */
+    /* js-responsiveHeight로 인해 스위퍼, 비주얼, wrapper, li 등
+       높이가 각각 달라져서 고정으로 최소 높이(min)를 주면 fullpage 자체
+       고정값 때문에 안먹음 -> 그래서 100dvh로 설정함 (.visual에 주면 충돌이나서 안됨) */
 }
 .visual .swiper .swiper-slide .photo {
     overflow: hidden;
@@ -38,61 +43,227 @@
     border-radius: 30px;
     padding: 11px 38px;
 }
-.visual .paging {
-    position: absolute; /* swiper를 기준으로 정렬 */
-    left: 50%;
-    bottom: 50px;
-    z-index: 10;
-    transform: translateX(-50%);
-    width: calc(100% - 40px);
-    max-width: 1260px;
-    color: #fff;
-    display: flex;
-}
-.visual .paging .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
-.visual .paging .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
-    margin: 0;
-}
-.visual .paging .swiper-pagination-bullet-active {
-    opacity: 1;
-    background: transparent;
-    /* 선택된 팝업 변경 스타일 */
-}
-.visual .paging .swiper-pagination-bullet {
-    width: 25%;
-    height: auto;
-    display: block;
-    border-radius: 0;
-    background: transparent;
-    opacity: 1;
-    margin: 0;
-    text-align: center;
-    border-bottom: 7px solid rgba(255,255,255,0.2);
-    padding: 0 0 5px 0;
-    position: relative; /* before 정렬의 기준 */
-}
-.visual .paging .swiper-pagination-bullet::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -7px;
-    width: 0;
-    height: 7px;
-    background-color: #fff;
-    /* transition: 5s; -> transition으로 하면 선택 전 바가 거꾸로 가서 안됨 */
-}
-.visual .paging .swiper-pagination-bullet.swiper-pagination-bullet-active::before {
-    animation-name: visual_paging;
-    animation-duration: 5s; /* jquery의 autoplay 시간과 맞추기 */
-    animation-iteration-count: 1; /* 반복 횟수*/
-    animation-fill-mode: forwards; /* 마지막 100% 유지 */
-    /* animation-timing-function: linear; 가속도 삭제 */
-}
-
+@media screen and (min-width:769px){
+    /* 769px 이상에서만 적용 */
+        .visual .paging {
+            position: absolute; /* swiper를 기준으로 정렬 */
+            left: 50%;
+            bottom: 4%;
+            z-index: 10;
+            transform: translateX(-50%);
+            width: calc(100% - 40px);
+            max-width: 1260px;
+            color: #fff;
+            display: flex;
+        }
+        .visual .paging .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+        .visual .paging .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+            margin: 0;
+        }
+        .visual .paging .swiper-pagination-bullet-active {
+            opacity: 1;
+            background: transparent;
+            /* 선택된 팝업 변경 스타일 */
+        }
+        .visual .paging .swiper-pagination-bullet {
+            width: 25%;
+            height: auto;
+            display: block;
+            border-radius: 0;
+            background: transparent;
+            opacity: 1;
+            margin: 0;
+            text-align: center;
+            border-bottom: 7px solid rgba(255,255,255,0.2);
+            padding: 0 0 5px 0;
+            position: relative; /* before 정렬의 기준 */
+        }
+        .visual .paging .swiper-pagination-bullet::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -7px;
+            width: 0;
+            height: 7px;
+            background-color: #fff;
+            /* transition: 5s; -> transition으로 하면 선택 전 바가 거꾸로 가서 안됨 */
+        }
+        .visual .paging .swiper-pagination-bullet.swiper-pagination-bullet-active::before {
+            animation-name: visual_paging;
+            animation-duration: 5s; /* jquery의 autoplay 시간과 맞추기 */
+            animation-iteration-count: 1; /* 반복 횟수*/
+            animation-fill-mode: forwards; /* 마지막 100% 유지 */
+            /* animation-timing-function: linear; 가속도 삭제 */
+        }
+}/*@media*/
 @keyframes visual_paging {
     0% { width: 0; }
     100% { width: 100%; }
 }
+
+@media screen and (max-width:768px){
+            .visual .swiper {
+                height: 700px;
+            }
+            .visual .swiper .swiper-slide .visual_txt h3 {
+                margin: 6px 0 16px 0;
+            }
+            .visual .swiper .swiper-slide .visual_txt h3 br {
+                display: none;
+            }
+            .visual .swiper .swiper-slide .visual_txt a {
+                padding: 6px 28px;
+            }
+            .visual .paging {
+                position: absolute; /* swiper를 기준으로 정렬 */
+                bottom: 30px;
+                left: 50%;
+                z-index: 10;
+                transform: translateX(-50%);
+                display: flex;
+                width: auto;
+                gap: 3px;
+            }
+            .visual .paging .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+            .visual .paging .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+                margin: 0;
+            }
+            .visual .paging .swiper-pagination-bullet.swiper-pagination-bullet-active {
+                /* 우선순위가 active가 들어가기 전에 준 요소에 밀려서 안들어감
+                -> 그래서 그 전 선택자(.swiper-pagination-bullet)를 붙여 더 자세히 불러줌 */
+                opacity: 1;
+                background: #fff;
+                width: 35px;
+            }
+            .visual .paging .swiper-pagination-bullet {
+                width: 9px;
+                height: 5px;
+                border-radius: 3px;
+                background: rgba(255,255,255,0.6);
+                opacity: 1;
+                font-size: 0;
+                line-height: 0;
+                margin: 0;
+            }
+}/*@media*/
+
+
+
+
+
+
+.tree .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.tree .tit h2 {
+    color: var(--main-color);
+    font-family: var(--tit-font-family);
+    font-size: var(--font-size);
+    line-height: var(--tit-line-height);
+    margin: 0 0 7px 0;
+}
+.tree .tit h2 strong {
+    position: relative; /* after 정렬의 기준 */
+}
+.tree .tit h2 strong::after {
+    content: "+";
+    position: absolute;
+    top: -18px;
+    right: -18px;
+    font-size: 40px;
+}
+.tree .tit {
+    width: 40%;
+}
+.tree .tree_ani {
+    position: relative; /* 꽃, 태양 정렬의 기준 */
+    max-width: 703px;
+    /* width: calc(100% - 396px); */
+    width: 58%;
+    margin: 10% 0 0 0;
+}
+.tree .tree_ani .img_tree {
+    width: 80%;
+    /*position: relative; /* z-index는 무조건 position이 있어야함(난 없어서 안해줌) */
+}
+.tree .tree_ani .img_flower1 {
+    position: absolute;
+    left: 1%;
+    bottom: 9%;
+    width: 22%;
+    animation: tree_up1 5s linear infinite;
+}
+.tree .tree_ani .img_flower2 {
+    position: absolute;
+    right: 16%;
+    bottom: 12%;
+    width: 30.01%;
+    animation: tree_up2 5s linear infinite;
+}
+.tree .tree_ani .img_sun {
+    position: absolute;
+    right: 4%;
+    top: -10%;
+    z-index: 1;
+    width: 20.48%;
+    animation: tree_rotate 15s linear infinite;
+}
+@keyframes tree_up1 {
+    /* 왔다갔다하는 반복되는 애니메이션은 0%, 100% 둘의 값이 같아야함 */
+    0% { transform: translateY(7.7%); }
+    50% { transform: translateY(-7.7%); }
+    100% { transform: translateY(7.7%); }
+}
+/* @keyframes tree_size {
+    /* 앞뒤로 커졌다 작아졌다 효과 *
+    0% { transform: scale(100%) translate(0, 0); opacity: 1; }
+    50% { transform: scale(80%) translate(-50px, -20px); opacity: 0.8; }
+    100% { transform: scale(100%) translate(0, 0); opacity: 1; }
+} */
+@keyframes tree_up2 {
+    /* 왔다갔다하는 반복되는 애니메이션은 0%, 100% 둘의 값이 같아야함 */
+    0% { transform: translateY(-4.5%); }
+    50% { transform: translateY(4.5%); }
+    100% { transform: translateY(-4.5%); }
+}
+@keyframes tree_rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); }
+}
+
+@media screen and (max-width:768px){
+            .tree {
+                margin: 100px 0 38px 0;
+                text-align: center;
+            }
+            .tree .wrapper {
+                display: block;
+            }
+            .tree .tit {
+                width: auto;
+            }
+            .tree .tit h2 {
+                margin: 0 0 3px 0;
+            }
+            .tree .tit h2 strong::after {
+                font-size: 30px;
+            }
+            .tree .tit p br {
+                display: none; /* 줄바꿈 삭제 */
+            }
+            .tree .tree_ani {
+                max-width: 400px;
+                width: 80%;
+                margin: 50px auto 0 auto; /* 좌우 가운데 정렬 */
+            }
+}/* @media */
+
+
+
+
+
 
 
 
@@ -179,6 +350,11 @@
     width: auto;
     padding: 1px 5px 0 5px;
     border-radius: 5px;
+}
+@media screen and (max-width:1024px){
+    #fp-nav {
+        display: none !important;
+    }
 }
 /******** 배경이 흰색일 때 ********/
 body.bg_w #fp-nav ul li .fp-tooltip {

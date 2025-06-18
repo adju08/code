@@ -21,7 +21,13 @@ html, body {
 
 
 
-@media screen and (max-width:1300px){ /* 1260 * 0.05 = 63 + 63 = 126 + 1260 = 1386 (%로 했을 때)*/
+@media screen and (max-width:1540px){
+    .wrapper {
+        width: auto;
+        margin: 0 120px 0 140px; /* 가운데 정렬 */
+    }
+}
+@media screen and (max-width:1024px){ /* 1260 * 0.05 = 63 + 63 = 126 + 1260 = 1386 (%로 했을 때)*/
                                       /* 20 + 20 = 40 + 1260 = 1300 (px로 했을 때)*/
     .wrapper {
         width: auto;
@@ -88,6 +94,7 @@ html, body {
     --tit-size: 2.65rem; /* 45px / 17 = 2.65 */
     --sub-tit-size: 1.35rem; /* 23px / 17 */
     --display-size: 60px;
+    --font-size: 80px
 }
 @media screen and (max-width:1024px){
     :root {
@@ -96,6 +103,7 @@ html, body {
         --tit-size: 2.06rem; /* 35/17 */
         --sub-tit-size: 1.24rem; /* 21/17 */
         --display-size: 45px;
+        --font-size: 62px
     }
 }
 @media screen and (max-width:768px){
@@ -103,5 +111,6 @@ html, body {
         --tit-size: 1.56rem; /* 25px / 16 = 1.56 */
         --sub-tit-size: 1.19rem; /* 19/16 */
         --display-size: 30px;
+        --font-size: 45px
     }
 }

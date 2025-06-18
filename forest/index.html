@@ -15,6 +15,9 @@
     <!-- jquery 라이브러리 -->
     <script src="js/jquery-3.7.1.min.js"></script>
 
+    <!-- count 라이브러리 -->
+    <script src="js/count.js"></script>
+
     <!-- 내거를 제일 아래에 둬야 우선순위가 제일 높음 -->
     <link rel="stylesheet" href="css/main.css">
     <script src="js/common.js"></script>
@@ -102,15 +105,33 @@
                 <div class="paging"></div>  <!-- 컨트롤 요소는 swiper 안에 배치-->
             </div>
         </section>
+
         <section class="tree section fp-auto-height-responsive">
-            tree
+            <div class="wrapper">
+                <div class="tit">
+                    <h2>
+                        <!--자릿수를 맞춰서 data 값을 넣어주면 자릿수가 늘어나는 걸 막아줌-->
+                        <strong class="counter" data-start="0" data-end="102302">102,302</strong>
+                    </h2>
+                    <p>2024년 한 해 동안 나무의 숲에서 심은 나무의 수는 <br>총 102,302그루 입니다.</p>
+                </div>
+                <div class="tree_ani">
+                    <img src="images/main/tree.png" alt="나무" class="img_tree">
+                    <img src="images/main/tree_flower01.png" alt="꽃1" class="img_flower1">
+                    <img src="images/main/tree_flower02.png" alt="꽃2" class="img_flower2">
+                    <img src="images/main/tree_sun.png" alt="태양" class="img_sun">
+                </div>
+            </div>
         </section>
+
         <section class="work section fp-auto-height-responsive">
             work
         </section>
+
         <section class="story section fp-auto-height-responsive">
             story
         </section>
+
         <footer class="section fp-auto-height"> <!--footer에만 줌 fp-auto-height-->
             footer
         </footer>
