@@ -1,7 +1,7 @@
 @import url(font.css);
 @import url(default.css);
-@import url(common.css);
-@import url(layout.css);
+@import url(common.css?v=2506190559);
+@import url(layout.css?v=2506190559);
 
 
 .visual .swiper {
