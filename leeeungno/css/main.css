@@ -550,24 +550,102 @@ section .tit h2 {
 .public .list .swiper-slide {
     width: 70%;
 }
+
+
+
+
+
+
+/**************************** ticket 모양 만드는 중 ****************************/
 .public .list .swiper-slide .ticket {
+    position: relative; /* ticket_edge */
+    display: flex;
+    justify-content: center;
+    width: calc(100% + 1px);
+    height: 100%;
+}
+.public .list .swiper-slide .ticket .ticket_edge { /*막대너비기준*/
+    width: 38px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.public .list .swiper-slide .ticket .ticket_edge::before { /* 왼쪽 상단 빵꾸 */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 38px;
+    height: 140px;
+    background-image: url(../images/main/ticket_edge.png);
+}
+.public .list .swiper-slide .ticket .ticket_edge::after { /* 왼쪽 하단 빵꾸 */
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 38px;
+    height: 140px;
+    background-image: url(../images/main/ticket_edge.png);
+    transform: scaleY(-1);
+}
+.public .list .swiper-slide .ticket .ticket_edge .bg { /* 막대 스타일 */
+    position: absolute;
+    top: 58px;
+    left: 0;
+    width: 100%;
+    height: 240px;
+    background-color: #fff;
+}
+
+
+/* .public .list .swiper-slide .ticket .ticket_edge.left::before {
+    content: "";
+    position: absolute;
+    left: -1px ;
+    top: -58px;
+    width: 39px;
+    height: 140px;
+    background: url(../images/main/ticket_edge.png) no-repeat left bottom / contain;
+} */
+
+
+
+
+
+
+
+
+.public .list .swiper-slide .ticket .ticket_inner {
+    position: relative; /* before */
     display: flex;
     background-color: #fff;
-    padding: 30px 64px;
-    border: 1px solid red;
+    padding: 30px 26px;
+    /* border: 1px solid red; */
     height: 356px;
+    width: calc(100% - 76px);
 }
-.public .list .swiper-slide .ticket .photo {
+.public .list .swiper-slide .ticket .ticket_inner::before {
+    content: "";
+    position: absolute;
+    right: 26px;
+    bottom: 30px;
+    width: 18.11%;/*207px*/
+    height: 10%;/*36px*/
+    background: url(../images/main/public_barcode.jpg) no-repeat center center / cover;
+}
+.public .list .swiper-slide .ticket .ticket_inner .photo {
     overflow: hidden;
     width: 313px;
     height: 296px;
 }
-.public .list .swiper-slide .ticket .txt_wrap {
+.public .list .swiper-slide .ticket .ticket_inner .txt_wrap {
     
     width: calc(100% - 313px);
     margin-left: 3%;
 }
-.public .list .swiper-slide .ticket .txt_wrap h3 {
+.public .list .swiper-slide .ticket .ticket_inner .txt_wrap h3 {
     font-size: 25px;
     font-weight: var(--bold-weight);
     color: var(--tit-color);
@@ -580,23 +658,23 @@ section .tit h2 {
     -webkit-box-orient: vertical;
     word-break: normal;
 }
-.public .list .swiper-slide .ticket .txt_wrap .txt_cont {
+.public .list .swiper-slide .ticket .ticket_inner .txt_wrap .txt_cont {
     margin: 38px 0 49px 0;
 }
-.public .list .swiper-slide .ticket .txt_wrap .txt_cont ul {
+.public .list .swiper-slide .ticket .ticket_inner .txt_wrap .txt_cont ul {
     display: flex;
     gap: 7%;
 }
-.public .list .swiper-slide .ticket .txt_wrap .txt_cont ul li {
+.public .list .swiper-slide .ticket .ticket_inner .txt_wrap .txt_cont ul li {
     width: 30%;
 }
-.public .list .swiper-slide .ticket .txt_wrap .txt_cont ul li strong {
+.public .list .swiper-slide .ticket .ticket_inner .txt_wrap .txt_cont ul li strong {
     display: block;
     font-size: 15px;
     color: var(--tit-color);
     margin-bottom: 16px;
 }
-.public .list .swiper-slide .ticket .txt_wrap .txt_cont ul li p {
+.public .list .swiper-slide .ticket .ticket_inner .txt_wrap .txt_cont ul li p {
     height: 3em;
     overflow: hidden;
     display: -webkit-box;
@@ -604,12 +682,18 @@ section .tit h2 {
     -webkit-box-orient: vertical;
     word-break: normal;
 }
-.public .list .swiper-slide .ticket a {
+.public .list .swiper-slide .ticket .ticket_inner a {
     display: inline-block;
     border: 1px solid #ccc;
+    background-color: #fff;
     font-size: 14px;
     color: var(--tit-color);
     padding: 18px 24px;
+}
+.public .list .swiper-slide .ticket .ticket_inner a:hover {
+    border-color: var(--point-color);
+    background-color: var(--point-color);
+    color: #fff;
 }
 .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
     text-align: center;
