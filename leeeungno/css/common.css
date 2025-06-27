@@ -88,7 +88,7 @@ html, body {
     --ctn-font-size: 1.29rem; /* 22px / 17 */
     --tit-line-height: 1.2;
 }
-@media screen and (max-width:1216px){
+@media screen and (max-width:1300px){
     :root {
         --header-h: 56px; /* header 높이 */
         --header-h-m: -56px;

@@ -30,14 +30,14 @@
     width: 100%;
     color: #fff;
 }
-.visual .swiper-slide.swiper-slide-active .txt_wrap .wrapper {
-    position: relative;
+.visual .swiper-slide.swiper-slide-active .txt_wrap .v_txt {
+    position: relative; /* txt */
 }
-.visual .swiper-slide.swiper-slide-active .txt_wrap .wrapper::after {
+.visual .swiper-slide.swiper-slide-active .txt_wrap .v_txt::after {
     content: "";
     position: absolute;
     left: 0;
-    bottom: 3.06em;
+    bottom: -3.12em;
     width: 0;
     height: 1px;
     background-color: #fff;
@@ -52,11 +52,11 @@
     100% { width: 100%; }
 }
 
-.visual .swiper-slide .txt_wrap .txt.mobil {
-    display: none;
-}
 .visual .swiper-slide .txt_wrap .txt {
     overflow: hidden;
+}
+.visual .swiper-slide .txt_wrap .txt.mobil {
+    display: none;
 }
 .visual .swiper-slide .txt_wrap .txt p {
     font-family: 'Italiana';
@@ -67,6 +67,9 @@
     transform: translateY(100%);
     transition: 0.8s;
 }
+.visual .swiper-slide.swiper-slide-active .txt_wrap .txt p {
+    transform: translateY(0%);
+}
 
 /* --> 윗줄 아랫줄 올라오는 속도 다르게 코딩한 것 */
 .visual .swiper-slide.swiper-slide-active .txt_wrap .txt.delay1 p {
@@ -75,15 +78,10 @@
 .visual .swiper-slide.swiper-slide-active .txt_wrap .txt.delay2 p {
     transition-delay: 0.8s;
 }
-
-.visual .swiper-slide.swiper-slide-active .txt_wrap .txt p {
-    transform: translateY(0%);
-}
 .visual .swiper-slide.swiper-slide-active .txt_wrap span {
     display: block;
     margin-top: 4.65em;
 }
-
 .visual .ctrl_wrap {
     position: absolute; /* visual을 기준으로 정렬 */
     bottom: 11%;
@@ -132,8 +130,8 @@
             .visual .swiper-slide.swiper-slide-active .photo img {
                 transform: scale3d(1,1,1);
             }
-            .visual .swiper-slide.swiper-slide-active .txt_wrap .wrapper::after {
-                bottom: 4.06em;
+            .visual .swiper-slide.swiper-slide-active .txt_wrap .v_txt::after {
+                bottom: -1.94em;
             }
             .visual .swiper-slide.swiper-slide-active .txt_wrap span {
                 margin-top: 3.06em;
@@ -379,6 +377,7 @@ section .tit h2 {
 
 .exhibitions {
     margin: 7.76em 0;
+    position: relative; /* .txt a */
 }
 .exhibitions .wrapper {
     display: flex;
@@ -472,6 +471,7 @@ section .tit h2 {
 @media screen and (max-width:768px){
             .exhibitions {
                 margin: 5.06em 0;
+                position: relative; /* .txt a */
             }
             .exhibitions .wrapper {
                 display: block;
@@ -479,12 +479,19 @@ section .tit h2 {
             .exhibitions .txt {
                 margin: 0;
                 min-width: 100%;
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-end;
             }
             .exhibitions .txt .tit {
                 margin-top: 0;
+                position: relative; /* after */
+            }
+            .exhibitions .txt .tit::after {
+                content: "";
+                position: absolute;
+                right: 30px;
+                bottom: 15px;
+                width: 45%;
+                height: 1px;
+                background-color: var(--tit-color);
             }
             .exhibitions .txt .tit h2 {
                 margin-bottom: 0;
@@ -493,29 +500,17 @@ section .tit h2 {
                 display: none;
             }
             .exhibitions .txt a {
-                position: relative;
-                margin-top: 0;
-                margin-bottom: 0.44em;
+                position: absolute; /* exhibitions */
+                top: 32px;
+                right: 18px;
                 width: 17px;
                 height: 17px;
-                background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_161_131' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='17' height='17'%3E%3Crect width='17' height='17' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_161_131)'%3E%3Cpath d='M7.79167 14.875V9.20833H2.125V7.79167H7.79167V2.125H9.20833V7.79167H14.875V9.20833H9.20833V14.875H7.79167Z' fill='%231D1D1D'/%3E%3C/g%3E%3C/svg%3E%0A");
-                background-repeat: no-repeat;
-                background-position: center center;
-            }
-            .exhibitions .txt a::before {
-                content: "";
-                position: absolute;
-                right: 1.82em;
-                bottom: 0.5em;
-                min-width: 163px;
-                height: 1px;
-                background-color: var(--point-color);
+                background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_130_287' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='17' height='17'%3E%3Crect width='17' height='17' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_130_287)'%3E%3Cpath d='M7.79167 14.875V9.20833H2.125V7.79167H7.79167V2.125H9.20833V7.79167H14.875V9.20833H9.20833V14.875H7.79167Z' fill='%231D1D1D'/%3E%3C/g%3E%3C/svg%3E%0A");
+                margin-top: 0;
             }
             .exhibitions .txt a span {
-                padding-right: 0;
                 display: none;
-            }
-            .exhibitions .list {
+            }.exhibitions .list {
                 margin-top: 1.38em;
             }
             .exhibitions .list .swiper-wrapper {
@@ -523,6 +518,7 @@ section .tit h2 {
             }
             .exhibitions .list .swiper-slide {
                 width: 13em;
+                padding-top: 0;
             }
             .exhibitions .list .swiper-slide a .photo {
                 height: 17.44em;
@@ -531,6 +527,8 @@ section .tit h2 {
                 margin: 0.95em 0 0.21em 0;
             }
 }/*@media*/
+
+
 
 
 
@@ -551,78 +549,53 @@ section .tit h2 {
     width: 70%;
 }
 
-
-
-
-
-
-/**************************** ticket 모양 만드는 중 ****************************/
+/* 티켓 모양 */
 .public .list .swiper-slide .ticket {
-    position: relative; /* ticket_edge */
     display: flex;
-    justify-content: center;
-    width: calc(100% + 1px);
-    height: 100%;
 }
 .public .list .swiper-slide .ticket .ticket_edge { /*막대너비기준*/
     width: 38px;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
 }
-.public .list .swiper-slide .ticket .ticket_edge::before { /* 왼쪽 상단 빵꾸 */
-    content: "";
+.public .list .swiper-slide .ticket .ticket_edge .bg {
     position: absolute;
-    top: 0;
     left: 0;
-    width: 38px;
-    height: 140px;
-    background-image: url(../images/main/ticket_edge.png);
-}
-.public .list .swiper-slide .ticket .ticket_edge::after { /* 왼쪽 하단 빵꾸 */
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 38px;
-    height: 140px;
-    background-image: url(../images/main/ticket_edge.png);
-    transform: scaleY(-1);
-}
-.public .list .swiper-slide .ticket .ticket_edge .bg { /* 막대 스타일 */
-    position: absolute;
-    top: 58px;
-    left: 0;
-    width: 100%;
-    height: 240px;
+    top: 38px;
+    width: calc(100% + 1px);
+    height: calc(100% - 76px);
     background-color: #fff;
 }
-
-
-/* .public .list .swiper-slide .ticket .ticket_edge.left::before {
+.public .list .swiper-slide .ticket .ticket_edge::before, 
+.public .list .swiper-slide .ticket .ticket_edge::after {
     content: "";
     position: absolute;
-    left: -1px ;
-    top: -58px;
-    width: 39px;
-    height: 140px;
-    background: url(../images/main/ticket_edge.png) no-repeat left bottom / contain;
-} */
-
-
-
-
-
-
-
+    left: 0;
+    
+    width: 100%;
+    height: 38px;
+    background: url(../images/main/ticket_edge.png) no-repeat left top / 100% ;
+}
+.public .list .swiper-slide .ticket .ticket_edge::before {
+    top: 0;
+}
+.public .list .swiper-slide .ticket .ticket_edge::after {
+    bottom: 0;
+}
+.public .list .swiper-slide .ticket .ticket_edge.left::before {
+    transform: scaleX(-1);
+}
+.public .list .swiper-slide .ticket .ticket_edge.left::after {
+    transform: scaleX(-1) scaleY(-1);
+}
+.public .list .swiper-slide .ticket .ticket_edge.right::after {
+    transform: scaleY(-1);
+}
 
 .public .list .swiper-slide .ticket .ticket_inner {
     position: relative; /* before */
     display: flex;
     background-color: #fff;
     padding: 30px 26px;
-    /* border: 1px solid red; */
     height: 356px;
     width: calc(100% - 76px);
 }
@@ -635,10 +608,25 @@ section .tit h2 {
     height: 10%;/*36px*/
     background: url(../images/main/public_barcode.jpg) no-repeat center center / cover;
 }
+.public .list .swiper-slide .ticket .ticket_inner::after {
+    content: "";
+    position: absolute;
+    left: -1px;
+    top: 0;
+    z-index: -1;
+    width: calc(100% + 2px);
+    height: 100%;
+    background-color: #fff;
+}
 .public .list .swiper-slide .ticket .ticket_inner .photo {
     overflow: hidden;
     width: 313px;
     height: 296px;
+}
+.public .list .swiper-slide .ticket .ticket_inner .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 .public .list .swiper-slide .ticket .ticket_inner .txt_wrap {
     
@@ -682,7 +670,7 @@ section .tit h2 {
     -webkit-box-orient: vertical;
     word-break: normal;
 }
-.public .list .swiper-slide .ticket .ticket_inner a {
+.public .list .swiper-slide .ticket .ticket_inner .txt_wrap a {
     display: inline-block;
     border: 1px solid #ccc;
     background-color: #fff;
@@ -690,7 +678,7 @@ section .tit h2 {
     color: var(--tit-color);
     padding: 18px 24px;
 }
-.public .list .swiper-slide .ticket .ticket_inner a:hover {
+.public .list .swiper-slide .ticket .ticket_inner .txt_wrap a:hover {
     border-color: var(--point-color);
     background-color: var(--point-color);
     color: #fff;
@@ -713,7 +701,7 @@ section .tit h2 {
     position: absolute; /* public */
     top: 190px;
     right: calc(50% - 630px);
-    display: block;
+    display: inline-block;
     color: #fff;
     padding-right: 1.76em;
 }
@@ -757,4 +745,411 @@ section .tit h2 {
 @keyframes rolling {
     0% {left: 0;}
     100% {left: -18.33em;}
+}
+@media screen and (max-width:1300px){
+    .public .more a {
+        /* right: calc(100% + 20px); */
+        right: 18px;
+    }
+}
+@media screen and (min-width:769px) and (max-width:1024px){
+            .public .list .swiper-slide {
+                width: 85%;
+            }
+            
+            .public .list .swiper-slide .ticket .ticket_inner {
+                padding: 25px 15px;
+                height: 300px;
+            }
+            .public .list .swiper-slide .ticket .ticket_inner .photo {
+                overflow: hidden;
+                width: 285px;
+                height: 100%;
+            }
+            .public .list .swiper-slide .ticket .ticket_inner .txt_wrap {
+                width: calc(100% - 285px);
+            }
+            .public .list .swiper-slide .ticket .ticket_inner .txt_wrap h3 {
+                font-size: 22px;
+            }
+            .public .list .swiper-slide .ticket .ticket_inner .txt_wrap .txt_cont {
+                margin: 20px 0 37px 0; /*****?????*****/
+            }
+            .public .list .swiper-slide .ticket .ticket_inner .txt_wrap .txt_cont ul li strong {
+                margin-bottom: 8px;
+            }
+            .public .more a {
+                position: absolute; /* public */
+                top: 190px;
+                display: inline-block;
+                color: #fff;
+                padding-right: 1.76em;
+            }
+            .public .more a::before {
+                content: "";
+                position: absolute;
+                right: -0.18em;
+                bottom: 0.18em;
+                width: 1.59em;
+                height: 0.82em;
+                background-image: url("data:image/svg+xml,%3Csvg width='27' height='14' viewBox='0 0 27 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_132_826)'%3E%3Cpath d='M0 10.4142H26.0122L19.4268 3.58496' stroke='white' stroke-width='2'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_132_826'%3E%3Crect width='27' height='14' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+                background-repeat: no-repeat;
+                background-position: center center;
+                transition: 0.5s;
+            }
+            .public .more a:hover::before {
+                transform: translateX(0.4em);
+            }
+            .public .rolling {
+                position: absolute; /* public */
+                bottom: 29px;
+                left: 0;
+                width: 100%;
+            }
+            .public .rolling p {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                font-family: 'Italiana';
+                font-size: 120px;
+                line-height: var(--tit-line-height);
+                color: rgba(255,255,255,0.1);
+                white-space: nowrap;
+            
+                animation-name: rolling;
+                animation-duration: 22s;
+                animation-iteration-count: infinite; /* 무제한 */
+                animation-timing-function: linear; /* 가속도 삭제 */
+                text-transform: uppercase; /* 대문자 변경 */
+            }
+            @keyframes rolling {
+                0% {left: 0;}
+                100% {left: -18.33em;}
+            }
+
+
+}/*@media*/
+@media screen and (max-width:768px){
+            section .tit {
+                margin-top: 0;
+            }
+            .public {
+                padding: 81px 0 156px 0;
+            }
+            .public .tit {
+                position: relative;
+            }
+            .public .tit::after {
+                content: "";
+                position: absolute;
+                right: 30px;
+                bottom: 15px;
+                width: 45%;
+                height: 1px;
+                background-color: #fff;
+            }
+            .public .list {
+                margin-top: 22px;
+            }
+            .public .list .swiper-slide {
+                width: 80%;
+            }
+            
+            /* 티켓 모양 */
+            .public .list .swiper-slide .ticket .ticket_edge { /*막대너비기준*/
+                width: 17px;
+            }
+            .public .list .swiper-slide .ticket .ticket_edge::before { /* 왼쪽 상단 빵꾸 */
+                width: 17px;
+                height: 63px;
+                background-image: url(../images/main/ticket_edge_m01.png);
+            }
+            .public .list .swiper-slide .ticket .ticket_edge::after { /* 왼쪽 하단 빵꾸 */
+                width: 17px;
+                height: 63px;
+                background-image: url(../images/main/ticket_edge_m02.png);
+            }
+            .public .list .swiper-slide .ticket .ticket_edge .bg { /* 막대 스타일 */
+                top: 17px;
+                height: calc(100% - 34px);
+            }
+            /* 티켓 모양 : end*/
+            
+            .public .list .swiper-slide .ticket .ticket_inner {
+                padding: 5.56% 3%;
+                height: 100%;
+                width: calc(100% - 34px);
+                display: flex;
+                flex-direction: column;
+            }
+            .public .list .swiper-slide .ticket .ticket_inner::before {
+                right: 3%;
+                bottom: 14%;
+                width: 20.27%;
+                height: 2.28%;
+            }
+            .public .list .swiper-slide .ticket .ticket_inner .photo {
+                width: auto;
+                height: 238px;
+            }
+            .public .list .swiper-slide .ticket .ticket_inner .txt_wrap {
+                width: auto;
+                margin-left: 0;
+            }
+            .public .list .swiper-slide .ticket .ticket_inner .txt_wrap h3 {
+                font-size: var(--ctn-font-size);
+                margin-top: 20px;
+            }
+            .public .list .swiper-slide .ticket .ticket_inner .txt_wrap h3 br {
+                display: none;
+            }
+            .public .list .swiper-slide .ticket .ticket_inner .txt_wrap .txt_cont {
+                margin: 20px 0 6px 0;
+            }
+            .public .list .swiper-slide .ticket .ticket_inner .txt_wrap .txt_cont ul {
+                flex-wrap: wrap;
+                column-gap: 14%;
+                row-gap: 10px;
+            }
+            .public .list .swiper-slide .ticket .ticket_inner .txt_wrap .txt_cont ul li {
+                width: 30%;
+            }
+            .public .list .swiper-slide .ticket .ticket_inner .txt_wrap .txt_cont ul li strong {
+                font-size: 14px;
+                margin-bottom: 0;
+            }
+            .public .list .swiper-slide .ticket .ticket_inner .txt_wrap a {
+                padding: 4px 0;
+                width: 100%;
+                text-align: center;
+            }
+            .swiper-pagination-bullet {
+                width: 10px;
+                height: 10px;
+            }
+            .public .more a {
+                top: 113px;
+                padding-right: 0;
+                width: 17px;
+                height: 17px;
+                background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_130_306' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='17' height='17'%3E%3Crect x='0.5' y='0.5' width='16' height='16' fill='%23D9D9D9' stroke='white'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_130_306)'%3E%3Cpath d='M9.19629 2.1377V7.80371H14.8623V9.19629H9.19629V14.8623H7.80371V9.19629H2.1377V7.80371H7.80371V2.1377H9.19629Z' fill='white' stroke='white' stroke-width='0.025'/%3E%3C/g%3E%3C/svg%3E%0A");
+            }
+            .public .more a::before {
+                display: none;
+            }
+            .public .more a span {
+                display: none;
+            }
+            .public .rolling {
+                bottom: 14px;
+            }
+            .public .rolling p {
+                font-size: 64px;
+            }
+}/*@media*/
+
+
+
+
+
+.notice {
+    background-color: var(--right-color);
+    padding: 7.76em 0 5.41em 0;
+}
+.notice .wrapper {
+    position: relative; /* more */
+}
+.notice .list ul {
+    margin-top: 2.76em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.notice .list ul li {
+    width: calc(50% - 0.5em);
+}
+.notice .list ul li {
+    border-top: 1px solid rgba(0,0,0,0.2);
+}
+.notice .list ul li:nth-child(1),
+.notice .list ul li:nth-child(2) {
+    border-top: 2px solid var(--tit-color);
+}
+.notice .list ul li a {
+    display: block;
+    margin: 1.12em 0 2.35em 0;
+}
+.notice .list ul li a strong {
+    color: var(--point-color);
+}
+.notice .list ul li a p {
+    font-size: var(--ctn-font-size);
+    color: var(--tit-color);
+    margin: 0.15em 0 0.9em 0;
+}
+.notice .list ul li a:hover p span {
+    border-bottom: 1px solid var(--tit-color);
+}
+.notice .more a {
+    position: absolute; /* wrapper */
+    top: 3.47em;
+    right: 0;
+    display: inline-block;
+    color: var(--tit-color);
+}
+.notice .more a span {
+    position: relative;
+    padding-right: 1.85em;
+}
+.notice .more a span::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0.18em;
+    width: 1.59em;
+    height: 0.82em;
+    background-image: url("data:image/svg+xml,%3Csvg width='27' height='14' viewBox='0 0 27 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_132_824)'%3E%3Cpath d='M0 10.4142H26.0122L19.4268 3.58496' stroke='%23441213' stroke-width='2'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_132_824'%3E%3Crect width='27' height='14' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: 0.5s;
+}
+.notice .more a:hover span::before {
+    transform: translateX(0.58em);
+}
+@media screen and (max-width:768px){
+            .notice {
+                padding: 5.06em 0;
+            }
+            .notice .tit {
+                position: relative; /* after */
+            }
+            .notice .tit::after {
+                content: "";
+                position: absolute;
+                right: 30px;
+                bottom: 15px;
+                width: 45%;
+                height: 1px;
+                background-color: var(--tit-color);
+            }
+            .notice .list ul {
+                margin-top: 1.81em;
+                display: block;
+            }
+            .notice .list ul li {
+                width: auto;
+            }
+            .notice .list ul li:nth-child(2) {
+                border-top: 1px solid rgba(0,0,0,0.2);
+            }
+            .notice .list ul li a {
+                margin: 0.63em 0 1.88em 0;
+            }
+            .notice .list ul li:last-child a {
+                margin-bottom: 0;
+            }
+            .notice .list ul li a p {
+                margin: 0.11em 0 0.84em 0;
+            }
+            .notice .more a {
+                top: 2em;
+                width: 1.06em; /* 17 */
+                height: 1.06em;
+                background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_130_345' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='17' height='17'%3E%3Crect x='0.5' y='0.5' width='16' height='16' fill='%23D9D9D9' stroke='white'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_130_345)'%3E%3Cpath d='M9.19629 2.1377V7.80371H14.8623V9.19629H9.19629V14.8623H7.80371V9.19629H2.1377V7.80371H7.80371V2.1377H9.19629Z' fill='%231D1D1D' stroke='%231D1D1D' stroke-width='0.025'/%3E%3C/g%3E%3C/svg%3E%0A");
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+            .notice .more a span {
+                display: none;
+            }
+}/*@media*/
+
+
+
+
+.collection {
+    background-color: var(--dark-color);
+    padding: 7.76em 0;
+}
+.collection .wrapper {
+    position: relative; /* tit */
+}
+.collection .tit {
+    position: absolute; /* wrapper */
+    top: 10px;
+    left: 0;
+}
+.collection .tit strong,
+.collection .tit h2 {
+    color: #fff;
+}
+
+
+
+.collection .list_pc {
+    width: 100%;
+}
+.collection .list_pc ul .group {
+    display: flex;
+    justify-content: flex-end;
+}
+.collection .list_pc ul li {
+    width: 25%;
+    margin: 12px;
+}
+.collection .list_pc ul li .brand {
+    width: 100%;
+    height: 100%;
+    background: url(../images/main/collection_brand.png) no-repeat center center / cover;
+}
+.collection .list_pc ul li:first-child {
+    margin-left: 0;
+}
+.collection .list_pc ul li:last-child {
+    margin-right: 0;
+}
+.collection .list_pc ul li a {
+    position: relative; /* txt_wrap */
+}
+.collection .list_pc ul li a .photo {
+    overflow: hidden;
+    max-height: 297px;
+}
+.collection .list_pc ul li a .photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/**** a에 오버했을 때 ****/
+.collection .list_pc ul li a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(68,18,19,0.8); */
+}
+.collection .list_pc ul li a .txt_wrap {
+    position: absolute; /* a */
+    top: 0;
+    left: 0;
+    color: #fff;
+}
+.collection .list_pc ul li a .txt_wrap h3 {
+    font-size: 25px;
+    font-weight: var(--bold-weight);
+    line-height: var(--tit-line-height);
+}
+
+
+
+
+
+
+
+.collection .list_mobil {
+    display: none;
 }
