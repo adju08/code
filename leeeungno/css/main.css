@@ -549,7 +549,7 @@ section .tit h2 {
     width: 70%;
 }
 
-/* 티켓 모양 */
+/**** 티켓 모양 ****/
 .public .list .swiper-slide .ticket {
     display: flex;
 }
@@ -564,6 +564,9 @@ section .tit h2 {
     width: calc(100% + 1px);
     height: calc(100% - 76px);
     background-color: #fff;
+}
+.public .list .swiper-slide .ticket .ticket_edge .bg.right {
+    border-right: 3px dashed #b1b1b1;
 }
 .public .list .swiper-slide .ticket .ticket_edge::before, 
 .public .list .swiper-slide .ticket .ticket_edge::after {
@@ -618,6 +621,8 @@ section .tit h2 {
     height: 100%;
     background-color: #fff;
 }
+/**** 티켓모양 끝 ****/
+
 .public .list .swiper-slide .ticket .ticket_inner .photo {
     overflow: hidden;
     width: 313px;
