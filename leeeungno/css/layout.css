@@ -7,7 +7,7 @@ header {
     width: 100%;
     height: var(--header-h);
     z-index: 100;
-    padding: 0 20px;
+    padding: 0 1.18em;
     display: flex; /* logo gnb util 좌우로 배치 */
     justify-content: space-between;
     align-items: center;
@@ -65,7 +65,7 @@ header.fixed,
 header.menu_over {
     background-color: #fff;
     color: var(--tit-color);
-    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.05);
+    box-shadow: 0 0.24em 0.59em 0 rgba(0,0,0,0.05);
 }
 
 header.fixed .logo a,
@@ -82,7 +82,7 @@ header.menu_over .util .search .search_open {
 }
 /****************************** header에 fixed 클래스 추가 : 끝 ******************************/
 
-@media screen and (min-width:1217px){
+@media screen and (min-width:1301px){
     header .gnb .gnb_bg,
     header .gnb .gnb_util,
     header .gnb .gnb_open,
@@ -132,7 +132,7 @@ header.menu_over .util .search .search_open {
         right: 0;
         top: 0;
         width: 1px;
-        height: 291px;
+        height: 17.12em;
         background-color: #E2E2E2;
     }
     header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a {
@@ -174,7 +174,7 @@ header.menu_over .util .search .search_open {
         width: 100%;
         height: 23em;
         background-color: #fff;
-        box-shadow: 0 4px 10px 0 rgba(0,0,0,0.05);
+        box-shadow: 0 0.24em 0.59em 0 rgba(0,0,0,0.05);
     }
     header.menu_over::after {
         content: "";
@@ -191,19 +191,10 @@ header.menu_over .util .search .search_open {
 /****************************** menu_over 추가 : 끝 ******************************/
 }/*@media*/
 
-@media screen and (min-width:1217px) and (max-width:1300px){
-    /* 1160-1024 사이일 때 적용 */
-            header .gnb .gnb_wrap ul.depth1 > li {
-                width: 10.5em;
-            }
-            header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
-                padding-left: 0.5em;
-            }
-}/*@media*/
 
 
-/************************************* 모바일 시작 *************************************/
-@media screen and (max-width:1216px){
+@media screen and (max-width:1300px){
+/*************************** 모바일 시작 ***************************/    
             header {
                 padding-right: 0;
             }
@@ -219,7 +210,7 @@ header.menu_over .util .search .search_open {
             header .gnb .gnb_util {
                 display: none;
                 position: absolute; /* gnb_wrap을 기준으로 정렬 */
-                left: 20px;
+                left: 1.25em;
                 top: 0.94em;
                 gap: 1.25em;
             }
@@ -271,7 +262,7 @@ header.menu_over .util .search .search_open {
             }
             header .gnb .gnb_wrap ul.depth1 {
                 margin-top: var(--header-h);
-                padding: 0 20px;
+                padding: 0 1.25em;
                 height: calc(100% - var(--header-h));
                 overflow-x: hidden;
                 overflow-y: auto;
@@ -302,7 +293,7 @@ header.menu_over .util .search .search_open {
             header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
                 display: none; /* open 클래스 추가 시 나타남 */
                 background-color: #F0ECEC;
-                padding: 20px 0 20px 20px;
+                padding: 1.25em 0 1.25em 1.25em;
                 color: var(--base-color);
             }
             header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a {
@@ -370,11 +361,89 @@ header.menu_over .util .search .search_open {
 
 
 
-
-
-
-
-
 footer {
-    margin-top: 1000px;
+    background-color: #0E0000;
+    padding: 7.76em 0 10.47em 0;
+    color: rgba(255,255,255,0.8);
 }
+footer .wrapper {
+    display: flex;
+    gap: 10%;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+footer .sns ul {
+    display: flex;
+    justify-content: center;
+    gap: 0.59em;
+}
+footer .sns li a {
+    display: block;
+    width: 1.41em;
+    height: 1.41em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+footer .sns li.facebook a {
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.2847 12.8114L16.8558 9.00982H13.2853V6.54617C13.2853 5.50884 13.7813 4.49509 15.3791 4.49509H17V1.25933C17 1.25933 15.5291 1 14.1217 1C11.1856 1 9.26481 2.82122 9.26481 6.11591V9.00982H6V12.8114H9.26481V22H13.2853V12.8114H16.2847Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+footer .sns li.kakao a {
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_290_21)'%3E%3Cpath d='M12 3C6.47577 3 2 6.65851 2 11.1751C2 14.1131 3.89737 16.6907 6.74501 18.1319C6.53595 18.9376 5.98796 21.0567 5.8771 21.5087C5.74089 22.0721 6.07666 22.0622 6.29522 21.9116C6.46627 21.7937 9.03516 19.9857 10.1438 19.2062C10.7456 19.2979 11.3665 19.347 12 19.347C17.5242 19.347 22 15.6885 22 11.1719C22 6.65523 17.5242 3 12 3ZM18.2021 13.5727L16.8464 11.6566L16.536 11.9154C16.536 11.9154 16.536 12.8619 16.536 13.3598C16.536 13.7888 15.478 13.7888 15.478 13.3598C15.478 13.0879 15.5002 9.41631 15.4907 9.01017C15.4843 8.78745 15.7631 8.66954 16.0355 8.66954C16.2889 8.66954 16.536 8.77107 16.5423 8.98069C16.5581 9.53094 16.5423 10.5266 16.5423 10.5266C16.5423 10.5266 18.0754 8.94139 18.294 8.71867C18.5188 8.48612 19.2157 9.21324 18.9908 9.44251C18.6044 9.83882 17.6256 10.9328 17.6256 10.9328L19.0668 12.8947C19.3392 13.2681 18.4777 13.946 18.2021 13.5694V13.5727ZM10.5651 8.99052C10.7488 9.39338 11.7466 12.2363 12.038 13.0257C12.2407 13.5792 11.262 13.9624 11.0592 13.4089C10.809 12.7276 10.8723 12.6949 10.8723 12.6949H8.98765L8.78175 13.4384C8.56319 13.9591 7.61609 13.5334 7.83465 13.0126C8.13874 12.2887 9.05417 9.56697 9.30757 8.99052C9.40893 8.76125 9.64333 8.66954 9.88407 8.66954C10.1755 8.66954 10.4764 8.80383 10.5619 8.99052H10.5651ZM8.15458 8.66954C8.79443 8.66954 8.79443 9.71108 8.15458 9.71108C7.47672 9.71108 7.13145 9.71108 7.13145 9.71108V13.2844C7.12829 13.7823 6.05765 13.7757 6.05765 13.2779C6.06398 12.5966 6.05765 9.67178 6.05765 9.67178H5.02819C4.42319 9.67178 4.42319 8.65316 5.02819 8.64989C5.02819 8.64989 7.43871 8.66954 8.15774 8.66954H8.15458ZM12.4023 13.0683C12.4023 13.0683 12.3991 10.0845 12.3959 9.15756C12.3959 8.8333 12.6747 8.66954 12.9534 8.66954C13.2322 8.66954 13.5078 8.83331 13.5109 9.15428C13.5109 9.82572 13.5109 12.5835 13.5109 12.5835C13.5109 12.5835 14.3947 12.5901 14.8793 12.5901C15.364 12.5901 15.364 13.6545 14.8793 13.6545C14.3947 13.6545 13.305 13.6611 12.8141 13.6611C12.3231 13.6611 12.4054 13.0683 12.4054 13.0683H12.4023Z' fill='white'/%3E%3Cpath d='M10.5238 11.7155L9.95043 9.8584L9.32959 11.7155H10.5238Z' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_290_21'%3E%3Crect width='20' height='19' fill='white' transform='translate(2 3)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+}
+footer .sns li.insta a {
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.5299 5.38672C16.9164 5.38672 16.415 5.88812 16.415 6.50154C16.415 7.11496 16.9164 7.61636 17.5299 7.61636C18.1433 7.61636 18.6447 7.11496 18.6447 6.50154C18.6447 5.88812 18.1433 5.38672 17.5299 5.38672Z' fill='url(%23paint0_linear_290_23)'/%3E%3Cpath d='M12.5745 6.81689C9.99279 6.81689 7.89648 8.91853 7.89648 11.4949C7.89648 14.0712 9.99812 16.1729 12.5745 16.1729C15.1508 16.1729 17.2525 14.0712 17.2525 11.4949C17.2525 8.91853 15.1508 6.81689 12.5745 6.81689ZM12.5745 14.498C10.9209 14.498 9.57672 13.1538 9.57672 11.5002C9.57672 9.84665 10.9209 8.50247 12.5745 8.50247C14.2281 8.50247 15.5722 9.84665 15.5722 11.5002C15.5722 13.1538 14.2281 14.498 12.5745 14.498Z' fill='url(%23paint1_linear_290_23)'/%3E%3Cpath d='M16.2925 21H8.70748C5.56037 21 3 18.4396 3 15.2925V7.70747C3 4.56036 5.56037 2 8.70748 2H16.2925C19.4396 2 22 4.56036 22 7.70747V15.2925C22 18.4396 19.4396 21 16.2925 21ZM8.70214 3.78158C6.54183 3.78158 4.78158 5.54183 4.78158 7.70214V15.2872C4.78158 17.4475 6.54183 19.2077 8.70214 19.2077H16.2872C18.4475 19.2077 20.2078 17.4475 20.2078 15.2872V7.70214C20.2078 5.54183 18.4475 3.78158 16.2872 3.78158H8.70214Z' fill='url(%23paint2_linear_290_23)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_290_23' x1='8.82465' y1='-1.83028' x2='26.059' y2='14.668' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='1' stop-color='white'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint1_linear_290_23' x1='3.95993' y1='3.25373' x2='21.1944' y2='19.7467' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='1' stop-color='white'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint2_linear_290_23' x1='3.9228' y1='3.29085' x2='21.1572' y2='19.7838' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='1' stop-color='white'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A");
+}
+footer .sns li.youtube a {
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M23 8.70192C23 6.10223 20.8359 4 18.1733 4H5.82675C3.15806 4 1 6.10816 1 8.70192V14.2981C1 16.8977 3.16413 19 5.82675 19H18.1733C20.8419 19 23 16.8918 23 14.2981V8.70192ZM15.7356 11.9175L10.1976 14.5882C9.97873 14.7007 9.24316 14.5468 9.24316 14.3099V8.8322C9.24316 8.58941 9.98479 8.43544 10.2036 8.55387L15.5045 11.3608C15.7295 11.4852 15.9605 11.7991 15.7356 11.9175Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+footer .info_wrap .f_nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 2.76em;
+}
+footer .info_wrap .f_nav ul li {
+    position: relative; /* after */
+}
+footer .info_wrap .f_nav ul li::after {
+    content: "";
+    position: absolute;
+    right: -1.38em;
+    top: 0.29em;
+    width: 1px;
+    height: 0.82em;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+footer .info_wrap .f_nav ul li:last-child:after {
+    display: none;
+}
+footer .info_wrap .f_info {
+    margin: 2.06em 0 2.94em 0;
+}
+footer .info_wrap .f_info span,
+footer .info_wrap .f_info address {
+    display: inline-block;
+    margin: 0 2.82em 0 0;
+}
+footer .info_wrap .copyright {
+    color: rgba(255,255,255,0.6);
+}
+
+@media screen and (max-width:768px){
+            footer {
+                padding: 5.06em 0 8.06em 0;
+            }
+            footer .wrapper {
+                display: block;
+            }
+            footer .sns {
+                margin-bottom: 1.81em;
+            }
+            footer .sns li a {
+                width: 1.13em;
+                height: 1.13em;
+            }
+            footer .info_wrap .f_info {
+                margin: 1.88em 0 2.5em 0;
+            }
+}/*@media*/

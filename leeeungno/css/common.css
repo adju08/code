@@ -84,9 +84,12 @@ html, body {
     --bold-weight: 700;
     --base-weight: 500;
     --v_font-size: 4.41rem; /* 75px / 17 */
+    --sp-font-size: 2.94rem; /* 50px */
     --tit-font-size: 2.65rem; /* 45px / 17 */
     --ctn-font-size: 1.29rem; /* 22px / 17 */
+    --u_ctn-font-size: 1.47rem; /* 25px */
     --tit-line-height: 1.2;
+
 }
 @media screen and (max-width:1300px){
     :root {
@@ -94,8 +97,10 @@ html, body {
         --header-h-m: -56px;
 
         --v_font-size: 3.24rem; /* 55px / 17 */
+        --sp-font-size: 2.35rem; /* 40px */
         --tit-font-size: 2.06rem; /* 35px / 17 */
         --ctn-font-size: 1.24rem; /* 21px / 17 */
+        --u_ctn-font-size: 1.35rem; /* 23px */
     }
 }
 @media screen and (max-width:768px){
@@ -103,5 +108,6 @@ html, body {
         --v_font-size: 2.19rem; /* 35px / 16 */
         --tit-font-size: 1.56rem; /* 25px / 16 */
         --ctn-font-size: 1.19rem; /* 19px / 16 */
+        --u_ctn-font-size: 1.31rem; /* 21px */
     }
 }

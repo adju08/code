@@ -99,6 +99,12 @@
     left: auto;
     width: auto;
 }
+.visual .ctrl_wrap .group .count_pc .swiper-pagination-current {
+    color: #fff;
+}
+.visual .ctrl_wrap .group .count_pc .swiper-pagination-total {
+    color: rgba(255,255,255,0.5);
+}
 .visual .ctrl_wrap .group .count_mobil {
     display: none;
 }
@@ -708,22 +714,25 @@ section .tit h2 {
     right: calc(50% - 630px);
     display: inline-block;
     color: #fff;
-    padding-right: 1.76em;
 }
-.public .more a::before {
+.public .more a span {
+    position: relative;
+    padding-right: 1.85em;
+}
+.public .more a span::before {
     content: "";
     position: absolute;
-    right: -0.18em;
+    right: 0;
     bottom: 0.18em;
     width: 1.59em;
     height: 0.82em;
-    background-image: url("data:image/svg+xml,%3Csvg width='27' height='14' viewBox='0 0 27 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_132_826)'%3E%3Cpath d='M0 10.4142H26.0122L19.4268 3.58496' stroke='white' stroke-width='2'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_132_826'%3E%3Crect width='27' height='14' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+    background-image: url("data:image/svg+xml,%3Csvg width='27' height='14' viewBox='0 0 27 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_132_872)'%3E%3Cpath d='M0 10.4142H26.0122L19.4268 3.58496' stroke='white' stroke-width='2'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_132_872'%3E%3Crect width='27' height='14' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
     background-repeat: no-repeat;
     background-position: center center;
     transition: 0.5s;
 }
-.public .more a:hover::before {
-    transform: translateX(0.4em);
+.public .more a:hover span::before {
+    transform: translateX(0.58em);
 }
 .public .rolling {
     position: absolute; /* public */
@@ -783,28 +792,6 @@ section .tit h2 {
             .public .list .swiper-slide .ticket .ticket_inner .txt_wrap .txt_cont ul li strong {
                 margin-bottom: 8px;
             }
-            .public .more a {
-                position: absolute; /* public */
-                top: 190px;
-                display: inline-block;
-                color: #fff;
-                padding-right: 1.76em;
-            }
-            .public .more a::before {
-                content: "";
-                position: absolute;
-                right: -0.18em;
-                bottom: 0.18em;
-                width: 1.59em;
-                height: 0.82em;
-                background-image: url("data:image/svg+xml,%3Csvg width='27' height='14' viewBox='0 0 27 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_132_826)'%3E%3Cpath d='M0 10.4142H26.0122L19.4268 3.58496' stroke='white' stroke-width='2'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_132_826'%3E%3Crect width='27' height='14' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
-                background-repeat: no-repeat;
-                background-position: center center;
-                transition: 0.5s;
-            }
-            .public .more a:hover::before {
-                transform: translateX(0.4em);
-            }
             .public .rolling {
                 position: absolute; /* public */
                 bottom: 29px;
@@ -860,39 +847,33 @@ section .tit h2 {
                 width: 80%;
             }
             
-            /* 티켓 모양 */
+            /**** 티켓 모양 ****/
             .public .list .swiper-slide .ticket .ticket_edge { /*막대너비기준*/
                 width: 17px;
             }
-            .public .list .swiper-slide .ticket .ticket_edge::before { /* 왼쪽 상단 빵꾸 */
-                width: 17px;
-                height: 63px;
-                background-image: url(../images/main/ticket_edge_m01.png);
-            }
-            .public .list .swiper-slide .ticket .ticket_edge::after { /* 왼쪽 하단 빵꾸 */
-                width: 17px;
-                height: 63px;
-                background-image: url(../images/main/ticket_edge_m02.png);
-            }
-            .public .list .swiper-slide .ticket .ticket_edge .bg { /* 막대 스타일 */
+            .public .list .swiper-slide .ticket .ticket_edge .bg {
                 top: 17px;
                 height: calc(100% - 34px);
             }
-            /* 티켓 모양 : end*/
-            
+            .public .list .swiper-slide .ticket .ticket_edge::before, 
+            .public .list .swiper-slide .ticket .ticket_edge::after {
+                height: 17px;
+            }
             .public .list .swiper-slide .ticket .ticket_inner {
-                padding: 5.56% 3%;
+                display: block;
+                padding: 20px 0;
                 height: 100%;
                 width: calc(100% - 34px);
-                display: flex;
-                flex-direction: column;
             }
             .public .list .swiper-slide .ticket .ticket_inner::before {
-                right: 3%;
-                bottom: 14%;
-                width: 20.27%;
-                height: 2.28%;
+                right: 0;
+                bottom: 59px;
+                width: 20.83%;/*75px*/
+                height: 2.28%;/*13px*/
             }
+            /**** 티켓모양 끝 ****/
+
+
             .public .list .swiper-slide .ticket .ticket_inner .photo {
                 width: auto;
                 height: 238px;
@@ -1031,8 +1012,8 @@ section .tit h2 {
             .notice .tit::after {
                 content: "";
                 position: absolute;
-                right: 30px;
-                bottom: 15px;
+                right: 1.88em;
+                bottom: 0.94em;
                 width: 45%;
                 height: 1px;
                 background-color: var(--tit-color);
@@ -1077,30 +1058,65 @@ section .tit h2 {
     padding: 7.76em 0;
 }
 .collection .wrapper {
-    position: relative; /* tit */
+    position: relative; /* txt */
 }
-.collection .tit {
+.collection .txt {
     position: absolute; /* wrapper */
-    top: 10px;
+    top: 0.59em;
     left: 0;
 }
-.collection .tit strong,
-.collection .tit h2 {
+.collection .txt .tit strong,
+.collection .txt .tit h2 {
     color: #fff;
 }
-
-
-
+.collection .txt .more a {
+    position: absolute; /* txt */
+    bottom: -9.76em;
+    left: 0;
+    display: inline-block;
+    color: #fff;
+}
+.collection .txt .more a span {
+    position: relative;
+    padding-right: 1.85em;
+}
+.collection .txt .more a span::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0.18em;
+    width: 1.59em;
+    height: 0.82em;
+    background-image: url("data:image/svg+xml,%3Csvg width='27' height='14' viewBox='0 0 27 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_132_872)'%3E%3Cpath d='M0 10.4142H26.0122L19.4268 3.58496' stroke='white' stroke-width='2'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_132_872'%3E%3Crect width='27' height='14' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: 0.5s;
+}
+.collection .txt .more a:hover span::before {
+    transform: translateX(0.58em);
+}
 .collection .list_pc {
     width: 100%;
+}
+.collection .list_pc ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end
 }
 .collection .list_pc ul .group {
     display: flex;
     justify-content: flex-end;
 }
+.collection .list_pc ul .group.up {
+    width: 50%;
+}
+
 .collection .list_pc ul li {
     width: 25%;
-    margin: 12px;
+    margin: 0.71em;
+}
+.collection .list_pc ul .group.up li{
+    width: 50%;
 }
 .collection .list_pc ul li .brand {
     width: 100%;
@@ -1110,6 +1126,9 @@ section .tit h2 {
 .collection .list_pc ul li:first-child {
     margin-left: 0;
 }
+.collection .list_pc ul .group.up li:first-child {
+    margin-left: 0.71em;
+}
 .collection .list_pc ul li:last-child {
     margin-right: 0;
 }
@@ -1118,7 +1137,7 @@ section .tit h2 {
 }
 .collection .list_pc ul li a .photo {
     overflow: hidden;
-    max-height: 297px;
+    max-height: 17.47em;
 }
 .collection .list_pc ul li a .photo img {
     display: block;
@@ -1126,35 +1145,195 @@ section .tit h2 {
     height: 100%;
     object-fit: cover;
 }
-
-/**** a에 오버했을 때 ****/
-.collection .list_pc ul li a::before {
+.collection .list_pc ul li a .txt_wrap {
+    position: absolute; /* a */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    padding: 1.18em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.3s;
+    opacity: 0;
+}
+.collection .list_pc ul li a .txt_wrap::after {
+    content: "";
+    position: absolute;
+    bottom: 1.53em;
+    right: 1.18em;
+    width: 3.29em;
+    height: 1.71em;
+    background-image: url("data:image/svg+xml,%3Csvg width='56' height='29' viewBox='0 0 56 29' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_129_487)'%3E%3Cpath d='M0 21.5731H53.9512L40.2927 7.42676' stroke='white' stroke-width='2'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_129_487'%3E%3Crect width='56' height='29' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.collection .list_pc ul li a .txt_wrap .txt_inner h3 {
+    font-size: var(--u_ctn-font-size);
+    font-weight: var(--bold-weight);
+    line-height: var(--tit-line-height);
+}
+.collection .list_pc ul li a .txt_wrap span {
+    font-size: var(--sp-font-size);
+    line-height: var(--tit-line-height);
+}
+.collection .list_pc ul li a:before {
     content: "";
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    /* background-color: rgba(68,18,19,0.8); */
+    background-color: rgba(68,18,19,0.8);
+    transition: 0.3s;
+    opacity: 0;
 }
-.collection .list_pc ul li a .txt_wrap {
-    position: absolute; /* a */
-    top: 0;
-    left: 0;
-    color: #fff;
+.collection .list_pc ul li a:hover:before,
+.collection .list_pc ul li a:hover .txt_wrap {
+    opacity: 1;
 }
-.collection .list_pc ul li a .txt_wrap h3 {
-    font-size: 25px;
-    font-weight: var(--bold-weight);
-    line-height: var(--tit-line-height);
-}
-
-
-
-
-
-
-
 .collection .list_mobil {
     display: none;
 }
+@media screen and (max-width:1024px){
+            /************* 모바일 ************/
+            .collection .list_mobil {
+                display: block;
+            }
+            .collection {
+                padding: 5.06em 0;
+            }
+            .collection .txt {
+                position: relative;
+                top: 0;
+            }
+            .collection .txt .more a {
+                bottom: 0;
+                left: auto;
+                right: 0;
+            }
+            .collection .list_mobil {
+                padding-top: 1.38em;
+            }
+            .collection .list_mobil .swiper {
+                overflow: visible;
+            }
+            .collection .list_mobil .swiper-slide {
+                width: 16.88em;
+            }
+            .collection .list_mobil .swiper-slide a {
+                position: relative; /* txt_wrap */
+                display: block;
+                transition: 0.5s;
+            }
+            .collection .list_mobil .swiper-slide:hover a {
+                transform: translateY(-0.71em);
+            }
+            .collection .list_mobil ul li a:before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(68,18,19,0.15);
+            }
+            .collection .list_mobil .swiper-slide a .photo {
+                overflow: hidden;
+                height: 16.88em;
+            }
+            .collection .list_mobil .swiper-slide a .photo img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .collection .list_mobil ul .swiper-slide a .txt_wrap {
+                position: absolute; /* a */
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                color: #fff;
+                padding: 1.18em;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+            .collection .list_mobil ul .swiper-slide a .txt_wrap::after {
+                content: "";
+                position: absolute;
+                bottom: 1.53em;
+                right: 1.18em;
+                width: 3.29em;
+                height: 1.71em;
+                background-image: url("data:image/svg+xml,%3Csvg width='56' height='29' viewBox='0 0 56 29' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_129_487)'%3E%3Cpath d='M0 21.5731H53.9512L40.2927 7.42676' stroke='white' stroke-width='2'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_129_487'%3E%3Crect width='56' height='29' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+            .collection .list_mobil ul .swiper-slide a .txt_wrap .txt_inner h3 {
+                font-size: var(--u_ctn-font-size);
+                font-weight: var(--bold-weight);
+                line-height: var(--tit-line-height);
+            }
+            .collection .list_mobil ul .swiper-slide a .txt_wrap span {
+                font-size: var(--sp-font-size);
+                line-height: var(--tit-line-height);
+            }
+            .collection .ctrl_wrap {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.59em;
+                margin-top: 0.94em;
+            }
+            .collection .ctrl_wrap button {
+                width: 0.94em;
+                height: 0.94em;
+                background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_161_197' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='12' height='12'%3E%3Crect x='12' y='12' width='12' height='12' transform='rotate(-180 12 12)' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_161_197)'%3E%3Cpath d='M7.99228 1.17291L8.70191 1.88253L4.58465 5.99978L8.7019 10.117L7.99228 10.8267L3.1654 5.99978L7.99228 1.17291Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+            .collection .ctrl_wrap .btn_next {
+                transform: rotate(180deg);
+            }
+            .collection .ctrl_wrap .paging {
+                width: auto;
+                margin-top: 0;
+            }
+            .collection .ctrl_wrap .paging .swiper-pagination-current {
+                color: #fff;
+            }
+            .collection .ctrl_wrap .paging .swiper-pagination-total {
+                color: rgba(255,255,255,0.5);
+            }
+            .collection .list_pc {
+                display: none;
+            }
+
+}/*@media*/
+@media screen and (max-width:768px){
+            .collection .txt .tit::after {
+                content: "";
+                position: absolute;
+                right: 1.88em;
+                bottom: 0.94em;
+                width: 45%;
+                height: 1px;
+                background-color: #fff;
+            }
+            .collection .txt .more a {
+                bottom: auto;
+                top: 2em;
+                width: 1.06em;
+                height: 1.06em;
+                background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_130_362' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='17' height='17'%3E%3Crect x='0.5' y='0.5' width='16' height='16' fill='%23D9D9D9' stroke='white'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_130_362)'%3E%3Cpath d='M9.19629 2.1377V7.80371H14.8623V9.19629H9.19629V14.8623H7.80371V9.19629H2.1377V7.80371H7.80371V2.1377H9.19629Z' fill='white' stroke='white' stroke-width='0.025'/%3E%3C/g%3E%3C/svg%3E%0A");
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+            .collection .txt .more a span {
+                display: none;
+            }
+}/*@media*/
