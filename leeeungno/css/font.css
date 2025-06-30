@@ -8,21 +8,19 @@
 	src: url(https://fonts.gstatic.com/s/italiana/v20/QldNNTtLsx4E__B0XQmWaXw.woff2) format('woff2');
   }
 @font-face {
-	font-family: "Italiana", sans-serif;
+	font-family: "Italiana";
 	font-weight: 400;
 	font-style: normal;
 	src: url(../font/QldNNTtLsx4E__B0XQmWaXw.woff2) format('woff2');
 }
 @font-face {
-	font-family: 'Red Rose', serif;
-  	font-optical-sizing: auto;
+	font-family: 'Red Rose';
   	font-weight: 500;
   	font-style: normal;
 	src: local('Red Rose Medium'), url(../font/QdVISTYiLBjouPgEUajvsfWwDtc3MH8yn_szdT6t.woff2) format('woff2');
 }
 @font-face {
-	font-family: 'Red Rose', serif;
-  	font-optical-sizing: auto;
+	font-family: 'Red Rose';
   	font-weight: 700;
   	font-style: normal;
 	src: local('Red Rose Bold'), url(../font/QdVISTYiLBjouPgEUajvsfWwDtc3MH8ySvwzdT6t.woff2) format('woff2');
