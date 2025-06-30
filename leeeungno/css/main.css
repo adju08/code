@@ -176,7 +176,7 @@
     padding: 2.06em;
     height: 100%;
 }
-.bar .research a strong {
+.bar .research a h3 {
     font-size: 1.76rem;
     line-height: var(--tit-line-height);
     white-space: nowrap;
@@ -215,14 +215,14 @@
     white-space: nowrap;
 }
 .bar .inner .list {
-    width: 83.47%;
+    width: calc(100% - 150px);
 }
 .bar .inner .list ul {
     display: flex;
     gap: 0.88em;
 }
 .bar .inner .list ul li {
-    width: 15.71em;
+    width: 25%;
 }
 .bar .inner ul li a {
     position: relative; /* before, after */
@@ -272,7 +272,7 @@
         row-gap: 3.53em;
         padding: 1.2em;
     }
-    .bar .research a strong {
+    .bar .research a h3 {
         font-size: 1.5rem;
     }
     .bar .inner {
@@ -311,7 +311,7 @@
                 row-gap: 0.69em;
                 padding: 1.25em;
             }
-            .bar .research a strong {
+            .bar .research a h3 {
                 font-size: 1.38rem;
             }
             .bar .inner {
@@ -386,6 +386,7 @@ section .tit h2 {
     position: relative; /* .txt a */
 }
 .exhibitions .wrapper {
+    position: relative; /* more */
     display: flex;
     gap: 10%;
 }
@@ -395,39 +396,6 @@ section .tit h2 {
 }
 .exhibitions .txt .tit h2 {
     margin-bottom: 0.4em;
-}
-.exhibitions .txt a {
-    display: inline-block;
-    margin-top: 12.18em;
-    color: var(--tit-color);
-}
-.exhibitions .txt a span {
-    position: relative; /* after,before */
-    padding-right: 1.76em;
-}
-.exhibitions .txt a span::after {
-    content: "";
-    position: absolute;
-    top: -10.12em;
-    left: 0;
-    width: 1px;
-    height: 9.24em;
-    background-color: var(--tit-color);
-}
-.exhibitions .txt a span::before {
-    content: "";
-    position: absolute;
-    right: -0.18em;
-    bottom: 0.18em;
-    width: 1.59em;
-    height: 0.82em;
-    background-image: url("data:image/svg+xml,%3Csvg width='27' height='14' viewBox='0 0 27 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_132_1239)'%3E%3Cpath d='M0 10.4147H26.0122L19.4268 3.58545' stroke='%23441213' stroke-width='2'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_132_1239'%3E%3Crect width='27' height='14' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
-    background-repeat: no-repeat;
-    background-position: center center;
-    transition: 0.5s;
-}
-.exhibitions .txt a:hover span::before {
-    transform: translateX(0.4em);
 }
 .exhibitions .list .swiper-wrapper {
     width: 67.59em;
@@ -462,6 +430,44 @@ section .tit h2 {
     color: var(--tit-color);
     line-height: var(--tit-line-height);
     margin: 1.09em 0 0.45em 0;
+}
+.exhibitions .more {
+    position: absolute;
+    bottom: 12.35em;
+    left: 0;
+}
+.exhibitions .more a {
+    display: inline-block;
+    margin-top: 12.18em;
+    color: var(--tit-color);
+}
+.exhibitions .more a span {
+    position: relative; /* after,before */
+    padding-right: 1.76em;
+}
+.exhibitions .more a span::after {
+    content: "";
+    position: absolute;
+    top: -10.12em;
+    left: 0;
+    width: 1px;
+    height: 9.24em;
+    background-color: var(--tit-color);
+}
+.exhibitions .more a span::before {
+    content: "";
+    position: absolute;
+    right: -0.18em;
+    bottom: 0.18em;
+    width: 1.59em;
+    height: 0.82em;
+    background-image: url("data:image/svg+xml,%3Csvg width='27' height='14' viewBox='0 0 27 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_132_1239)'%3E%3Cpath d='M0 10.4147H26.0122L19.4268 3.58545' stroke='%23441213' stroke-width='2'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_132_1239'%3E%3Crect width='27' height='14' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: 0.5s;
+}
+.exhibitions .more a:hover span::before {
+    transform: translateX(0.4em);
 }
 @media screen and (min-width:769px) and (max-width:1024px){
             .exhibitions .list .swiper-wrapper {
@@ -505,18 +511,22 @@ section .tit h2 {
             .exhibitions .txt p {
                 display: none;
             }
-            .exhibitions .txt a {
-                position: absolute; /* exhibitions */
-                top: 32px;
-                right: 18px;
+            .exhibitions .more {
+                bottom: auto;
+                left: auto;
+                top: 2em;
+                right: 0;
+            }
+            .exhibitions .more a {
                 width: 17px;
                 height: 17px;
                 background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_130_287' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='17' height='17'%3E%3Crect width='17' height='17' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_130_287)'%3E%3Cpath d='M7.79167 14.875V9.20833H2.125V7.79167H7.79167V2.125H9.20833V7.79167H14.875V9.20833H9.20833V14.875H7.79167Z' fill='%231D1D1D'/%3E%3C/g%3E%3C/svg%3E%0A");
                 margin-top: 0;
             }
-            .exhibitions .txt a span {
+            .exhibitions .more a span {
                 display: none;
-            }.exhibitions .list {
+            }
+            .exhibitions .list {
                 margin-top: 1.38em;
             }
             .exhibitions .list .swiper-wrapper {
@@ -708,10 +718,12 @@ section .tit h2 {
 .swiper-pagination-bullet-active {
     background: #F2F2F2;
 }
-.public .more a {
+.public .more {
     position: absolute; /* public */
     top: 190px;
     right: calc(50% - 630px);
+}
+.public .more a {
     display: inline-block;
     color: #fff;
 }
@@ -761,9 +773,9 @@ section .tit h2 {
     100% {left: -18.33em;}
 }
 @media screen and (max-width:1300px){
-    .public .more a {
+    .public .more {
         /* right: calc(100% + 20px); */
-        right: 18px;
+        right: 20px;
     }
 }
 @media screen and (min-width:769px) and (max-width:1024px){
@@ -828,10 +840,10 @@ section .tit h2 {
             .public {
                 padding: 81px 0 156px 0;
             }
-            .public .tit {
+            .public .wrapper {
                 position: relative;
             }
-            .public .tit::after {
+            .public .wrapper::after {
                 content: "";
                 position: absolute;
                 right: 30px;
@@ -913,9 +925,10 @@ section .tit h2 {
                 width: 10px;
                 height: 10px;
             }
-            .public .more a {
+            .public .more {
                 top: 113px;
-                padding-right: 0;
+            }
+            .public .more a {
                 width: 17px;
                 height: 17px;
                 background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_130_306' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='17' height='17'%3E%3Crect x='0.5' y='0.5' width='16' height='16' fill='%23D9D9D9' stroke='white'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_130_306)'%3E%3Cpath d='M9.19629 2.1377V7.80371H14.8623V9.19629H9.19629V14.8623H7.80371V9.19629H2.1377V7.80371H7.80371V2.1377H9.19629Z' fill='white' stroke='white' stroke-width='0.025'/%3E%3C/g%3E%3C/svg%3E%0A");
@@ -976,10 +989,12 @@ section .tit h2 {
 .notice .list ul li a:hover p span {
     border-bottom: 1px solid var(--tit-color);
 }
-.notice .more a {
+.notice .more {
     position: absolute; /* wrapper */
     top: 3.47em;
     right: 0;
+}
+.notice .more a {
     display: inline-block;
     color: var(--tit-color);
 }
@@ -1037,8 +1052,10 @@ section .tit h2 {
             .notice .list ul li a p {
                 margin: 0.11em 0 0.84em 0;
             }
-            .notice .more a {
+            .notice .more {
                 top: 2em;
+            }
+            .notice .more a {
                 width: 1.06em; /* 17 */
                 height: 1.06em;
                 background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_130_345' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='17' height='17'%3E%3Crect x='0.5' y='0.5' width='16' height='16' fill='%23D9D9D9' stroke='white'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_130_345)'%3E%3Cpath d='M9.19629 2.1377V7.80371H14.8623V9.19629H9.19629V14.8623H7.80371V9.19629H2.1377V7.80371H7.80371V2.1377H9.19629Z' fill='%231D1D1D' stroke='%231D1D1D' stroke-width='0.025'/%3E%3C/g%3E%3C/svg%3E%0A");
@@ -1064,15 +1081,16 @@ section .tit h2 {
     position: absolute; /* wrapper */
     top: 0.59em;
     left: 0;
+    z-index: 1;
 }
 .collection .txt .tit strong,
 .collection .txt .tit h2 {
     color: #fff;
 }
+.collection .txt .more {
+   margin-top: 8em;
+}
 .collection .txt .more a {
-    position: absolute; /* txt */
-    bottom: -9.76em;
-    left: 0;
     display: inline-block;
     color: #fff;
 }
@@ -1100,23 +1118,11 @@ section .tit h2 {
 }
 .collection .list_pc ul {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end
+    flex-wrap: wrap;
+    gap: 24px;
 }
-.collection .list_pc ul .group {
-    display: flex;
-    justify-content: flex-end;
-}
-.collection .list_pc ul .group.up {
-    width: 50%;
-}
-
 .collection .list_pc ul li {
-    width: 25%;
-    margin: 0.71em;
-}
-.collection .list_pc ul .group.up li{
-    width: 50%;
+    width: calc(25% - 18px);
 }
 .collection .list_pc ul li .brand {
     width: 100%;
@@ -1124,13 +1130,7 @@ section .tit h2 {
     background: url(../images/main/collection_brand.png) no-repeat center center / cover;
 }
 .collection .list_pc ul li:first-child {
-    margin-left: 0;
-}
-.collection .list_pc ul .group.up li:first-child {
-    margin-left: 0.71em;
-}
-.collection .list_pc ul li:last-child {
-    margin-right: 0;
+    margin-left: calc(50% + 12px);
 }
 .collection .list_pc ul li a {
     position: relative; /* txt_wrap */
@@ -1209,13 +1209,14 @@ section .tit h2 {
                 position: relative;
                 top: 0;
             }
-            .collection .txt .more a {
-                bottom: 0;
-                left: auto;
+            .collection .txt .more {
+                margin-top: 0;
+                position: absolute;
+                top: 3.47em;
                 right: 0;
             }
             .collection .list_mobil {
-                padding-top: 1.38em;
+                padding-top: 2em;
             }
             .collection .list_mobil .swiper {
                 overflow: visible;
@@ -1324,9 +1325,10 @@ section .tit h2 {
                 height: 1px;
                 background-color: #fff;
             }
-            .collection .txt .more a {
-                bottom: auto;
+            .collection .txt .more {
                 top: 2em;
+            }
+            .collection .txt .more a {
                 width: 1.06em;
                 height: 1.06em;
                 background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_130_362' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='17' height='17'%3E%3Crect x='0.5' y='0.5' width='16' height='16' fill='%23D9D9D9' stroke='white'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_130_362)'%3E%3Cpath d='M9.19629 2.1377V7.80371H14.8623V9.19629H9.19629V14.8623H7.80371V9.19629H2.1377V7.80371H7.80371V2.1377H9.19629Z' fill='white' stroke='white' stroke-width='0.025'/%3E%3C/g%3E%3C/svg%3E%0A");
@@ -1335,5 +1337,8 @@ section .tit h2 {
             }
             .collection .txt .more a span {
                 display: none;
+            }
+            .collection .list_mobil {
+                padding-top: 1.38em;
             }
 }/*@media*/
