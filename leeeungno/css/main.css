@@ -215,7 +215,7 @@
     white-space: nowrap;
 }
 .bar .inner .list {
-    width: calc(100% - 150px);
+    width: calc(100% - 164px);
 }
 .bar .inner .list ul {
     display: flex;
@@ -435,6 +435,7 @@ section .tit h2 {
     position: absolute;
     bottom: 12.35em;
     left: 0;
+    z-index: 10;
 }
 .exhibitions .more a {
     display: inline-block;
@@ -722,6 +723,7 @@ section .tit h2 {
     position: absolute; /* public */
     top: 190px;
     right: calc(50% - 630px);
+    z-index: 10;
 }
 .public .more a {
     display: inline-block;
@@ -993,6 +995,7 @@ section .tit h2 {
     position: absolute; /* wrapper */
     top: 3.47em;
     right: 0;
+    z-index: 10;
 }
 .notice .more a {
     display: inline-block;
@@ -1081,13 +1084,15 @@ section .tit h2 {
     position: absolute; /* wrapper */
     top: 0.59em;
     left: 0;
-    z-index: 1;
+    z-index: 10;
 }
 .collection .txt .tit strong,
 .collection .txt .tit h2 {
     color: #fff;
 }
 .collection .txt .more {
+    position: relative;
+    z-index: 10;
    margin-top: 8em;
 }
 .collection .txt .more a {
