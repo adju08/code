@@ -210,17 +210,36 @@ section .tit h2 {
 .lineup .list .swiper-slide:nth-child(even) {
     transform: translateY(-70px);
 }
+
+
+
+
+/****** 카드 옆으로 뒤집기 : 시작 ******/
 .lineup .list .swiper-slide a {
     display: block;
     position: relative; /* txt */
 }
+.lineup .list .swiper-slide a:hover {
+    transform: rotateY(-180deg);
+}
+
+
+
+
+
+
+
+/****** 카드 옆으로 뒤집기 : 종료 ******/
+
+
+
 .lineup .list .swiper-slide a .photo {
     position: relative;
     overflow: hidden;
     height: 399px;
     border-radius: 10px;
 }
-.lineup .list .swiper-slide a .photo::before {
+.lineup .list .swiper-slide a:hover .photo::before {
     content: "";
     position: absolute; /* photo */
     top: 0;
@@ -229,7 +248,7 @@ section .tit h2 {
     height: 100%;
     background-color: #fff;
 }
-.lineup .list .swiper-slide:nth-child(even) a .photo::before {
+.lineup .list .swiper-slide:nth-child(even) a:hover .photo::before {
     background-color: var(--main-color);
 }
 .lineup .list .swiper-slide a .photo img {
@@ -237,20 +256,72 @@ section .tit h2 {
     height: 100%;
     object-fit: cover;
 }
-.lineup .list .swiper-slide a .txt {
+.lineup .list .swiper-slide a .txt_wrap {
     position: absolute; /* a */
-    top: 0;
+    bottom: 0;
     left: 0;
-    color: var(--main-color);
+    color: #fff;
+    padding: 0 0 30px 20px;
 }
-.lineup .list .swiper-slide:nth-child(even) a .txt {
+.lineup .list .swiper-slide a:hover .txt_wrap {
+    bottom: auto;
+    top: 0;
+    height: 100%;
+    color: var(--main-color);
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.lineup .list .swiper-slide:nth-child(even) a .txt_wrap {
     color: #fff;
 }
+.lineup .list .swiper-slide a .txt_wrap .txt {
+    position: relative;
+}
+.lineup .list .swiper-slide a:hover .txt_wrap .txt::after {
+    content: "";
+    position: absolute; /* txt */
+    bottom: 5px;
+    right: 0;
+    width: 33px;
+    height: 33px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("data:image/svg+xml,%3Csvg width='33' height='34' viewBox='0 0 33 34' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.78034 33.8926L29.0062 7.692V31.5116H33V0.892578H2.38097V4.88637H26.2006L0 31.1122L2.78034 33.8926Z' fill='%2300264B'/%3E%3C/svg%3E%0A");
+}
+.lineup .list .swiper-slide:nth-child(even) a:hover .txt_wrap .txt::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='33' height='34' viewBox='0 0 33 34' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.78034 33.8926L29.0062 7.692V31.5116H33V0.892578H2.38097V4.88637H26.2006L0 31.1122L2.78034 33.8926Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+.lineup .list .swiper-slide a .txt_wrap .txt strong {
+    font-size: 15px;
+    margin-bottom: 2px;
+}
+.lineup .list .swiper-slide a .txt_wrap .txt h3 {
+    font-size: var(--sub-tit-size);
+    font-weight: var(--bold-weight);
+    line-height: var(--tit-line-height);
+}
+.lineup .list .swiper-slide:nth-child(even) a .txt_wrap .txt h3,
+.lineup .list .swiper-slide:nth-child(even) a:hover .txt_wrap .txt h3 {
+    color: #fff;
+}
+.lineup .list .swiper-slide a:hover .txt_wrap .txt h3 {
+    color: var(--main-color);
+}
+.lineup .list .swiper-slide a .txt_wrap p {
+    display: none;
+}
+.lineup .list .swiper-slide a:hover .txt_wrap p {
+    display: block;
+}
+
 
 
 @media screen and (max-width:1540px){
     .lineup .list {
         left: 140px;
+        width: calc(100% - 260px);
     }
 }
 
