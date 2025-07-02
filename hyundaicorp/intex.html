@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- fullpage 라이브러리 파일 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.9/fullpage.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.9/fullpage.min.css">
+
+    <!-- swiper 라이브러리 -->
+    <script src="js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+
+    <!-- jquery 라이브러리 -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+
+    <!-- aos 애니메이션 라이브러리 -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- count 라이브러리 -->
+    <script src="js/count.js"></script>
+
+    <script src="js/main.js"></script>
+    <script src="js/common.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+    <title>현대코퍼레이션</title>
+</head>
+<body>
+    <!-- 배경이 흰색이라 header나 다른 요소가 검은색
+         모바일에서 스크롤되면 header에 fixed 클래스 추가 -->
+    <header class="">
+        <h1 class="logo"><a href="index.html"><span class="blind">현대코퍼레이션</span></a></h1>
+        <nav class="gnb">
+            <button class="gnb_open"><span class="blind">메뉴열기</span></button>
+            <div class="gnb_wrap">
+                <div class="gnb_util">
+                    <a href="#" class="mypage"><span class="blind">마이페이지</span></a>
+                    <div class="lang">
+                        <button class="lang_open"><span class="blind">언어선택</span></button>
+                    </div>
+                    <div class="search">
+                        <button class="search_open"><span class="blind">검색열기</span></button>
+                    </div>
+                </div><!--//gnb_util-->
+                <ul class="depth1">
+                    <!--pc버전에서 over 클래스 추가, 모바일에서는 open 클래스 추가-->
+                    <li class="">
+                        <a href="#"><span>회사소개</span></a>
+                        <ul class="depth2">
+                            <li><a href="#"><span>회사개요</span></a></li>
+                            <li><a href="#"><span>회사연혁</span></a></li>
+                            <li><a href="#"><span>인사말씀</span></a></li>
+                            <li><a href="#"><span>핵심가치</span></a></li>
+                            <li><a href="#"><span>현대정신</span></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><span>BUSINESS</span></a>
+                        <ul class="depth2">
+                            <li><a href="#"><span>철강</span></a></li>
+                            <li><a href="#"><span>석유화학</span></a></li>
+                            <li><a href="#"><span>자동차</span></a></li>
+                            <li><a href="#"><span>선박</span></a></li>
+                            <li><a href="#"><span>플랜트/환경사업</span></a></li>
+                            <li><a href="#"><span>전기전자</span></a></li>
+                            <li><a href="#"><span>건설장비</span></a></li>
+                            <li><a href="#"><span>자원개발</span></a></li>
+                            <li><a href="#"><span>해외투자</span></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><span>IR</span></a>
+                        <ul class="depth2">
+                            <li><a href="#"><span>IR자료실</span></a></li>
+                            <li><a href="#"><span>기업현황</span></a></li>
+                            <li><a href="#"><span>경영정보</span></a></li>
+                            <li><a href="#"><span>주식정보</span></a></li>
+                            <li><a href="#"><span>공시정보</span></a></li>
+                            <li><a href="#"><span>재무정보</span></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><span>ESG</span></a>
+                        <ul class="depth2">
+                            <li><a href="#"><span>윤리경영</span></a></li>
+                            <li><a href="#"><span>환경경영</span></a></li>
+                            <li><a href="#"><span>임직원행동지침</span></a></li>
+                            <li><a href="#"><span>안전보건 경영방침</span></a></li>
+                            <li><a href="#"><span>사회공헌정책/활동</span></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><span>인재채용</span></a>
+                        <ul class="depth2">
+                            <li><a href="#"><span>인사제도</span></a></li>
+                            <li><a href="#"><span>복리후생</span></a></li>
+                            <li><a href="#"><span>채용공고</span></a></li>
+                            <li><a href="#"><span>채용안내</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <button class="gnb_close"><span class="blind">메뉴닫기</span></button>
+            </div><!--//gnb_wrap-->
+            <div class="gnb_bg"></div><!--메뉴 아래에서 검은색 배경 담당-->
+        </nav>
+        <div class="util">
+            <a href="#" class="mypage"><span class="blind">마이페이지</span></a>
+            <div class="lang">
+                <button class="lang_open"><span class="blind">언어선택</span></button>
+            </div>
+            <div class="search">
+                <button class="search_open"><span class="blind">검색열기</span></button>
+            </div>
+        </div>
+    </header>
+    <div id="fullpage">
+        <!-- fp-auto-height-responsive 모바일에서 높이 100% 해제 -->
+        <section class="visual section fp-auto-height-responsive">
+            <h2 class="blind">팝업</h2>
+            <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                    <li class="swiper-slide">
+                        <div class="photo"><img src="images/main/visual01.jpg" alt=""></div>
+                        <div class="visual_txt">
+                            <div class="wrapper">
+                                <h3>Hyundai. Where Global Shipbuilding Begins.</h3>
+                                <p>중화학 산업의 핵심 분야인 선박, 철강, 화학, 플랜트 부문에 특화된 맞춤형 제품과 솔루션을 제공합니다.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="photo"><img src="images/main/visual02.jpg" alt=""></div>
+                        <div class="visual_txt">
+                            <div class="wrapper">
+                                <h3>Global Business Powered by Connection</h3>
+                                <p>수출입과 투자, 자원개발을 아우르는 종합 비즈니스 플랫폼을 구축하고 있습니다.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="photo"><img src="images/main/visual03.jpg" alt=""></div>
+                        <div class="visual_txt">
+                            <div class="wrapper">
+                                <h3>Smart Trade Solutions with Global Reach</h3>
+                                <p>전 세계에 구축된 비즈니스 네트워크를 통해 고객 맞춤형 무역 솔루션을 제공합니다.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="photo">
+                            <video loop muted data-autoplay playsinline>
+                                <!-- <source src="images/main/visual04.mp4" type="video/mp4"> -->
+                            </video>
+                        </div>
+                        <div class="visual_txt">
+                            <div class="wrapper">
+                                <h3>Global Growth through Local Expertise</h3>
+                                <p>해외시장에 특화된 전략과 현지화된 역량으로 글로벌 성장을 이끌고 있습니다.</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="ctrl_wrap">
+                    <div class="paging"></div><!-- 컨트롤 요소는 swiper 안에 배치-->
+                    <div class="btn_wrap">
+                        <button class="btn_prev"><span class="blind">이전버튼</span></button>
+                        <button class="btn_stop"><span class="blind">일시정지</span></button>
+                        <button class="btn_play"><span class="blind">재생</span></button>
+                        <button class="btn_next"><span class="blind">다음버튼</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll_down"><span>scroll down</span></div>
+        </section>
+
+        <section class="lineup section fp-auto-height-responsive">
+            <div class="tit">
+                <div class="wrapper">
+                    <h2>무역사업</h2>
+                    <p>다양한 산업 분야의 제품을 전 세계 고객에게 최적의 조건으로 제공합니다.</p>
+                </div>
+            </div>
+            <div class="list">
+                <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
+                    <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
+                        <li class="swiper-slide">
+                            <a href="#">
+                                <div class="photo"><img src="images/main/lineup01.jpg" alt=""></div>
+                                <div class="txt">
+                                    <strong>철강</strong>
+                                    <h3>STEEL</h3>
+                                    <p>현대코퍼레이션은 포스코, 현대제철, KG스틸 등 국내외 유수 철강 기업들과 협력하여 열연강, 냉연강, 후판, 도금강판, 강관, 형강, 스테인리스 등 다양한 철강제품과 알루미늄, 아연 등 비철금속 및 반제품을 취급합니다.</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#">
+                                <div class="photo"><img src="images/main/lineup02.jpg" alt=""></div>
+                                <div class="txt">
+                                    <strong>화학</strong>
+                                    <h3>CHEMICAL</h3>
+                                    <p>현대코퍼레이션의 화학 부문은 글로벌 네트워크를 바탕으로 석유제품 트레이딩부터 항공유 급유, 해상 벙커링, 합성수지, 합섬원료, 화학비료에 이르기까지 고객 맞춤형 솔루션을 제공합니다.</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#">
+                                <div class="photo"><img src="images/main/lineup03.jpg" alt=""></div>
+                                <div class="txt">
+                                    <strong>플랜트</strong>
+                                    <h3>PLANT</h3>
+                                    <p>현대코퍼레이션의 플랜트 부문은 국내외 건설사와 협력해 해외 플랜트 수주 및 기자재 공급을 수행하며, 발전소, 정유·석유화학공장, 담수공장 등 다양한 산업설비와 환경·해양·운반설비의 제작·설치를 지원합니다.</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#">
+                                <div class="photo"><img src="images/main/lineup04.jpg" alt=""></div>
+                                <div class="txt">
+                                    <strong>자동차 및 부품</strong>
+                                    <h3>AUTOMOBILE<br>& PARTS</h3>
+                                    <p>현대코퍼레이션의 자동차 부문은 승용차, 상용차, 특장차, 군용차, 엔진 및 부품 등을 전 세계에 공급하며, 현대차·기아를 비롯한 국내외 전문 제조업체들과 폭넓게 협력하고 있습니다.</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#">
+                                <div class="photo"><img src="images/main/lineup05.jpg" alt=""></div>
+                                <div class="txt">
+                                    <strong>에너지</strong>
+                                    <h3>ENERGY</h3>
+                                    <p>현대코퍼레이션은 태양광 중심의 그린에너지 사업을 전개하며, 글로벌 모듈 공급과 발전소 운영, 바이오매스·지열·온실가스 감축 등 지속가능한 에너지 분야로 사업을 확장하고 있습니다.</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#">
+                                <div class="photo"><img src="images/main/lineup06.jpg" alt=""></div>
+                                <div class="txt">
+                                    <strong>철도 시스템</strong>
+                                    <h3>RAILWAY<br>SYSTEM</h3>
+                                    <p>현대코퍼레이션은 현대로템과 협력해 철도차량, 신호통신, 전력설비 등 종합 철도시스템을 전 세계에 공급하며, 운영과 유지보수까지 책임지고 있습니다. 또한 국내 방위산업체와 함께 군용차량과 무기류 제품도 제공합니다.</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#">
+                                <div class="photo"><img src="images/main/lineup07.jpg" alt=""></div>
+                                <div class="txt">
+                                    <strong>건설 장비</strong>
+                                    <h3>CONSTRUCTION<br>EQUIPMENT</h3>
+                                    <p>현대코퍼레이션은 현대중공업의 건설장비와 산업차량을 전 세계에 공급하며, 부가장비 발굴, 파이낸싱 지원, 기술·부품 서비스, 딜러 네트워크 강화 등을 통해 고객 맞춤형 솔루션을 제공하고 있습니다.</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#">
+                                <div class="photo"><img src="images/main/lineup08.jpg" alt=""></div>
+                                <div class="txt">
+                                    <strong>선박</strong>
+                                    <h3>SHIP</h3>
+                                    <p>현대코퍼레이션은 글로벌 선박 네트워크를 통해 맞춤형 건조와 금융, 수리, 기자재 서비스를 제공합니다. 대형 선박은 현대중공업 3사와, 중소형 선박은 국내외 조선소와 협력합니다.</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="more"><a href="#">VIEW MORE</a></div>
+        </section>
+
+        <section class="global section fp-auto-height-responsive">
+            <div class="wrapper">
+                <div class="tit">
+                    <h2>시민의 힘으로, <br>
+                        모두가 누리는 <br>
+                        <strong>5분 거리</strong>의 숲 만들기</h2>
+                    <p>시민의 힘으로 나무를 심고 숲을 가꾸고 보전하며, 숲의 공공<br>성을 높여 누구나 숲의 가치를 누리는 건강한 사회를 만들어 <br>가고자 합니다.</p>
+                </div>
+                <div class="list">
+                    <ul>
+                        <li class="work01"><a href="#"><span>도시숲</span></a></li>
+                        <li class="work02"><a href="#"><span>학교숲</span></a></li>
+                        <li class="work03"><a href="#"><span>사회복지숲</span></a></li>
+                        <li class="work04"><a href="#"><span>숲환경교육</span></a></li>
+                        <li class="work05"><a href="#"><span>숲길</span></a></li>
+                        <li class="work06"><a href="#"><span>공존숲</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="media section fp-auto-height-responsive">
+            <div class="wrapper">
+                <div class="tit">
+                    <h2>생명의 숲 활동이야기</h2>
+                </div>
+                <div class="list">
+                    <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
+                        <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <h2>서로배움학교 [산림써클] 1회차 - 청소년 환경활동가의 이야기를 담은 영화 그레타 툰베리 를 중심으로 -</h2>
+                                    <p>서로배움학교는 생명의숲 활동가의 역량 강화를 위한 스터디 그룹 프로그램입니다. ‘일 기반 학습, 일을 통한 성장’을 중심에 두고, 주최자가 선정한 주제를 바탕으로 3~5인의 공감하는 활동가들이 참여하여, 모든 구성원이 배움의 주체가 되어 경계 없이 생각을 나눕니다. 2025년 서로배움학교 <산림써클>은 산림정책팀 활동가들로 구성되어 있으며, 산림 복원과 숲 조성 활동을 바탕으로, 전문가와 함께 산림 정책에 대해 조금 더 전문적으로 논의하고, 생명의숲 활동 주제에 대해 다양한 의견을 나누고 학습하는 프로그램입니다.</p>
+                                    <span class="date_wrap">
+                                        <span class="date">2025.06.10</span>
+                                        <span class="name">정하나 로배움학교는 생명의숲 활동가의 역량 강화</span>
+                                    </span>
+                                    <div class="photo">
+                                        <strong class="cate">사무처이야기</strong>
+                                        <img src="images/main/story01.jpg" alt="">
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <h2>[더해지구] 생명의숲과 함께한 2025년 인제 자작나무숲 신혼부부 나무심기</h2>
+                                    <p>매년 열리는 신혼부부 나무심기 행사, 2025년에도 생명의숲은 유한킴벌리와 함께 신혼부부 나무심기 행사를 진행하였습니다. 비 예보가 있었던 행사 당일, 하지만 날씨요정도 우리 모두의 바람을 알아차렸는 지, 맑은 날씨로 따뜻하게 맞이해주었습니다. 2025년 4월 12일 토요일, 생명의숲은 강원특별자치도 인제 자작나무숲에서 신혼부부 나무심기를 진행하였는데요. 행사 당일에는 선정된 신혼부부 106쌍과 생명의숲, 유한킴벌리 임직원, 북부지방산림청, 인제군 관계자 총 350명이 신혼부부 나무심기 행사에 함께하였습니다. 정말 많은 분들께서 숲에 대한 중요성을 인지하고, 다음 세대를 위해 나무심기 행사에 참여해주신 걸 보니 마음이 따뜻해집니다. 이제 신혼부부 나무심기 행사에 대해 이야기하기 앞서, 은행나무를 심는 이 곳, 행사 대상지에 대한 이해를 높이기 위해 인제 자작나무숲에 대해 설명하고자 합니다.</p>
+                                    <span class="date_wrap">
+                                        <span class="date">2025.06.09</span>
+                                        <span class="name">정하나</span>
+                                    </span>
+                                    <div class="photo">
+                                        <strong class="cate">2025 지금지구 숲행동 2025 지금지구 숲행동2025 지금지구 숲행동2025 지금지구 숲행동2025 지금지구 숲행동</strong>
+                                        <img src="images/main/story02.jpg" alt="">
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <h2>2025.3.18 ~ 6.5 80일간의 숲행동 돌아보기</h2>
+                                    <p>시민의 숲행동이 이어지며 지켜낸 숲은 우리의 일상과 미래를 지킵니다.</p>
+                                    <span class="date_wrap">
+                                        <span class="date">2025.06.05</span>
+                                        <span class="name">생명의숲</span>
+                                    </span>
+                                    <div class="photo">
+                                        <strong class="cate">2025 지금지구 숲행동</strong>
+                                        <img src="images/main/story03.jpg" alt="">
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <h2>[이어지구] 청와대 숲 산책 후기 _ 정치의 공간을 넘어, 숲으로 다시 열린 청와대에서 시민들과 함께 걷다</h2>
+                                    <p>올해, 새로운 기획 활동으로 시민들과 함께하는 숲 탐방 프로그램을 준비했다. 서울 시내에서 시민들이 쉽게 접근할 수 있는 숲들을 검토한 끝에, 최종 목적지는 청와대로 정했다. 이유는 명확했다. 『청와대의 나무들』 저자이자 뛰어난 해설가인 박상진 교수님이 계시고, 조만간 개방된 청와대가 다시 일반에 폐쇄될 수도 있다는 소식 때문이었다.</p>
+                                    <span class="date_wrap">
+                                        <span class="date">2025.05.30</span>
+                                        <span class="name">유영민</span>
+                                    </span>
+                                    <div class="photo">
+                                        <strong class="cate">2025 지금지구 숲행동</strong>
+                                        <img src="images/main/story04.JPG" alt="">
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="more"><a href="#"><span>더보기</span></a></div>
+            </div>
+        </section>
+
+        <footer class="section fp-auto-height"> <!--footer에만 줌 fp-auto-height-->
+            <div class="footer_head">
+                <div class="wrapper">
+                    <div class="item newsletter">
+                        <div class="inner">
+                            <h2>생명의숲 뉴스레터</h2>
+                            <p>시민과 함께 2025 지금지구 숲행동에 나섭니다.</p>
+                        </div>
+                        <a href="#">구독하기</a>
+                    </div><!--//item-->
+                    <div class="item support">
+                        <div class="inner">
+                            <h2>생명의숲 후원안내</h2>
+                            <p>생명의 숲은 시민, 회원의 힘으로 움직입니다.</p>
+                        </div>
+                        <a href="#">후원하기</a>
+                    </div><!--//item-->
+                </div><!--//wrapper-->
+            </div><!--//footer_head-->
+            <div class="footer_sub">
+                <div class="wrapper">
+                    <div class="f_logo"><img src="images/common/logo_w.png" alt="생명의숲"></div>
+                    <div class="sns">
+                        <ul>
+                            <li class="blog"><a href="#">블로그</a></li>
+                            <li class="facebook"><a href="#">페이스북</a></li>
+                            <li class="kakao"><a href="#">카카오톡</a></li>
+                            <li class="insta"><a href="#">인스타그램</a></li>
+                            <li class="youtube"><a href="#">유튜브</a></li>
+                        </ul>
+                    </div><!--//sns-->
+                    <div class="info_wrap">
+                        <div class="f_nav">
+                            <ul>
+                                <li><a href="#">개인정보처리방침</a></li>
+                                <li><a href="#">저작권보호 및 정책</a></li>
+                                <li><a href="#">생명의숲 FAQ</a></li>
+                                <li><a href="#">이메일수집거부</a></li>
+                                <li><a href="#">문의하기</a></li>
+                                <li><a href="#">청렴포털사이트</a></li>
+                            </ul>
+                        </div><!--//f_nav-->
+                        <div class="f_info">
+                            <span>사단법인 생명의숲</span><br>
+                            <address>04001 서울특별시 마포구 월드컵북로5길 13, 2층 201호</address><br>
+                            <span>사업자등록번호 : 102-82-09642</span>
+                            <span>대표자 : 허상만</span><br>
+                            <span>Tel : 02-735-3232</span>
+                            <span>Fax : 02-735-3238</span>
+                            <span>Email : admin@forest.or.kr</span><br>
+                            <span>개인정보책임자 사무처장 최승희</span>
+                        </div><!--//f_info-->
+                        <div class="copyright">
+                            Copyright ⓒ 2016 Forest for life All. rights reserved.<br>
+                            홈페이지 내 사용된 이미지 중 일부는 Freepik의 이미지를 사용하였습니다.
+                        </div>
+                    </div>
+                </div><!--//wrapper-->
+            </div><!--//footer_sub-->
+        </footer>
+    </div><!--//fullpage-->
+</body>
+</html>
