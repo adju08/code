@@ -96,6 +96,15 @@ $(document).ready(function(){ //문서가 로딩되고 단 1번 실행
         }, 500)
     })
 
+    $('footer .family_site button.family_open').on('click', function(){
+        $('footer .family_site').addClass('open')
+        $('footer .family_site .list').slideDown()
+    })
+    $('footer .family_site button.family_close').on('click', function(){
+        $('footer .family_site').removeClass('open')
+        $('footer .family_site .list').slideUp()
+    })
+
 
 
 })//$(document).ready
