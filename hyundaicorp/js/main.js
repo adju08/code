@@ -46,8 +46,8 @@ $(document).ready(function(){
             }
         },
 
-        responsiveWidth: 1025, /* fullpage를 적용시키지 않을 모바일 사이즈 (768부터 모바일) */
-        responsiveHeight: 700 /* 브라우저 높이가 700이하로 줄면 fullpage 안함 */
+        responsiveWidth: 1025 /* fullpage를 적용시키지 않을 모바일 사이즈 (768부터 모바일) */
+        //responsiveHeight: 700 /* 브라우저 높이가 700이하로 줄면 fullpage 안함 */
     }); //fullpage
 
 
