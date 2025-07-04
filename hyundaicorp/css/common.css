@@ -24,7 +24,7 @@ html, body {
 @media screen and (max-width:1540px){
     .wrapper {
         width: auto;
-        margin: 0 120px 0 140px; /* 가운데 정렬 */
+        margin: 0 110px 0 150px; /* 가운데 정렬 */
     }
 }
 @media screen and (max-width:1024px){ /* 1260 * 0.05 = 63 + 63 = 126 + 1260 = 1386 (%로 했을 때)*/

@@ -14,7 +14,7 @@ $(document).ready(function(){
         navigationTooltips: ['Main', 'Lineup', 'Global Net', 'Media', 'footer'], /* 툴팁 */
         showActiveTooltip: true, /* 현재 활성화된 페이지의 툴팁에 특정 클래스 주기 */
         
-        lockAnchors: false, //true -> 새로고침하면 main 페이지로 이동
+        lockAnchors: true, //true -> 새로고침하면 main 페이지로 이동
         //false -> 새로고침했을 때 보던 페이지로 자동 이동
         anchors: ['Main', 'Lineup', 'Global', 'Media', 'footer'], /* href="#link1" 이렇게 코딩하면 해당 링크명으로 이동 */
 
@@ -159,6 +159,22 @@ $(document).ready(function(){
     
 
     
+    /******************************* global 아이콘 애니메이션 ******************************/
+    const items = document.querySelectorAll('.global .map .list ul li');
+        let current = 0;
 
+        function animateItem(index) {
+            const item = items[index];
+            item.classList.add('animate');
+
+            item.addEventListener('animationend', () => {
+            item.classList.remove('animate'); // 다음 실행을 위해 초기화
+            const next = (index + 1) % items.length;
+            animateItem(next);
+            }, { once: true });
+    }
+
+  // 첫 시작
+  animateItem(0);
 
 })//$(document).ready
