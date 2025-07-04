@@ -302,7 +302,7 @@ section .tit h2 {
 }
 .lineup .more {
     position: absolute; /* global */
-    top: 200px;
+    top: 22%;
     left: calc(50% + 630px);
     border: 2px solid var(--main-color);
 }
