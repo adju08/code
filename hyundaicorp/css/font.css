@@ -2,26 +2,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
 
 @font-face {
-	font-family: "Ubuntu", serif;
+	font-family: "Ubuntu";
   	font-weight: 500;
   	font-style: normal;
 	src: url(../font/4iCv6KVjbNBYlgoCjC3jvWyNL4U.woff2) format('woff2');
 }
 
 @font-face {
-	font-family: "Ubuntu", serif;
+	font-family: "Ubuntu";
 	font-weight: 700;
 	font-style: normal;
 	src: url(../font/4iCv6KVjbNBYlgoCxCvjtGyNL4U.woff2) format('woff2');
 }
 @font-face {
-	font-family: "Noto Sans KR", sans-serif;
+	font-family: "Noto Sans KR";
 	font-weight: 500;
 	font-style: normal;
 	src: url(../font/PbykFmXiEBPT4ITbgNA5Cgm20xz64px_1hVWr0wuPNGmlQNMEfD4.0.woff2) format('woff2');
 }
 @font-face {
-	font-family: "Noto Sans KR", sans-serif;
+	font-family: "Noto Sans KR";
 	font-weight: 700;
 	font-style: normal;
 	src: url(../font/PbykFmXiEBPT4ITbgNA5Cgm20xz64px_1hVWr0wuPNGmlQNMEfD4.0.woff2) format('woff2');
