@@ -198,8 +198,29 @@ section .tit h2 {
 }
 .lineup {
     background-color: var(--bg-color);
-    position: relative; /* more */
     overflow-x: hidden;
+}
+.lineup .wrapper {
+    position: relative; /* more */
+}
+.lineup .tit .more {
+    position: absolute; /* tit */
+    bottom: 0;
+    right: 0;
+    border: 2px solid var(--main-color);
+}
+.lineup .tit .more a {
+    display: block;
+    font-size: 14px;
+    font-weight: var(--bold-weight);
+    line-height: var(--tit-line-height);
+    color: var(--main-color);
+    padding: 11px 24px;
+    transition: 0.2s;
+}
+.lineup .tit .more a:hover {
+    background-color: var(--main-color);
+    color: #fff;
 }
 .lineup .list {
     position: relative;
@@ -300,35 +321,12 @@ section .tit h2 {
 .lineup .list .swiper-slide:nth-child(even) a .card .card_inner .txt_wrap .txt::after {
     background-image: url("data:image/svg+xml,%3Csvg width='33' height='34' viewBox='0 0 33 34' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.78034 33.8926L29.0062 7.692V31.5116H33V0.892578H2.38097V4.88637H26.2006L0 31.1122L2.78034 33.8926Z' fill='white'/%3E%3C/svg%3E%0A");
 }
-.lineup .more {
-    position: absolute; /* global */
-    top: 20%;
-    left: calc(50% + 630px);
-    border: 2px solid var(--main-color);
-}
-.lineup .more a {
-    display: block;
-    font-size: 14px;
-    font-weight: var(--bold-weight);
-    line-height: var(--tit-line-height);
-    color: var(--main-color);
-    padding: 11px 24px;
-    transition: 0.2s;
-}
-.lineup .more a:hover {
-    background-color: var(--main-color);
-    color: #fff;
-}
 
 
 @media screen and (max-width:1540px){
     .lineup .list {
         left: 140px;
         width: calc(100% - 260px);
-    }
-    .lineup .more {
-        left: auto;
-        right: 120px;
     }
 }/*@media*/
 
@@ -342,18 +340,17 @@ section .tit h2 {
             .lineup .list .swiper-slide:nth-child(even) {
                 transform: translateY(-55px);
             }
-            .lineup .more {
-                top: 19%;
-                right: 20px;
-            }
 }
 @media screen and (max-width:768px){
             /********************* 모바일 시작 ********************/
             .lineup {
                 padding: 81px 0;
             }
+            .lineup .tit {
+                text-align: center;
+            }
             .lineup .list {
-                padding-top: 25px;
+                padding-top: 32px;
             }
             .lineup .list .swiper-slide {
                 width: 182px;
@@ -367,17 +364,16 @@ section .tit h2 {
             .lineup .list .swiper-slide a:hover .card .card_inner {
                 transform: rotateY(0);
             }
-            .lineup .more {
+            .lineup .tit .more {
                 position: relative; /* absolute 해제 */
-                top: 0;
                 right: auto;
                 left: 50%;
                 transform: translateX(-50%);
                 border: 2px solid var(--main-color);
-                margin: 25px 0 0 0;
+                margin: 17px 0 0 0;
                 width: fit-content;
             }
-            .lineup .more a {
+            .lineup .tit .more a {
                 padding: 7px 18px;
                 
             }
