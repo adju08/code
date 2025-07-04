@@ -15,13 +15,13 @@
 	src: url(../font/4iCv6KVjbNBYlgoCxCvjtGyNL4U.woff2) format('woff2');
 }
 @font-face {
-	font-family: "Noto Sans KR";
+	font-family: "Noto Sans KR", sans-serif;
 	font-weight: 500;
 	font-style: normal;
 	src: url(../font/PbykFmXiEBPT4ITbgNA5Cgm20xz64px_1hVWr0wuPNGmlQNMEfD4.0.woff2) format('woff2');
 }
 @font-face {
-	font-family: "Noto Sans KR";
+	font-family: "Noto Sans KR", sans-serif;
 	font-weight: 700;
 	font-style: normal;
 	src: url(../font/PbykFmXiEBPT4ITbgNA5Cgm20xz64px_1hVWr0wuPNGmlQNMEfD4.0.woff2) format('woff2');
