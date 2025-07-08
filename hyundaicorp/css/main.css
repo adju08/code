@@ -391,7 +391,7 @@ section .tit h2 {
     }
 }
 .global {
-    background-color: var(--main-color);
+    background: url(../images/main/global_bg.jpg) no-repeat center center / cover;
 }
 .global .global_inner {
     width: auto;
