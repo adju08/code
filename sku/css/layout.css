@@ -127,7 +127,7 @@ header.menu_over .util .login::before {
 
 /**************************메뉴 열렸을 때 하고 있음!!!!!!!!*************************/
     header .gnb .gnb_wrap ul.depth1 > li.over > a {
-        color: var(--point-color);
+        color: var(--main-color);
         position: relative; /* before */
     }
     header .gnb .gnb_wrap ul.depth1 > li.over > a::before {
@@ -137,27 +137,31 @@ header.menu_over .util .login::before {
         left: 0;
         width: 100%;
         height: 3px;
-        background-color: var(--point-color);
+        background-color: var(--main-color);
     }
     header .gnb .gnb_wrap ul.depth1 > li .gnb_bg {
         /*display: none !important;/* 다 하면 풀어 !!!!!!!!!!!!!!!!!!!!!!숨김 / !important -> 무조건 내가 먼저!!(대신 2개여서 충돌나면 작살남)*/
         justify-content: center;
         align-items: center;
-        gap: 55px;
         position: absolute; /* header */
         left: 0;
         top: var(--header-h);
         width: 100%;
         height: auto;
         background-color: #fff;
-        border: 1px solid #ccc;
-        border-top: transparent;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.05);
+        display: flex;
     }
     header .gnb .gnb_wrap ul.depth1 > li .gnb_bg .head {
+        flex: 1;
         width: 22.76%;
+        height: 100%;
+        background-color: var(--main-color);
+        padding: 51px 0;
     }
     header .gnb .gnb_wrap ul.depth1 > li .gnb_bg ul.depth2 {
         display: flex;
+        padding: 51px 0 51px 40px;
     }
 
 
