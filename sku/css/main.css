@@ -1,0 +1,304 @@
+@import url(font.css);
+@import url(default.css);
+@import url(common.css);
+@import url(layout.css);
+
+
+.visual {
+    position: relative; /* ctrl_wrap, scroll_down 정렬의 기준 */
+}
+.visual .swiper-slide .photo {
+    overflow: hidden;
+    height: 100dvh; /* 모바일까지 고려한 브라우저 높이 100% */
+    min-height: 35.29em; /* 최소높이 - 600 / 17 = 35.29 */
+}
+.visual .swiper-slide .photo img,
+.visual .swiper-slide .photo video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 2s;
+    /* 여기에는 delay 안줌 -> 주면 이상해짐 */
+}
+.visual .swiper-slide.swiper-slide-active .photo img {
+    transform: scale3d(1.1,1.1,1);
+}
+.visual .swiper-slide .txt_wrap {
+    position: absolute; /* swiper-slide를 기준으로 정렬 */
+    left: 5.73%;
+    bottom: 40.38%;
+    width: 100%;
+}
+.visual .swiper-slide .txt_wrap .txt.mobil {
+    display: none; /* 숨김 */
+}
+.visual .swiper-slide .txt_wrap .txt {
+    overflow: hidden; /* 위로 올라오는 효과 줄 때 필수 */
+}
+.visual .swiper-slide .txt_wrap .txt p {
+    color: #fff;
+    font-size: var(--visual-font);
+    font-weight: var(--bold-weight);
+    line-height: var(--tit-line-height);
+    white-space: nowrap; /* 1줄로 표현 -> 이거 안돼있으면 글자 올라오는 효과 줄 때 홀라당 잘림 */
+
+    transform: translateY(100%);
+    /*transform: translateY(50%); /* 100% -> 0%으로 애니메이션 */
+    transition: 0.8s;
+    /*transition-delay: 0.5s;*/
+}
+.visual .swiper-slide .txt_wrap .txt.f_italic p {
+    font-style: italic;
+}
+.visual .swiper-slide .txt_wrap .txt.d_margin p {
+    margin-top: 0.83em;
+}
+.visual .swiper-slide .txt_wrap span {
+    color: #fff;
+    display: block;
+    margin-top: 0.94em;
+}
+
+/* --> 윗줄 아랫줄 올라오는 속도 다르게 코딩한 것 */
+.visual .swiper-slide.swiper-slide-active .txt_wrap .txt.delay1 p {
+    transition-delay: 0.6s;
+}
+.visual .swiper-slide.swiper-slide-active .txt_wrap .txt.delay2 p {
+    transition-delay: 0.8s;
+}
+
+.visual .swiper-slide.swiper-slide-active .txt_wrap .txt p {
+    transform: translateY(0%);
+    /*animation-name: visual_txt;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;*/
+}
+@keyframes visual_txt {
+    0%{transform: translateY(100%);}
+    100%{transform: translateY(0);}
+}
+
+@media screen and (min-width:769px){
+    .visual .swiper .paging {
+        position: absolute; /* visual을 기준으로 정렬 */
+        bottom: 16.88%;
+        left: 5.73%; /* txt_wrap이랑 같은 값 */
+        z-index: 10;
+        width: auto;
+        color: #fff;
+        display: flex;
+        gap: 0.88em;
+    }
+    .visual .swiper .paging .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+    .visual .swiper .paging .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+        margin: 0;
+    }
+    .visual .swiper .paging .swiper-pagination-bullet-active {
+        opacity: 1;
+        background: transparent;
+        /* 선택된 팝업 변경 스타일 */
+    }
+    .visual .swiper .paging .swiper-pagination-bullet {
+        width: 11.33em;
+        height: auto;
+        display: block;
+        border-radius: 0;
+        background: transparent;
+        opacity: 1;
+        margin: 0;
+        font-size: 0.88rem;
+        border-bottom: 0.2em solid rgba(255,255,255,0.2);
+        padding: 0 0 0.33em 0;
+        position: relative; /* before 정렬의 기준 */
+    }
+    .visual .swiper .paging .swiper-pagination-bullet::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -0.2em;
+        width: 0;
+        height: 0.2em;
+        background-color: #fff;
+    }
+    .visual .swiper .paging .swiper-pagination-bullet.swiper-pagination-bullet-active::before {
+        animation-name: visual_paging;
+        animation-duration: 5s; /* jquery의 autoplay 시간과 맞추기 */
+        animation-iteration-count: 1; /* 반복 횟수*/
+        animation-fill-mode: forwards; /* 마지막 100% 유지 */
+        /* animation-timing-function: linear; 가속도 삭제 */
+    }
+
+
+    .visual .scroll_down {
+        position: absolute;
+        z-index: 10;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 5.8%;
+        font-size: 0.82rem;
+        font-weight: var(--bold-weight);
+        color: #fff;
+    }
+    .visual .scroll_down::before {
+        position: absolute;
+        content: "";
+        left: 50%;
+        transform: translateX(-50%);
+        top: 1.64em;
+        width: 1.43em;
+        height: 2.14em;
+        background-image: url("data:image/svg+xml,%3Csvg width='20' height='30' viewBox='0 0 20 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='1' y='1' width='18' height='28' rx='9' stroke='white' stroke-width='2'/%3E%3Ccircle cx='10' cy='9' r='1.5' fill='white' stroke='white'/%3E%3C/svg%3E%0A");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+
+        animation-name: scroll_down;
+        animation-duration: 2s;
+        animation-iteration-count: infinite; /* 무제한 반복 */
+        animation-timing-function: linear; /* 가속도 조절 */
+    }
+}/*@media*/
+@keyframes visual_paging {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+@keyframes scroll_down {
+    0% { top: 1.64em; }
+    50% { top: 2.36em; }
+    100% { top: 1.64em; }
+} 
+
+
+@media screen and (max-width:1300px){
+    .visual .swiper-slide .txt_wrap {
+        left: 20px;
+    }
+    .visual .swiper .paging {
+        left: 20px;
+    }
+}/* @media */
+
+@media screen and (max-width:768px){
+            .visual .swiper,
+            .visual .swiper-slide .photo img,
+            .visual .swiper-slide .photo video {
+                height: 600px;
+            }
+            .visual .swiper-slide .photo.d_photo {
+                position: relative;
+            }
+            .visual .swiper-slide .photo.d_photo::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 600px;
+                background: url(../images/main/m_visual.jpg) center bottom / cover;
+            }
+            .visual .swiper-slide .photo.d_photo img {
+                display: none;
+            }
+            .visual .swiper-slide.swiper-slide-active .photo img {
+                transform: scale3d(1,1,1);
+            }
+            .visual .swiper-slide .txt_wrap {
+                bottom: 35%;
+            }
+            .visual .swiper-slide .txt_wrap .txt.mobil {
+                display: block; /* 나타남 */
+            }
+            .visual .swiper-slide .txt_wrap .txt.pc {
+                display: none; /* 숨김 */
+            }
+            
+            .visual .swiper-slide .txt_wrap .txt.resize p {
+                font-size: 1.56rem;
+            }
+            .visual .swiper-slide .txt_wrap .txt.d_margin p {
+                margin-top: 0.57em;
+            }
+            .visual .swiper-slide .txt_wrap span {
+                display: none;
+            }
+            .visual .swiper .paging {
+                position: absolute; /* visual을 기준으로 정렬 */
+                bottom: 29.33%;
+                left: 20px;
+                z-index: 10;
+                width: auto;
+                display: flex;
+                gap: 0.19em;
+            }
+            .visual .swiper .paging .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+            .visual .swiper .paging .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+                margin: 0;
+            }
+            .visual .swiper .paging .swiper-pagination-bullet {
+                width: 9px;
+                height: 5px;
+                border-radius: 3px;
+                background: rgba(255,255,255,0.6);
+                opacity: 1;
+                font-size: 0;
+                line-height: 0;
+                margin: 0;
+            }
+            .visual .swiper .paging .swiper-pagination-bullet-active {
+                opacity: 1;
+                background: #fff;
+                width: 35px;
+            }
+            .visual .scroll_down {
+                display: none;
+            }
+}/* @media */
+
+
+
+
+
+/* title의 공통스타일 */
+section .tit {
+    margin: 10.53em 0 2.18em 0;
+}
+section .tit strong {
+    color: var(--point-color);
+    font-weight: var(--bold-weight);
+    display: inline-block;
+    padding-right: 0.63em;
+    position: relative; /* after */
+}
+section .tit strong::after {
+    content: "";
+    position: absolute; /* strong */
+    top: -0.12em;
+    right: 0.06em;
+    width: 0.59em;
+    height: 0.59em;
+    background-image: var(--tit-ico);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+section .tit h2 {
+    color: var(--tit-color);
+    font-size: var(--tit-font-size); /* 45/17=2.65 */
+    line-height: var(--tit-line-height);
+}
+@media screen and (max-width:768px){
+            section .tit {
+                margin: 7.19em 0 1.69em 0;
+            }
+            section .tit strong::after {
+                top: 0.06em;
+                right: 0;
+            }
+}/* @media */
+
+
+
+
+
