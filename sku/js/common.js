@@ -63,12 +63,8 @@ $(document).ready(function(){ //문서가 로딩되고 단 1번 실행
         $('header').removeClass('menu_open')
     })
 
-    /************* 모바일 2차 메뉴 열고 닫기 *************
-     * 지금 현재 메뉴가 열려있는지 닫혀있는지 구분 (li에 open 클래스 있는지 유무)
-     * 메뉴가 열려있으면 - li에 open클래스 삭제, 2차 메뉴 접기
-     * 메뉴가 닫혀있으면 - li에 open클래스 추가, 2차 메뉴 열기
-     */
-    $('header .gnb .gnb_wrap ul.depth1 > li > a').on('click', function(e){
+    /************* 모바일 2차 메뉴 열고 닫기 *************/
+    $('header .gnb .gnb_wrap ul.depth1 > li > .gnb_bg .inner .head').on('click', function(e){
         if(device_status == 'mobile'){
             // console.log('눌려???')
             e.preventDefault()
@@ -80,12 +76,38 @@ $(document).ready(function(){ //문서가 로딩되고 단 1번 실행
                 $(this).next().slideUp()
             }else{ //닫혀있으면
                 $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('open')
-                $('header .gnb .gnb_wrap ul.depth1 > li > ul.depth2').slideUp()
+                $('header .gnb .gnb_wrap ul.depth1 > li > .gnb_bg .inner ul.depth2').slideUp()
                 $(this).parents('li').addClass('open')
                 $(this).next().slideDown()
             }
         }
     })
+
+    /************* 모바일 3차 메뉴 열고 닫기 *************/
+    $('header .gnb .gnb_wrap ul.depth1 > li > .gnb_bg .inner ul.depth2 > li > a').on('click', function(e){
+        if(device_status == 'mobile'){
+            // console.log('눌려???')
+            e.preventDefault()
+            menu_open = $(this).parent('li').hasClass('open02')
+            // console.log(menu_open)
+
+            if(menu_open == true){ //메뉴가 열려있으면
+                $(this).parent('li').removeClass('open02')
+                $(this).next().slideUp()
+            }else{ //닫혀있으면
+                $('header .gnb .gnb_wrap ul.depth1 > li .gnb_bg .inner ul.depth2 > li').removeClass('open02')
+                $('header .gnb .gnb_wrap ul.depth1 > li .gnb_bg .inner ul.depth2 > li ul.depth3').slideUp()
+                $(this).parent('li').addClass('open02')
+                $(this).next().slideDown()
+            }
+        }
+    })
+
+
+
+
+
+
 
 
     /* top 버튼을 클릭하면 상단으로 스크롤 */
