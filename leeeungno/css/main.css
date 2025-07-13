@@ -85,7 +85,7 @@
 .visual .ctrl_wrap {
     position: absolute; /* visual을 기준으로 정렬 */
     bottom: 11%;
-    right: calc(50% - 630px);
+    right: calc(50% - 37.06em);
     z-index: 10;
     color: #fff;
 }
@@ -117,10 +117,9 @@
     background-repeat: no-repeat;
 }
 
-@media screen and (max-width:1300px){ /* common.css에서 wrapper가 풀리는 사이즈 */
+@media screen and (max-width:1300px){
     .visual .ctrl_wrap {
-        right: 20px; /* common.css에서 wrapper의 margin 여백
-                        -> 이렇게 해야 ctrl 버튼이 브라우저가 줄어들어도 wrapper 위치에 맞게 따라옴 */
+        right: 20px; /* common.css wrapper 같은 값 */
     }
     
 }
@@ -215,7 +214,7 @@
     white-space: nowrap;
 }
 .bar .inner .list {
-    width: calc(100% - 164px);
+    width: calc(100% - 9.65em);
 }
 .bar .inner .list ul {
     display: flex;
@@ -333,7 +332,7 @@
 @media screen and (max-width:768px){
             .bar .inner ul li a {
                 padding-top: 0.88em;
-                font-size: 13px;
+                font-size: 0.81rem;
             }
             .bar .inner ul li a::before {
                 width: 2em;
@@ -501,8 +500,8 @@ section .tit h2 {
             .exhibitions .txt .tit::after {
                 content: "";
                 position: absolute;
-                right: 30px;
-                bottom: 15px;
+                right: 1.88em;
+                bottom: 0.94em;
                 width: 45%;
                 height: 1px;
                 background-color: var(--tit-color);
@@ -520,8 +519,8 @@ section .tit h2 {
                 right: 0;
             }
             .exhibitions .more a {
-                width: 17px;
-                height: 17px;
+                width: 1.06em;
+                height: 1.06em;
                 background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_130_287' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='17' height='17'%3E%3Crect width='17' height='17' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_130_287)'%3E%3Cpath d='M7.79167 14.875V9.20833H2.125V7.79167H7.79167V2.125H9.20833V7.79167H14.875V9.20833H9.20833V14.875H7.79167Z' fill='%231D1D1D'/%3E%3C/g%3E%3C/svg%3E%0A");
                 margin-top: 0;
             }
@@ -538,6 +537,9 @@ section .tit h2 {
                 width: 13em;
                 padding-top: 0;
             }
+            .exhibitions .list .swiper-slide:hover a {
+                transform: translateY(0);
+            }
             .exhibitions .list .swiper-slide a .photo {
                 height: 17.44em;
             }
@@ -553,7 +555,7 @@ section .tit h2 {
 
 .public {
     background: url(../images/main/public_bg.jpg) no-repeat center center / cover;
-    padding: 132px 0 363px 0;
+    padding: 7.76em 0 21.35em 0;
     position: relative; /* more,rolling */
 }
 .public .tit strong,
@@ -561,7 +563,7 @@ section .tit h2 {
     color: #fff;
 }
 .public .list {
-    margin-top: 27px;
+    margin-top: 1.59em;
 }
 .public .list .swiper-slide {
     width: 70%;
@@ -572,19 +574,19 @@ section .tit h2 {
     display: flex;
 }
 .public .list .swiper-slide .ticket .ticket_edge { /*막대너비기준*/
-    width: 38px;
+    width: 2.24em;
     position: relative;
 }
 .public .list .swiper-slide .ticket .ticket_edge .bg {
     position: absolute;
     left: 0;
-    top: 38px;
+    top: 2.24em;
     width: calc(100% + 1px);
-    height: calc(100% - 76px);
+    height: calc(100% - 4.47em);
     background-color: #fff;
 }
 .public .list .swiper-slide .ticket .ticket_edge .bg.right {
-    border-right: 3px dashed #b1b1b1;
+    border-right: 0.18em dashed #b1b1b1;
 }
 .public .list .swiper-slide .ticket .ticket_edge::before, 
 .public .list .swiper-slide .ticket .ticket_edge::after {
@@ -593,7 +595,7 @@ section .tit h2 {
     left: 0;
     
     width: 100%;
-    height: 38px;
+    height: 2.24em;
     background: url(../images/main/ticket_edge.png) no-repeat left top / 100% ;
 }
 .public .list .swiper-slide .ticket .ticket_edge::before {
@@ -616,15 +618,15 @@ section .tit h2 {
     position: relative; /* before */
     display: flex;
     background-color: #fff;
-    padding: 30px 26px;
-    height: 356px;
-    width: calc(100% - 76px);
+    padding: 1.76em 1.53em;
+    height: 20.94em;
+    width: calc(100% - 4.47em);
 }
 .public .list .swiper-slide .ticket .ticket_inner::before {
     content: "";
     position: absolute;
-    right: 26px;
-    bottom: 30px;
+    right: 1.53em;
+    bottom: 1.76em;
     width: 18.11%;/*207px*/
     height: 10%;/*36px*/
     background: url(../images/main/public_barcode.jpg) no-repeat center center / cover;
@@ -635,7 +637,7 @@ section .tit h2 {
     left: -1px;
     top: 0;
     z-index: -1;
-    width: calc(100% + 2px);
+    width: calc(100% + 0.12em);
     height: 100%;
     background-color: #fff;
 }
@@ -643,8 +645,8 @@ section .tit h2 {
 
 .public .list .swiper-slide .ticket .ticket_inner .photo {
     overflow: hidden;
-    width: 313px;
-    height: 296px;
+    width: 18.41em;
+    height: 17.41em;
 }
 .public .list .swiper-slide .ticket .ticket_inner .photo img {
     width: 100%;
@@ -653,11 +655,11 @@ section .tit h2 {
 }
 .public .list .swiper-slide .ticket .ticket_inner .txt_wrap {
     
-    width: calc(100% - 313px);
+    width: calc(100% - 18.41em);
     margin-left: 3%;
 }
 .public .list .swiper-slide .ticket .ticket_inner .txt_wrap h3 {
-    font-size: 25px;
+    font-size: 1.47rem;
     font-weight: var(--bold-weight);
     color: var(--tit-color);
     line-height: var(--tit-line-height);
@@ -670,7 +672,7 @@ section .tit h2 {
     word-break: normal;
 }
 .public .list .swiper-slide .ticket .ticket_inner .txt_wrap .txt_cont {
-    margin: 38px 0 49px 0;
+    margin: 2.24em 0 2.88em 0;
 }
 .public .list .swiper-slide .ticket .ticket_inner .txt_wrap .txt_cont ul {
     display: flex;
@@ -681,9 +683,9 @@ section .tit h2 {
 }
 .public .list .swiper-slide .ticket .ticket_inner .txt_wrap .txt_cont ul li strong {
     display: block;
-    font-size: 15px;
+    font-size: 0.88rem;
     color: var(--tit-color);
-    margin-bottom: 16px;
+    margin-bottom: 1.07em;
 }
 .public .list .swiper-slide .ticket .ticket_inner .txt_wrap .txt_cont ul li p {
     height: 3em;
@@ -697,9 +699,9 @@ section .tit h2 {
     display: inline-block;
     border: 1px solid #ccc;
     background-color: #fff;
-    font-size: 14px;
+    font-size: 0.82rem;
     color: var(--tit-color);
-    padding: 18px 24px;
+    padding: 1.29em 1.71em;
 }
 .public .list .swiper-slide .ticket .ticket_inner .txt_wrap a:hover {
     border-color: var(--point-color);
@@ -708,11 +710,11 @@ section .tit h2 {
 }
 .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
     text-align: center;
-    margin-top: 15px;
+    margin-top: 0.88em;
  }
 .swiper-pagination-bullet {
-    width: 13px;
-    height: 13px;
+    width: 0.76em;
+    height: 0.76em;
     border: 1px solid #F2F2F2;
     background: transparent;
     opacity: 1;
@@ -722,8 +724,8 @@ section .tit h2 {
 }
 .public .more {
     position: absolute; /* public */
-    top: 190px;
-    right: calc(50% - 630px);
+    top: 11.18em;
+    right: calc(50% - 37.06em);
     z-index: 10;
 }
 .public .more a {
@@ -751,7 +753,7 @@ section .tit h2 {
 }
 .public .rolling {
     position: absolute; /* public */
-    bottom: 29px;
+    bottom: 1.71em;
     left: 0;
     width: 100%;
 }
@@ -760,7 +762,7 @@ section .tit h2 {
     left: 0;
     bottom: 0;
     font-family: 'Italiana';
-    font-size: 120px;
+    font-size: 7.06rem;
     line-height: var(--tit-line-height);
     color: rgba(255,255,255,0.1);
     white-space: nowrap;
@@ -775,73 +777,46 @@ section .tit h2 {
     0% {left: 0;}
     100% {left: -18.33em;}
 }
+
 @media screen and (max-width:1300px){
     .public .more {
-        /* right: calc(100% + 20px); */
         right: 20px;
     }
 }
-@media screen and (min-width:769px) and (max-width:1024px){
+
+@media screen and (max-width:1024px){
             .public .list .swiper-slide {
                 width: 85%;
             }
-            
             .public .list .swiper-slide .ticket .ticket_inner {
-                padding: 25px 15px;
-                height: 300px;
+                padding: 1.47em 0.88em;
+                height: 17.65em;
             }
             .public .list .swiper-slide .ticket .ticket_inner .photo {
                 overflow: hidden;
-                width: 285px;
+                width: 16.76em;
                 height: 100%;
             }
             .public .list .swiper-slide .ticket .ticket_inner .txt_wrap {
-                width: calc(100% - 285px);
+                width: calc(100% - 16.76em);
             }
             .public .list .swiper-slide .ticket .ticket_inner .txt_wrap h3 {
-                font-size: 22px;
+                font-size: var(--ctn-font-size);
             }
             .public .list .swiper-slide .ticket .ticket_inner .txt_wrap .txt_cont {
-                margin: 20px 0 37px 0; /*****?????*****/
+                margin: 1.18em 0 2.18em 0;
             }
             .public .list .swiper-slide .ticket .ticket_inner .txt_wrap .txt_cont ul li strong {
-                margin-bottom: 8px;
+                margin-bottom: 0.53em;
             }
-            .public .rolling {
-                position: absolute; /* public */
-                bottom: 29px;
-                left: 0;
-                width: 100%;
-            }
-            .public .rolling p {
-                position: absolute;
-                left: 0;
-                bottom: 0;
-                font-family: 'Italiana';
-                font-size: 120px;
-                line-height: var(--tit-line-height);
-                color: rgba(255,255,255,0.1);
-                white-space: nowrap;
-            
-                animation-name: rolling;
-                animation-duration: 22s;
-                animation-iteration-count: infinite; /* 무제한 */
-                animation-timing-function: linear; /* 가속도 삭제 */
-                text-transform: uppercase; /* 대문자 변경 */
-            }
-            @keyframes rolling {
-                0% {left: 0;}
-                100% {left: -18.33em;}
-            }
-
-
 }/*@media*/
+
 @media screen and (max-width:768px){
             section .tit {
                 margin-top: 0;
             }
             .public {
-                padding: 81px 0 156px 0;
+                padding: 5.06em 0 9.75em 0;
             }
             .public .wrapper {
                 position: relative;
@@ -849,14 +824,14 @@ section .tit h2 {
             .public .wrapper::after {
                 content: "";
                 position: absolute;
-                right: 30px;
-                bottom: 15px;
+                right: 1.88em;
+                bottom: 0.94em;
                 width: 45%;
                 height: 1px;
                 background-color: #fff;
             }
             .public .list {
-                margin-top: 22px;
+                margin-top: 1.38em;
             }
             .public .list .swiper-slide {
                 width: 80%;
@@ -864,25 +839,25 @@ section .tit h2 {
             
             /**** 티켓 모양 ****/
             .public .list .swiper-slide .ticket .ticket_edge { /*막대너비기준*/
-                width: 17px;
+                width: 1.06em;
             }
             .public .list .swiper-slide .ticket .ticket_edge .bg {
-                top: 17px;
-                height: calc(100% - 34px);
+                top: 1.06em;
+                height: calc(100% - 2.13em);
             }
             .public .list .swiper-slide .ticket .ticket_edge::before, 
             .public .list .swiper-slide .ticket .ticket_edge::after {
-                height: 17px;
+                height: 1.06em;
             }
             .public .list .swiper-slide .ticket .ticket_inner {
                 display: block;
-                padding: 20px 0;
+                padding: 1.25em 0;
                 height: 100%;
-                width: calc(100% - 34px);
+                width: calc(100% - 2.13em);
             }
             .public .list .swiper-slide .ticket .ticket_inner::before {
                 right: 0;
-                bottom: 59px;
+                bottom: 3.69em;
                 width: 20.83%;/*75px*/
                 height: 2.28%;/*13px*/
             }
@@ -891,49 +866,47 @@ section .tit h2 {
 
             .public .list .swiper-slide .ticket .ticket_inner .photo {
                 width: auto;
-                height: 238px;
+                height: 14.88em;
             }
             .public .list .swiper-slide .ticket .ticket_inner .txt_wrap {
                 width: auto;
                 margin-left: 0;
             }
             .public .list .swiper-slide .ticket .ticket_inner .txt_wrap h3 {
-                font-size: var(--ctn-font-size);
-                margin-top: 20px;
+                margin-top: 1.05em;
             }
             .public .list .swiper-slide .ticket .ticket_inner .txt_wrap h3 br {
                 display: none;
             }
             .public .list .swiper-slide .ticket .ticket_inner .txt_wrap .txt_cont {
-                margin: 20px 0 6px 0;
+                margin: 1.25em 0 0.38em 0;
             }
             .public .list .swiper-slide .ticket .ticket_inner .txt_wrap .txt_cont ul {
                 flex-wrap: wrap;
                 column-gap: 14%;
-                row-gap: 10px;
+                row-gap: 0.63em;
             }
             .public .list .swiper-slide .ticket .ticket_inner .txt_wrap .txt_cont ul li {
                 width: 30%;
             }
             .public .list .swiper-slide .ticket .ticket_inner .txt_wrap .txt_cont ul li strong {
-                font-size: 14px;
                 margin-bottom: 0;
             }
             .public .list .swiper-slide .ticket .ticket_inner .txt_wrap a {
-                padding: 4px 0;
+                padding: 0.31em 0;
                 width: 100%;
                 text-align: center;
             }
             .swiper-pagination-bullet {
-                width: 10px;
-                height: 10px;
+                width: 0.63em;
+                height: 0.63em;
             }
             .public .more {
-                top: 113px;
+                top: 7.06em;
             }
             .public .more a {
-                width: 17px;
-                height: 17px;
+                width: 1.06em;
+                height: 1.06em;
                 background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_130_306' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='17' height='17'%3E%3Crect x='0.5' y='0.5' width='16' height='16' fill='%23D9D9D9' stroke='white'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_130_306)'%3E%3Cpath d='M9.19629 2.1377V7.80371H14.8623V9.19629H9.19629V14.8623H7.80371V9.19629H2.1377V7.80371H7.80371V2.1377H9.19629Z' fill='white' stroke='white' stroke-width='0.025'/%3E%3C/g%3E%3C/svg%3E%0A");
             }
             .public .more a::before {
@@ -943,10 +916,10 @@ section .tit h2 {
                 display: none;
             }
             .public .rolling {
-                bottom: 14px;
+                bottom: 0.88em;
             }
             .public .rolling p {
-                font-size: 64px;
+                font-size: 4rem;
             }
 }/*@media*/
 
@@ -977,7 +950,7 @@ section .tit h2 {
 }
 .notice .list ul li:nth-child(1),
 .notice .list ul li:nth-child(2) {
-    border-top: 2px solid var(--tit-color);
+    border-top: 0.12em solid var(--tit-color);
 }
 .notice .list ul li a {
     display: block;
@@ -1127,10 +1100,10 @@ section .tit h2 {
 .collection .list_pc ul {
     display: flex;
     flex-wrap: wrap;
-    gap: 24px;
+    gap: 1.41em;
 }
 .collection .list_pc ul li {
-    width: calc(25% - 18px);
+    width: calc(25% - 1.06em);
 }
 .collection .list_pc ul li .brand {
     width: 100%;
@@ -1138,7 +1111,7 @@ section .tit h2 {
     background: url(../images/main/collection_brand.png) no-repeat center center / cover;
 }
 .collection .list_pc ul li:first-child {
-    margin-left: calc(50% + 12px);
+    margin-left: calc(50% + 0.71em);
 }
 .collection .list_pc ul li a {
     position: relative; /* txt_wrap */
@@ -1348,5 +1321,8 @@ section .tit h2 {
             }
             .collection .list_mobil {
                 padding-top: 1.38em;
+            }
+            .collection .list_mobil .swiper-slide:hover a {
+                transform: translateY(0);
             }
 }/*@media*/

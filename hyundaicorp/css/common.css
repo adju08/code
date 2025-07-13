@@ -90,7 +90,7 @@ html, body {
     --sub-bg-color: #F5F0EA;
     --bold-weight: 700;
     --tit-line-height: 1.2;
-    --tit-size: 2.65rem; /* 45px / 17 = 2.65 */
+    --tit-size: 45px; /* 45px / 17 = 2.65 */
     --sub-tit-size: 22px; /* 22px / 17 */
     --display-size: 60px;
 }
@@ -98,15 +98,15 @@ html, body {
     :root {
         --header-h: 56px; /* header 높이 */
         --header-h-m: -56px;
-        --tit-size: 2.06rem; /* 35/17 */
-        --sub-tit-size: 1.24rem; /* 21/17 */
+        --tit-size: 35px; /* 35/17 */
+        --sub-tit-size: 21px; /* 21/17 */
         --display-size: 48px;
     }
 }
 @media screen and (max-width:768px){
     :root {
-        --tit-size: 1.56rem; /* 25px / 16 = 1.56 */
-        --sub-tit-size: 1.19rem; /* 19/16 */
+        --tit-size: 25px; /* 25px / 16 = 1.56 */
+        --sub-tit-size: 19px; /* 19/16 */
         --display-size: 35px;
     }
 }

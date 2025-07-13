@@ -248,8 +248,8 @@ header.menu_over .util .search .search_open {
                 right: -100%;
                 top: 0;
                 z-index: 10;/* gnb_bg 때문에 깔리는 걸 위로 올려줌 */
-                width: calc(100% - 2.5em);
-                max-width: 28.13em;
+                width: calc(100% - 43px);
+                max-width: 478px;
                 height: 100%;
                 background-color: #fff;
                 color: var(--base-color);

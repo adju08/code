@@ -114,7 +114,7 @@ header.menu_over .util .search .search_open {
         left: 0;
         z-index: 1;
         width: 100%;
-        height: 3px;
+        height: 0.14em;
         background-color: var(--point-color);
     }
     header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
