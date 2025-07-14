@@ -246,7 +246,7 @@ header.menu_over .util .search .search_open {
                 background-position: center center;
             }
             header.fixed .gnb .gnb_open {
-                background-image: url("data:image/svg+xml,%3Csvg width='31' height='31' viewBox='0 0 31 31' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_130_223' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='31' height='31'%3E%3Crect width='31' height='31' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_130_223)'%3E%3Cpath d='M3.875 9.04134V6.45801H27.125V9.04134H3.875ZM3.875 24.5413V21.958H27.125V24.5413H3.875ZM3.875 16.7913V14.208H27.125V16.7913H3.875Z' fill='%231d1d1d'/%3E%3C/g%3E%3C/svg%3E%0A");
+                background-image: url("data:image/svg+xml,%3Csvg width='31' height='31' viewBox='0 0 31 31' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_139_99' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='31' height='31'%3E%3Crect width='31' height='31' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_139_99)'%3E%3Cpath d='M3.875 9.04134V6.45801H27.125V9.04134H3.875ZM3.875 24.5413V21.958H27.125V24.5413H3.875ZM3.875 16.7913V14.208H27.125V16.7913H3.875Z' fill='%231D1D1D'/%3E%3C/g%3E%3C/svg%3E%0A");
             }
             header .gnb .gnb_wrap {
                 position: fixed;

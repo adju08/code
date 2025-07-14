@@ -103,6 +103,7 @@ html, body {
     :root {
         --visual-font: 2.82rem;/*48*/
         --tit-font-size: 2.06rem; /* 35/17 */
+        --ctn_sub-font-size: 1.24rem;
     }
 }
 @media screen and (max-width:900px){
