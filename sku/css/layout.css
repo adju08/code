@@ -547,156 +547,93 @@ header.menu_over .util .login::before {
 
 
 
-footer {
-    margin: 500px 0 0 0;
+footer .footer_head {
+    background-color: #343434;
+    
 }
-footer {
-    background-color: #031023;
-    color: rgba(255,255,255,0.8);
-    padding: 100px 0 181px 0;
-}
-footer .wrapper {
-    position: relative; /* top, f_logo*/
+footer .footer_head .list .tab_list ul {
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: flex-start; /* flex 땜에 늘어난 ul의 길이를 딱 맞춰줌 */
 }
-footer .top {
-    display: none;/* 모바일에서 나타남 */
+footer .footer_head .list .tab_list ul li {
+    width: 25%;
+    border-right: 1px solid rgba(255,255,255,0.2);
 }
-footer .family_site {
-    position: relative; /* ul 정렬의 기준 */
+footer .footer_head .list .tab_list ul li:last-child {
+    border-right: 0;
 }
-footer .family_site button {
-    display: block;
-    color: #fff;
-    border: 1px solid #fff;
-    width: 374px;
-    padding: 5px 32px 5px 19px;
-    height: 36px; /* ul의 bottom과 같아야함(그래야 페이지 열리고 닫힐 때 딱맞음) */
+footer .footer_head .list .tab_list ul li button {
     position: relative;
+    padding: 20px 0 20px 40px;
+    width: 100%;
+    font-weight: var(--bold-weight);
+    line-height: var(--tit-line-height);
+    color: #fff;
 }
-footer .family_site button::after {
+footer .footer_head .list .tab_list ul li.active button {
+    color: var(--tit-color);
+    background-color: #DBE6E6;
+}
+footer .footer_head .list .tab_list ul li button::after {
     content: "";
-    position: absolute; /* family_open */
-    top: 6px;
-    right: 13px;
+    position: absolute;
+    top: 22px;
+    right: 38px;
     width: 20px;
     height: 20px;
-    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_127_715' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='20' height='20'%3E%3Crect y='20' width='20' height='20' transform='rotate(-90 0 20)' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_127_715)'%3E%3Cpath d='M15.8334 6.66634L10.0001 15.833L4.16675 6.66634L15.8334 6.66634Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_205_5748' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='22' height='22'%3E%3Crect x='22' width='22' height='22' transform='rotate(90 22 0)' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_205_5748)'%3E%3Cpath d='M1.83341 7.3556L3.4605 5.72851L11.0001 13.2681L18.5397 5.72852L20.1667 7.3556L11.0001 16.5223L1.83341 7.3556Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
     background-repeat: no-repeat;
     background-position: center center;
-}
-footer .family_site button.family_close {
-    display: none;
-}
-footer .family_site button.family_close::after {
-    transform: rotate(180deg);
-}
-footer .family_site .list {
-    display: none;
-    position: absolute;
-    left: 0;
-    bottom: 36px;
-    width: 100%;
-    background-color: #767676;
-    padding: 15px;
-    color: #fff;
-}
-footer .family_site.open button.family_open {
-    display: none;
-}
-footer .family_site.open button.family_close {
-    display: block;
-}
-footer .family_site .list ul li a {
-    display: block;
-    line-height: 2;
-}
-footer .family_site .list ul li a span {
-    position: relative;
-}
-footer .family_site .list ul li a span::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background-color: #fff;
+    background-size: cover;
     transition: 0.5s;
 }
-footer .family_site .list ul li a:hover span::before {
-    width: 100%;
+footer .footer_head .list .tab_list ul li.active button::after {
+    transform: rotate(180deg);
+    top: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_205_5748' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='22' height='22'%3E%3Crect x='22' width='22' height='22' transform='rotate(90 22 0)' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_205_5748)'%3E%3Cpath d='M1.83341 7.3556L3.4605 5.72851L11.0001 13.2681L18.5397 5.72852L20.1667 7.3556L11.0001 16.5223L1.83341 7.3556Z' fill='%231d1d1d'/%3E%3C/g%3E%3C/svg%3E%0A");
 }
-footer .f_nav ul {
+footer .footer_head .list .tab_content {
+    background-color: #DBE6E6;
+    padding: 35px 0;
+}
+footer .footer_head .list .tab_content .tab_item {
+    display: none; /* 숨김 */
+}
+footer .footer_head .list .tab_content .tab_item.active {
+    display: block; /* 나타남 */
+}
+footer .footer_head .list .tab_content .tab_item ul {
     display: flex;
-    flex-wrap: wrap; /* 여러줄 허용 */
-    gap: 4px 45px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: 20px;
 }
-footer .f_nav ul li {
- position: relative; /* after */
+footer .footer_head .list .tab_content .tab_item ul li {
+    width: 20%;
 }
-footer .f_nav ul li::after {
-    content: "";
-    position: absolute;
-    right: -23px;
-    top: 6px;
-    width: 1px;
-    height: 12px;
-    background-color: rgba(255,255,255,0.2);
+footer .footer_head .list .tab_content .tab_item ul li a {
+    display: block;
+    padding: 0 10px;
+    text-align: center;
+    font-size: 15px;
+    color: var(--tit-color);
 }
-footer .f_nav ul li:last-child:after {
-    display: none;
+footer .footer_head .list .tab_content .tab_item ul li a:hover {
+    font-weight: var(--bold-weight);
+    color: var(--main-color);
 }
-footer .f_info {
-    margin: 20px 0 47px 0;
+
+
+
+
+
+
+
+
+footer .footer_sub {
+    background-color: #061007;
+    padding: 53px 0 116px 0;
 }
-footer .copyright {
-    color: rgba(255,255,255,0.6);
-}
-footer .f_logo {
-    position: absolute; /* wrapper */
-    bottom: 0;
-    right: 0;
-    width: 131px;
-    height: 42px;
-}
-@media screen and (max-width:1024px){
-            footer {
-                padding: 81px 0 100px 0;
-            }
-            footer .wrapper {
-                display: block;
-            }
-            footer .top {
-                display: block;
-                position: absolute; /* wrapper */
-                top: -101px;
-                right: 0;
-                width: 40px;
-                height: 40px;
-                border-radius: 50%;
-                background-color: #00A5E6;
-                background-image: url("data:image/svg+xml,%3Csvg width='23' height='23' viewBox='0 0 23 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_140_657' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='23' height='23'%3E%3Crect x='22.7949' y='0.205078' width='22.5641' height='22.5641' transform='rotate(90 22.7949 0.205078)' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_140_657)'%3E%3Cpath d='M5.87188 9.60685L11.5129 3.96582L17.1539 9.60685L15.7907 10.9231L12.4531 7.58548V19.0086L10.5727 19.0086V7.58548L7.23512 10.9231L5.87188 9.60685Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
-                background-repeat: no-repeat;
-                background-position: center center;
-            }
-            footer .family_site button {
-                width: 100%;
-                margin-bottom: 30px;
-            }
-            footer .f_nav ul {
-                gap: 4px 45px;
-            }
-            footer .f_info {
-                margin: 15px 0 35px 0;
-            }
-            footer .f_logo {
-                position: relative;
-                width: 93px;
-                height: 30px;
-                margin-top: 45px;
-            }
+footer .footer_sub {
+    padding-top: 500px;
 }
