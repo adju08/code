@@ -9,6 +9,29 @@ $(document).ready(function(){
     });
 
 
+
+    /******************************************************
+     * aside quick 열고 닫기
+     * 닫혀있을 때 (open 클래스가 있을 때) - close 클래스로 교체, detail 보임
+     * 열려있을 때 (open 클래스가 없을 때) - open 클래스로 교체, detail 숨김
+     */
+
+    $('.quick .btn').on('click', function(){
+        if($(this).hasClass('open') == true){
+            $(this).removeClass('open')
+            $(this).addClass('close')
+            $(this).find('span').text('닫기')
+            // $(this).attr('title', '열기/닫기') //html에 title을 사용했다면.
+            $('.quick .detail').slideDown(300) //나타남
+        }else{
+            $(this).removeClass('close')
+            $(this).addClass('open')
+            $(this).find('span').text('열기')
+            $('.quick .detail').slideUp(200) //사라짐
+        }
+    })
+
+
 /*************************** visual swiper 연결 : 시작 ***************************/
     let visual_name = ['Seokyeong Univ', 'Ideas, together', '2nd in jobs, career aid']
     //console.log(visual_name[3]) 숫자가 0부터 시작

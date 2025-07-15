@@ -109,39 +109,41 @@ $(document).ready(function(){ //문서가 로딩되고 단 1번 실행
 
 
     //footer tab
-    let footer_content // 클릭한 메뉴의 이름(id)
+    let footer_content; // 클릭한 메뉴의 이름(id)
 
-    $('footer .footer_head .list .tab_list ul li').on('click', function() {
+    $('footer .footer_head .list .tab_list ul li').on('click', function () {
+        const $tabContentWrap = $('footer .footer_head .list .tab_content');
+        
         // 클릭한 li가 이미 active라면 닫기 처리
         if ($(this).hasClass('active')) {
-            // 닫기 처리
-            $(this).removeClass('active')
-            $(this).attr('aria-selected', 'false')
-            $(this).find('span').text('')
+            $(this).removeClass('active');
+            $(this).attr('aria-selected', 'false');
+            $(this).find('span').text('');
 
-            footer_content = $(this).attr('data-content')
-            $('footer .footer_head .list .tab_content').find('#' + footer_content).removeClass('active')
+            footer_content = $(this).attr('data-content');
+            $tabContentWrap.find('#' + footer_content).removeClass('active');
+
+            // tab_content 전체를 slideUp (닫기)
+            $tabContentWrap.slideUp(200);
         } else {
-            // 열기 처리
-            footer_content = $(this).attr('data-content')
+            footer_content = $(this).attr('data-content');
 
-            // 1. 모든 컨텐츠 비활성화, 해당 컨텐츠 활성화
-            $('footer .footer_head .list .tab_content .tab_item').removeClass('active')
-            $('footer .footer_head .list .tab_content').find('#' + footer_content).addClass('active')
+            // 모든 탭, 컨텐츠 비활성화
+            $('footer .footer_head .list .tab_list ul li').removeClass('active').attr('aria-selected', 'false').find('span').text('');
+            $('footer .footer_head .list .tab_content .tab_item').removeClass('active');
 
-            // 2. 모든 탭 비활성화, 현재 탭 활성화
-            $('footer .footer_head .list .tab_list ul li').removeClass('active')
-            $(this).addClass('active')
+            // 현재 클릭한 탭 활성화
+            $(this).addClass('active').attr('aria-selected', 'true').find('span').text('선택됨');
 
-            // 3. "선택됨" 텍스트 업데이트
-            $('footer .footer_head .list .tab_list ul li button span').text('')
-            $(this).find('span').text('선택됨')
+            // 해당 콘텐츠만 활성화
+            $tabContentWrap.find('#' + footer_content).addClass('active');
 
-            // 4. aria-selected 처리
-            $('footer .footer_head .list .tab_list ul li').attr('aria-selected', 'false')
-            $(this).attr('aria-selected', 'true')
+            // tab_content 영역이 숨겨져 있다면 slideDown
+            if (!$tabContentWrap.is(':visible')) {
+                $tabContentWrap.slideDown(200);
+            }
         }
-    })
+    });
 
 
 
@@ -151,7 +153,7 @@ $(document).ready(function(){ //문서가 로딩되고 단 1번 실행
 
 
     /* top 버튼을 클릭하면 상단으로 스크롤 */
-    $('footer .top').on('click', function(){
+    $('footer .footer_sub .top').on('click', function(){
         // console.log('클릭했다')
         $('html, body').animate({
             scrollTop: 0
