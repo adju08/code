@@ -19,7 +19,7 @@ let device_status //pc인지 모바일인지 구분하는 값
 let scrolling //브라우저가 스크롤 된 값
 let scroll_prev //이전에 스크롤 된 값
 let window_w //브라우저의 넓이 값
-let mobile_size = 1024 //모바일로 변경되는 사이즈
+let mobile_size = 1260 //모바일로 변경되는 사이즈
 let menu_open //모바일에서 사용할 메뉴가 열렸는지 여부
 
 
@@ -36,7 +36,7 @@ $(document).ready(function(){ //문서가 로딩되고 단 1번 실행
     resize_chk() //함수의 실행
     scroll_chk() //함수의 실행
 
-    $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter', function(){
+    $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter focusin', function(){
         if(device_status == 'pc'){
             $('header').addClass('menu_over')
             $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
@@ -64,24 +64,26 @@ $(document).ready(function(){ //문서가 로딩되고 단 1번 실행
     })
 
     /************* 모바일 2차 메뉴 열고 닫기 *************/
-    $('header .gnb .gnb_wrap ul.depth1 > li > .gnb_bg .inner .head').on('click', function(e){
-        if(device_status == 'mobile'){
-            // console.log('눌려???')
-            e.preventDefault()
-            menu_open = $(this).parents('li').hasClass('open')
-            // console.log(menu_open)
-
-            if(menu_open == true){ //메뉴가 열려있으면
-                $(this).parents('li').removeClass('open')
-                $(this).next().slideUp()
-            }else{ //닫혀있으면
-                $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('open')
-                $('header .gnb .gnb_wrap ul.depth1 > li > .gnb_bg .inner ul.depth2').slideUp()
-                $(this).parents('li').addClass('open')
-                $(this).next().slideDown()
+    $('header .gnb .gnb_wrap ul.depth1 > li > .gnb_bg .inner .head').on('click', function(e) {
+        if (device_status == 'mobile') {
+            e.preventDefault();
+    
+            const $li = $(this).parents('li');
+    
+            // 이미 open 클래스가 있으면 아무 동작도 하지 않음 (닫히지 않게)
+            if ($li.hasClass('open')) {
+                return;
             }
+    
+            // 다른 li 닫고
+            $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('open');
+            $('header .gnb .gnb_wrap ul.depth1 > li > .gnb_bg .inner ul.depth2').slideUp();
+    
+            // 현재 li 열기
+            $li.addClass('open');
+            $(this).next().slideDown();
         }
-    })
+    });
 
     /************* 모바일 3차 메뉴 열고 닫기 *************/
     $('header .gnb .gnb_wrap ul.depth1 > li > .gnb_bg .inner ul.depth2 > li > a').on('click', function(e){
@@ -147,18 +149,6 @@ $(document).ready(function(){ //문서가 로딩되고 단 1번 실행
 
 
 
-
-
-
-
-
-    /* top 버튼을 클릭하면 상단으로 스크롤 */
-    $('footer .footer_sub .top').on('click', function(){
-        // console.log('클릭했다')
-        $('html, body').animate({
-            scrollTop: 0
-        }, 500)
-    })
 
 
 

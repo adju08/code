@@ -94,6 +94,15 @@ $(document).ready(function(){
             }
         })
     /******************************* updates 탭 기능 : 끝 ******************************/
+
+
+
+
+    /******************************* department list : 시작 ******************************/
+    $('.department .list ul.depth1 > li').on('mouseenter', function(){
+        $('.department .list ul.depth1 > li').removeClass('on')
+        $(this).addClass('on')
+    })
     
 
 
