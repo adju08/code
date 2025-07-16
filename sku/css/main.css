@@ -346,6 +346,19 @@ section .tit strong {
     height: 100%;
     background-color: #005345;
 }
+
+/*********************************/
+.news .today .list ul { display: grid;  column-gap: 24px; row-gap: 30px; grid-template-columns: 3fr 1fr;  grid-template-rows: auto auto;}
+.news .today .list ul li { min-width: 0; }/* 중요 */
+.news .today .list ul li:first-child { grid-row: span 2; }
+.news .today .list ul li a { display:block; }
+.news .today .list ul li a .photo { overflow:hidden; }
+.news .today .list ul li a .photo img { width: 100%; height: 100%; object-fit: cover; }
+.news .today .list ul li:first-child a p { display: none; }
+
+
+/*********************************/
+
 .news .today .tit,
 .news .column .tit {
     position: relative;
@@ -374,48 +387,54 @@ section .tit strong {
 .news .column .tit .more a:hover {
     transform: rotate(90deg);
 }
-.news .today .list {
-    display: flex;
-    gap: 24px;
-}
-.news .today .list .group01 {
-    width: 72.5%;
-}
-.news .today .list .group02 {
-    width: 27.5%;
-}
-.news .today .list .group01 ul li a,
-.news .today .list .group02 ul li a,
+.news .today .list ul li a
 .news .column a {
     display: block;
 }
 .news .today .list .group02 ul li:last-child a {
     margin-top: 31px;
 }
-.news .today .list .group01 ul li a .photo,
-.news .today .list .group02 ul li a .photo,
+.news .today .list ul li a .photo,
 .news .column a .photo {
     overflow: hidden;
-    height: 350px;
     border-radius: 10px;
-}
-.news .today .list .group02 ul li a .photo {
+    width: 100%;
     height: 123px;
 }
-.news .today .list .group01 ul li a .photo img,
-.news .today .list .group02 ul li a .photo img,
+.news .today .list ul li:first-child a .photo,
+.news .column a .photo {
+    height: 350px;
+}
+.news .today .list ul li a .photo img
 .news .column a .photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: 0.5s;
+    display: block;
 }
-.news .today .list .group01 ul li a:hover .photo img,
-.news .today .list .group02 ul li a:hover .photo img,
+.news .today .list ul li a:hover .photo img,
 .news .column a:hover .photo img {
     transform: scale3d(1.1, 1.1, 1);
 }
+
 .news .today .list ul li a h3,
+.news .today .list ul li a p {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    box-sizing: border-box;
+}
+.news .today .list ul li a h3 {
+    font-weight: var(--bold-weight);
+    line-height: var(--tit-line-height);
+    color: var(--tit-color);
+    font-size: 19px;
+    margin-top: 20px;
+}
+.news .today .list ul li:first-child a h3,
 .news .column a h3 {
     font-size: var(--ctn_sub-font-size);
     font-weight: var(--bold-weight);
@@ -435,19 +454,6 @@ section .tit strong {
 }
 .news .column .tit strong {
     color: var(--sub-point-color);
-}
-.news .today .list .group02 ul li a h3,
-.news .today .list .group02 ul li a p {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-.news .today .list .group02 ul li a h3 {
-    font-size: 19px;
-    margin: 20px 0 4px 0;
-    height: 1.2em;
-    display: block;
-    -webkit-line-clamp: 1;
 }
 @media screen and (max-width:1200px){
     .news .today .list .group01 ul li a .photo,
