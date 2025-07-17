@@ -78,17 +78,17 @@ $(document).ready(function(){
     //visual_swiper.autoplay.stop();  /* 일시정지 기능 */
     //visual_swiper.autoplay.start();  /* 재생 기능 */
 
-    $('.visual .ctrl_wrap button.btn_stop').on('click', function(){
+    $('.visual .swiper .ctrl_wrap .btn_wrap button.btn_stop').on('click', function(){
         //console.log('정지버튼 클릭')
         visual_swiper.autoplay.stop();
         $(this).hide() //나를 숨김
-        $('.visual .ctrl_wrap button.btn_play').show() //play 버튼 나타남
+        $('.visual .swiper .ctrl_wrap .btn_wrap button.btn_play').show() //play 버튼 나타남
     })
-    $('.visual .ctrl_wrap button.btn_play').on('click', function(){
+    $('.visual .swiper .ctrl_wrap .btn_wrap button.btn_play').on('click', function(){
         //console.log('재생버튼 클릭')
         visual_swiper.autoplay.start()
         $(this).hide() //나를 숨김
-        $('.visual .ctrl_wrap button.btn_stop').show() //stop 버튼 나타남
+        $('.visual .swiper .ctrl_wrap .btn_wrap button.btn_stop').show() //stop 버튼 나타남
     })
 
 

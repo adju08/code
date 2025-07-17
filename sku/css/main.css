@@ -79,27 +79,50 @@
     100%{transform: translateY(0);}
 }
 
+.visual .swiper .ctrl_wrap {
+    position: absolute; /* visual을 기준으로 정렬 */
+    bottom: 16.88%;
+    left: 5.73%; /* txt_wrap이랑 같은 값 */
+    z-index: 10;
+    display: flex;
+    gap: 22px;
+}
+.visual .swiper .ctrl_wrap .btn_wrap {
+    display: flex;
+}
+.visual .swiper .ctrl_wrap .btn_wrap button{
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.visual .swiper .ctrl_wrap .btn_wrap button.btn_stop {
+    background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='15' cy='15' r='14.5' stroke='white'/%3E%3Cmask id='mask0_0_1' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='6' y='6' width='18' height='18'%3E%3Crect x='6' y='6' width='18' height='18' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_0_1)'%3E%3Cpath d='M16.5 20.25V9.75H19.5V20.25H16.5ZM10.5 20.25V9.75H13.5V20.25H10.5Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+.visual .swiper .ctrl_wrap .btn_wrap button.btn_play {
+    display: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_0_1' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='6' y='6' width='18' height='18'%3E%3Crect x='24' y='24' width='18' height='18' transform='rotate(180 24 24)' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_0_1)'%3E%3Cpath d='M12 9.75L20.25 15L12 20.25L12 9.75Z' fill='white'/%3E%3C/g%3E%3Ccircle cx='15' cy='15' r='14.5' stroke='white'/%3E%3C/svg%3E%0A");
+}
+
 @media screen and (min-width:769px){
-    .visual .swiper .paging {
-        position: absolute; /* visual을 기준으로 정렬 */
-        bottom: 16.88%;
-        left: 5.73%; /* txt_wrap이랑 같은 값 */
-        z-index: 10;
+    .visual .swiper .ctrl_wrap .paging {
         width: auto;
         color: #fff;
         display: flex;
         gap: 0.88em;
     }
-    .visual .swiper .paging .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
-    .visual .swiper .paging .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    .visual .swiper .ctrl_wrap .paging .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+    .visual .swiper .ctrl_wrap .paging .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
         margin: 0;
     }
-    .visual .swiper .paging .swiper-pagination-bullet-active {
+    .visual .swiper .ctrl_wrap .paging .swiper-pagination-bullet-active {
         opacity: 1;
         background: transparent;
         /* 선택된 팝업 변경 스타일 */
     }
-    .visual .swiper .paging .swiper-pagination-bullet {
+    .visual .swiper .ctrl_wrap .paging .swiper-pagination-bullet {
         width: 11.33em;
         height: auto;
         display: block;
@@ -112,7 +135,7 @@
         padding: 0 0 0.33em 0;
         position: relative; /* before 정렬의 기준 */
     }
-    .visual .swiper .paging .swiper-pagination-bullet::before {
+    .visual .swiper .ctrl_wrap .paging .swiper-pagination-bullet::before {
         content: "";
         position: absolute;
         left: 0;
@@ -121,7 +144,7 @@
         height: 0.2em;
         background-color: #fff;
     }
-    .visual .swiper .paging .swiper-pagination-bullet.swiper-pagination-bullet-active::before {
+    .visual .swiper .ctrl_wrap .paging .swiper-pagination-bullet.swiper-pagination-bullet-active::before {
         animation-name: visual_paging;
         animation-duration: 5s; /* jquery의 autoplay 시간과 맞추기 */
         animation-iteration-count: 1; /* 반복 횟수*/
@@ -222,20 +245,22 @@
             .visual .swiper-slide .txt_wrap span {
                 display: none;
             }
-            .visual .swiper .paging {
-                position: absolute; /* visual을 기준으로 정렬 */
+            .visual .swiper .ctrl_wrap {
                 bottom: 29.33%;
                 left: 20px;
-                z-index: 10;
+                align-items: center;
+                gap: 10px;
+            }
+            .visual .swiper .ctrl_wrap .paging {
                 width: auto;
                 display: flex;
                 gap: 0.19em;
             }
-            .visual .swiper .paging .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
-            .visual .swiper .paging .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+            .visual .swiper .ctrl_wrap .paging .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+            .visual .swiper .ctrl_wrap .paging .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
                 margin: 0;
             }
-            .visual .swiper .paging .swiper-pagination-bullet {
+            .visual .swiper .ctrl_wrap .paging .swiper-pagination-bullet {
                 width: 9px;
                 height: 5px;
                 border-radius: 3px;
@@ -245,10 +270,20 @@
                 line-height: 0;
                 margin: 0;
             }
-            .visual .swiper .paging .swiper-pagination-bullet-active {
+            .visual .swiper .ctrl_wrap .paging .swiper-pagination-bullet-active {
                 opacity: 1;
                 background: #fff;
                 width: 35px;
+            }
+            .visual .swiper .ctrl_wrap .btn_wrap button{
+                width: 14px;
+                height: 14px;
+            }
+            .visual .swiper .ctrl_wrap .btn_wrap button.btn_stop {
+                background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_315_14' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='14' height='14'%3E%3Crect width='14' height='14' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_315_14)'%3E%3Cpath d='M8.16667 11.0837V2.91699H10.5V11.0837H8.16667ZM3.5 11.0837V2.91699H5.83333V11.0837H3.5Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+            }
+            .visual .swiper .ctrl_wrap .btn_wrap button.btn_play {
+                background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_315_11' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='14' height='14'%3E%3Crect x='14' y='14' width='14' height='14' transform='rotate(180 14 14)' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_315_11)'%3E%3Cpath d='M4.66683 2.91634L11.0835 6.99967L4.66683 11.083L4.66683 2.91634Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
             }
             .visual .scroll_down {
                 display: none;
