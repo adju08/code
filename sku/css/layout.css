@@ -272,6 +272,8 @@ header.menu_over .util .login::before {
 /****************************** menu_over 추가 : 시작 ******************************/
     header.menu_over .gnb .gnb_wrap ul.depth1 > li.over .gnb_bg {
         display: block !important; /* 나타남 */
+        max-height: 80vh;
+        overflow-y: auto;
     }
 /****************************** menu_over 추가 : 끝 ******************************/
 }/*@media*/

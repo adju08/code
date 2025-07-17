@@ -159,7 +159,7 @@ $(document).ready(function(){ //문서가 로딩되고 단 1번 실행
 function resize_chk(){
     window_w = $(window).width()
     //console.log(window_w)
-    if(window_w > mobile_size){ //1024보다 크면
+    if(window_w > mobile_size){
         device_status = 'pc'
     }else{ //같거나 작으면
         device_status = 'mobile'
