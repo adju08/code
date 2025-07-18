@@ -289,11 +289,6 @@
                 display: none;
             }
 }/* @media */
-@media screen and (max-height: 750px) {
-    .visual .swiper-slide .txt_wrap .txt p {
-        font-size: 55px;
-    }
-}
 
 
 

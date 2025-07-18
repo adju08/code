@@ -1,5 +1,41 @@
 $(document).ready(function(){
 
+
+    $('.quick .btn').on('click', function(){
+        if($(this).hasClass('open') == true){
+            $(this).removeClass('open')
+            $(this).addClass('close')
+            $(this).find('span').text('닫기')
+            // $(this).attr('title', '열기/닫기') //html에 title을 사용했다면.
+            $('.quick .detail').slideDown(300) //나타남
+        }else{
+            $(this).removeClass('close')
+            $(this).addClass('open')
+            $(this).find('span').text('열기')
+            $('.quick .detail').slideUp(200) //사라짐
+        }
+    })
+
+
+
+
+    //breadcrumb 메뉴
+    $('.sub_menu .breadcrumb ol > li').on('click', function(){
+        if($(this).hasClass('open') == true){
+            //console.log('가지고 있음')
+            $(this).removeClass('open')
+        }else{
+            //console.log('아니')
+            $('.sub_menu .breadcrumb ol > li').removeClass('open')
+            $(this).addClass('open')
+        }
+    })
+
+
+
+
+
+
     // console.log($('.ctn_history').length)
     if($('.ctn_history').length > 0){
     
@@ -13,7 +49,7 @@ $(document).ready(function(){
         let obj_nav_area = $('.ctn_history')
         let obj_nav_start //보이기 시작하는 스크롤값
         let obj_nav_end //보이는 마지막 스크롤값
-        let obj_nav_p = $('.sub_visual .breadcrumb')
+        let obj_nav_p = $('.sub_visual .depth1_name span')
         /*
         eq -> 몇번째
         offset -> 위치를 시작점으로 하는 위치값
@@ -81,6 +117,33 @@ $(document).ready(function(){
         resize_chk()
         photo_show()
         nav_show()
+
+
+
+
+        //his 콘텐츠 스크롤
+        gsap.registerPlugin(ScrollTrigger);
+
+        const sections = document.querySelectorAll(".his_year_group");
+
+        sections.forEach(section => {
+            const large = section.querySelector(".his_year_group .cont_wrap .year_cont");
+
+            gsap.to(large, {
+                y: () => (window.innerHeight - large.clientHeight - 64),
+                ease: "none",
+                scrollTrigger: {
+                    trigger: section,
+                    pin: true,
+                    pinSpacing: true,
+                    start: "top 15%",
+                    end: () => "+=500",
+                    scrub: 0.5,
+                    markers: false,
+                    invalidateOnRefresh: true,
+                }
+            });
+        });
 
 
 
