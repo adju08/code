@@ -96,6 +96,7 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+    transition: 0.5s;
 }
 .sub_menu .breadcrumb ol > li > button.menu_close {
     display: none;
@@ -218,7 +219,7 @@
                 height: 12px;
             }
             .sub_menu .breadcrumb ol > li ul {
-                top: 34px;
+                top: 35px;
             }
             .sub_menu .breadcrumb ol > li ul li a {
                 font-size: 13px;
@@ -230,6 +231,7 @@
             /*********** open 클래스 추가 스타일 ***********/
             .sub_menu .breadcrumb ol > li.open ul {
                 display: block; /* open 클래스 추가하면 나타남 */
+                width: 112px;
             }
             .sub_menu .breadcrumb ol > li.open > button span {
                 color: var(--tit-color);

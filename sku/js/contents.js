@@ -35,6 +35,55 @@ $(document).ready(function(){
 
 
 
+    //his_tit 글자 색 차오름
+    let scrolling;
+    let win_h;
+    let slogan = $('.ctn_history .his_tit');
+    let slogan_obj = $('.ctn_history .his_tit h2 span');
+    let slogan_leng = slogan_obj.length;
+    let slogan_top, slogan_start, slogan_end, slogan_scroll;
+
+    function slogan_ani() {
+        slogan_top = slogan.offset().top;
+        slogan_start = slogan_top - win_h + (win_h * 0.3);
+        slogan_end = slogan_top + slogan.height() - win_h + (win_h * 0.5);
+
+        slogan_scroll = (scrolling - slogan_start) / (slogan_end - slogan_start) * 100;
+
+        // clamp(0, slogan_scroll, 100)
+        if (scrolling < slogan_start) {
+            slogan_obj.width(0);
+        } else if (scrolling >= slogan_end) {
+            slogan_obj.width('100%');
+        } else {
+            // 슬라이드 비율 계산 후 각 span에 적용
+            for (let i = 0; i < slogan_leng; i++) {
+                let part = (slogan_scroll - (100 / slogan_leng) * i) * slogan_leng;
+                if (part < 0) part = 0;
+                if (part > 100) part = 100;
+                slogan_obj.eq(i).width(part + '%');
+            }
+        }
+    }
+
+    $(window).on('scroll resize', function () {
+    scrolling = $(window).scrollTop();
+    win_h = $(window).height();
+    slogan_ani();
+    });
+
+    // 최초 실행
+    $(function () {
+        scrolling = $(window).scrollTop();
+        win_h = $(window).height();
+        slogan_ani();
+    });
+
+
+
+
+
+
 
     // console.log($('.ctn_history').length)
     if($('.ctn_history').length > 0){
@@ -121,33 +170,6 @@ $(document).ready(function(){
 
 
 
-        //his 콘텐츠 스크롤
-        gsap.registerPlugin(ScrollTrigger);
-
-        const sections = document.querySelectorAll(".his_year_group");
-
-        sections.forEach(section => {
-            const large = section.querySelector(".his_year_group .cont_wrap .year_cont");
-
-            gsap.to(large, {
-                y: () => (window.innerHeight - large.clientHeight - 64),
-                ease: "none",
-                scrollTrigger: {
-                    trigger: section,
-                    pin: true,
-                    pinSpacing: true,
-                    start: "top 15%",
-                    end: () => "+=500",
-                    scrub: 0.5,
-                    markers: false,
-                    invalidateOnRefresh: true,
-                }
-            });
-        });
-
-
-
-
         /************* nav 메뉴 선택 클릭 이동 *****************/
         let menuName = $('.ctn_history .his_nav')  // 상단에 고정할 메뉴 영역 선택자
         let menuItem = $('.ctn_history .his_nav ul li') // data-link 값을 준 클릭할 요소의 선택자
@@ -158,29 +180,45 @@ $(document).ready(function(){
         let areaName
         let scrollTop
         menuItem.on('click', function(){
-            sectionName = $(this).attr('data-link')
-            moveTop = $('*[data-menu="'+sectionName+'"]').offset().top - menuName.height()
+            sectionName = $(this).attr('data-link');
+            let target = $('*[data-menu="'+sectionName+'"]');
+            let menuHeight = menuName.height();
+            let targetTop = target.offset().top - menuHeight;
+
+            // 현재 문서의 최대 스크롤 가능한 값 계산
+            let documentHeight = $(document).height();
+            let windowHeight = $(window).height();
+            let maxScrollTop = documentHeight - windowHeight;
+
+            // 이동할 위치가 maxScrollTop을 넘지 않도록 보정
+            if (targetTop > maxScrollTop) {
+                targetTop = maxScrollTop;
+            }
+
             $('html, body').animate({
-                scrollTop : moveTop
-            }, 500)
-        })
+                scrollTop : targetTop
+            }, 500);
+        });
         menuChk()
         $(window).scroll(function(){
             menuChk()
         })
         function menuChk(){
-            scrollTop = $(window).scrollTop()
-            $.each($('*[data-menu]'), function(idx, item){
-                areaTop = $('*[data-menu]').eq(idx).offset().top
-                areaH = $('*[data-menu]').eq(idx).height()
-                areaName = $('*[data-menu]').eq(idx).attr('data-menu')
-                if((scrollTop >= areaTop - menuName.height()) && (scrollTop < areaTop + areaH - menuName.height())){
-                    menuItem.removeClass('active')
-                    menuItem.siblings('[data-link="'+areaName+'"]').addClass('active')
-                }else if(scrollTop < $('*[data-menu]').first().offset().top){
-                    menuItem.removeClass('active')
-                }else if(scrollTop > $('*[data-menu]').last().offset().top + $('*[data-menu]').last().height()){
-                    menuItem.removeClass('active')
+            scrollTop = $(window).scrollTop();
+            let winH = $(window).height();
+            let triggerLine = scrollTop + winH / 2; // 뷰포트 중간을 기준으로 함
+
+            menuItem.removeClass('active');
+
+            $('*[data-menu]').each(function () {
+                let $this = $(this);
+                let thisTop = $this.offset().top;
+                let thisBottom = thisTop + $this.outerHeight();
+                let thisName = $this.attr('data-menu');
+
+                if (triggerLine >= thisTop && triggerLine < thisBottom) {
+                    menuItem.filter('[data-link="' + thisName + '"]').addClass('active');
+                    return false; // 하나만 active 처리하고 루프 종료
                 }
             });
         }
