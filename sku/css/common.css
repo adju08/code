@@ -13,7 +13,8 @@ html, body {
     width: 1260px;
     margin: 0 auto; /* 가운데 정렬 */
 }
-#wrap {
+#wrap,
+.his_wrap {
     position: relative; /* header 정렬의 기준 */
     overflow-x: hidden; /* 가로스크롤 삭제 */
     width: 100%;
