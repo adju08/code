@@ -36,7 +36,7 @@ $(document).ready(function(){ //문서가 로딩되고 단 1번 실행
     resize_chk() //함수의 실행
     scroll_chk() //함수의 실행
 
-    $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter', function(){
+    $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter focusin', function(){
         if(device_status == 'pc'){
             $('header').addClass('menu_over')
             $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')

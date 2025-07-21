@@ -440,8 +440,9 @@ section .tit h2 {
 .global .map .list ul li::after {
     content: "";
     position: absolute;
-    top: -51px;
-    left: 29%;
+    top: -47px;
+    left: 50%;
+    transform: translateX(-50%);
     width: 38px;
     height: 38px;
     background-image: url("data:image/svg+xml,%3Csvg width='38' height='38' viewBox='0 0 38 38' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='19' cy='19' r='19' fill='%2300B4DD' fill-opacity='0.4'/%3E%3Ccircle cx='19' cy='19' r='11' fill='%2300B4DD' fill-opacity='0.5'/%3E%3Ccircle cx='19' cy='19' r='3' fill='white'/%3E%3C/svg%3E%0A");
@@ -451,17 +452,15 @@ section .tit h2 {
 }
 .global .map .list ul li.animate::after {
     animation: map_icon 2.5s ease-in-out;
-    background-image: url("data:image/svg+xml,%3Csvg width='62' height='62' viewBox='0 0 62 62' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='31' cy='31' r='31' fill='%230149F2' fill-opacity='0.4'/%3E%3Ccircle cx='31' cy='31' r='18' fill='%230149F2' fill-opacity='0.4'/%3E%3Cmask id='mask0_347_2650' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='16' y='16' width='31' height='31'%3E%3Crect x='16' y='16' width='31' height='31' fill='%230B50F2'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_347_2650)'%3E%3Cpath d='M30.0307 32.9688H22.1958V30.0302H30.0307V22.1953H32.9693V30.0302H40.8042V32.9688H32.9693V40.8037H30.0307V32.9688Z' fill='white'/%3E%3C/g%3E%3Ccircle cx='31' cy='31' r='31' fill='%230149F2'/%3E%3Ccircle cx='31.0005' cy='31.002' r='18' fill='%230149F2'/%3E%3Cmask id='mask1_347_2650' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='15' y='16' width='32' height='31'%3E%3Crect x='15.999' y='16' width='31' height='31' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask1_347_2650)'%3E%3Cpath d='M29.7873 33.2097H21.8364V29.7868H29.7873V21.8359H33.2102V29.7868H41.161V33.2097H33.2102V41.1606H29.7873V33.2097Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
-    /* background-image: url("data:image/svg+xml,%3Csvg width='62' height='62' viewBox='0 0 62 62' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='31' cy='31' r='31' fill='%230149F2' fill-opacity='0.4'/%3E%3Ccircle cx='31' cy='31' r='18' fill='%230149F2' fill-opacity='0.4'/%3E%3Cmask id='mask0_345_2298' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='16' y='16' width='31' height='31'%3E%3Crect x='16' y='16' width='31' height='31' fill='%230B50F2'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_345_2298)'%3E%3Cpath d='M30.0307 32.9688H22.1958V30.0302H30.0307V22.1953H32.9693V30.0302H40.8042V32.9688H32.9693V40.8037H30.0307V32.9688Z' fill='white'/%3E%3C/g%3E%3Ccircle cx='31' cy='31' r='23' fill='%230149F2'/%3E%3Ccircle cx='31.0003' cy='31.0013' r='13.3548' fill='%230149F2'/%3E%3Cmask id='mask1_345_2298' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='19' y='19' width='24' height='24'%3E%3Crect x='19.8699' y='19.8711' width='23' height='23' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask1_345_2298)'%3E%3Cpath d='M30.1002 32.6398H24.2012V30.1002H30.1002V24.2012H32.6398V30.1002H38.5388V32.6398H32.6398V38.5388H30.1002V32.6398Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A"); */
+    background-image: url("data:image/svg+xml,%3Csvg width='62' height='62' viewBox='0 0 62 62' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='31' cy='31' r='31' fill='%2300B4DD'/%3E%3Ccircle cx='31' cy='31' r='18' fill='%2300B4DD'/%3E%3Cmask id='mask0_311_292' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='16' y='16' width='31' height='31'%3E%3Crect x='16' y='16' width='31' height='31' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_311_292)'%3E%3Cpath d='M30.0302 32.9698H22.1953V30.0312H30.0302V22.1963H32.9688V30.0312H40.8037V32.9698H32.9688V40.8047H30.0302V32.9698Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
 }
 .global .map .list ul li.animate a{
-    background-color: rgba(1,73,242,0.3);
-    border-radius: 20px;
+    color: #00B4DD;
 }
 .global .map .list ul li a:hover::after {
     content: "";
     position: absolute;
-    top: 4px;
+    top: 2px;
     right: -18px;
     width: 20px;
     height: 20px;
@@ -470,9 +469,9 @@ section .tit h2 {
     background-position: center center;
 }
 @keyframes map_icon {
-    0% { transform: scale(100%);}
-    50% { transform: scale(150%);}
-    100% { transform: scale(100%);}
+    0% { transform: translateX(-50%) scale(1); }
+    50% { transform: translateX(-50%) scale(1.5); }
+    100% { transform: translateX(-50%) scale(1); }
 }
 .global .map .list ul li.kr {
     top: 34.5%;
@@ -513,7 +512,6 @@ section .tit h2 {
     font-size: 19px;
     font-weight: var(--bold-weight);
     line-height: var(--tit-line-height);
-    padding: 1px 12px;
 }
 
 
@@ -530,7 +528,6 @@ section .tit h2 {
     }
     .global .map .list ul li::after {
         top: -40px;
-        left: 32%;
         width: 30px;
         height: 30px;
     }

@@ -36,17 +36,29 @@ $(document).ready(function(){ //문서가 로딩되고 단 1번 실행
     resize_chk() //함수의 실행
     scroll_chk() //함수의 실행
 
-    $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter', function(){
-        if(device_status == 'pc'){
-            $('header').addClass('menu_over')
-            $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
-            $(this).addClass('over')
-        } 
-    })
+    // 메뉴에 마우스 오버/포커스 진입 시
+    $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter focusin', function(){
+        if (device_status === 'pc') {
+            $('header').addClass('menu_over');
+            $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over');
+            $(this).addClass('over');
+        }
+    });
+
+    // 마우스 나가면 닫기
     $('header').on('mouseleave', function(){
-        $('header').removeClass('menu_over')
-        $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
-    })
+        $('header').removeClass('menu_over');
+        $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over');
+    });
+
+    // 키보드로 포커스가 메뉴 바깥으로 나가면 닫기
+    $(document).on('focusin', function() {
+        const isInMenu = $(document.activeElement).closest('header .gnb .gnb_wrap').length > 0;
+        if (!isInMenu) {
+            $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over');
+            $('header').removeClass('menu_over');
+        }
+    });
 
 
     /************* 모바일 메뉴 열고 닫기 *************/
