@@ -3,13 +3,19 @@
 @import url(common.css);
 @import url(layout.css);
 
-.accordion_wrap { position:relative; z-index:-1; }
-.accordion_wrap .accordion { background-color:#fff; }
-.h_txt {
+
+.accordion .conts {
+    position: relative; /* h_txt */
+}
+.accordion .conts .h_txt {
+    position: absolute; /* conts */
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
     font-weight: 600;
     display: flex;
     justify-content: space-between;
-    padding: 30px 0;
+    width: 100%;
 }
 
 .visual {
@@ -32,6 +38,14 @@
 .visual .wrapper {
     position: relative; /* .visual .txt */
     height: 100%;
+}
+.visual .h_txt,
+.final .h_txt {
+    color: #fff;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0;
 }
 .visual h1 {
     position: relative;
@@ -86,7 +100,10 @@
     border-radius: 40px;
 }
 .accordion_wrap .accordion .conts {
-    padding: 150px 0 200px 0;
+    padding-top: 190px;
+}
+.accordion_wrap .accordion .conts:last-child {
+    height: 100dvh !important;
 }
 .accordion_wrap .accordion .conts .inner {
     display: flex;
@@ -286,9 +303,8 @@
     background: url(../images/main/final_bg.jpg) no-repeat center center / cover;
     height: 100dvh;
     color: #fff;
-}
-.final .h_txt {
-    color: #fff;
+    position: relative;
+    z-index: 1;
 }
 .final .txt {
     text-align: center;
@@ -324,3 +340,4 @@
     height: 2px;
     background-color: #fff;
 }
+.accordion_wrap .accordion { background-color:#fff; }
