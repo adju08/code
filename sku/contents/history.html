@@ -10,7 +10,6 @@
     <script src="../js/common.js"></script>
     <link rel="stylesheet" href="../css/sub.css">
     <link rel="shortcut icon" href="../favicon.svg" type="image/x-icon">
-    <!-- 현재 페이지명 > 상위 메뉴명 > 사이트명 -->
     <title>연혁 > 대학현황 > 학교소개 > 서경대학교</title>
 </head>
 <body>
@@ -33,8 +32,6 @@
                         </div><!--//gnb_util-->
                     </div><!--//menu_header-->
                     <ul class="depth1">
-                        <!--pc버전에서 over 클래스 추가,
-                            모바일에서는 open 클래스 디폴트 값(첫번째 1차 메뉴의 2차 메뉴 상시 열려있음)-->
                         <li class="open">
                             <a href="greeting.html"><span>학교소개</span></a>
                             <div class="gnb_bg">
@@ -43,7 +40,7 @@
                                         <h2>학교소개</h2>
                                     </div>
                                     <ul class="depth2">
-                                        <li class=""><!-- depth2에는 open02 클래서 추가(3차 메뉴 열림) -->
+                                        <li class="">
                                             <a href="greeting.html"><span>총장실</span></a>
                                             <ul class="depth3">
                                                 <li><a href="greeting.html"><span>총장 인사말</span></a></li>
@@ -302,7 +299,7 @@
                     </ul><!--//depth1-->
                     <button class="gnb_close"><span class="blind">메뉴닫기</span></button>
                 </div><!--//gnb_wrap-->
-                <div class="gnb_bg"></div><!--메뉴 아래에서 검은색 배경 담당-->
+                <div class="gnb_bg"></div>
             </nav>
             <div class="util">
                 <div class="search">
@@ -329,9 +326,9 @@
                     <nav class="breadcrumb">
                         <ol>
                             <li class="home"><a href="../index.html"><span>SKU Home</span></a></li>
-                            <li class="menu01"><!-- 1차메뉴명 / open 클래스 추가하면 메뉴 열림 -->
+                            <li class="menu01">
                                 <button class="menu_open" title="열기"><span>학교소개</span></button>
-                                <ul><!-- 숨김처리 / 상위 li에 open 클래스 추가하면 나타남 -->
+                                <ul>
                                     <li class="now"><a href="greeting.html"><span>학교소개</span></a></li>
                                     <li><a href="history.html"><span>입학안내</span></a></li>
                                     <li><a href="greeting.html"><span>대학/대학원</span></a></li>
@@ -371,7 +368,7 @@
                                     <li><a href="history.html"><span>기부금 현황</span></a></li>
                                 </ul>
                                 <button class="menu_close" title="닫기"><span>연혁</span></button>
-                            </li><!-- 현재 메뉴명 -->
+                            </li>
                         </ol>
                     </nav>
                     <div class="sub_util">
@@ -382,12 +379,9 @@
             </div><!--//sub_menu-->
             <div class="page_tit">
                 <div class="wrapper">
-                    <h1>연혁</h1><!-- 현재 메뉴명 -->
+                    <h1>연혁</h1>
                 </div>
             </div><!--//page_tit-->
-
-
-
 
             <div class="contents ctn_history">
                 <div class="wrapper">
@@ -402,17 +396,17 @@
                     </div>
                     <div class="his_photo">
                         <div class="photo"><img src="../images/contents/history_tit01.jpg" alt=""></div>
-                        <div class="txt"><!-- ############### 스크롤 내리면 글자 색 차오르는 인터랙티브 줄거임 ########### -->
+                        <div class="txt">
                             <strong>2025-2010</strong>
                             <p>세상의 변화를 이끄는 교육<br>서경의 혁신</p>
                         </div>
                     </div>
-                    <div class="his_year_group"  data-menu="year2020"><!--//좌우 요소를 감싸는 요소-->
-                        <div class="year_tit"><!--//고정 요소-->
+                    <div class="his_year_group"  data-menu="year2020">
+                        <div class="year_tit">
                             <h3>2025 - <br>2010</h3>
                             <div class="photo"><img src="../images/contents/history_year01.jpg" alt=""></div>
                         </div>
-                        <div class="cont_wrap"><!--//스크롤될 요소를 감싸는 요소-->
+                        <div class="cont_wrap">
                             <div class="year_cont">
                                 <h4>2025 - 2016</h4>
                                 <ul>
@@ -737,7 +731,7 @@
                             <p>세계로 향한 눈,<br>교육의 틀을 넓히다</p>
                         </div>
                     </div>
-                    <div class="his_year_group reverse" data-menu="year2010"> <!-- 반대로 구성된 요소 -->
+                    <div class="his_year_group reverse" data-menu="year2010">
                         <div class="year_tit">
                             <h3>2009 - <br>2000</h3>
                             <div class="photo"><img src="../images/contents/history_year02.jpg" alt=""></div>
@@ -1196,7 +1190,7 @@
                             <p>실용을 넘어, 사람을 키우는<br>교육의 뿌리</p>
                         </div>
                     </div>
-                    <div class="his_year_group reverse" data-menu="year1990"> <!-- 반대로 구성된 요소 -->
+                    <div class="his_year_group reverse" data-menu="year1990">
                         <div class="year_tit">
                             <h3>1989 - <br>1947</h3>
                             <div class="photo"><img src="../images/contents/history_year04.jpg" alt=""></div>
@@ -1388,8 +1382,6 @@
                         </ul>
                     </div>
                     <!--################### ctn_history : 끝 ###################-->
-
-
                     
                 </div><!--//wrapper-->
             </div><!--//contents-->
@@ -1516,7 +1508,7 @@
     </div>
     <aside class="quick">
         <button class="btn open"><span class="blind">열기</span></button>
-        <div class="detail"><!--열렸다 닫혔다(보였다 안보였다)하는 건 list보다 detail이라 이름 줌-->
+        <div class="detail">
             <ul>
                 <li class="skian"><a href="#">서경인</a></li>
                 <li class="pre_skian"><a href="#">예비<br>서경인</a></li>

@@ -8,15 +8,12 @@
 }
 .visual .swiper {
     height: 100%;
-    width: 100%; /* fullpage로 인해 커진 너비 조절 */
-    height: 100dvh; /* 화면의 높이에 꽉 맞게 */
-    /* js-responsiveHeight로 인해 스위퍼, 비주얼, wrapper, li 등
-       높이가 각각 달라져서 고정으로 최소 높이(min)를 주면 fullpage 자체
-       고정값 때문에 안먹음 -> 그래서 100dvh로 설정함 (.visual에 주면 충돌이나서 안됨) */
+    width: 100%;
+    height: 100dvh;
 }
 .visual .swiper .swiper-slide .photo {
     overflow: hidden;
-    height: 100%; /* 100dvh도 가능 */
+    height: 100%;
 }
 .visual .swiper .swiper-slide .photo img,
 .visual .swiper .swiper-slide .photo video {
@@ -25,7 +22,7 @@
     object-fit: cover;
 }
 .visual .swiper .swiper-slide .visual_txt {
-    position: absolute; /* swiper-slide 기준으로 정렬 */
+    position: absolute; /* swiper-slide */
     left: 0;
     top: 50%;
     width: 100%;
@@ -40,9 +37,8 @@
     margin-bottom: 9px;
 }
 @media screen and (min-width:769px){
-    /* 769px 이상에서만 적용 */
         .visual .ctrl_wrap {
-            position: absolute; /* visual을 기준으로 정렬 */
+            position: absolute; /* visual */
             bottom: 32%;
             left: 50%;
             transform: translateX(-50%);
@@ -87,7 +83,7 @@
             background-image: url("data:image/svg+xml,%3Csvg width='18' height='19' viewBox='0 0 18 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_127_742' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='18' height='19'%3E%3Crect x='18' y='18.3984' width='18' height='18' transform='rotate(-180 18 18.3984)' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_127_742)'%3E%3Cpath d='M6 1.89844L13.5 9.39844L6 16.8984L4.66875 15.5672L10.8375 9.39844L4.66875 3.22969L6 1.89844Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
         }
         .visual .scroll_down {
-            position: absolute; /* visual을 기준으로 정렬 */
+            position: absolute; /* visual */
             z-index: 10;
             right: 0;
             bottom: 20%;
@@ -110,8 +106,8 @@
         
             animation-name: scroll_down;
             animation-duration: 2s;
-            animation-iteration-count: infinite; /* 무제한 반복 */
-            animation-timing-function: linear; /* 가속도 조절 */
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
         }
         @keyframes scroll_down {
             0% { right: -30px; }
@@ -129,7 +125,7 @@
                 display: none;
             }
             .visual .ctrl_wrap {
-                position: absolute; /* swiper를 기준으로 정렬 */
+                position: absolute; /* swiper */
                 bottom: 30px;
                 left: 50%;
                 z-index: 10;
@@ -821,7 +817,7 @@ section .tit h2 {
 
 
 #fp-nav.fp-left {
-    left: 20px; /* 왼쪽에서 떨어진 거리 */
+    left: 20px;
 }
 #fp-nav ul li {
     width: auto;
@@ -833,8 +829,7 @@ section .tit h2 {
     display: none;
 }
 #fp-nav ul li a {
-    /* li대로 덮어서 넓이가 꽉 차게 하려고 */
-    position: absolute; /* li를 기준으로 정렬 */
+    position: absolute; /* li */
     left: 0;
     top: 0;
 }
@@ -859,7 +854,6 @@ section .tit h2 {
     display: none; /* 숨김 */
 }
 #fp-nav ul li:hover .fp-tooltip, #fp-nav.fp-show-active a.active + .fp-tooltip {
-    /* 마우스를 오버하거나 현재 선택된 메뉴 */
     border: 1px solid #fff;
     border-radius: 15px;
     color: #fff;
@@ -869,15 +863,15 @@ section .tit h2 {
 #fp-nav ul li .fp-tooltip.fp-left {
     left: auto;
 }
-#fp-nav ul li .fp-tooltip { /* absolute XXXXX */
+#fp-nav ul li .fp-tooltip {
     position: relative;
     top: auto;
     color: rgba(255,255,255,0.6);
     font-size: 15px;
-    font-family: inherit; /* 기본 스타일 상속 */
-    max-width: 100%; /* 해제 */
-    overflow: visible; /* hidden 해제 */
-    display: inline-block; /* 글자 넓이 만큼 스타일 들어감 */
+    font-family: inherit;
+    max-width: 100%;
+    overflow: visible;
+    display: inline-block;
     opacity: 1;
     width: auto;
     padding: 0 4px;

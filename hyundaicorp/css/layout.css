@@ -1,18 +1,16 @@
-/* header와 footer 같이 모든 페이지 공통사항 저장 */
-
 header {
-    position: fixed; /* body를 기준으로 정렬 */
+    position: fixed;
     left: 0;
     top: 0;
     width: 100%;
     height: var(--header-h);
     z-index: 100;
     padding: 0 20px;
-    display: flex; /* logo gnb util 좌우로 배치 */
+    display: flex;
     justify-content: space-between;
     align-items: center;
     color: #fff;
-    transition: top 0.5s; /* 색깔 등은 효과 안들어가고 올라가는 효과만 부드럽게 */
+    transition: top 0.5s;
 }
 header .logo a {
     display: block;
@@ -48,7 +46,7 @@ header.fixed.gnb_up {
     top: var(--header-h-m);
 }
 header.fixed.gnb_up.menu_over {
-    top: 0; /* 메뉴를 오버한 상태로 스크롤을 내렸을 때 메뉴 사라지게 할거임 */
+    top: 0;
 }
 
 
@@ -83,7 +81,7 @@ header.menu_over .util .search .search_open {
     header .gnb .gnb_util,
     header .gnb .gnb_open,
     header .gnb .gnb_close {
-        display: none; /* 숨김 / 모바일에서 나타남 */
+        display: none;
     }
     header .gnb .gnb_wrap ul.depth1 {
         display: flex;
@@ -115,7 +113,7 @@ header.menu_over .util .search .search_open {
         border-radius: 50%;
     }
     header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
-        display: none !important;/* 숨김 / !important -> 무조건 내가 먼저!!(대신 2개여서 충돌나면 작살남)*/
+        display: none !important;
         justify-content: center;
         align-items: center;
         gap: 55px;
@@ -209,7 +207,7 @@ header.menu_over .util .search .search_open {
             }
             header .gnb .gnb_util {
                 display: none;
-                position: absolute; /* gnb_wrap을 기준으로 정렬 */
+                position: absolute; /* gnb_wrap */
                 left: 20px;
                 top: 13px;
                 gap: 2px;
@@ -247,7 +245,7 @@ header.menu_over .util .search .search_open {
                 position: fixed;
                 right: -100%;
                 top: 0;
-                z-index: 10;/* gnb_bg 때문에 깔리는 걸 위로 올려줌 */
+                z-index: 10;
                 width: calc(100% - 43px);
                 max-width: 478px;
                 height: 100%;
@@ -267,7 +265,7 @@ header.menu_over .util .search .search_open {
                 border-bottom: 1px solid #ededed;
             }
             header .gnb .gnb_wrap ul.depth1 > li > a {
-                position: relative; /* after 정렬의 기준 */
+                position: relative; /* after */
                 display: block;
                 font-size: var(--sub-tit-size);
                 line-height: var(--tit-line-height);
@@ -275,7 +273,7 @@ header.menu_over .util .search .search_open {
             }
             header .gnb .gnb_wrap ul.depth1 > li > a::after {
                 content: "";
-                position: absolute; /* a를 기준으로 정렬 */
+                position: absolute; /* a */
                 right: 0;
                 top: 16px;
                 width: 20px;
@@ -316,7 +314,7 @@ header.menu_over .util .search .search_open {
             }
             header .gnb .gnb_bg {
                 display: none;
-                position: fixed; /* body를 기준으로 정렬 */
+                position: fixed; /* body */
                 left: 0;
                 top: 0;
                 width: 100%;
@@ -338,7 +336,7 @@ header.menu_over .util .search .search_open {
 
             /******** 메뉴 열렸을 때 *******/
             header.menu_open .gnb .gnb_util {
-                display: flex; /* display: none;으로 숨긴 것 나타나기 */
+                display: flex;
             }
             header.menu_open .gnb .gnb_wrap {
                 right: 0;
@@ -350,10 +348,8 @@ header.menu_over .util .search .search_open {
                 display: block;
                 animation-name: gnb_bg;
                 animation-duration: 0.5s;
-                animation-iteration-count: 1; /* 한번만 */
-                animation-fill-mode: forwards; /* 애니메이션이 끝나도 상태유지 */
-
-                /* -> transition 안먹혀서 애니메이트로 스르르 들어가는 설정함 */
+                animation-iteration-count: 1;
+                animation-fill-mode: forwards;
             }
             @keyframes gnb_bg {
                 0% { opacity: 0; }
@@ -376,13 +372,13 @@ footer .wrapper {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
-    align-items: flex-start; /* flex 땜에 늘어난 ul의 길이를 딱 맞춰줌 */
+    align-items: flex-start;
 }
 footer .top {
     display: none;/* 모바일에서 나타남 */
 }
 footer .family_site {
-    position: relative; /* ul 정렬의 기준 */
+    position: relative; /* ul */
 }
 footer .family_site button {
     display: block;
@@ -448,7 +444,7 @@ footer .family_site .list ul li a:hover span::before {
 }
 footer .f_nav ul {
     display: flex;
-    flex-wrap: wrap; /* 여러줄 허용 */
+    flex-wrap: wrap;
     gap: 4px 45px;
 }
 footer .f_nav ul li {

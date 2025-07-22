@@ -210,7 +210,7 @@
     margin: 80px 0 132px 0;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* 늘어난 p의 길이를 글자만큼 맞춰줌 */
+    align-items: flex-start;
 }
 .ctn_history .his_tit strong {
     color: var(--point-color);
@@ -221,8 +221,8 @@
     line-height: var(--tit-line-height);
     color: #E1E1E1;
     margin: 4px 0 0 0;
-    position: relative; /* span 정렬의 기준 */
-    white-space: nowrap; /* 줄바꿈 금지 */
+    position: relative; /* span */
+    white-space: nowrap;
 }
 .ctn_history .his_tit h2 span {
     position: absolute;
@@ -244,8 +244,8 @@
 .ctn_history .his_photo .photo {
     overflow: hidden;
     height: 536px;
-    width: 30%; /* active가 들어가면 늘어나게 할거임(%로 하는 게 좋음) */
-    margin: 0 auto; /* 왼쪽으로 간 사진 가운데로 정렬 */
+    width: 30%;
+    margin: 0 auto;
     transition: 0.5s;
     border-radius: 20px;
 }
@@ -270,7 +270,7 @@
     font-size: 35px;
     font-weight: var(--bold-weight);
 }
-.ctn_history .his_year_group {/* 스크롤되면서 보여질 최대높이를 지정해야한다. height로도 가능 */
+.ctn_history .his_year_group {
     display:flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -279,7 +279,6 @@
 }
 .ctn_history .his_year_group .year_tit {
     width: clamp(300px, 40%, 404px);
-    /* 최소값, 기본값, 최대값 -> 이렇게 3가지 값이 있을 때 clamp를 사용 */
     position: sticky;
     top: 15%;
     align-self: flex-start;
@@ -360,7 +359,7 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
-    width: calc(100% - 103px); /* strong한테 굳이 넓이 안줘도 됨 */
+    width: calc(100% - 103px);
 }
 .ctn_history .his_year_group .cont_wrap .year_cont ul li .txt span {
     display: block;
@@ -379,11 +378,11 @@
 }
 
 .ctn_history .his_nav {
-    position: fixed; /* 무조건 body를 기준으로 정렬 */
+    position: fixed;
     left: 50%;
     transform: translateX(-50%);
     bottom: -70px;
-    z-index: 99; /* header보다 1만 작은값 */
+    z-index: 99;
     width: calc(100% - 40px);
     max-width: 716px;
     background-color: #E8E8E8;
@@ -396,8 +395,8 @@
 }
 .ctn_history .his_nav ul {
     display: flex;
-    overflow-y: hidden; /* 위아래 스크롤 금지 */
-    overflow-x: auto; /* 가로 스크롤 허용 */
+    overflow-y: hidden;
+    overflow-x: auto;
 }
 .ctn_history .his_nav ul li {
     width: 25%;
@@ -411,7 +410,7 @@
     line-height: var(--tit-line-height);
     padding: 16px 40px;
     border-radius: 40px;
-    white-space: nowrap; /* 줄바꿈 금지 */
+    white-space: nowrap;
 }
 .ctn_history .his_nav ul li.active button {
     background-color: var(--main-color);
@@ -419,9 +418,9 @@
 }
 
 @media screen and (min-width:769px){
-    /* reverse 스타일은 PC버전에서만 적용 */
+    /* reverse PC버전에서만 */
     .ctn_history .his_year_group.reverse {
-        flex-direction: row-reverse; /* 가로반전 */
+        flex-direction: row-reverse;
     }
     .ctn_history .his_year_group.reverse .year_cont {
         padding-right: 35px;
@@ -504,13 +503,12 @@
                 top: 0;
             }
             .ctn_history .his_year_group .cont_wrap {
-                max-width: 100%; /* 해제 */
-                /* min은 해제하려면 0을 줌 */
-                width: auto; /* 해제 */
+                max-width: 100%;
+                width: auto;
             }
             .ctn_history .his_year_group .cont_wrap .year_cont {
                 padding-left: 24px;
-                position: relative; /* or static */
+                position: relative;
                 overflow: visible;
                 display: block;
             }
@@ -543,13 +541,12 @@
                 height: calc(100% + 34px);
             }
             .ctn_history .his_year_group .cont_wrap .year_cont ul li .txt {
-                width: calc(100% - 89px); /* strong한테 굳이 넓이 안줘도 됨 */
+                width: calc(100% - 89px);
             }
             .ctn_history .his_nav {
                 padding: 5px 7px;
             }
             .ctn_history .his_nav ul::-webkit-scrollbar {
-                /* !비표준 코드! 스크롤바 삭제 */
                  display: none;
             }
             .ctn_history .his_nav ul li {

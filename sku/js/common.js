@@ -1,40 +1,20 @@
-//header, footer 공통요소에 들어가는 javascript/jquery
-
-/******************* 
- * pc버전, 모바일 버전 구분
- * 스크롤된 값 계산
- * 
- * 스크롤을 내리면 header에 fixed 클래스 주기
- * 메뉴에 마우스를 올리면 menu_over 클래스 추가
- * 메뉴를 오버한 li에 over 클래스 추가
- * 
- * 스크롤을 내릴 때는 gnb_up 클래스 추가
- * 스크롤을 올릴 때는 gnb_up 클래스 삭제
- * ===> 이전에 스크롤값과 현재 스크롤값을 비교해서
- *      현재 값이 더 크면 내려가는 중 ( 100 --> 200 )
- *      현재 값이 작으면 올라가는 중 ( 200 --> 100 )
- *******************/
-
-let device_status //pc인지 모바일인지 구분하는 값
-let scrolling //브라우저가 스크롤 된 값
-let scroll_prev //이전에 스크롤 된 값
-let window_w //브라우저의 넓이 값
-let mobile_size = 1260 //모바일로 변경되는 사이즈
-let menu_open //모바일에서 사용할 메뉴가 열렸는지 여부
+let device_status
+let scrolling
+let scroll_prev
+let window_w
+let mobile_size = 1260
+let menu_open
 
 
-$(window).scroll(function(){ //브라우저가 스크롤 될 때마다 1번 실행
-    //console.log('스크롤 된다!!')
-    scroll_chk() //함수의 실행
+$(window).scroll(function(){
+    scroll_chk()
 })
-$(window).resize(function(){ //리사이즈 될 때마다 1번 실행
-    //console.log('브라우저 크기 변한다!!')
-    resize_chk() //함수의 실행
+$(window).resize(function(){
+    resize_chk()
 })
-$(document).ready(function(){ //문서가 로딩되고 단 1번 실행
-    //console.log('로딩됐다!!!')
-    resize_chk() //함수의 실행
-    scroll_chk() //함수의 실행
+$(document).ready(function(){
+    resize_chk()
+    scroll_chk()
 
     $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter focusin', function(){
         if(device_status == 'pc'){
@@ -43,7 +23,6 @@ $(document).ready(function(){ //문서가 로딩되고 단 1번 실행
             $(this).addClass('over')
         } 
     })
-    /* 메뉴는 오버를 감지하는 영역보다 out을 잡아주는 영역이 커야함 */
     $('header .gnb').on('mouseleave', function(){
         $('header').removeClass('menu_over')
         $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
@@ -69,17 +48,11 @@ $(document).ready(function(){ //문서가 로딩되고 단 1번 실행
             e.preventDefault();
     
             const $li = $(this).parents('li');
-    
-            // 이미 open 클래스가 있으면 아무 동작도 하지 않음 (닫히지 않게)
             if ($li.hasClass('open')) {
                 return;
             }
-    
-            // 다른 li 닫고
             $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('open');
             $('header .gnb .gnb_wrap ul.depth1 > li > .gnb_bg .inner ul.depth2').slideUp();
-    
-            // 현재 li 열기
             $li.addClass('open');
             $(this).next().slideDown();
         }
@@ -88,15 +61,13 @@ $(document).ready(function(){ //문서가 로딩되고 단 1번 실행
     /************* 모바일 3차 메뉴 열고 닫기 *************/
     $('header .gnb .gnb_wrap ul.depth1 > li > .gnb_bg .inner ul.depth2 > li > a').on('click', function(e){
         if(device_status == 'mobile'){
-            // console.log('눌려???')
             e.preventDefault()
             menu_open = $(this).parent('li').hasClass('open02')
-            // console.log(menu_open)
 
-            if(menu_open == true){ //메뉴가 열려있으면
+            if(menu_open == true){
                 $(this).parent('li').removeClass('open02')
                 $(this).next().slideUp()
-            }else{ //닫혀있으면
+            }else{
                 $('header .gnb .gnb_wrap ul.depth1 > li .gnb_bg .inner ul.depth2 > li').removeClass('open02')
                 $('header .gnb .gnb_wrap ul.depth1 > li .gnb_bg .inner ul.depth2 > li ul.depth3').slideUp()
                 $(this).parent('li').addClass('open02')
@@ -111,12 +82,11 @@ $(document).ready(function(){ //문서가 로딩되고 단 1번 실행
 
 
     //footer tab
-    let footer_content; // 클릭한 메뉴의 이름(id)
+    let footer_content;
 
     $('footer .footer_head .list .tab_list ul li').on('click', function () {
         const $tabContentWrap = $('footer .footer_head .list .tab_content');
         
-        // 클릭한 li가 이미 active라면 닫기 처리
         if ($(this).hasClass('active')) {
             $(this).removeClass('active');
             $(this).attr('aria-selected', 'false');
@@ -125,22 +95,16 @@ $(document).ready(function(){ //문서가 로딩되고 단 1번 실행
             footer_content = $(this).attr('data-content');
             $tabContentWrap.find('#' + footer_content).removeClass('active');
 
-            // tab_content 전체를 slideUp (닫기)
             $tabContentWrap.slideUp(200);
         } else {
             footer_content = $(this).attr('data-content');
-
-            // 모든 탭, 컨텐츠 비활성화
             $('footer .footer_head .list .tab_list ul li').removeClass('active').attr('aria-selected', 'false').find('span').text('');
             $('footer .footer_head .list .tab_content .tab_item').removeClass('active');
 
-            // 현재 클릭한 탭 활성화
             $(this).addClass('active').attr('aria-selected', 'true').find('span').text('선택됨');
 
-            // 해당 콘텐츠만 활성화
             $tabContentWrap.find('#' + footer_content).addClass('active');
 
-            // tab_content 영역이 숨겨져 있다면 slideDown
             if (!$tabContentWrap.is(':visible')) {
                 $tabContentWrap.slideDown(200);
             }
@@ -155,16 +119,13 @@ $(document).ready(function(){ //문서가 로딩되고 단 1번 실행
 
 })//$(document).ready
 
-//함수의 선언
 function resize_chk(){
     window_w = $(window).width()
-    //console.log(window_w)
     if(window_w > mobile_size){
         device_status = 'pc'
-    }else{ //같거나 작으면
+    }else{
         device_status = 'mobile'
     }
-    //console.log(device_status)
 }
 function scroll_chk(){
     scrolling = $(window).scrollTop()

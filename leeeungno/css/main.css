@@ -4,7 +4,7 @@
 @import url(layout.css);
 
 .visual {
-    position: relative; /* ctrl_wrap 정렬의 기준 */
+    position: relative; /* ctrl_wrap */
 }
 .visual .swiper {
     width: 100%;
@@ -12,7 +12,7 @@
 .visual .swiper-slide .photo {
     overflow: hidden;
     height: 100dvh;
-    min-height: 35.29em; /* ????????? 최소높이 - 600 / 17 = 35.29 */
+    min-height: 35.29em;
 }
 .visual .swiper-slide .photo img {
     width: 100%;
@@ -24,7 +24,7 @@
     transform: scale3d(1.1,1.1,1);
 }
 .visual .swiper-slide .txt_wrap {
-    position: absolute; /* swiper-slide를 기준으로 정렬 */
+    position: absolute; /* swiper-slide */
     left: 0;
     bottom: 11%;
     width: 100%;
@@ -43,9 +43,8 @@
     background-color: #fff;
     animation-name: visual_paging;
     animation-duration: 5s; /* jquery의 autoplay 시간과 맞추기 */
-    animation-iteration-count: 1; /* 반복 횟수*/
-    animation-fill-mode: forwards; /* 마지막 100% 유지 */
-    /* animation-timing-function: linear; 가속도 삭제 */
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 @keyframes visual_paging {
     0% { width: 0; }
@@ -83,7 +82,7 @@
     margin-top: 4.65em;
 }
 .visual .ctrl_wrap {
-    position: absolute; /* visual을 기준으로 정렬 */
+    position: absolute; /* visual */
     bottom: 11%;
     right: calc(50% - 37.06em);
     z-index: 10;
@@ -769,9 +768,9 @@ section .tit h2 {
 
     animation-name: rolling;
     animation-duration: 22s;
-    animation-iteration-count: infinite; /* 무제한 */
-    animation-timing-function: linear; /* 가속도 삭제 */
-    text-transform: uppercase; /* 대문자 변경 */
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    text-transform: uppercase;
 }
 @keyframes rolling {
     0% {left: 0;}
