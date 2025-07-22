@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&display=swap');
+
+@font-face {
+	font-family: "Montserrat";
+	font-weight: 800;
+	font-style: italic;
+	src: url(../font/montserrat-800-italic.woff2) format('woff2');
+}
+@font-face {
+	font-family: "Montserrat";
+	font-weight: 800;
+	font-style: normal;
+	src: url(../font/montserrat-800.woff2) format('woff2');
+	font-display: swap;
+}
+@font-face {
+	font-family: "Montserrat";
+	font-weight: 700;
+	font-style: italic;
+	src: url(../font/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq0N6WXx0poK5.woff2) format('woff2');
+}
+@font-face {
+	font-family: "Montserrat";
+	font-weight: 700;
+	font-style: normal;
+	src: url(../font/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM73w9aXpsog.woff2) format('woff2');
+}
+@font-face {
+	font-family: "Montserrat";
+	font-weight: 500;
+	font-style: normal;
+	src: url(../font/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtZ6Hw9aXpsog.woff2) format('woff2');
+}
+@font-face {
+    font-family: 'Paperlogy';
+    src: url('../font/Paperlogy-5Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Paperlogy';
+    src: url('../font/Paperlogy-6SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
